@@ -1,0 +1,399 @@
+-Arithmetic. +
+-   Counting. \threedots
+-       Number as Matching
+-       Pebbles of Various Sizes
+-       Digits
+-       Carry Overs
+-       Units
+-       Base Representations
+-       Largest Number
+-   Addition. + 
+-       Notions of Additions
+-       Adding Single Digits
+-       Complements of Ten
+-       Left to Right Addition
+-       Significant Addition
+-       Tricks and Checks of Addition
+-       Properties of Addition
+-   Multiplication. *
+-       Notions of Multiplication
+-       Single Digit Multiplication
+-       No Carry Left to Right Multiplication
+-       Carry Left to Right Multiplication
+-       Significant Multiplication
+-       Tricks and Checks of Multiplication
+-       Properties of Multiplication 
+-   Subtraction. -
+-       Removal
+-       Complement Subtraction
+-       Left to Right Subtraction
+-       Negative Numbers
+-       Significant Subtraction
+-       Tricks and Checks of Subtraction
+-       Properties of Subtraction
+-   Division. \div
+-       Notions of Division
+-       Foundational Divisions
+-       Long Division
+-       Significant Division
+-       Fractions
+-       Decimals
+-       Tricks and Checks of Division
+-   Powers. \wedge
+-       Notions of Exponents
+-       Rules of Exponents
+-       Scientific Notation
+-       Significant Powers
+-       Guesstimation
+-       Undoing Exponentiation
+-       Sums and Powers
+-   Constructing Numbers. \mathbb{N}, \mathbb{Z}, \mathbb{Q}
+-       Containers
+-       Natural Numbers
+-       Addition and Multiplication
+-       Integers
+-       Rationals
+-       Properties Revisited
+-       Relations
+-Algebra. x
+-   Lines. x
+-       Shortest Distance
+-       Basic Distance Shapes
+-       Cartesian Coordinate Plane
+-       Slope
+-       Solving a Linear Equation
+-       Families of Lines
+-       Linear Inequalities
+-   Quadratics. x^2
+-       Notions of Quadratics
+-       The Vertex of a Quadratic
+-       Square Roots
+-       Solving Quadratics
+-       Complex Numbers
+-       Common Quadratic Problems
+-       Quadratic Inequalities
+-   Polynomials. x^n
+-       Arithmetic of Polynomials
+-       The Questions of Polynomials
+-       Synthetic Division
+-       Zeros of Polynomials
+-       Calculus of Polynomials
+-       Graphing polynomials
+-       Powering Polynomials
+-   Interest Accumulations. \%
+-       Percentages
+-       Simple Interest and Discount
+-       Compound Interest
+-       Effective Rate
+-       Payments
+-       Personal Finances
+-       Tricks of Business Mathematics
+-   Inequalities and Absolute Values. \leq
+-       Basic Inequalities
+-       Polynomial Inequalities
+-       Triangle Inequality
+-       Absolute Value
+-       Solving Absolute Value Equations
+-       Absolute Value Inequalities
+-       Distance
+-   Linear Systems. x, y, z
+-       Two Variable Systems
+-       Matrices
+-       Solving Systems
+-       Applications
+-       Not the Right Amount of Information
+-       Linear Programming
+-       Simplex Method
+-   Constructing the Real and Complex Numbers. \mathbb{R}, \mathbb{C}
+-       Square Root 2
+-       Zeroing in on Zeros
+-       Notions of Real Numbers
+-       Polynomial Zeros Beyond Radicals
+-       Complex Numbers
+-       Arithmetic and Geometry of Complex Numbers
+-       Sizes of Infinity
+-Functions. f
+-   Rational and Power Functions. \sqrt{x}
+-       Rational Functions
+-       Graphing Rational Functions
+-       Calculus of Rational Functions
+-       Rational Approximations
+-       Powering Functions
+-       Graphing Radical Functions
+-       Calculus of Radical Functions
+-   Infinite Processes. \x_n
+-       Sequences
+-       Sums and products
+-       Off to Infinity
+-       Limits
+-       Iterative Processes
+-       Errors
+-       The Reality of Infinity
+-   Differential Calculus. \frac{df}{dx}
+-       Notions of Derivatives
+-       Using Derivatives
+-       Derivative Rules
+-       Newtons Method
+-       Optimization Problems
+-       Taylor Polynomials
+-       Implicit Differentiation
+-   Integral Calculus.  \int f(x) dx
+-       Notions of Integrals
+-       Fundamental Theorem of Calculus
+-       Integral Rules
+-       Numerics
+-       Arc Length of Functions
+-       Volumes of Revolution
+-       Error Estimates
+-   Exponentials and Logarithms. e^x, \mathrm{ln(x)}
+-       Paths to the Exponential
+-       Properties of the Exponential
+-       Paths to the Logarithm
+-       Properties of the Logarithm
+-       Dealing with Large Numbers
+-       Applications of Exponentials and Logarithms
+-       Asymptotics
+-   Trigonometric Functions. \sin(x), \cos(x), \tan(x)
+-       Notions of Trigonometric Functions
+-       Properties of Trigonometric Functions
+-       Approximating Trigonometric Functions
+-       Inverse Trigonometric Functions
+-       Applications of Trigonometric Functions
+-       Sums and Products of Trigonometric Functions
+-       Complex Exponentials
+-   Defining Functions. y' = y
+-       Taylor Series
+-       Functional Equations
+-       Differential Equations
+-       Special Functions
+-       Laplace Transforms
+-       Fourier Approximations
+-       Tricks
+-Many Variables. \bar{x}
+-   Linear Algebra. A \bar{x} 
+-       Vectors
+-       Subspaces
+-       Matrices
+-       Solving Linear Systems
+-       Changing the Basis
+-       Diagonalizations
+-       Complex Linear Spaces
+-   Systems of Ordinary Differential Equations.  \bar{x}' = A \bar{x}
+-       Predator Prey
+-       Two Dimensional Systems
+-       Matrix Solutions
+-       Numerics
+-       Non-linear Differential Systems
+-       Chaos
+-       Critical Points
+-   Multivariable Functions. \bar{f}(\bar{x})
+-       One to Many
+-       Many to One
+-       Complex to Complex
+-       Many to Many
+-       Graphs
+-       Questions to Ask
+-       Multivariable Polynomials
+-   Multivaribale Differential Calculus. \frac{\partial f}{\partial x}
+-       Total Derivatives
+-       Partial Derivatives
+-       Tangentials
+-       Extrema
+-       Lagrange Multiplies
+-       High Dimensional Newtons Method
+-       Local Approximations
+-   Multivariable Integral Calculus. d\bar{x}
+-       Volume Integrals
+-       Surface Area Integrals
+-       Line Integrals
+-       Integral Relations
+-       Change of Basis in Integrals
+-       Antiderivatives
+-       Generalizations
+-   Partial Differential Equations. \frac{\partial f}{partial t} = \Delta f
+-       Partial versus Ordinary
+-       Verifying Solutions
+-       Laplacian Equations
+-       Boundary Conditions
+-       Time versus Space
+-       Approximations in PDEs
+-       Generalized Solutions
+-   Curved Spaces. T_x M 
+-       Surfaces in 3D
+-       Curves
+-       Coordinates
+-       Tangent Spaces
+-       Metrics
+-       Tensors and Differential Forms
+-       Topological Concerns
+-Geometry. \Delta
+-   Plane Geometry. ||
+-       Euclidean Lines
+-       Euclidean Triangles
+-       Similarity
+-       Polygons
+-       Euclidean Circles
+-       Transformations
+-       Coordinate Proofs
+-   Constructions. \circ
+-       Ruler and Compass
+-       Constructions with Lines
+-       Constructing Angles
+-       Drawing Triangles
+-       Constructions with Circles
+-       Trisecting the Angle
+-       Constructing Solutions to Equations
+-   Trigonometry. \Delta
+-       Right Triangle
+-       Any Triangle
+-       Regular Polygons
+-       Areas
+-       Measuring from a Distance
+-       Parallax
+-       Circumference of the Earth
+-   Conic Sections. x^2 - y^2 = 1
+-       Notions of a Conic Section
+-       Ellipses
+-       Parabolas
+-       Hyperbolas
+-       Cones
+-       Unifying Pictures
+-       Generalizations
+-   Parametric Curves. (x(t), y(t) )
+-       Notions of Parametric Curves
+-       Functions of x as a Function of t
+-       Spirals 
+-       Tangent Vectors
+-       Arc Length
+-       Reparametrizations
+-       Geodesics
+-   Higher Dimensions. \mathbb{R}^N
+-       Three Dimensions
+-       Volumes
+-       Surface area
+-       Even Higher Dimensions
+-       Many Variable Inequalities
+-       Norms and Angles
+-       Transforming Space
+-   Other Geometries. d(x,y)
+-       Taxicab Geometry
+-       Spherical Geometry
+-       Hyperbolic Geometry
+-       Discrete Geometries
+-       Metric Geometries
+-       Infinite Dimensional Geometries
+-       Compact Geometry
+-Probability and Statistics. \mu 
+-   Descriptive Statistics. \sigma
+-       Gathering Data
+-       Notions of Centrality
+-       Notions of Spread
+-       Charts
+-       Other Measures
+-       Stories
+-       Lies
+-   Fitting Functions. R^2
+-       Exact Fits
+-       Least Squares
+-       Linear Regression
+-       Polynomial Regression
+-       Logging Data for Regression
+-       Trust and Regression
+-       General Linear Model
+-   Probability. P(X=1)
+-       Counting Outcomes
+-       Combinatorial Probability
+-       Random variables
+-       Special Random Variables
+-       Conditional Probabilities
+-       Central Limit Theorem
+-       To Ponder
+-   Frequentist Statistics. p
+-       Notions of Frequentist Statistics
+-       Varieties of Statistics
+-       Proper Data Collection
+-       z-Test
+-       t-Test
+-       ANOVA
+-       Categorical Tests
+-   Bayesian Statistics. P(A|B)
+-       Using Bayes Theorem
+-       Parameter Estimation
+-       Priors
+-       Posteriors
+-       Sampling
+-       Monte Carlo
+-       Comparing Methods
+-   Simulations. \ddots
+-       Exploring Probability
+-       Randomness
+-       Simulating Random Variables
+-       Central Limit Theorem Explorations
+-       z-Test Explorations
+-       t-Test Explorations
+-       Bayesian Explorations
+-   Multivariate Statistics. \bold{X}
+-       Random Multivariates
+-       Joint Distribution
+-       Multivariate Distributions
+-       Multivariate Means
+-       Multivariate Normals
+-       Multivariate Analysis
+-       Multivariate Regression
+-Practitioners. \heartsuit
+-   Algebraists. G
+-       Abstract Algebra
+-       Number Theory
+-       Cryptography
+-       Algebraic Geometry
+-       Algebraic Topology
+-       Computer Algebra
+-       Category Theory
+-   Analysts. \epsilon
+-       Real Analysis
+-       Complex Analysis
+-       Numerical Analysis
+-       Functional Analysis
+-       Calculus of Variations
+-       Delta Functions
+-       Optimization
+-   Geometers. \omega
+-       Toplogy
+-       Differential Geometry
+-       Soap Bubbles
+-       Symplectic Geometry
+-       Control Theory
+-       Mathematical Physics
+-       Infinite Dimensional Spaces
+-   Booleans. \binom{n}{r}
+-       Combinatorics
+-       Graph Theory
+-       Mathematical Logic
+-       Game Theory
+-       Computer Scientists
+-       Politicians
+-       Risk Managers
+-   Scientists. P(t)
+-       Physics
+-       Chemistry
+-       Biology
+-       Health
+-       Ecology
+-       Economics
+-       Sociology
+-   Engineers. \jmath
+-       Mechanical Engineering
+-       Electrical Engineering
+-       Chemical Engineering
+-       Aerospace Engineering
+-       Actuarial Science
+-       Meterology
+-       Finance
+-   Artists. \natural
+-       Music
+-       Writing
+-       Architecture
+-       Visualizations
+-       Computer Generation
+-       Entertainment
+-       Fractals
