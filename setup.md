@@ -43,6 +43,7 @@ necessary modifications.
 
     let litprorunner = [];
     let generate = true;
+    let count = 0;
     if (generate) {
         let levels = [];
         prepped.forEach( (arr) => {
@@ -63,15 +64,14 @@ necessary modifications.
             let top = ''; 
             let file = '';
             _"make litpro file"
-            //fs.writeFileSync('src/pages/'+fname, file, {encoding:'utf8'});
-            console.log(file);
-            throw 'done'
+            fs.writeFileSync('src/pages/'+fname, file, {encoding:'utf8'});
             litprorunner.push(`[${fname}](${'pages/'+fname} "load:")`);
+            count += 1;
         });
         fs.writeFileSync('pagerunner.md', litprorunner.join('\n'));
     }
     
-    console.log("done");
+    console.log("done. Saved "+ count + " pages");
 
 
 
@@ -227,7 +227,7 @@ add in the new content.
 
     <script>
         import Nav from '../components/Nav.svelte';
-        const actual = [${levels.map(el => '"'  + el + '"').join(',')}]
+        const actual = [${levels.map(el => '"'  + el + '"').join(',')}];
 
         \_"script"
     
@@ -241,7 +241,7 @@ add in the new content.
 
     \_"html"
 
-[../sapper/src/routes/${fname}](# "save:")
+[../sapper/src/routes/${fname.slice(0,-2)+'svelte'}](# "save:")
 
 
 ```

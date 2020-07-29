@@ -1,0 +1,49 @@
+# Special Random Variables
+
+## HTML
+
+The video youube should go in the middle; cut and paste. 
+
+    _"intro | md"
+
+    
+
+    _"pebble"
+
+
+### Intro
+
+
+### Pebble
+
+
+
+## Script
+
+
+## Style
+
+
+
+# GENERATED
+
+## Svelte
+
+    <script>
+        import Nav from '../components/Nav.svelte';
+        const actual = ["Probability and Statistics","Probability","Special Random Variables"];
+
+        _"script"
+    
+    </script>
+
+    <style>
+        _"style"
+    </style>
+
+    <Nav {actual} />
+
+    _"html"
+
+[../sapper/src/routes/probability-and-statistics_probability_special-random-variables.svelte](# "save:")
+
