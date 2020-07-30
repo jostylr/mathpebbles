@@ -25,6 +25,7 @@ The video youube should go in the middle; cut and paste.
 
 
 
+
 # GENERATED
 
 ## Svelte
@@ -45,5 +46,5 @@ The video youube should go in the middle; cut and paste.
 
     _"html"
 
-[../sapper/src/routes/probability-and-statistics_simulations_z-test-explorations.svelte](# "save:")
+[../fullsapper/src/routes/probability-and-statistics_simulations_z-test-explorations.svelte](# "save:")
 

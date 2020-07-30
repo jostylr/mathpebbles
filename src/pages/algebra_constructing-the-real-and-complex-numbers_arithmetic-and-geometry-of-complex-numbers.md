@@ -25,6 +25,7 @@ The video youube should go in the middle; cut and paste.
 
 
 
+
 # GENERATED
 
 ## Svelte
@@ -45,5 +46,5 @@ The video youube should go in the middle; cut and paste.
 
     _"html"
 
-[../sapper/src/routes/algebra_constructing-the-real-and-complex-numbers_arithmetic-and-geometry-of-complex-numbers.svelte](# "save:")
+[../fullsapper/src/routes/algebra_constructing-the-real-and-complex-numbers_arithmetic-and-geometry-of-complex-numbers.svelte](# "save:")
 

@@ -25,6 +25,7 @@ The video youube should go in the middle; cut and paste.
 
 
 
+
 # GENERATED
 
 ## Svelte
@@ -45,5 +46,5 @@ The video youube should go in the middle; cut and paste.
 
     _"html"
 
-[../sapper/src/routes/geometry_other-geometries_taxicab-geometry.svelte](# "save:")
+[../fullsapper/src/routes/geometry_other-geometries_taxicab-geometry.svelte](# "save:")
 

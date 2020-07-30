@@ -241,7 +241,7 @@ add in the new content.
 
     \_"html"
 
-[../sapper/src/routes/${fname.slice(0,-2)+'svelte'}](# "save:")
+[../fullsapper/src/routes/${fname.slice(0,-2)+'svelte'}](# "save:")
 
 
 ```
@@ -473,7 +473,265 @@ layer should be just a button to the page.
 {/if}
 
 
-### Fano Plane
+## Katex
 
-This is a svelte plugin for constructing a seven-symboled Fano Plane. 
+
+    <script>
+
+    import {onMount} from 'svelte'
+
+    export let str = '';
+    export let block = false;
+    let mathel;
+
+    let katex = {render:() => {}};
+
+    $: str = str.
+        replace(/\!\@/g, '\\').
+        replace(/\&\#36\;/g, '\\$');
+    $: console.log("katex:", str);
+    $: katex.render(str, mathel, {displayMode:block, throwOnError:false});
+
+
+    onMount( () => {
+        if (!window.katex) {
+            window.addEventListener('DOMContentLoaded', (event) => {
+                katex =  window.katex;
+                katex.render(str, mathel, {displayMode:block, throwOnError:false});
+            });
+        } else {
+            katex =  window.katex;
+            katex.render(str, mathel, {displayMode:block, throwOnError:false});
+        }
+    });
+
+    
+    </script>
+     
+    <span bind:this={mathel}></span>
+
+
+[../sapper/src/components/Katex.svelte](# "save:")
+[../fullsapper/src/components/Katex.svelte](# "save:")
+
+## JXG
+
+A couple of helpful bits:  https://www.intmath.com/cg3/jsxgraph-coding-summary.php
+
+
+This creates a simple board for JSXGraph. To use, have something like `<Jxg
+{options} id="..." {f} width, height optional />  The function f is how we
+get to the board. It should be something like `let a; const f = (b) => a=b;`. 
+
+
+    <script>
+
+    import {onMount} from 'svelte'
+
+    export let options = {};
+    export let id;
+    export let f;
+    export let width = '500px';
+    export let height = '500px';
+    
+    options = { 
+        showCopyright:false,
+        showNavigation:false,
+        axis: true,
+        ...options};
+    
+    onMount( () => {
+        if (!window.JXG) {
+            window.addEventListener('DOMContentLoaded', (event) => {
+                let b = window.JXG.JSXGraph.initBoard(id, options);
+                f(b); // sends b to the parent 
+            });
+        } else {
+            let b = window.JXG.JSXGraph.initBoard(id, options);
+            f(b); // sends b to the parent 
+        }
+    });
+
+    </script>
+
+    <div {id} style="{`width:${width}; height:${height}`}"></div>
+
+
+
+[../sapper/src/components/Jxg.svelte](# "save:")
+[../fullsapper/src/components/Jxg.svelte](# "save:")
+
+
+## Layout
+
+
+    <script>
+
+    </script>
+
+    <style>
+       /* main {
+            position: relative;
+            max-width: 56em;
+            background-color: white;
+            padding: 2em;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }*/
+    </style>
+
+    <slot></slot>
+
+[../sapper/src/routes/\_layout.svelte](# "save:")
+[../fullsapper/src/routes/\_layout.svelte](# "save:")
+
+
+##  Template html
+
+
+    <!doctype html>
+    <html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+        <meta name='theme-color' content='#333333'>
+
+Katex  global: katex
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+JSXGraph  global: JXG
+        
+        <script type="text/javascript" charset="UTF-8" defer
+         src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraph.css" />
+
+
+        %sapper.base%
+
+        <link rel='stylesheet' href='global.css'>
+        <link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
+        <link rel='icon' type='image/png' href='favicon.png'>
+
+        <!-- Sapper generates a <style> tag containing critical CSS
+             for the current page. CSS for the rest of the app is
+             lazily loaded when it precaches secondary pages -->
+        %sapper.styles%
+
+        <!-- This contains the contents of the <svelte:head> component, if
+             the current page has one -->
+        %sapper.head%
+    </head>
+    <body>
+        <!-- The application will be rendered inside this element,
+             because `src/client.js` references it -->
+        <div id='sapper'>%sapper.html%</div>
+
+        <!-- Sapper creates a <script> tag containing `src/client.js`
+             and anything else it needs to hydrate the app and
+             initialise the router -->
+        %sapper.scripts%
+    </body>
+    </html>
+
+[../sapper/src/template.html](# "save:")
+[../fullsapper/src/template.html](# "save:")
+
+
+
+
+
+## Single
+
+Sapper seems to take about 30s to compile the whole site and a single file
+change seems to trigger a recompile or something (20 s). So we have two sapper
+folders, one (fullsapper) is the full for export and checking out the whole, and a second one (sapper) which contains more the single files. This little script compiles the litpro for a single file and then copies it from the full to the single sapper. 
+
+
+    #! /bin/bash
+    
+    set -e
+
+    literate-programming "src/pages/$1.md"
+
+    cp "fullsapper/src/routes/$1.svelte" "sapper/src/routes/$1.svelte"
+
+
+[../single](# "save:")
+
+
+## Fano Plane
+
+This is a svelte component for constructing a seven-symboled Fano Plane. It
+expects an array with seven symbols. 
+
+    <script>
+    import FanoEl from '../components/FanoEl.svelte';
+    </script>
+
+
+    <svg width="600" height="600" id="svg2">
+        <circle cx="300" cy="355.66243" r="144.33756" fill="none" stroke="black" stroke-width="2"/>
+        <polygon fill="none" stroke="black" stroke-width="2" points="50,500 550,500 300,66.98729"/>
+        <line x1="50" y1="500" x2="425" y2="283.49364" stroke="black" stroke-width="2"/>
+        <line x1="550" y1="500" x2="175" y2="283.49364" stroke="black" stroke-width="2"/>
+        <line x1="300" y1="500" x2="300" y2="66.98729" stroke="black" stroke-width="2"/>
+
+        <FanoEl href="arithmetic" symbol="x^5" tr={[50, 500]} />
+        <circle cx="550" cy="500" r="20" fill="black" stroke="none"/>
+        <circle cx="300" cy="66.98729" r="20" fill="black" stroke="none"/>
+        <circle cx="300" cy="355.66243" r="20" fill="black" stroke="none"/>
+        <circle cx="300" cy="500" r="20" fill="black" stroke="none"/>
+        <circle cx="175" cy="283.49364" r="20" fill="black" stroke="none"/>
+        <circle cx="425" cy="283.49364" r="20" fill="black" stroke="none"/>
+      
+    </svg> 
+
+[../sapper/src/routes/fano.svelte](# "save:")
+
+### Fano Circle
+
+This is a component for a fano circle element. It expects an href and a symbol
+for Katex. It should be short. 
+
+    <script>
+        import Katex from './Katex.svelte';
+
+        export let href;
+        export let tr;
+        export let symbol;
+
+        export let rx = 20;
+        export let ry = 20;
+        export let cx = 0;
+        export let cy = 0;
+        export let x = -17;
+        export let y = -10;
+        export let height = 20;
+        export let width = 35;
+        export let stroke = "black";
+        export let strokewidth = "1px";
+        export let fill = "white";
+
+
+    </script>
+
+    <style>
+        div  {
+            text-align:center;
+        }
+    </style>
+
+    <g transform="{`translate(${tr[0]}, ${tr[1]})`}" {stroke} stroke-width={strokewidth}>
+        <ellipse {cx} {cy} {rx} {ry} {fill}></ellipse>
+        <a {href} >
+            <foreignObject {height} {y} {width} {x}>
+                <div><Katex str={symbol} /> </div>
+            </foreignObject>
+        </a>
+    </g>
+
+    
+[../sapper/src/components/FanoEl.svelte](# "save:")
+    
 

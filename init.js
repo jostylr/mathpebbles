@@ -168,7 +168,7 @@ if (generate) {
         
             _"html"
         
-        [../sapper/src/routes/${fname.slice(0,-2)+'svelte'}](# "save:")
+        [../fullsapper/src/routes/${fname.slice(0,-2)+'svelte'}](# "save:")
         
         `.replace(/\n {8}/g, '\n');
         
