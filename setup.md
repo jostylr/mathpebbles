@@ -512,7 +512,6 @@ layer should be just a button to the page.
 
 
 [../sapper/src/components/Katex.svelte](# "save:")
-[../fullsapper/src/components/Katex.svelte](# "save:")
 
 ## JXG
 
@@ -559,7 +558,6 @@ get to the board. It should be something like `let a; const f = (b) => a=b;`.
 
 
 [../sapper/src/components/Jxg.svelte](# "save:")
-[../fullsapper/src/components/Jxg.svelte](# "save:")
 
 
 ## Layout
@@ -635,7 +633,6 @@ JSXGraph  global: JXG
     </html>
 
 [../sapper/src/template.html](# "save:")
-[../fullsapper/src/template.html](# "save:")
 
 
 
@@ -660,13 +657,104 @@ folders, one (fullsapper) is the full for export and checking out the whole, and
 [../single](# "save:")
 
 
-## Fano Plane
+## Sync Sap
+
+This does a sync from the sapper to the full-sapper src directory. The idea is
+that the sapper directory is our working directory to test it all out. Then
+full sapper is where we build the full site (production version, if you will). 
+
+    #! /bin/bash
+
+    rsync -av sapper/src/ fullsapper/src/
+
+[../sync-sap](# "save:")
+
+
+## Fano Page 
+
+This is the page that allows us to select the Fanos (eventually).
+
+
+    <script>
+        import FanoController from '../components/FanoController.svelte'
+    </script>
+
+    <FanoController which='' level=7 />
+
+
+[../sapper/src/routes/fano.svelte](# "save:")
+
+
+### Fano Controller
+
+This is a page just for Fano. 
+
+    <script>
+        import Fano from './Fano.svelte'
+        import { navData, slugify } from '../components/navData.js'
+
+        export let which = '';
+        let slugwhich;
+        $:slugwhich = slugify(which);
+        export let level = 7;
+
+        let symbols;
+
+        _":make fano object"
+
+        $: symbols.length = level;
+
+        _":extract"
+
+    </script>
+
+    
+    <Fano {symbols} />
+
+
+[../sapper/src/components/FanoController.svelte](# "save:")
+
+[make fano object]()
+
+
+    $: if (which) {
+        let arr = navData.find( (el) => el.h === which);
+        symbols = extract(arr);
+    } else {
+        symbols = extract(arr);
+    }
+
+[extract]() 
+
+    function extract (arr) {
+        return arr.map( el => {
+            let href = slugify(el.h); 
+            if (which) {
+                href = slugwhich + '\_' + href; 
+            } 
+            return {href, symbol: el.s, title: el.h}; 
+        });
+    }
+
+### Fano Plane
 
 This is a svelte component for constructing a seven-symboled Fano Plane. It
 expects an array with seven symbols. 
 
     <script>
-    import FanoEl from '../components/FanoEl.svelte';
+        import FanoEl from './FanoEl.svelte';
+    
+        export let symbols;
+
+        export let centers = [
+            [50,500], 
+            [300, 500], 
+            [175, 283.5], 
+            [425, 283.5],
+            [550, 500],
+            [300, 67],
+            [300, 355.6]
+        ];
     </script>
 
 
@@ -676,8 +764,18 @@ expects an array with seven symbols.
         <line x1="50" y1="500" x2="425" y2="283.49364" stroke="black" stroke-width="2"/>
         <line x1="550" y1="500" x2="175" y2="283.49364" stroke="black" stroke-width="2"/>
         <line x1="300" y1="500" x2="300" y2="66.98729" stroke="black" stroke-width="2"/>
+    
+        {#each symbols as {href, symbol, title}, ind (href) }
+            <FanoEl {href} {symbol} {title} tr={centers[ind]} />
+        {/each}
+    </svg> 
 
-        <FanoEl href="arithmetic" symbol="x^5" tr={[50, 500]} />
+[../sapper/src/components/Fano.svelte](# "save:")
+
+
+[junk]()
+
+
         <circle cx="550" cy="500" r="20" fill="black" stroke="none"/>
         <circle cx="300" cy="66.98729" r="20" fill="black" stroke="none"/>
         <circle cx="300" cy="355.66243" r="20" fill="black" stroke="none"/>
@@ -685,9 +783,6 @@ expects an array with seven symbols.
         <circle cx="175" cy="283.49364" r="20" fill="black" stroke="none"/>
         <circle cx="425" cy="283.49364" r="20" fill="black" stroke="none"/>
       
-    </svg> 
-
-[../sapper/src/routes/fano.svelte](# "save:")
 
 ### Fano Circle
 
@@ -724,7 +819,7 @@ for Katex. It should be short.
 
     <g transform="{`translate(${tr[0]}, ${tr[1]})`}" {stroke} stroke-width={strokewidth}>
         <ellipse {cx} {cy} {rx} {ry} {fill}></ellipse>
-        <a {href} >
+        <a {href} title="Arithmetic" >
             <foreignObject {height} {y} {width} {x}>
                 <div><Katex str={symbol} /> </div>
             </foreignObject>
