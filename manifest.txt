@@ -1,5 +1,5 @@
 -Arithmetic. +
--   Counting. \threedots
+-   Counting. \ldots
 -       Number as Matching
 -       Pebbles of Various Sizes
 -       Digits
@@ -47,7 +47,7 @@
 -       Guesstimation
 -       Undoing Exponentiation
 -       Sums and Powers
--   Constructing Numbers. \mathbb{N}, \mathbb{Z}, \mathbb{Q}
+-   Constructing Numbers. \mathbb{N}
 -       Containers
 -       Natural Numbers
 -       Addition and Multiplication
@@ -96,7 +96,7 @@
 -       Solving Absolute Value Equations
 -       Absolute Value Inequalities
 -       Distance
--   Linear Systems. x, y, z
+-   Linear Systems. x_i
 -       Two Variable Systems
 -       Matrices
 -       Solving Systems
@@ -104,7 +104,7 @@
 -       Not the Right Amount of Information
 -       Linear Programming
 -       Simplex Method
--   Constructing the Real and Complex Numbers. \mathbb{R}, \mathbb{C}
+-   Constructing the Real and Complex Numbers. \mathbb{R}
 -       Square Root 2
 -       Zeroing in on Zeros
 -       Notions of Real Numbers
@@ -121,7 +121,7 @@
 -       Powering Functions
 -       Graphing Radical Functions
 -       Calculus of Radical Functions
--   Infinite Processes. \x_n
+-   Infinite Processes. \Sigma
 -       Sequences
 -       Sums and products
 -       Off to Infinity
@@ -137,7 +137,7 @@
 -       Optimization Problems
 -       Taylor Polynomials
 -       Implicit Differentiation
--   Integral Calculus.  \int f(x) dx
+-   Integral Calculus.  \int f
 -       Notions of Integrals
 -       Fundamental Theorem of Calculus
 -       Integral Rules
@@ -145,15 +145,15 @@
 -       Arc Length of Functions
 -       Volumes of Revolution
 -       Error Estimates
--   Exponentials and Logarithms. e^x, \mathrm{ln(x)}
--       Paths to the Exponential
+-   Exponentials and Logarithms. e^x
+        Paths to the Exponential
 -       Properties of the Exponential
 -       Paths to the Logarithm
 -       Properties of the Logarithm
 -       Dealing with Large Numbers
 -       Applications of Exponentials and Logarithms
 -       Asymptotics
--   Trigonometric Functions. \sin(x), \cos(x), \tan(x)
+-   Trigonometric Functions. \tan
 -       Notions of Trigonometric Functions
 -       Properties of Trigonometric Functions
 -       Approximating Trigonometric Functions
@@ -161,7 +161,7 @@
 -       Applications of Trigonometric Functions
 -       Sums and Products of Trigonometric Functions
 -       Complex Exponentials
--   Defining Functions. y' = y
+-   Defining Functions. y'
 -       Taylor Series
 -       Functional Equations
 -       Differential Equations
@@ -178,7 +178,7 @@
 -       Changing the Basis
 -       Diagonalizations
 -       Complex Linear Spaces
--   Systems of Ordinary Differential Equations.  \bar{x}' = A \bar{x}
+-   Systems of Ordinary Differential Equations.  \bar{x}'
 -       Predator Prey
 -       Two Dimensional Systems
 -       Matrix Solutions
@@ -186,7 +186,7 @@
 -       Non-linear Differential Systems
 -       Chaos
 -       Critical Points
--   Multivariable Functions. \bar{f}(\bar{x})
+-   Multivariable Functions. \bar{f}
 -       One to Many
 -       Many to One
 -       Complex to Complex
@@ -210,7 +210,7 @@
 -       Change of Basis in Integrals
 -       Antiderivatives
 -       Generalizations
--   Partial Differential Equations. \frac{\partial f}{partial t} = \Delta f
+-   Partial Differential Equations. \Delta f
 -       Partial versus Ordinary
 -       Verifying Solutions
 -       Laplacian Equations
@@ -218,7 +218,7 @@
 -       Time versus Space
 -       Approximations in PDEs
 -       Generalized Solutions
--   Curved Spaces. T_x M 
+-   Curved Spaces. T_p M 
 -       Surfaces in 3D
 -       Curves
 -       Coordinates
@@ -235,7 +235,7 @@
 -       Euclidean Circles
 -       Transformations
 -       Coordinate Proofs
--   Constructions. \circ
+-   Constructions. \underline \circ
 -       Ruler and Compass
 -       Constructions with Lines
 -       Constructing Angles
@@ -243,7 +243,7 @@
 -       Constructions with Circles
 -       Trisecting the Angle
 -       Constructing Solutions to Equations
--   Trigonometry. \Delta
+-   Trigonometry. \triangle
 -       Right Triangle
 -       Any Triangle
 -       Regular Polygons
@@ -251,7 +251,7 @@
 -       Measuring from a Distance
 -       Parallax
 -       Circumference of the Earth
--   Conic Sections. x^2 - y^2 = 1
+-   Conic Sections. \asymp
 -       Notions of a Conic Section
 -       Ellipses
 -       Parabolas
@@ -259,7 +259,7 @@
 -       Cones
 -       Unifying Pictures
 -       Generalizations
--   Parametric Curves. (x(t), y(t) )
+-   Parametric Curves. \propto
 -       Notions of Parametric Curves
 -       Functions of x as a Function of t
 -       Spirals 
@@ -275,7 +275,7 @@
 -       Many Variable Inequalities
 -       Norms and Angles
 -       Transforming Space
--   Other Geometries. d(x,y)
+-   Other Geometries. d
 -       Taxicab Geometry
 -       Spherical Geometry
 -       Hyperbolic Geometry
@@ -300,7 +300,7 @@
 -       Logging Data for Regression
 -       Trust and Regression
 -       General Linear Model
--   Probability. P(X=1)
+-   Probability. X
 -       Counting Outcomes
 -       Combinatorial Probability
 -       Random variables
@@ -308,7 +308,7 @@
 -       Conditional Probabilities
 -       Central Limit Theorem
 -       To Ponder
--   Frequentist Statistics. p
+-   Frequentist Statistics. t
 -       Notions of Frequentist Statistics
 -       Varieties of Statistics
 -       Proper Data Collection
@@ -316,7 +316,7 @@
 -       t-Test
 -       ANOVA
 -       Categorical Tests
--   Bayesian Statistics. P(A|B)
+-   Bayesian Statistics. A|B
 -       Using Bayes Theorem
 -       Parameter Estimation
 -       Priors
@@ -332,7 +332,7 @@
 -       z-Test Explorations
 -       t-Test Explorations
 -       Bayesian Explorations
--   Multivariate Statistics. \bold{X}
+-   Multivariate Statistics. \bar{X}
 -       Random Multivariates
 -       Joint Distribution
 -       Multivariate Distributions
@@ -373,7 +373,7 @@
 -       Computer Scientists
 -       Politicians
 -       Risk Managers
--   Scientists. P(t)
+-   Scientists. P_t
 -       Physics
 -       Chemistry
 -       Biology

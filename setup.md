@@ -598,7 +598,16 @@ Katex  global: katex
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+
+
 JSXGraph  global: JXG
+
         
         <script type="text/javascript" charset="UTF-8" defer
          src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.js"></script>
@@ -609,7 +618,8 @@ JSXGraph  global: JXG
 
         <link rel='stylesheet' href='global.css'>
         <link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
-        <link rel='icon' type='image/png' href='favicon.png'>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="alternate icon" href="favicon.ico">
 
         <!-- Sapper generates a <style> tag containing critical CSS
              for the current page. CSS for the rest of the app is
@@ -677,9 +687,41 @@ This is the page that allows us to select the Fanos (eventually).
 
     <script>
         import FanoController from '../components/FanoController.svelte'
+        import {navData} from '../components/navData.js'
+
+
+        let which = '';
+    
+        let books = ['', ...navData.map(el => el.h)];
+
+        let level = 7;
+
     </script>
 
-    <FanoController which='' level=7 />
+    <style>
+    .con {
+        display: flex;
+    }
+
+    </style>
+
+    <div class="con">
+    
+    <FanoController {which} {level} />
+    
+    <div>
+    <select bind:value={which} >
+		{#each books as book}
+			<option value={book}>
+				{book ? book : 'All'}
+			</option>
+		{/each}
+	</select>
+
+    <input type="number" bind:value={level} />
+    </div>
+
+    </div>
 
 
 [../sapper/src/routes/fano.svelte](# "save:")
@@ -702,14 +744,14 @@ This is a page just for Fano.
 
         _":make fano object"
 
-        $: symbols.length = level;
+        $: limited = symbols.filter( (el, i) => i < level);
 
         _":extract"
 
     </script>
 
     
-    <Fano {symbols} />
+    <Fano symbols={limited} />
 
 
 [../sapper/src/components/FanoController.svelte](# "save:")
@@ -718,10 +760,15 @@ This is a page just for Fano.
 
 
     $: if (which) {
-        let arr = navData.find( (el) => el.h === which);
-        symbols = extract(arr);
+        let obj = navData.find( (el) => el.h === which);
+        if (obj) {
+            let arr = obj.d;
+            symbols = extract(arr);
+        } else {
+            throw "book not found:" + which;
+        }
     } else {
-        symbols = extract(arr);
+        symbols = extract(navData);
     }
 
 [extract]() 
@@ -745,7 +792,7 @@ expects an array with seven symbols.
         import FanoEl from './FanoEl.svelte';
     
         export let symbols;
-
+        
         export let centers = [
             [50,500], 
             [300, 500], 
@@ -773,15 +820,6 @@ expects an array with seven symbols.
 [../sapper/src/components/Fano.svelte](# "save:")
 
 
-[junk]()
-
-
-        <circle cx="550" cy="500" r="20" fill="black" stroke="none"/>
-        <circle cx="300" cy="66.98729" r="20" fill="black" stroke="none"/>
-        <circle cx="300" cy="355.66243" r="20" fill="black" stroke="none"/>
-        <circle cx="300" cy="500" r="20" fill="black" stroke="none"/>
-        <circle cx="175" cy="283.49364" r="20" fill="black" stroke="none"/>
-        <circle cx="425" cy="283.49364" r="20" fill="black" stroke="none"/>
       
 
 ### Fano Circle
@@ -789,21 +827,25 @@ expects an array with seven symbols.
 This is a component for a fano circle element. It expects an href and a symbol
 for Katex. It should be short. 
 
+Could not get title working on the a link in css. put it on div for now. 
+
+
     <script>
         import Katex from './Katex.svelte';
 
         export let href;
         export let tr;
         export let symbol;
+        export let title;
 
         export let rx = 20;
         export let ry = 20;
         export let cx = 0;
         export let cy = 0;
-        export let x = -17;
-        export let y = -10;
-        export let height = 20;
-        export let width = 35;
+        export let x = -20;
+        export let y = -13;
+        export let height = 25;
+        export let width = 40;
         export let stroke = "black";
         export let strokewidth = "1px";
         export let fill = "white";
@@ -819,9 +861,9 @@ for Katex. It should be short.
 
     <g transform="{`translate(${tr[0]}, ${tr[1]})`}" {stroke} stroke-width={strokewidth}>
         <ellipse {cx} {cy} {rx} {ry} {fill}></ellipse>
-        <a {href} title="Arithmetic" >
+        <a {href} >
             <foreignObject {height} {y} {width} {x}>
-                <div><Katex str={symbol} /> </div>
+                <div {title}><Katex str={symbol} /> </div>
             </foreignObject>
         </a>
     </g>

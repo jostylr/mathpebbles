@@ -98,6 +98,8 @@ Defines a katex function
 ## Style
 
 
+
+
 # GENERATED
 
 ## Svelte
