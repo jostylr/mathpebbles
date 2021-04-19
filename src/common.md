@@ -1974,8 +1974,8 @@ We need the panel name to show the tabs.
         }
 
         
-        $('sl-tab-group').addEventListener('sl-tab-show', newOrder);
-        newOrder();
+        //$('sl-tab-group').addEventListener('sl-tab-show', newOrder);
+        //newOrder();
  
  For the orders, we want to attach the add and remove functions which will
  take in a this and become a method. 
