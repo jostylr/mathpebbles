@@ -1,52 +1,87 @@
 # Constructions
 
-## HTML
+    _"pieces | page /geometry/constructions, _'intro |md',
+            /geometry/constructions/ruler-and-compass,  _'Ruler and Compass',
+          /geometry/constructions/constructions-with-lines,  _'Constructions with Lines',
+          /geometry/constructions/constructing-angles,  _'Constructing Angles',
+          /geometry/constructions/drawing-triangles,  _'Drawing Triangles',
+          /geometry/constructions/constructions-with-circles,  _'Constructions with Circles',
+          /geometry/constructions/trisecting-the-angle,  _'Trisecting the Angle',
+          /geometry/constructions/constructing-solutions-to-equations,  _'Constructing Solutions to Equations'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/geometry/constructions.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Ruler and Compass
+
+    _"ruler-and-compass::intro"
 
 
+[ruler-and-compass](pages/geometry_constructions_ruler-and-compass.md "load:")
 
-## Script
+## Constructions with Lines
 
-
-## Style
-
-
+    _"constructions-with-lines::intro"
 
 
+[constructions-with-lines](pages/geometry_constructions_constructions-with-lines.md "load:")
+
+## Constructing Angles
+
+    _"constructing-angles::intro"
 
 
-# GENERATED
+[constructing-angles](pages/geometry_constructions_constructing-angles.md "load:")
 
-## Svelte
+## Drawing Triangles
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry","Constructions"];
+    _"drawing-triangles::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[drawing-triangles](pages/geometry_constructions_drawing-triangles.md "load:")
 
-    <Nav {actual} />
+## Constructions with Circles
 
-    _"html"
+    _"constructions-with-circles::intro"
 
-[../fullsapper/src/routes/geometry_constructions.svelte](# "save:")
 
+[constructions-with-circles](pages/geometry_constructions_constructions-with-circles.md "load:")
+
+## Trisecting the Angle
+
+    _"trisecting-the-angle::intro"
+
+
+[trisecting-the-angle](pages/geometry_constructions_trisecting-the-angle.md "load:")
+
+## Constructing Solutions to Equations
+
+    _"constructing-solutions-to-equations::intro"
+
+
+[constructing-solutions-to-equations](pages/geometry_constructions_constructing-solutions-to-equations.md "load:")

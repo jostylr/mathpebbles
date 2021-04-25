@@ -1,52 +1,87 @@
 # Geometers
 
-## HTML
+    _"pieces | page /practitioners/geometers, _'intro |md',
+            /practitioners/geometers/toplogy,  _'Toplogy',
+          /practitioners/geometers/differential-geometry,  _'Differential Geometry',
+          /practitioners/geometers/soap-bubbles,  _'Soap Bubbles',
+          /practitioners/geometers/symplectic-geometry,  _'Symplectic Geometry',
+          /practitioners/geometers/control-theory,  _'Control Theory',
+          /practitioners/geometers/mathematical-physics,  _'Mathematical Physics',
+          /practitioners/geometers/infinite-dimensional-spaces,  _'Infinite Dimensional Spaces'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners/geometers.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Toplogy
+
+    _"toplogy::intro"
 
 
+[toplogy](pages/practitioners_geometers_toplogy.md "load:")
 
-## Script
+## Differential Geometry
 
-
-## Style
-
-
+    _"differential-geometry::intro"
 
 
+[differential-geometry](pages/practitioners_geometers_differential-geometry.md "load:")
+
+## Soap Bubbles
+
+    _"soap-bubbles::intro"
 
 
-# GENERATED
+[soap-bubbles](pages/practitioners_geometers_soap-bubbles.md "load:")
 
-## Svelte
+## Symplectic Geometry
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Geometers"];
+    _"symplectic-geometry::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[symplectic-geometry](pages/practitioners_geometers_symplectic-geometry.md "load:")
 
-    <Nav {actual} />
+## Control Theory
 
-    _"html"
+    _"control-theory::intro"
 
-[../fullsapper/src/routes/practitioners_geometers.svelte](# "save:")
 
+[control-theory](pages/practitioners_geometers_control-theory.md "load:")
+
+## Mathematical Physics
+
+    _"mathematical-physics::intro"
+
+
+[mathematical-physics](pages/practitioners_geometers_mathematical-physics.md "load:")
+
+## Infinite Dimensional Spaces
+
+    _"infinite-dimensional-spaces::intro"
+
+
+[infinite-dimensional-spaces](pages/practitioners_geometers_infinite-dimensional-spaces.md "load:")

@@ -1,52 +1,87 @@
 # Lines
 
-## HTML
+    _"pieces | page /algebra/lines, _'intro |md',
+            /algebra/lines/shortest-distance,  _'Shortest Distance',
+          /algebra/lines/basic-distance-shapes,  _'Basic Distance Shapes',
+          /algebra/lines/cartesian-coordinate-plane,  _'Cartesian Coordinate Plane',
+          /algebra/lines/slope,  _'Slope',
+          /algebra/lines/solving-a-linear-equation,  _'Solving a Linear Equation',
+          /algebra/lines/families-of-lines,  _'Families of Lines',
+          /algebra/lines/linear-inequalities,  _'Linear Inequalities'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/algebra/lines.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Shortest Distance
+
+    _"shortest-distance::intro"
 
 
+[shortest-distance](pages/algebra_lines_shortest-distance.md "load:")
 
-## Script
+## Basic Distance Shapes
 
-
-## Style
-
-
+    _"basic-distance-shapes::intro"
 
 
+[basic-distance-shapes](pages/algebra_lines_basic-distance-shapes.md "load:")
+
+## Cartesian Coordinate Plane
+
+    _"cartesian-coordinate-plane::intro"
 
 
-# GENERATED
+[cartesian-coordinate-plane](pages/algebra_lines_cartesian-coordinate-plane.md "load:")
 
-## Svelte
+## Slope
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Lines"];
+    _"slope::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[slope](pages/algebra_lines_slope.md "load:")
 
-    <Nav {actual} />
+## Solving a Linear Equation
 
-    _"html"
+    _"solving-a-linear-equation::intro"
 
-[../fullsapper/src/routes/algebra_lines.svelte](# "save:")
 
+[solving-a-linear-equation](pages/algebra_lines_solving-a-linear-equation.md "load:")
+
+## Families of Lines
+
+    _"families-of-lines::intro"
+
+
+[families-of-lines](pages/algebra_lines_families-of-lines.md "load:")
+
+## Linear Inequalities
+
+    _"linear-inequalities::intro"
+
+
+[linear-inequalities](pages/algebra_lines_linear-inequalities.md "load:")

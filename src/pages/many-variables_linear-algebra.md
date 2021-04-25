@@ -1,52 +1,87 @@
 # Linear Algebra
 
-## HTML
+    _"pieces | page /many-variables/linear-algebra, _'intro |md',
+            /many-variables/linear-algebra/vectors,  _'Vectors',
+          /many-variables/linear-algebra/subspaces,  _'Subspaces',
+          /many-variables/linear-algebra/matrices,  _'Matrices',
+          /many-variables/linear-algebra/solving-linear-systems,  _'Solving Linear Systems',
+          /many-variables/linear-algebra/changing-the-basis,  _'Changing the Basis',
+          /many-variables/linear-algebra/diagonalizations,  _'Diagonalizations',
+          /many-variables/linear-algebra/complex-linear-spaces,  _'Complex Linear Spaces'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/many-variables/linear-algebra.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Vectors
+
+    _"vectors::intro"
 
 
+[vectors](pages/many-variables_linear-algebra_vectors.md "load:")
 
-## Script
+## Subspaces
 
-
-## Style
-
-
+    _"subspaces::intro"
 
 
+[subspaces](pages/many-variables_linear-algebra_subspaces.md "load:")
+
+## Matrices
+
+    _"matrices::intro"
 
 
-# GENERATED
+[matrices](pages/many-variables_linear-algebra_matrices.md "load:")
 
-## Svelte
+## Solving Linear Systems
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Many Variables","Linear Algebra"];
+    _"solving-linear-systems::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[solving-linear-systems](pages/many-variables_linear-algebra_solving-linear-systems.md "load:")
 
-    <Nav {actual} />
+## Changing the Basis
 
-    _"html"
+    _"changing-the-basis::intro"
 
-[../fullsapper/src/routes/many-variables_linear-algebra.svelte](# "save:")
 
+[changing-the-basis](pages/many-variables_linear-algebra_changing-the-basis.md "load:")
+
+## Diagonalizations
+
+    _"diagonalizations::intro"
+
+
+[diagonalizations](pages/many-variables_linear-algebra_diagonalizations.md "load:")
+
+## Complex Linear Spaces
+
+    _"complex-linear-spaces::intro"
+
+
+[complex-linear-spaces](pages/many-variables_linear-algebra_complex-linear-spaces.md "load:")

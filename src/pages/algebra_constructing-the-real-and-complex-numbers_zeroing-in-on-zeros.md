@@ -1,52 +1,33 @@
 # Zeroing in on Zeros
 
-## HTML
+    _"pieces | page /algebra/constructing-the-real-and-complex-numbers/zeroing-in-on-zeros, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/algebra/constructing-the-real-and-complex-numbers/zeroing-in-on-zeros.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Constructing the Real and Complex Numbers","Zeroing in on Zeros"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/algebra_constructing-the-real-and-complex-numbers_zeroing-in-on-zeros.svelte](# "save:")
+[end]()
 

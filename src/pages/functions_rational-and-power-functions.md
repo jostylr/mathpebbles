@@ -1,52 +1,87 @@
 # Rational and Power Functions
 
-## HTML
+    _"pieces | page /functions/rational-and-power-functions, _'intro |md',
+            /functions/rational-and-power-functions/rational-functions,  _'Rational Functions',
+          /functions/rational-and-power-functions/graphing-rational-functions,  _'Graphing Rational Functions',
+          /functions/rational-and-power-functions/calculus-of-rational-functions,  _'Calculus of Rational Functions',
+          /functions/rational-and-power-functions/rational-approximations,  _'Rational Approximations',
+          /functions/rational-and-power-functions/powering-functions,  _'Powering Functions',
+          /functions/rational-and-power-functions/graphing-radical-functions,  _'Graphing Radical Functions',
+          /functions/rational-and-power-functions/calculus-of-radical-functions,  _'Calculus of Radical Functions'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/functions/rational-and-power-functions.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Rational Functions
+
+    _"rational-functions::intro"
 
 
+[rational-functions](pages/functions_rational-and-power-functions_rational-functions.md "load:")
 
-## Script
+## Graphing Rational Functions
 
-
-## Style
-
-
+    _"graphing-rational-functions::intro"
 
 
+[graphing-rational-functions](pages/functions_rational-and-power-functions_graphing-rational-functions.md "load:")
+
+## Calculus of Rational Functions
+
+    _"calculus-of-rational-functions::intro"
 
 
-# GENERATED
+[calculus-of-rational-functions](pages/functions_rational-and-power-functions_calculus-of-rational-functions.md "load:")
 
-## Svelte
+## Rational Approximations
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Functions","Rational and Power Functions"];
+    _"rational-approximations::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[rational-approximations](pages/functions_rational-and-power-functions_rational-approximations.md "load:")
 
-    <Nav {actual} />
+## Powering Functions
 
-    _"html"
+    _"powering-functions::intro"
 
-[../fullsapper/src/routes/functions_rational-and-power-functions.svelte](# "save:")
 
+[powering-functions](pages/functions_rational-and-power-functions_powering-functions.md "load:")
+
+## Graphing Radical Functions
+
+    _"graphing-radical-functions::intro"
+
+
+[graphing-radical-functions](pages/functions_rational-and-power-functions_graphing-radical-functions.md "load:")
+
+## Calculus of Radical Functions
+
+    _"calculus-of-radical-functions::intro"
+
+
+[calculus-of-radical-functions](pages/functions_rational-and-power-functions_calculus-of-radical-functions.md "load:")

@@ -1,52 +1,33 @@
 # Compact Geometry
 
-## HTML
+    _"pieces | page /geometry/other-geometries/compact-geometry, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/geometry/other-geometries/compact-geometry.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry","Other Geometries","Compact Geometry"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/geometry_other-geometries_compact-geometry.svelte](# "save:")
+[end]()
 

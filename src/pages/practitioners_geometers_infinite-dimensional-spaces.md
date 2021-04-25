@@ -1,52 +1,33 @@
 # Infinite Dimensional Spaces
 
-## HTML
+    _"pieces | page /practitioners/geometers/infinite-dimensional-spaces, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/practitioners/geometers/infinite-dimensional-spaces.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Geometers","Infinite Dimensional Spaces"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/practitioners_geometers_infinite-dimensional-spaces.svelte](# "save:")
+[end]()
 

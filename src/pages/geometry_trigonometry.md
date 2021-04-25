@@ -1,52 +1,87 @@
 # Trigonometry
 
-## HTML
+    _"pieces | page /geometry/trigonometry, _'intro |md',
+            /geometry/trigonometry/right-triangle,  _'Right Triangle',
+          /geometry/trigonometry/any-triangle,  _'Any Triangle',
+          /geometry/trigonometry/regular-polygons,  _'Regular Polygons',
+          /geometry/trigonometry/areas,  _'Areas',
+          /geometry/trigonometry/measuring-from-a-distance,  _'Measuring from a Distance',
+          /geometry/trigonometry/parallax,  _'Parallax',
+          /geometry/trigonometry/circumference-of-the-earth,  _'Circumference of the Earth'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/geometry/trigonometry.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Right Triangle
+
+    _"right-triangle::intro"
 
 
+[right-triangle](pages/geometry_trigonometry_right-triangle.md "load:")
 
-## Script
+## Any Triangle
 
-
-## Style
-
-
+    _"any-triangle::intro"
 
 
+[any-triangle](pages/geometry_trigonometry_any-triangle.md "load:")
+
+## Regular Polygons
+
+    _"regular-polygons::intro"
 
 
-# GENERATED
+[regular-polygons](pages/geometry_trigonometry_regular-polygons.md "load:")
 
-## Svelte
+## Areas
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry","Trigonometry"];
+    _"areas::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[areas](pages/geometry_trigonometry_areas.md "load:")
 
-    <Nav {actual} />
+## Measuring from a Distance
 
-    _"html"
+    _"measuring-from-a-distance::intro"
 
-[../fullsapper/src/routes/geometry_trigonometry.svelte](# "save:")
 
+[measuring-from-a-distance](pages/geometry_trigonometry_measuring-from-a-distance.md "load:")
+
+## Parallax
+
+    _"parallax::intro"
+
+
+[parallax](pages/geometry_trigonometry_parallax.md "load:")
+
+## Circumference of the Earth
+
+    _"circumference-of-the-earth::intro"
+
+
+[circumference-of-the-earth](pages/geometry_trigonometry_circumference-of-the-earth.md "load:")

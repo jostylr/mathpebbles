@@ -1,52 +1,33 @@
 # Properties Revisited
 
-## HTML
+    _"pieces | page /arithmetic/constructing-numbers/properties-revisited, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/arithmetic/constructing-numbers/properties-revisited.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic","Constructing Numbers","Properties Revisited"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/arithmetic_constructing-numbers_properties-revisited.svelte](# "save:")
+[end]()
 

@@ -1,52 +1,87 @@
 # Division
 
-## HTML
+    _"pieces | page /arithmetic/division, _'intro |md',
+            /arithmetic/division/notions-of-division,  _'Notions of Division',
+          /arithmetic/division/foundational-divisions,  _'Foundational Divisions',
+          /arithmetic/division/long-division,  _'Long Division',
+          /arithmetic/division/significant-division,  _'Significant Division',
+          /arithmetic/division/fractions,  _'Fractions',
+          /arithmetic/division/decimals,  _'Decimals',
+          /arithmetic/division/tricks-and-checks-of-division,  _'Tricks and Checks of Division'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/arithmetic/division.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Notions of Division
+
+    _"notions-of-division::intro"
 
 
+[notions-of-division](pages/arithmetic_division_notions-of-division.md "load:")
 
-## Script
+## Foundational Divisions
 
-
-## Style
-
-
+    _"foundational-divisions::intro"
 
 
+[foundational-divisions](pages/arithmetic_division_foundational-divisions.md "load:")
+
+## Long Division
+
+    _"long-division::intro"
 
 
-# GENERATED
+[long-division](pages/arithmetic_division_long-division.md "load:")
 
-## Svelte
+## Significant Division
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic","Division"];
+    _"significant-division::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[significant-division](pages/arithmetic_division_significant-division.md "load:")
 
-    <Nav {actual} />
+## Fractions
 
-    _"html"
+    _"fractions::intro"
 
-[../fullsapper/src/routes/arithmetic_division.svelte](# "save:")
 
+[fractions](pages/arithmetic_division_fractions.md "load:")
+
+## Decimals
+
+    _"decimals::intro"
+
+
+[decimals](pages/arithmetic_division_decimals.md "load:")
+
+## Tricks and Checks of Division
+
+    _"tricks-and-checks-of-division::intro"
+
+
+[tricks-and-checks-of-division](pages/arithmetic_division_tricks-and-checks-of-division.md "load:")

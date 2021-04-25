@@ -1,52 +1,87 @@
 # Plane Geometry
 
-## HTML
+    _"pieces | page /geometry/plane-geometry, _'intro |md',
+            /geometry/plane-geometry/euclidean-lines,  _'Euclidean Lines',
+          /geometry/plane-geometry/euclidean-triangles,  _'Euclidean Triangles',
+          /geometry/plane-geometry/similarity,  _'Similarity',
+          /geometry/plane-geometry/polygons,  _'Polygons',
+          /geometry/plane-geometry/euclidean-circles,  _'Euclidean Circles',
+          /geometry/plane-geometry/transformations,  _'Transformations',
+          /geometry/plane-geometry/coordinate-proofs,  _'Coordinate Proofs'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/geometry/plane-geometry.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Euclidean Lines
+
+    _"euclidean-lines::intro"
 
 
+[euclidean-lines](pages/geometry_plane-geometry_euclidean-lines.md "load:")
 
-## Script
+## Euclidean Triangles
 
-
-## Style
-
-
+    _"euclidean-triangles::intro"
 
 
+[euclidean-triangles](pages/geometry_plane-geometry_euclidean-triangles.md "load:")
+
+## Similarity
+
+    _"similarity::intro"
 
 
-# GENERATED
+[similarity](pages/geometry_plane-geometry_similarity.md "load:")
 
-## Svelte
+## Polygons
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry","Plane Geometry"];
+    _"polygons::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[polygons](pages/geometry_plane-geometry_polygons.md "load:")
 
-    <Nav {actual} />
+## Euclidean Circles
 
-    _"html"
+    _"euclidean-circles::intro"
 
-[../fullsapper/src/routes/geometry_plane-geometry.svelte](# "save:")
 
+[euclidean-circles](pages/geometry_plane-geometry_euclidean-circles.md "load:")
+
+## Transformations
+
+    _"transformations::intro"
+
+
+[transformations](pages/geometry_plane-geometry_transformations.md "load:")
+
+## Coordinate Proofs
+
+    _"coordinate-proofs::intro"
+
+
+[coordinate-proofs](pages/geometry_plane-geometry_coordinate-proofs.md "load:")

@@ -1,52 +1,87 @@
 # Descriptive Statistics
 
-## HTML
+    _"pieces | page /probability-and-statistics/descriptive-statistics, _'intro |md',
+            /probability-and-statistics/descriptive-statistics/gathering-data,  _'Gathering Data',
+          /probability-and-statistics/descriptive-statistics/notions-of-centrality,  _'Notions of Centrality',
+          /probability-and-statistics/descriptive-statistics/notions-of-spread,  _'Notions of Spread',
+          /probability-and-statistics/descriptive-statistics/charts,  _'Charts',
+          /probability-and-statistics/descriptive-statistics/other-measures,  _'Other Measures',
+          /probability-and-statistics/descriptive-statistics/stories,  _'Stories',
+          /probability-and-statistics/descriptive-statistics/lies,  _'Lies'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/probability-and-statistics/descriptive-statistics.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Gathering Data
+
+    _"gathering-data::intro"
 
 
+[gathering-data](pages/probability-and-statistics_descriptive-statistics_gathering-data.md "load:")
 
-## Script
+## Notions of Centrality
 
-
-## Style
-
-
+    _"notions-of-centrality::intro"
 
 
+[notions-of-centrality](pages/probability-and-statistics_descriptive-statistics_notions-of-centrality.md "load:")
+
+## Notions of Spread
+
+    _"notions-of-spread::intro"
 
 
-# GENERATED
+[notions-of-spread](pages/probability-and-statistics_descriptive-statistics_notions-of-spread.md "load:")
 
-## Svelte
+## Charts
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Probability and Statistics","Descriptive Statistics"];
+    _"charts::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[charts](pages/probability-and-statistics_descriptive-statistics_charts.md "load:")
 
-    <Nav {actual} />
+## Other Measures
 
-    _"html"
+    _"other-measures::intro"
 
-[../fullsapper/src/routes/probability-and-statistics_descriptive-statistics.svelte](# "save:")
 
+[other-measures](pages/probability-and-statistics_descriptive-statistics_other-measures.md "load:")
+
+## Stories
+
+    _"stories::intro"
+
+
+[stories](pages/probability-and-statistics_descriptive-statistics_stories.md "load:")
+
+## Lies
+
+    _"lies::intro"
+
+
+[lies](pages/probability-and-statistics_descriptive-statistics_lies.md "load:")

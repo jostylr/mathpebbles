@@ -1,52 +1,87 @@
 # Booleans
 
-## HTML
+    _"pieces | page /practitioners/booleans, _'intro |md',
+            /practitioners/booleans/combinatorics,  _'Combinatorics',
+          /practitioners/booleans/graph-theory,  _'Graph Theory',
+          /practitioners/booleans/mathematical-logic,  _'Mathematical Logic',
+          /practitioners/booleans/game-theory,  _'Game Theory',
+          /practitioners/booleans/computer-scientists,  _'Computer Scientists',
+          /practitioners/booleans/politicians,  _'Politicians',
+          /practitioners/booleans/risk-managers,  _'Risk Managers'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners/booleans.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Combinatorics
+
+    _"combinatorics::intro"
 
 
+[combinatorics](pages/practitioners_booleans_combinatorics.md "load:")
 
-## Script
+## Graph Theory
 
-
-## Style
-
-
+    _"graph-theory::intro"
 
 
+[graph-theory](pages/practitioners_booleans_graph-theory.md "load:")
+
+## Mathematical Logic
+
+    _"mathematical-logic::intro"
 
 
-# GENERATED
+[mathematical-logic](pages/practitioners_booleans_mathematical-logic.md "load:")
 
-## Svelte
+## Game Theory
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Booleans"];
+    _"game-theory::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[game-theory](pages/practitioners_booleans_game-theory.md "load:")
 
-    <Nav {actual} />
+## Computer Scientists
 
-    _"html"
+    _"computer-scientists::intro"
 
-[../fullsapper/src/routes/practitioners_booleans.svelte](# "save:")
 
+[computer-scientists](pages/practitioners_booleans_computer-scientists.md "load:")
+
+## Politicians
+
+    _"politicians::intro"
+
+
+[politicians](pages/practitioners_booleans_politicians.md "load:")
+
+## Risk Managers
+
+    _"risk-managers::intro"
+
+
+[risk-managers](pages/practitioners_booleans_risk-managers.md "load:")

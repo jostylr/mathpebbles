@@ -1,52 +1,87 @@
 # Simulations
 
-## HTML
+    _"pieces | page /probability-and-statistics/simulations, _'intro |md',
+            /probability-and-statistics/simulations/exploring-probability,  _'Exploring Probability',
+          /probability-and-statistics/simulations/randomness,  _'Randomness',
+          /probability-and-statistics/simulations/simulating-random-variables,  _'Simulating Random Variables',
+          /probability-and-statistics/simulations/central-limit-theorem-explorations,  _'Central Limit Theorem Explorations',
+          /probability-and-statistics/simulations/z-test-explorations,  _'z-Test Explorations',
+          /probability-and-statistics/simulations/t-test-explorations,  _'t-Test Explorations',
+          /probability-and-statistics/simulations/bayesian-explorations,  _'Bayesian Explorations'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/probability-and-statistics/simulations.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Exploring Probability
+
+    _"exploring-probability::intro"
 
 
+[exploring-probability](pages/probability-and-statistics_simulations_exploring-probability.md "load:")
 
-## Script
+## Randomness
 
-
-## Style
-
-
+    _"randomness::intro"
 
 
+[randomness](pages/probability-and-statistics_simulations_randomness.md "load:")
+
+## Simulating Random Variables
+
+    _"simulating-random-variables::intro"
 
 
-# GENERATED
+[simulating-random-variables](pages/probability-and-statistics_simulations_simulating-random-variables.md "load:")
 
-## Svelte
+## Central Limit Theorem Explorations
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Probability and Statistics","Simulations"];
+    _"central-limit-theorem-explorations::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[central-limit-theorem-explorations](pages/probability-and-statistics_simulations_central-limit-theorem-explorations.md "load:")
 
-    <Nav {actual} />
+## z-Test Explorations
 
-    _"html"
+    _"z-test-explorations::intro"
 
-[../fullsapper/src/routes/probability-and-statistics_simulations.svelte](# "save:")
 
+[z-test-explorations](pages/probability-and-statistics_simulations_z-test-explorations.md "load:")
+
+## t-Test Explorations
+
+    _"t-test-explorations::intro"
+
+
+[t-test-explorations](pages/probability-and-statistics_simulations_t-test-explorations.md "load:")
+
+## Bayesian Explorations
+
+    _"bayesian-explorations::intro"
+
+
+[bayesian-explorations](pages/probability-and-statistics_simulations_bayesian-explorations.md "load:")

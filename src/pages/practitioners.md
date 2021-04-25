@@ -1,52 +1,87 @@
 # Practitioners
 
-## HTML
+    _"pieces | page /practitioners, _'intro |md',
+            /practitioners/algebraists,  _'Algebraists',
+          /practitioners/analysts,  _'Analysts',
+          /practitioners/geometers,  _'Geometers',
+          /practitioners/booleans,  _'Booleans',
+          /practitioners/scientists,  _'Scientists',
+          /practitioners/engineers,  _'Engineers',
+          /practitioners/artists,  _'Artists'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Algebraists
+
+    _"algebraists::intro"
 
 
+[algebraists](pages/practitioners_algebraists.md "load:")
 
-## Script
+## Analysts
 
-
-## Style
-
-
+    _"analysts::intro"
 
 
+[analysts](pages/practitioners_analysts.md "load:")
+
+## Geometers
+
+    _"geometers::intro"
 
 
-# GENERATED
+[geometers](pages/practitioners_geometers.md "load:")
 
-## Svelte
+## Booleans
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners"];
+    _"booleans::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[booleans](pages/practitioners_booleans.md "load:")
 
-    <Nav {actual} />
+## Scientists
 
-    _"html"
+    _"scientists::intro"
 
-[../fullsapper/src/routes/practitioners.svelte](# "save:")
 
+[scientists](pages/practitioners_scientists.md "load:")
+
+## Engineers
+
+    _"engineers::intro"
+
+
+[engineers](pages/practitioners_engineers.md "load:")
+
+## Artists
+
+    _"artists::intro"
+
+
+[artists](pages/practitioners_artists.md "load:")

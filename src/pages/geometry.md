@@ -1,52 +1,87 @@
 # Geometry
 
-## HTML
+    _"pieces | page /geometry, _'intro |md',
+            /geometry/plane-geometry,  _'Plane Geometry',
+          /geometry/constructions,  _'Constructions',
+          /geometry/trigonometry,  _'Trigonometry',
+          /geometry/conic-sections,  _'Conic Sections',
+          /geometry/parametric-curves,  _'Parametric Curves',
+          /geometry/higher-dimensions,  _'Higher Dimensions',
+          /geometry/other-geometries,  _'Other Geometries'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/geometry.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Plane Geometry
+
+    _"plane-geometry::intro"
 
 
+[plane-geometry](pages/geometry_plane-geometry.md "load:")
 
-## Script
+## Constructions
 
-
-## Style
-
-
+    _"constructions::intro"
 
 
+[constructions](pages/geometry_constructions.md "load:")
+
+## Trigonometry
+
+    _"trigonometry::intro"
 
 
-# GENERATED
+[trigonometry](pages/geometry_trigonometry.md "load:")
 
-## Svelte
+## Conic Sections
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry"];
+    _"conic-sections::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[conic-sections](pages/geometry_conic-sections.md "load:")
 
-    <Nav {actual} />
+## Parametric Curves
 
-    _"html"
+    _"parametric-curves::intro"
 
-[../fullsapper/src/routes/geometry.svelte](# "save:")
 
+[parametric-curves](pages/geometry_parametric-curves.md "load:")
+
+## Higher Dimensions
+
+    _"higher-dimensions::intro"
+
+
+[higher-dimensions](pages/geometry_higher-dimensions.md "load:")
+
+## Other Geometries
+
+    _"other-geometries::intro"
+
+
+[other-geometries](pages/geometry_other-geometries.md "load:")

@@ -1,52 +1,87 @@
 # Algebraists
 
-## HTML
+    _"pieces | page /practitioners/algebraists, _'intro |md',
+            /practitioners/algebraists/abstract-algebra,  _'Abstract Algebra',
+          /practitioners/algebraists/number-theory,  _'Number Theory',
+          /practitioners/algebraists/cryptography,  _'Cryptography',
+          /practitioners/algebraists/algebraic-geometry,  _'Algebraic Geometry',
+          /practitioners/algebraists/algebraic-topology,  _'Algebraic Topology',
+          /practitioners/algebraists/computer-algebra,  _'Computer Algebra',
+          /practitioners/algebraists/category-theory,  _'Category Theory'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners/algebraists.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Abstract Algebra
+
+    _"abstract-algebra::intro"
 
 
+[abstract-algebra](pages/practitioners_algebraists_abstract-algebra.md "load:")
 
-## Script
+## Number Theory
 
-
-## Style
-
-
+    _"number-theory::intro"
 
 
+[number-theory](pages/practitioners_algebraists_number-theory.md "load:")
+
+## Cryptography
+
+    _"cryptography::intro"
 
 
-# GENERATED
+[cryptography](pages/practitioners_algebraists_cryptography.md "load:")
 
-## Svelte
+## Algebraic Geometry
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Algebraists"];
+    _"algebraic-geometry::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[algebraic-geometry](pages/practitioners_algebraists_algebraic-geometry.md "load:")
 
-    <Nav {actual} />
+## Algebraic Topology
 
-    _"html"
+    _"algebraic-topology::intro"
 
-[../fullsapper/src/routes/practitioners_algebraists.svelte](# "save:")
 
+[algebraic-topology](pages/practitioners_algebraists_algebraic-topology.md "load:")
+
+## Computer Algebra
+
+    _"computer-algebra::intro"
+
+
+[computer-algebra](pages/practitioners_algebraists_computer-algebra.md "load:")
+
+## Category Theory
+
+    _"category-theory::intro"
+
+
+[category-theory](pages/practitioners_algebraists_category-theory.md "load:")

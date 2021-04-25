@@ -1,52 +1,33 @@
 # Implicit Differentiation
 
-## HTML
+    _"pieces | page /functions/differential-calculus/implicit-differentiation, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/functions/differential-calculus/implicit-differentiation.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Functions","Differential Calculus","Implicit Differentiation"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/functions_differential-calculus_implicit-differentiation.svelte](# "save:")
+[end]()
 

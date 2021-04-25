@@ -1,52 +1,87 @@
 # Engineers
 
-## HTML
+    _"pieces | page /practitioners/engineers, _'intro |md',
+            /practitioners/engineers/mechanical-engineering,  _'Mechanical Engineering',
+          /practitioners/engineers/electrical-engineering,  _'Electrical Engineering',
+          /practitioners/engineers/chemical-engineering,  _'Chemical Engineering',
+          /practitioners/engineers/aerospace-engineering,  _'Aerospace Engineering',
+          /practitioners/engineers/actuarial-science,  _'Actuarial Science',
+          /practitioners/engineers/meterology,  _'Meterology',
+          /practitioners/engineers/finance,  _'Finance'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners/engineers.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Mechanical Engineering
+
+    _"mechanical-engineering::intro"
 
 
+[mechanical-engineering](pages/practitioners_engineers_mechanical-engineering.md "load:")
 
-## Script
+## Electrical Engineering
 
-
-## Style
-
-
+    _"electrical-engineering::intro"
 
 
+[electrical-engineering](pages/practitioners_engineers_electrical-engineering.md "load:")
+
+## Chemical Engineering
+
+    _"chemical-engineering::intro"
 
 
-# GENERATED
+[chemical-engineering](pages/practitioners_engineers_chemical-engineering.md "load:")
 
-## Svelte
+## Aerospace Engineering
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Engineers"];
+    _"aerospace-engineering::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[aerospace-engineering](pages/practitioners_engineers_aerospace-engineering.md "load:")
 
-    <Nav {actual} />
+## Actuarial Science
 
-    _"html"
+    _"actuarial-science::intro"
 
-[../fullsapper/src/routes/practitioners_engineers.svelte](# "save:")
 
+[actuarial-science](pages/practitioners_engineers_actuarial-science.md "load:")
+
+## Meterology
+
+    _"meterology::intro"
+
+
+[meterology](pages/practitioners_engineers_meterology.md "load:")
+
+## Finance
+
+    _"finance::intro"
+
+
+[finance](pages/practitioners_engineers_finance.md "load:")

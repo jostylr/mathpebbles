@@ -1,52 +1,87 @@
 # Multivariable Functions
 
-## HTML
+    _"pieces | page /many-variables/multivariable-functions, _'intro |md',
+            /many-variables/multivariable-functions/one-to-many,  _'One to Many',
+          /many-variables/multivariable-functions/many-to-one,  _'Many to One',
+          /many-variables/multivariable-functions/complex-to-complex,  _'Complex to Complex',
+          /many-variables/multivariable-functions/many-to-many,  _'Many to Many',
+          /many-variables/multivariable-functions/graphs,  _'Graphs',
+          /many-variables/multivariable-functions/questions-to-ask,  _'Questions to Ask',
+          /many-variables/multivariable-functions/multivariable-polynomials,  _'Multivariable Polynomials'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/many-variables/multivariable-functions.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## One to Many
+
+    _"one-to-many::intro"
 
 
+[one-to-many](pages/many-variables_multivariable-functions_one-to-many.md "load:")
 
-## Script
+## Many to One
 
-
-## Style
-
-
+    _"many-to-one::intro"
 
 
+[many-to-one](pages/many-variables_multivariable-functions_many-to-one.md "load:")
+
+## Complex to Complex
+
+    _"complex-to-complex::intro"
 
 
-# GENERATED
+[complex-to-complex](pages/many-variables_multivariable-functions_complex-to-complex.md "load:")
 
-## Svelte
+## Many to Many
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Many Variables","Multivariable Functions"];
+    _"many-to-many::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[many-to-many](pages/many-variables_multivariable-functions_many-to-many.md "load:")
 
-    <Nav {actual} />
+## Graphs
 
-    _"html"
+    _"graphs::intro"
 
-[../fullsapper/src/routes/many-variables_multivariable-functions.svelte](# "save:")
 
+[graphs](pages/many-variables_multivariable-functions_graphs.md "load:")
+
+## Questions to Ask
+
+    _"questions-to-ask::intro"
+
+
+[questions-to-ask](pages/many-variables_multivariable-functions_questions-to-ask.md "load:")
+
+## Multivariable Polynomials
+
+    _"multivariable-polynomials::intro"
+
+
+[multivariable-polynomials](pages/many-variables_multivariable-functions_multivariable-polynomials.md "load:")

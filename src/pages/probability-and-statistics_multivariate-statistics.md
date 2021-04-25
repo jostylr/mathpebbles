@@ -1,52 +1,87 @@
 # Multivariate Statistics
 
-## HTML
+    _"pieces | page /probability-and-statistics/multivariate-statistics, _'intro |md',
+            /probability-and-statistics/multivariate-statistics/random-multivariates,  _'Random Multivariates',
+          /probability-and-statistics/multivariate-statistics/joint-distribution,  _'Joint Distribution',
+          /probability-and-statistics/multivariate-statistics/multivariate-distributions,  _'Multivariate Distributions',
+          /probability-and-statistics/multivariate-statistics/multivariate-means,  _'Multivariate Means',
+          /probability-and-statistics/multivariate-statistics/multivariate-normals,  _'Multivariate Normals',
+          /probability-and-statistics/multivariate-statistics/multivariate-analysis,  _'Multivariate Analysis',
+          /probability-and-statistics/multivariate-statistics/multivariate-regression,  _'Multivariate Regression'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/probability-and-statistics/multivariate-statistics.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Random Multivariates
+
+    _"random-multivariates::intro"
 
 
+[random-multivariates](pages/probability-and-statistics_multivariate-statistics_random-multivariates.md "load:")
 
-## Script
+## Joint Distribution
 
-
-## Style
-
-
+    _"joint-distribution::intro"
 
 
+[joint-distribution](pages/probability-and-statistics_multivariate-statistics_joint-distribution.md "load:")
+
+## Multivariate Distributions
+
+    _"multivariate-distributions::intro"
 
 
-# GENERATED
+[multivariate-distributions](pages/probability-and-statistics_multivariate-statistics_multivariate-distributions.md "load:")
 
-## Svelte
+## Multivariate Means
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Probability and Statistics","Multivariate Statistics"];
+    _"multivariate-means::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[multivariate-means](pages/probability-and-statistics_multivariate-statistics_multivariate-means.md "load:")
 
-    <Nav {actual} />
+## Multivariate Normals
 
-    _"html"
+    _"multivariate-normals::intro"
 
-[../fullsapper/src/routes/probability-and-statistics_multivariate-statistics.svelte](# "save:")
 
+[multivariate-normals](pages/probability-and-statistics_multivariate-statistics_multivariate-normals.md "load:")
+
+## Multivariate Analysis
+
+    _"multivariate-analysis::intro"
+
+
+[multivariate-analysis](pages/probability-and-statistics_multivariate-statistics_multivariate-analysis.md "load:")
+
+## Multivariate Regression
+
+    _"multivariate-regression::intro"
+
+
+[multivariate-regression](pages/probability-and-statistics_multivariate-statistics_multivariate-regression.md "load:")

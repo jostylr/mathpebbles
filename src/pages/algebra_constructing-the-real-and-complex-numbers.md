@@ -1,52 +1,87 @@
 # Constructing the Real and Complex Numbers
 
-## HTML
+    _"pieces | page /algebra/constructing-the-real-and-complex-numbers, _'intro |md',
+            /algebra/constructing-the-real-and-complex-numbers/square-root-2,  _'Square Root 2',
+          /algebra/constructing-the-real-and-complex-numbers/zeroing-in-on-zeros,  _'Zeroing in on Zeros',
+          /algebra/constructing-the-real-and-complex-numbers/notions-of-real-numbers,  _'Notions of Real Numbers',
+          /algebra/constructing-the-real-and-complex-numbers/polynomial-zeros-beyond-radicals,  _'Polynomial Zeros Beyond Radicals',
+          /algebra/constructing-the-real-and-complex-numbers/complex-number-construction,  _'Complex Number Construction',
+          /algebra/constructing-the-real-and-complex-numbers/arithmetic-and-geometry-of-complex-numbers,  _'Arithmetic and Geometry of Complex Numbers',
+          /algebra/constructing-the-real-and-complex-numbers/sizes-of-infinity,  _'Sizes of Infinity'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/algebra/constructing-the-real-and-complex-numbers.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Square Root 2
+
+    _"square-root-2::intro"
 
 
+[square-root-2](pages/algebra_constructing-the-real-and-complex-numbers_square-root-2.md "load:")
 
-## Script
+## Zeroing in on Zeros
 
-
-## Style
-
-
+    _"zeroing-in-on-zeros::intro"
 
 
+[zeroing-in-on-zeros](pages/algebra_constructing-the-real-and-complex-numbers_zeroing-in-on-zeros.md "load:")
+
+## Notions of Real Numbers
+
+    _"notions-of-real-numbers::intro"
 
 
-# GENERATED
+[notions-of-real-numbers](pages/algebra_constructing-the-real-and-complex-numbers_notions-of-real-numbers.md "load:")
 
-## Svelte
+## Polynomial Zeros Beyond Radicals
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Constructing the Real and Complex Numbers"];
+    _"polynomial-zeros-beyond-radicals::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[polynomial-zeros-beyond-radicals](pages/algebra_constructing-the-real-and-complex-numbers_polynomial-zeros-beyond-radicals.md "load:")
 
-    <Nav {actual} />
+## Complex Number Construction
 
-    _"html"
+    _"complex-number-construction::intro"
 
-[../fullsapper/src/routes/algebra_constructing-the-real-and-complex-numbers.svelte](# "save:")
 
+[complex-number-construction](pages/algebra_constructing-the-real-and-complex-numbers_complex-number-construction.md "load:")
+
+## Arithmetic and Geometry of Complex Numbers
+
+    _"arithmetic-and-geometry-of-complex-numbers::intro"
+
+
+[arithmetic-and-geometry-of-complex-numbers](pages/algebra_constructing-the-real-and-complex-numbers_arithmetic-and-geometry-of-complex-numbers.md "load:")
+
+## Sizes of Infinity
+
+    _"sizes-of-infinity::intro"
+
+
+[sizes-of-infinity](pages/algebra_constructing-the-real-and-complex-numbers_sizes-of-infinity.md "load:")

@@ -1,52 +1,87 @@
 # Functions
 
-## HTML
+    _"pieces | page /functions, _'intro |md',
+            /functions/rational-and-power-functions,  _'Rational and Power Functions',
+          /functions/infinite-processes,  _'Infinite Processes',
+          /functions/differential-calculus,  _'Differential Calculus',
+          /functions/integral-calculus,  _'Integral Calculus',
+          /functions/exponentials-and-logarithms,  _'Exponentials and Logarithms',
+          /functions/trigonometric-functions,  _'Trigonometric Functions',
+          /functions/defining-functions,  _'Defining Functions'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/functions.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Rational and Power Functions
+
+    _"rational-and-power-functions::intro"
 
 
+[rational-and-power-functions](pages/functions_rational-and-power-functions.md "load:")
 
-## Script
+## Infinite Processes
 
-
-## Style
-
-
+    _"infinite-processes::intro"
 
 
+[infinite-processes](pages/functions_infinite-processes.md "load:")
+
+## Differential Calculus
+
+    _"differential-calculus::intro"
 
 
-# GENERATED
+[differential-calculus](pages/functions_differential-calculus.md "load:")
 
-## Svelte
+## Integral Calculus
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Functions"];
+    _"integral-calculus::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[integral-calculus](pages/functions_integral-calculus.md "load:")
 
-    <Nav {actual} />
+## Exponentials and Logarithms
 
-    _"html"
+    _"exponentials-and-logarithms::intro"
 
-[../fullsapper/src/routes/functions.svelte](# "save:")
 
+[exponentials-and-logarithms](pages/functions_exponentials-and-logarithms.md "load:")
+
+## Trigonometric Functions
+
+    _"trigonometric-functions::intro"
+
+
+[trigonometric-functions](pages/functions_trigonometric-functions.md "load:")
+
+## Defining Functions
+
+    _"defining-functions::intro"
+
+
+[defining-functions](pages/functions_defining-functions.md "load:")

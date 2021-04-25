@@ -1,52 +1,33 @@
 # Tricks and Checks of Multiplication
 
-## HTML
+    _"pieces | page /arithmetic/multiplication/tricks-and-checks-of-multiplication, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/arithmetic/multiplication/tricks-and-checks-of-multiplication.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic","Multiplication","Tricks and Checks of Multiplication"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/arithmetic_multiplication_tricks-and-checks-of-multiplication.svelte](# "save:")
+[end]()
 

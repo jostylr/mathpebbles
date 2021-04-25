@@ -1,52 +1,87 @@
 # Bayesian Statistics
 
-## HTML
+    _"pieces | page /probability-and-statistics/bayesian-statistics, _'intro |md',
+            /probability-and-statistics/bayesian-statistics/using-bayes-theorem,  _'Using Bayes Theorem',
+          /probability-and-statistics/bayesian-statistics/parameter-estimation,  _'Parameter Estimation',
+          /probability-and-statistics/bayesian-statistics/priors,  _'Priors',
+          /probability-and-statistics/bayesian-statistics/posteriors,  _'Posteriors',
+          /probability-and-statistics/bayesian-statistics/sampling,  _'Sampling',
+          /probability-and-statistics/bayesian-statistics/monte-carlo,  _'Monte Carlo',
+          /probability-and-statistics/bayesian-statistics/comparing-methods,  _'Comparing Methods'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/probability-and-statistics/bayesian-statistics.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Using Bayes Theorem
+
+    _"using-bayes-theorem::intro"
 
 
+[using-bayes-theorem](pages/probability-and-statistics_bayesian-statistics_using-bayes-theorem.md "load:")
 
-## Script
+## Parameter Estimation
 
-
-## Style
-
-
+    _"parameter-estimation::intro"
 
 
+[parameter-estimation](pages/probability-and-statistics_bayesian-statistics_parameter-estimation.md "load:")
+
+## Priors
+
+    _"priors::intro"
 
 
-# GENERATED
+[priors](pages/probability-and-statistics_bayesian-statistics_priors.md "load:")
 
-## Svelte
+## Posteriors
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Probability and Statistics","Bayesian Statistics"];
+    _"posteriors::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[posteriors](pages/probability-and-statistics_bayesian-statistics_posteriors.md "load:")
 
-    <Nav {actual} />
+## Sampling
 
-    _"html"
+    _"sampling::intro"
 
-[../fullsapper/src/routes/probability-and-statistics_bayesian-statistics.svelte](# "save:")
 
+[sampling](pages/probability-and-statistics_bayesian-statistics_sampling.md "load:")
+
+## Monte Carlo
+
+    _"monte-carlo::intro"
+
+
+[monte-carlo](pages/probability-and-statistics_bayesian-statistics_monte-carlo.md "load:")
+
+## Comparing Methods
+
+    _"comparing-methods::intro"
+
+
+[comparing-methods](pages/probability-and-statistics_bayesian-statistics_comparing-methods.md "load:")

@@ -1,52 +1,87 @@
 # Other Geometries
 
-## HTML
+    _"pieces | page /geometry/other-geometries, _'intro |md',
+            /geometry/other-geometries/taxicab-geometry,  _'Taxicab Geometry',
+          /geometry/other-geometries/spherical-geometry,  _'Spherical Geometry',
+          /geometry/other-geometries/hyperbolic-geometry,  _'Hyperbolic Geometry',
+          /geometry/other-geometries/discrete-geometries,  _'Discrete Geometries',
+          /geometry/other-geometries/metric-geometries,  _'Metric Geometries',
+          /geometry/other-geometries/infinite-dimensional-geometries,  _'Infinite Dimensional Geometries',
+          /geometry/other-geometries/compact-geometry,  _'Compact Geometry'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/geometry/other-geometries.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Taxicab Geometry
+
+    _"taxicab-geometry::intro"
 
 
+[taxicab-geometry](pages/geometry_other-geometries_taxicab-geometry.md "load:")
 
-## Script
+## Spherical Geometry
 
-
-## Style
-
-
+    _"spherical-geometry::intro"
 
 
+[spherical-geometry](pages/geometry_other-geometries_spherical-geometry.md "load:")
+
+## Hyperbolic Geometry
+
+    _"hyperbolic-geometry::intro"
 
 
-# GENERATED
+[hyperbolic-geometry](pages/geometry_other-geometries_hyperbolic-geometry.md "load:")
 
-## Svelte
+## Discrete Geometries
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Geometry","Other Geometries"];
+    _"discrete-geometries::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[discrete-geometries](pages/geometry_other-geometries_discrete-geometries.md "load:")
 
-    <Nav {actual} />
+## Metric Geometries
 
-    _"html"
+    _"metric-geometries::intro"
 
-[../fullsapper/src/routes/geometry_other-geometries.svelte](# "save:")
 
+[metric-geometries](pages/geometry_other-geometries_metric-geometries.md "load:")
+
+## Infinite Dimensional Geometries
+
+    _"infinite-dimensional-geometries::intro"
+
+
+[infinite-dimensional-geometries](pages/geometry_other-geometries_infinite-dimensional-geometries.md "load:")
+
+## Compact Geometry
+
+    _"compact-geometry::intro"
+
+
+[compact-geometry](pages/geometry_other-geometries_compact-geometry.md "load:")

@@ -1,52 +1,87 @@
 # Probability and Statistics
 
-## HTML
+    _"pieces | page /probability-and-statistics, _'intro |md',
+            /probability-and-statistics/descriptive-statistics,  _'Descriptive Statistics',
+          /probability-and-statistics/fitting-functions,  _'Fitting Functions',
+          /probability-and-statistics/probability,  _'Probability',
+          /probability-and-statistics/frequentist-statistics,  _'Frequentist Statistics',
+          /probability-and-statistics/bayesian-statistics,  _'Bayesian Statistics',
+          /probability-and-statistics/simulations,  _'Simulations',
+          /probability-and-statistics/multivariate-statistics,  _'Multivariate Statistics'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/probability-and-statistics.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Descriptive Statistics
+
+    _"descriptive-statistics::intro"
 
 
+[descriptive-statistics](pages/probability-and-statistics_descriptive-statistics.md "load:")
 
-## Script
+## Fitting Functions
 
-
-## Style
-
-
+    _"fitting-functions::intro"
 
 
+[fitting-functions](pages/probability-and-statistics_fitting-functions.md "load:")
+
+## Probability
+
+    _"probability::intro"
 
 
-# GENERATED
+[probability](pages/probability-and-statistics_probability.md "load:")
 
-## Svelte
+## Frequentist Statistics
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Probability and Statistics"];
+    _"frequentist-statistics::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[frequentist-statistics](pages/probability-and-statistics_frequentist-statistics.md "load:")
 
-    <Nav {actual} />
+## Bayesian Statistics
 
-    _"html"
+    _"bayesian-statistics::intro"
 
-[../fullsapper/src/routes/probability-and-statistics.svelte](# "save:")
 
+[bayesian-statistics](pages/probability-and-statistics_bayesian-statistics.md "load:")
+
+## Simulations
+
+    _"simulations::intro"
+
+
+[simulations](pages/probability-and-statistics_simulations.md "load:")
+
+## Multivariate Statistics
+
+    _"multivariate-statistics::intro"
+
+
+[multivariate-statistics](pages/probability-and-statistics_multivariate-statistics.md "load:")

@@ -1,4 +1,4 @@
-# Binding
+# JS
 
 This is a little js library that should help create reactive and customizable
 bindings between inputs, computational functions, and display functions. It's
@@ -39,7 +39,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
     export {MP};
 
 
-[../public/r/common.mjs](# "save:")
+[../public/r/common.mjs](# "save")
 
 ## Link
 
@@ -516,13 +516,12 @@ painful to use.
 
 ## CSS
 
-This is the hook for the CSS to go with the HTML page. When sufficiently done,
-we can save this as its own file for cache purposes, but want to avoid
-potential cache remembrances. 
+This is the hook for the CSS to go with the HTML page. 
 
     _"typed input:css"
 
     _"real:css"
+
 
 ## Typed Input
 

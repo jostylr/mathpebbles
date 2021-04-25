@@ -98,7 +98,7 @@
 -       Distance
 -   Linear Systems. x_i
 -       Two Variable Systems
--       Matrices
+-       Systems as Matrices
 -       Solving Systems
 -       Applications
 -       Not the Right Amount of Information
@@ -109,7 +109,7 @@
 -       Zeroing in on Zeros
 -       Notions of Real Numbers
 -       Polynomial Zeros Beyond Radicals
--       Complex Numbers
+-       Complex Number Construction
 -       Arithmetic and Geometry of Complex Numbers
 -       Sizes of Infinity
 -Functions. f
@@ -141,7 +141,7 @@
 -       Notions of Integrals
 -       Fundamental Theorem of Calculus
 -       Integral Rules
--       Numerics
+-       Numerical Integration
 -       Arc Length of Functions
 -       Volumes of Revolution
 -       Error Estimates
@@ -182,7 +182,7 @@
 -       Predator Prey
 -       Two Dimensional Systems
 -       Matrix Solutions
--       Numerics
+-       Numerical Systems
 -       Non-linear Differential Systems
 -       Chaos
 -       Critical Points
@@ -209,7 +209,7 @@
 -       Integral Relations
 -       Change of Basis in Integrals
 -       Antiderivatives
--       Generalizations
+-       Generalizing Multivariable Integrals
 -   Partial Differential Equations. \Delta f
 -       Partial versus Ordinary
 -       Verifying Solutions

@@ -1,52 +1,87 @@
 # Powers
 
-## HTML
+    _"pieces | page /arithmetic/powers, _'intro |md',
+            /arithmetic/powers/notions-of-exponents,  _'Notions of Exponents',
+          /arithmetic/powers/rules-of-exponents,  _'Rules of Exponents',
+          /arithmetic/powers/scientific-notation,  _'Scientific Notation',
+          /arithmetic/powers/significant-powers,  _'Significant Powers',
+          /arithmetic/powers/guesstimation,  _'Guesstimation',
+          /arithmetic/powers/undoing-exponentiation,  _'Undoing Exponentiation',
+          /arithmetic/powers/sums-and-powers,  _'Sums and Powers'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/arithmetic/powers.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Notions of Exponents
+
+    _"notions-of-exponents::intro"
 
 
+[notions-of-exponents](pages/arithmetic_powers_notions-of-exponents.md "load:")
 
-## Script
+## Rules of Exponents
 
-
-## Style
-
-
+    _"rules-of-exponents::intro"
 
 
+[rules-of-exponents](pages/arithmetic_powers_rules-of-exponents.md "load:")
+
+## Scientific Notation
+
+    _"scientific-notation::intro"
 
 
-# GENERATED
+[scientific-notation](pages/arithmetic_powers_scientific-notation.md "load:")
 
-## Svelte
+## Significant Powers
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic","Powers"];
+    _"significant-powers::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[significant-powers](pages/arithmetic_powers_significant-powers.md "load:")
 
-    <Nav {actual} />
+## Guesstimation
 
-    _"html"
+    _"guesstimation::intro"
 
-[../fullsapper/src/routes/arithmetic_powers.svelte](# "save:")
 
+[guesstimation](pages/arithmetic_powers_guesstimation.md "load:")
+
+## Undoing Exponentiation
+
+    _"undoing-exponentiation::intro"
+
+
+[undoing-exponentiation](pages/arithmetic_powers_undoing-exponentiation.md "load:")
+
+## Sums and Powers
+
+    _"sums-and-powers::intro"
+
+
+[sums-and-powers](pages/arithmetic_powers_sums-and-powers.md "load:")

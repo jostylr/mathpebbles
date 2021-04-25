@@ -1,124 +1,87 @@
 # Arithmetic
 
-## HTML
+    _"pieces | page /arithmetic, _'intro |md',
+            /arithmetic/counting,  _'Counting',
+          /arithmetic/addition,  _'Addition',
+          /arithmetic/multiplication,  _'Multiplication',
+          /arithmetic/subtraction,  _'Subtraction',
+          /arithmetic/division,  _'Division',
+          /arithmetic/powers,  _'Powers',
+          /arithmetic/constructing-numbers,  _'Constructing Numbers'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md | katex"
-
-    _"pebble"
-
-
-### Intro
-
-    Some stuff. $x^2$. A $$\\$ \sin( \frac{x}{x^3} )$$ expression \\$ 
-
-    Hi
-
-### Pebble
-    
-    <button on:click="{toggle}">Toggle</button>
-
-    {#if toggled}
-    <input type="text" bind:value={mtext} />
-    <input type="text" bind:value={pA} />
-    <input type="text" bind:value={pB} />
-    <Katex str={mtext} block={true} />
-    <Jxg id="jxgbox" width="500px" height="500px"
-    options="{{showNavigation:true}}" {f} />
-    {/if}
+[../public/arithmetic.html](# "save:")
 
 
-### katex f
+## Intro
 
-Defines a katex function
+## Pieces
 
-    (text) => {
-        text = text.replace(/\\\$/g, '&#36;');
-        
-        text = text.replace(/\$\$([^$]*)\$\$/g, (m, mtext, offset, whole) => {
-                let ktds = mtext.
-                    replace(/"/g, "''").
-                    replace(/\\/g, '!@');
-                let katex = '<Katex str="{"' + ktds + '"}" block={true} />';
-                return katex;
-            });
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
-        text = text.replace(/\$([^$]*)\$/g, (m, mtext, offset, whole) => {
-                let ktds = mtext.
-                    replace(/"/g, "''");
-                let katex = '<Katex str="{"' + ktds + '"}"/>';
-                return katex;
-            });
+[style]() 
 
-        return text;
-    }
+[script]()
 
-[katex](# "define:")
+[header]()
 
+[begin]()
 
-## Script
-    
-    import Navnew from '../components/Navnew.svelte'
-    import Katex from '../components/Katex.svelte'
-    import Jxg from '../components/Jxg.svelte'
+[end]()
 
-    let mtext = '\\frac{-b \\pm \\sqrt{b^2 -4ac}}{2a}';
+## Counting
 
-    let toggled = false;
-    function toggle () {
-        toggled = !toggled;
-    }
-
-    let b, p1, p2, li;
-    let f = (a) => {
-        b=a;
-        p1 = b.create('point',[pAx,pAy], {name:'A',size:4});
-        p2 = b.create('point',[pBx,pBy], {name:'B',size:4});
-        li = b.create('line',["A","B"], {strokeColor:'#00ff00',strokeWidth:2});
-    };
-
-    let pA = '0,0';
-    let pB = '1,1';
-
-    let pAx = () => parseInt(pA.split(',')[0]);
-    let pAy = () => parseInt(pA.split(',')[1]);
-    let pBx = () => parseInt(pB.split(',')[0]);
-    let pBy = () => parseInt(pB.split(',')[1]);
-
-    let noop = () => {};
-
-    $: if (b) {
-        noop(pA, pB);
-        b.update();
-    }
+    _"counting::intro"
 
 
+[counting](pages/arithmetic_counting.md "load:")
 
-## Style
+## Addition
+
+    _"addition::intro"
 
 
+[addition](pages/arithmetic_addition.md "load:")
+
+## Multiplication
+
+    _"multiplication::intro"
 
 
-# GENERATED
+[multiplication](pages/arithmetic_multiplication.md "load:")
 
-## Svelte
+## Subtraction
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic"];
+    _"subtraction::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[subtraction](pages/arithmetic_subtraction.md "load:")
 
-    <Nav {actual} />
+## Division
 
-    _"html"
+    _"division::intro"
 
-[../fullsapper/src/routes/arithmetic.svelte](# "save:")
 
+[division](pages/arithmetic_division.md "load:")
+
+## Powers
+
+    _"powers::intro"
+
+
+[powers](pages/arithmetic_powers.md "load:")
+
+## Constructing Numbers
+
+    _"constructing-numbers::intro"
+
+
+[constructing-numbers](pages/arithmetic_constructing-numbers.md "load:")

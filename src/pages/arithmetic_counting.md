@@ -1,52 +1,87 @@
 # Counting
 
-## HTML
+    _"pieces | page /arithmetic/counting, _'intro |md',
+            /arithmetic/counting/number-as-matching,  _'Number as Matching',
+          /arithmetic/counting/pebbles-of-various-sizes,  _'Pebbles of Various Sizes',
+          /arithmetic/counting/digits,  _'Digits',
+          /arithmetic/counting/carry-overs,  _'Carry Overs',
+          /arithmetic/counting/units,  _'Units',
+          /arithmetic/counting/base-representations,  _'Base Representations',
+          /arithmetic/counting/largest-number,  _'Largest Number'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/arithmetic/counting.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Number as Matching
+
+    _"number-as-matching::intro"
 
 
+[number-as-matching](pages/arithmetic_counting_number-as-matching.md "load:")
 
-## Script
+## Pebbles of Various Sizes
 
-
-## Style
-
-
+    _"pebbles-of-various-sizes::intro"
 
 
+[pebbles-of-various-sizes](pages/arithmetic_counting_pebbles-of-various-sizes.md "load:")
+
+## Digits
+
+    _"digits::intro"
 
 
-# GENERATED
+[digits](pages/arithmetic_counting_digits.md "load:")
 
-## Svelte
+## Carry Overs
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Arithmetic","Counting"];
+    _"carry-overs::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[carry-overs](pages/arithmetic_counting_carry-overs.md "load:")
 
-    <Nav {actual} />
+## Units
 
-    _"html"
+    _"units::intro"
 
-[../fullsapper/src/routes/arithmetic_counting.svelte](# "save:")
 
+[units](pages/arithmetic_counting_units.md "load:")
+
+## Base Representations
+
+    _"base-representations::intro"
+
+
+[base-representations](pages/arithmetic_counting_base-representations.md "load:")
+
+## Largest Number
+
+    _"largest-number::intro"
+
+
+[largest-number](pages/arithmetic_counting_largest-number.md "load:")

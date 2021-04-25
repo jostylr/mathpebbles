@@ -1,52 +1,33 @@
 # Triangle Inequality
 
-## HTML
+    _"pieces | page /algebra/inequalities-and-absolute-values/triangle-inequality, _'intro |md',
+            "
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
+[../public/algebra/inequalities-and-absolute-values/triangle-inequality.html](# "save:")
 
 
-### Intro
+## Intro
 
+## Pieces
 
-### Pebble
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
 
+[style]() 
 
+[script]()
 
-## Script
+[header]()
 
+[begin]()
 
-## Style
-
-
-
-
-
-
-# GENERATED
-
-## Svelte
-
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Inequalities and Absolute Values","Triangle Inequality"];
-
-        _"script"
-    
-    </script>
-
-    <style>
-        _"style"
-    </style>
-
-    <Nav {actual} />
-
-    _"html"
-
-[../fullsapper/src/routes/algebra_inequalities-and-absolute-values_triangle-inequality.svelte](# "save:")
+[end]()
 

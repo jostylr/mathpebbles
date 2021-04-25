@@ -42,7 +42,7 @@ By adding to a [prepost](https://github.com/jostylr/literate-programming/blob/ma
         const base = `_"html"`;
         let pieces = base.split('!-!');
         const replace = {};
-        let path = args.shift();
+        let path = args[0];
 
 The path should start with a slash, but easy to forget. 
 
@@ -50,7 +50,7 @@ The path should start with a slash, but easy to forget.
             path = '/' + path;
         }
         replace.NAV = makeNav(path);
-        replace.TITLE = args[0].trim();
+        replace.TITLE = links[path]?.name ?? 'MathPebbles'; //index is not in the listings
         _":populate replace"
         
         let main = '';
@@ -103,17 +103,37 @@ until the next one
 
 [details]() 
 
-This is the generator of the details. 
+This is the generator of the details. The stuff comes in pairs with the first
+one being either a section name only or an array with the first element being
+the section name and the second one being a path for the Explore button. 
 
-    
-    while (args.length > 1) {
-        const name = args.shift().trim();
-        slug = slugify(name);
-        const body = args.shift().trim();
+   
+    let n = args.length;
+    for (let i = 0; i < n; i+=2)  {
+        let lpath = args[i];
+        let item = links[lpath];
+        let name, href;
+        if (item) {
+            name = item.name;
+            href = lpath;
+        } else if (lpath==='/index') {
+            name = 'MathPebbles';
+        } else {
+            name = lpath;
+        }
+        let heading; 
+        if ((i !== 0) && (href)) {  // not intro
+            heading = `    <h2 class="with-explore"><span class="heading">${name}</span>`+
+                `<a class="explore" href="${href}.html">` +
+                `Explore </a></h2> \n\n` ; 
+        } else {
+            heading = `<h2>${name}</h2>`;
+        }
+        const body = args[i+1].trim();
         const [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
-        main += `<sl-details id="${slug}">
+        main += `<sl-details id="${slugify(name)}">
             <div slot="summary">
-                ${name !== 'intro' ? '<h2 >'+name+'</h2>' : ''}
+                ${heading}
                 ${preview}
             </div>
             ${full || ''}
@@ -130,8 +150,7 @@ A simple slugification
         return str.
             trim().
             toLowerCase().
-            replace(/\, /g, '--').
-            replace(/ /g, '-')
+            replace(/[^A-Za-z0-9]/g, '-').
     }
 
 
@@ -140,6 +159,8 @@ A simple slugification
 
 So make path makes the bread crumbs while the rest of this makes the drop
 downs for books, chapters, and sections. 
+
+nav is initially hidden to avoid FLOUT. 
 
     (path) => {
 
@@ -172,7 +193,7 @@ downs for books, chapters, and sections.
             let mret = '<sl-dropdown>\n';
             mret += `<sl-button slot="trigger" caret>${top}</sl-button>\n`;
             mret += items.map( 
-                ([name, path]) => `<sl-button href="${path}">${name}</sl-button>`).
+                ([name, path]) => `<sl-button class="hide" href="${path}.html">${name}</sl-button>`).
                 join('\n');
             mret += '\n</sl-dropdown>\n';
             return mret;
@@ -246,7 +267,7 @@ The crumb setup and css was originally from
 
     .crumbs ol {
         list-style-type: none;
-        padding-left: 0;
+        padding-left: 5px;
     }
 
     .crumb {
@@ -272,6 +293,9 @@ The crumb setup and css was originally from
         margin-right:10px;
     }
 
+    sl-dropdown sl-button {
+        width:100%
+    }
 
 [junk]()
 
@@ -303,20 +327,43 @@ This creates the next and previous buttons. We need the [listings](listings.md
 
     (path) => {
         const tr = _":transform";
-        if (!links.hasOwnProperty(path) ) { return '';}
-        const {prev, next} = ( links[path.trim()] );
-        const prevB = `<sl-button class="prev ${progress(prev)}" href="${prev}.html">
+        const home = '\index';
+        let prev, next;   
+        if (!links.hasOwnProperty(path) ) { 
+            console.log('no such path:', path); 
+            next = '\arithmetic';
+            prev = home;
+        } else {
+            ({prev, next} = ( links[path.trim()] ) );
+        }
+        const prevB = `<sl-button class="prev ${progress(prev)}" href="${prev || home}.html">
             <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>${tr(prev)}
             </sl-button>`;
-        const nextB = `<sl-button class="next ${progress(prev)}" href="${next}.html">${tr(next)}<sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
-        return `<footer>${prevB}${nextB}</footer>`;
+        const nextB = `<sl-button class="next ${progress(prev)}" href="${next || home}.html">${tr(next)}<sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
+        return `<footer>${prevB} _":middle" ${nextB}</footer>`;
     }
 
 [transform]()
 
 This gives the name for the path. 
 
-    (path) => links[path]?.name || '' 
+    (path) => links[path]?.name || 'MathPebbles' 
+
+
+[middle]()
+
+This gives the middle pages in the footer: About, FAQ, Settings, Site Map
+
+
+    <sl-dropdown>
+        <sl-button slot="trigger" caret>Non-Mathy Stuff</sl-button>
+        <sl-button href="/about.html">About</sl-button>
+        <sl-button href="/faq.html">FAQ</sl-button>
+        <sl-button href="/support.html">Support</sl-button>
+        <sl-button href="/settings.html">Settings</sl-button>
+        <sl-button href="/toc.html">Table of Contents</sl-button>
+        <sl-button href="/book-index.html">Index of Content</sl-button>
+    </sl-dropdown>
 
 
 [old transform]()
@@ -370,7 +417,16 @@ This is where we do some common behavior on event listening.
     details.forEach( el => { 
         el.addEventListener('sl-show', ev => {
             details.forEach( elEv => (elEv.open = ev.target === details) );
-            document.location.hash = el.id;
+            let path = document.location.pathname.split('/').slice(-1)[0].split('.')[0];
+            let hash = document.location.hash.slice(1);
+            console.log(hash, path, el.id);
+            if (el.id === path) {
+                if (hash.length) {
+                    document.location.hash = '';
+                }
+            } else if (hash !== el.id) {
+                document.location.hash = el.id;
+            }
         });
     });
 
@@ -405,7 +461,7 @@ katex and jsxgraph were first, then they block loading of elements.
 My homespun Var binding
 
         <script type="module">
-            import {MP} from '/r/common.mjs';
+            import {MP} from _"global js:version";
             window.MP = MP;
             window.$ = MP.$
             window.$$ = MP.$$
@@ -413,10 +469,13 @@ My homespun Var binding
         </script>
 
 
+        _"global css:version"
+
+
 Katex  global: katex
 
         <link rel="stylesheet" href="/r/katex.css">
-        <script defer src="r/katex.js" ></script>
+        <script defer src="/r/katex.js" ></script>
 
 
 
@@ -431,31 +490,14 @@ There is also math.js mainly used for high precision arithmetic.
         <script typ="text/javascript" charset="UTF-8" defer src="/r/math.js"></script>
 
 
-        <link rel='stylesheet' href='global.css'>
         <link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
-        <link rel="alternate icon" href="favicon.ico">
-
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="alternate icon" href="/favicon.ico">
 
         <style>
-            body {
-                max-width: 80em;
-                margin-left: auto;
-                margin-right: auto;
-            }
             .hide  {
                 display:none;
             }
-            sl-input {
-                width: 20ch;
-            }
-
-
-            _"make path:css"
-            _"next prev:css"
-            _"accordion:css"
-            _"common::css"
-        
             !-!STYLE!-!
         </style>
 
@@ -478,22 +520,101 @@ There is also math.js mainly used for high precision arithmetic.
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
             let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys); 
   
-            _"accordion:js"
-
             !-!SCRIPT!-!
-
+            
         });
 
     </script>
     </body>
     </html>
 
+
+### Global CSS
+
+
+    body {
+        max-width: 80em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    sl-input {
+        width: 20ch;
+    }
+
+Specifying width otherwise the explore buttons don't line up. 
+
+    h2.with-explore {
+        width:min(90vw, 50em);
+        display:flex;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+
+    .explore:link, .explore:visited {
+      background-color: #69ceff;
+      font-size:80%;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-variant: small-caps;
+      border-radius:4px;
+    }
+
+    .explore:hover, .explore:active {
+      filter: drop-shadow(3px 3px 2px);
+    }
+
+    _"make path:css"
+    _"next prev:css"
+    _"accordion:css"
+    _"common::css"
+        
+
+    
+[../public/r/global-1.css](# "save:")
+
+[version]() 
+
+    <link rel='stylesheet' href='/r/global-1.css'>
+
+
+### Global JS
+
+    
+    
+    _"common::js"
+
+
+     document.addEventListener("DOMContentLoaded", function() {
+        $$('.crumbs  sl-button' ).forEach(el => el.classList.remove('hide'));
+
+        _"accordion:js"
+
+        $$('a.explore').forEach( (el) => {
+            el.addEventListener( 'click', (ev) => ev.stopPropagation()); 
+        });
+    });
+
+
+[../public/r/global-1.mjs](# "save:")
+    
+[version]()
+
+    '/r/global-1.mjs'
+            
+
+
+# Previously useful Abandoned now
+
 ## Section Example
 
 This is an example to try out 
 
 
-[../public/section.html](# "save: | page algebra/lines/shortest-distance, Lines, _':intro|md', Distance, _':section 1|md', Angles,_':section 2|md'" )
+[../public/section.html](# "save | page algebra/lines/shortest-distance,_':intro|md', Distance, _':section 1|md', Angles,_':section 2|md'" )
 
 [intro]() 
 
@@ -513,12 +634,12 @@ This is an example to try out
 
 This is just the same as the section example except it is a book. 
 
-    _":pieces | page  /algebra/lines, Lines, _':intro|md', 
-        Shortest Distance, _':section 1|md', 
-        ec("Circles, Angles, and Triangles"), _':section 2|md' "
+    _":pieces | page  /algebra/lines, _':intro|md', 
+        /algebra/lines/shortest-distance, _':section 1|md', 
+        /algebra/lines/circles--angles--and-trianges, _':section 2|md' "
 
 
-[../public/book.html](# "save:" )
+[../public/book.html](# "save" )
 
 
 [pieces]()

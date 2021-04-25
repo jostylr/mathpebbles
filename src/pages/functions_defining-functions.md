@@ -1,52 +1,87 @@
 # Defining Functions
 
-## HTML
+    _"pieces | page /functions/defining-functions, _'intro |md',
+            /functions/defining-functions/taylor-series,  _'Taylor Series',
+          /functions/defining-functions/functional-equations,  _'Functional Equations',
+          /functions/defining-functions/differential-equations,  _'Differential Equations',
+          /functions/defining-functions/special-functions,  _'Special Functions',
+          /functions/defining-functions/laplace-transforms,  _'Laplace Transforms',
+          /functions/defining-functions/fourier-approximations,  _'Fourier Approximations',
+          /functions/defining-functions/tricks,  _'Tricks'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/functions/defining-functions.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Taylor Series
+
+    _"taylor-series::intro"
 
 
+[taylor-series](pages/functions_defining-functions_taylor-series.md "load:")
 
-## Script
+## Functional Equations
 
-
-## Style
-
-
+    _"functional-equations::intro"
 
 
+[functional-equations](pages/functions_defining-functions_functional-equations.md "load:")
+
+## Differential Equations
+
+    _"differential-equations::intro"
 
 
-# GENERATED
+[differential-equations](pages/functions_defining-functions_differential-equations.md "load:")
 
-## Svelte
+## Special Functions
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Functions","Defining Functions"];
+    _"special-functions::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[special-functions](pages/functions_defining-functions_special-functions.md "load:")
 
-    <Nav {actual} />
+## Laplace Transforms
 
-    _"html"
+    _"laplace-transforms::intro"
 
-[../fullsapper/src/routes/functions_defining-functions.svelte](# "save:")
 
+[laplace-transforms](pages/functions_defining-functions_laplace-transforms.md "load:")
+
+## Fourier Approximations
+
+    _"fourier-approximations::intro"
+
+
+[fourier-approximations](pages/functions_defining-functions_fourier-approximations.md "load:")
+
+## Tricks
+
+    _"tricks::intro"
+
+
+[tricks](pages/functions_defining-functions_tricks.md "load:")

@@ -1,52 +1,87 @@
 # Interest Accumulations
 
-## HTML
+    _"pieces | page /algebra/interest-accumulations, _'intro |md',
+            /algebra/interest-accumulations/percentages,  _'Percentages',
+          /algebra/interest-accumulations/simple-interest-and-discount,  _'Simple Interest and Discount',
+          /algebra/interest-accumulations/compound-interest,  _'Compound Interest',
+          /algebra/interest-accumulations/effective-rate,  _'Effective Rate',
+          /algebra/interest-accumulations/payments,  _'Payments',
+          /algebra/interest-accumulations/personal-finances,  _'Personal Finances',
+          /algebra/interest-accumulations/tricks-of-business-mathematics,  _'Tricks of Business Mathematics'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/algebra/interest-accumulations.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Percentages
+
+    _"percentages::intro"
 
 
+[percentages](pages/algebra_interest-accumulations_percentages.md "load:")
 
-## Script
+## Simple Interest and Discount
 
-
-## Style
-
-
+    _"simple-interest-and-discount::intro"
 
 
+[simple-interest-and-discount](pages/algebra_interest-accumulations_simple-interest-and-discount.md "load:")
+
+## Compound Interest
+
+    _"compound-interest::intro"
 
 
-# GENERATED
+[compound-interest](pages/algebra_interest-accumulations_compound-interest.md "load:")
 
-## Svelte
+## Effective Rate
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Interest Accumulations"];
+    _"effective-rate::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[effective-rate](pages/algebra_interest-accumulations_effective-rate.md "load:")
 
-    <Nav {actual} />
+## Payments
 
-    _"html"
+    _"payments::intro"
 
-[../fullsapper/src/routes/algebra_interest-accumulations.svelte](# "save:")
 
+[payments](pages/algebra_interest-accumulations_payments.md "load:")
+
+## Personal Finances
+
+    _"personal-finances::intro"
+
+
+[personal-finances](pages/algebra_interest-accumulations_personal-finances.md "load:")
+
+## Tricks of Business Mathematics
+
+    _"tricks-of-business-mathematics::intro"
+
+
+[tricks-of-business-mathematics](pages/algebra_interest-accumulations_tricks-of-business-mathematics.md "load:")

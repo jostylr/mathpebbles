@@ -1,52 +1,87 @@
 # Polynomials
 
-## HTML
+    _"pieces | page /algebra/polynomials, _'intro |md',
+            /algebra/polynomials/arithmetic-of-polynomials,  _'Arithmetic of Polynomials',
+          /algebra/polynomials/the-questions-of-polynomials,  _'The Questions of Polynomials',
+          /algebra/polynomials/synthetic-division,  _'Synthetic Division',
+          /algebra/polynomials/zeros-of-polynomials,  _'Zeros of Polynomials',
+          /algebra/polynomials/calculus-of-polynomials,  _'Calculus of Polynomials',
+          /algebra/polynomials/graphing-polynomials,  _'Graphing polynomials',
+          /algebra/polynomials/powering-polynomials,  _'Powering Polynomials'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/algebra/polynomials.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Arithmetic of Polynomials
+
+    _"arithmetic-of-polynomials::intro"
 
 
+[arithmetic-of-polynomials](pages/algebra_polynomials_arithmetic-of-polynomials.md "load:")
 
-## Script
+## The Questions of Polynomials
 
-
-## Style
-
-
+    _"the-questions-of-polynomials::intro"
 
 
+[the-questions-of-polynomials](pages/algebra_polynomials_the-questions-of-polynomials.md "load:")
+
+## Synthetic Division
+
+    _"synthetic-division::intro"
 
 
-# GENERATED
+[synthetic-division](pages/algebra_polynomials_synthetic-division.md "load:")
 
-## Svelte
+## Zeros of Polynomials
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra","Polynomials"];
+    _"zeros-of-polynomials::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[zeros-of-polynomials](pages/algebra_polynomials_zeros-of-polynomials.md "load:")
 
-    <Nav {actual} />
+## Calculus of Polynomials
 
-    _"html"
+    _"calculus-of-polynomials::intro"
 
-[../fullsapper/src/routes/algebra_polynomials.svelte](# "save:")
 
+[calculus-of-polynomials](pages/algebra_polynomials_calculus-of-polynomials.md "load:")
+
+## Graphing polynomials
+
+    _"graphing-polynomials::intro"
+
+
+[graphing-polynomials](pages/algebra_polynomials_graphing-polynomials.md "load:")
+
+## Powering Polynomials
+
+    _"powering-polynomials::intro"
+
+
+[powering-polynomials](pages/algebra_polynomials_powering-polynomials.md "load:")

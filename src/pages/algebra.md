@@ -1,52 +1,87 @@
 # Algebra
 
-## HTML
+    _"pieces | page /algebra, _'intro |md',
+            /algebra/lines,  _'Lines',
+          /algebra/quadratics,  _'Quadratics',
+          /algebra/polynomials,  _'Polynomials',
+          /algebra/interest-accumulations,  _'Interest Accumulations',
+          /algebra/inequalities-and-absolute-values,  _'Inequalities and Absolute Values',
+          /algebra/linear-systems,  _'Linear Systems',
+          /algebra/constructing-the-real-and-complex-numbers,  _'Constructing the Real and Complex Numbers'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/algebra.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Lines
+
+    _"lines::intro"
 
 
+[lines](pages/algebra_lines.md "load:")
 
-## Script
+## Quadratics
 
-
-## Style
-
-
+    _"quadratics::intro"
 
 
+[quadratics](pages/algebra_quadratics.md "load:")
+
+## Polynomials
+
+    _"polynomials::intro"
 
 
-# GENERATED
+[polynomials](pages/algebra_polynomials.md "load:")
 
-## Svelte
+## Interest Accumulations
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Algebra"];
+    _"interest-accumulations::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[interest-accumulations](pages/algebra_interest-accumulations.md "load:")
 
-    <Nav {actual} />
+## Inequalities and Absolute Values
 
-    _"html"
+    _"inequalities-and-absolute-values::intro"
 
-[../fullsapper/src/routes/algebra.svelte](# "save:")
 
+[inequalities-and-absolute-values](pages/algebra_inequalities-and-absolute-values.md "load:")
+
+## Linear Systems
+
+    _"linear-systems::intro"
+
+
+[linear-systems](pages/algebra_linear-systems.md "load:")
+
+## Constructing the Real and Complex Numbers
+
+    _"constructing-the-real-and-complex-numbers::intro"
+
+
+[constructing-the-real-and-complex-numbers](pages/algebra_constructing-the-real-and-complex-numbers.md "load:")

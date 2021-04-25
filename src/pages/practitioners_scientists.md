@@ -1,52 +1,87 @@
 # Scientists
 
-## HTML
+    _"pieces | page /practitioners/scientists, _'intro |md',
+            /practitioners/scientists/physics,  _'Physics',
+          /practitioners/scientists/chemistry,  _'Chemistry',
+          /practitioners/scientists/biology,  _'Biology',
+          /practitioners/scientists/health,  _'Health',
+          /practitioners/scientists/ecology,  _'Ecology',
+          /practitioners/scientists/economics,  _'Economics',
+          /practitioners/scientists/sociology,  _'Sociology'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/practitioners/scientists.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Physics
+
+    _"physics::intro"
 
 
+[physics](pages/practitioners_scientists_physics.md "load:")
 
-## Script
+## Chemistry
 
-
-## Style
-
-
+    _"chemistry::intro"
 
 
+[chemistry](pages/practitioners_scientists_chemistry.md "load:")
+
+## Biology
+
+    _"biology::intro"
 
 
-# GENERATED
+[biology](pages/practitioners_scientists_biology.md "load:")
 
-## Svelte
+## Health
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Practitioners","Scientists"];
+    _"health::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[health](pages/practitioners_scientists_health.md "load:")
 
-    <Nav {actual} />
+## Ecology
 
-    _"html"
+    _"ecology::intro"
 
-[../fullsapper/src/routes/practitioners_scientists.svelte](# "save:")
 
+[ecology](pages/practitioners_scientists_ecology.md "load:")
+
+## Economics
+
+    _"economics::intro"
+
+
+[economics](pages/practitioners_scientists_economics.md "load:")
+
+## Sociology
+
+    _"sociology::intro"
+
+
+[sociology](pages/practitioners_scientists_sociology.md "load:")

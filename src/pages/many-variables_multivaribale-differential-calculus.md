@@ -1,52 +1,87 @@
 # Multivaribale Differential Calculus
 
-## HTML
+    _"pieces | page /many-variables/multivaribale-differential-calculus, _'intro |md',
+            /many-variables/multivaribale-differential-calculus/total-derivatives,  _'Total Derivatives',
+          /many-variables/multivaribale-differential-calculus/partial-derivatives,  _'Partial Derivatives',
+          /many-variables/multivaribale-differential-calculus/tangentials,  _'Tangentials',
+          /many-variables/multivaribale-differential-calculus/extrema,  _'Extrema',
+          /many-variables/multivaribale-differential-calculus/lagrange-multiplies,  _'Lagrange Multiplies',
+          /many-variables/multivaribale-differential-calculus/high-dimensional-newtons-method,  _'High Dimensional Newtons Method',
+          /many-variables/multivaribale-differential-calculus/local-approximations,  _'Local Approximations'"
 
-The video youube should go in the middle; cut and paste. 
-
-    _"intro | md"
-
-    
-
-    _"pebble"
-
-
-### Intro
+[../public/many-variables/multivaribale-differential-calculus.html](# "save:")
 
 
-### Pebble
+## Intro
+
+## Pieces
+
+    !- style
+    _":style"
+    !- script
+    _":script"
+    !- header
+    _":header"
+    !- begin
+    _":begin"
+    !- end
+    _":end"
+
+[style]() 
+
+[script]()
+
+[header]()
+
+[begin]()
+
+[end]()
+
+## Total Derivatives
+
+    _"total-derivatives::intro"
 
 
+[total-derivatives](pages/many-variables_multivaribale-differential-calculus_total-derivatives.md "load:")
 
-## Script
+## Partial Derivatives
 
-
-## Style
-
-
+    _"partial-derivatives::intro"
 
 
+[partial-derivatives](pages/many-variables_multivaribale-differential-calculus_partial-derivatives.md "load:")
+
+## Tangentials
+
+    _"tangentials::intro"
 
 
-# GENERATED
+[tangentials](pages/many-variables_multivaribale-differential-calculus_tangentials.md "load:")
 
-## Svelte
+## Extrema
 
-    <script>
-        import Nav from '../components/Nav.svelte';
-        const actual = ["Many Variables","Multivaribale Differential Calculus"];
+    _"extrema::intro"
 
-        _"script"
-    
-    </script>
 
-    <style>
-        _"style"
-    </style>
+[extrema](pages/many-variables_multivaribale-differential-calculus_extrema.md "load:")
 
-    <Nav {actual} />
+## Lagrange Multiplies
 
-    _"html"
+    _"lagrange-multiplies::intro"
 
-[../fullsapper/src/routes/many-variables_multivaribale-differential-calculus.svelte](# "save:")
 
+[lagrange-multiplies](pages/many-variables_multivaribale-differential-calculus_lagrange-multiplies.md "load:")
+
+## High Dimensional Newtons Method
+
+    _"high-dimensional-newtons-method::intro"
+
+
+[high-dimensional-newtons-method](pages/many-variables_multivaribale-differential-calculus_high-dimensional-newtons-method.md "load:")
+
+## Local Approximations
+
+    _"local-approximations::intro"
+
+
+[local-approximations](pages/many-variables_multivaribale-differential-calculus_local-approximations.md "load:")
