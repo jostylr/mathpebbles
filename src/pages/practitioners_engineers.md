@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/engineers, _'intro |md',
             /practitioners/engineers/mechanical-engineering,  _'Mechanical Engineering',
-          /practitioners/engineers/electrical-engineering,  _'Electrical Engineering',
-          /practitioners/engineers/chemical-engineering,  _'Chemical Engineering',
-          /practitioners/engineers/aerospace-engineering,  _'Aerospace Engineering',
-          /practitioners/engineers/actuarial-science,  _'Actuarial Science',
-          /practitioners/engineers/meterology,  _'Meterology',
-          /practitioners/engineers/finance,  _'Finance'"
+            /practitioners/engineers/electrical-engineering,  _'Electrical Engineering',
+            /practitioners/engineers/chemical-engineering,  _'Chemical Engineering',
+            /practitioners/engineers/aerospace-engineering,  _'Aerospace Engineering',
+            /practitioners/engineers/actuarial-science,  _'Actuarial Science',
+            /practitioners/engineers/meterology,  _'Meterology',
+            /practitioners/engineers/finance,  _'Finance'"
 
 [../public/practitioners/engineers.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"mechanical-engineering::intro:pebble"
+
+    _"electrical-engineering::intro:pebble"
+
+    _"chemical-engineering::intro:pebble"
+
+    _"aerospace-engineering::intro:pebble"
+
+    _"actuarial-science::intro:pebble"
+
+    _"meterology::intro:pebble"
+
+    _"finance::intro:pebble"
+
+
+[code]()
+
+    _"mechanical-engineering::intro:code"
+
+    _"electrical-engineering::intro:code"
+
+    _"chemical-engineering::intro:code"
+
+    _"aerospace-engineering::intro:code"
+
+    _"actuarial-science::intro:code"
+
+    _"meterology::intro:code"
+
+    _"finance::intro:code"
+
 
 [header]()
 

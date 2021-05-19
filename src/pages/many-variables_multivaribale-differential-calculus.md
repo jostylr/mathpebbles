@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/multivaribale-differential-calculus, _'intro |md',
             /many-variables/multivaribale-differential-calculus/total-derivatives,  _'Total Derivatives',
-          /many-variables/multivaribale-differential-calculus/partial-derivatives,  _'Partial Derivatives',
-          /many-variables/multivaribale-differential-calculus/tangentials,  _'Tangentials',
-          /many-variables/multivaribale-differential-calculus/extrema,  _'Extrema',
-          /many-variables/multivaribale-differential-calculus/lagrange-multiplies,  _'Lagrange Multiplies',
-          /many-variables/multivaribale-differential-calculus/high-dimensional-newtons-method,  _'High Dimensional Newtons Method',
-          /many-variables/multivaribale-differential-calculus/local-approximations,  _'Local Approximations'"
+            /many-variables/multivaribale-differential-calculus/partial-derivatives,  _'Partial Derivatives',
+            /many-variables/multivaribale-differential-calculus/tangentials,  _'Tangentials',
+            /many-variables/multivaribale-differential-calculus/extrema,  _'Extrema',
+            /many-variables/multivaribale-differential-calculus/lagrange-multiplies,  _'Lagrange Multiplies',
+            /many-variables/multivaribale-differential-calculus/high-dimensional-newtons-method,  _'High Dimensional Newtons Method',
+            /many-variables/multivaribale-differential-calculus/local-approximations,  _'Local Approximations'"
 
 [../public/many-variables/multivaribale-differential-calculus.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"total-derivatives::intro:pebble"
+
+    _"partial-derivatives::intro:pebble"
+
+    _"tangentials::intro:pebble"
+
+    _"extrema::intro:pebble"
+
+    _"lagrange-multiplies::intro:pebble"
+
+    _"high-dimensional-newtons-method::intro:pebble"
+
+    _"local-approximations::intro:pebble"
+
+
+[code]()
+
+    _"total-derivatives::intro:code"
+
+    _"partial-derivatives::intro:code"
+
+    _"tangentials::intro:code"
+
+    _"extrema::intro:code"
+
+    _"lagrange-multiplies::intro:code"
+
+    _"high-dimensional-newtons-method::intro:code"
+
+    _"local-approximations::intro:code"
+
 
 [header]()
 

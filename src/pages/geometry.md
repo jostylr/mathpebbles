@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry, _'intro |md',
             /geometry/plane-geometry,  _'Plane Geometry',
-          /geometry/constructions,  _'Constructions',
-          /geometry/trigonometry,  _'Trigonometry',
-          /geometry/conic-sections,  _'Conic Sections',
-          /geometry/parametric-curves,  _'Parametric Curves',
-          /geometry/higher-dimensions,  _'Higher Dimensions',
-          /geometry/other-geometries,  _'Other Geometries'"
+            /geometry/constructions,  _'Constructions',
+            /geometry/trigonometry,  _'Trigonometry',
+            /geometry/conic-sections,  _'Conic Sections',
+            /geometry/parametric-curves,  _'Parametric Curves',
+            /geometry/higher-dimensions,  _'Higher Dimensions',
+            /geometry/other-geometries,  _'Other Geometries'"
 
 [../public/geometry.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"plane-geometry::intro:pebble"
+
+    _"constructions::intro:pebble"
+
+    _"trigonometry::intro:pebble"
+
+    _"conic-sections::intro:pebble"
+
+    _"parametric-curves::intro:pebble"
+
+    _"higher-dimensions::intro:pebble"
+
+    _"other-geometries::intro:pebble"
+
+
+[code]()
+
+    _"plane-geometry::intro:code"
+
+    _"constructions::intro:code"
+
+    _"trigonometry::intro:code"
+
+    _"conic-sections::intro:code"
+
+    _"parametric-curves::intro:code"
+
+    _"higher-dimensions::intro:code"
+
+    _"other-geometries::intro:code"
+
 
 [header]()
 

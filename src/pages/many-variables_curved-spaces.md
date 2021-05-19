@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/curved-spaces, _'intro |md',
             /many-variables/curved-spaces/surfaces-in-3d,  _'Surfaces in 3D',
-          /many-variables/curved-spaces/curves,  _'Curves',
-          /many-variables/curved-spaces/coordinates,  _'Coordinates',
-          /many-variables/curved-spaces/tangent-spaces,  _'Tangent Spaces',
-          /many-variables/curved-spaces/metrics,  _'Metrics',
-          /many-variables/curved-spaces/tensors-and-differential-forms,  _'Tensors and Differential Forms',
-          /many-variables/curved-spaces/topological-concerns,  _'Topological Concerns'"
+            /many-variables/curved-spaces/curves,  _'Curves',
+            /many-variables/curved-spaces/coordinates,  _'Coordinates',
+            /many-variables/curved-spaces/tangent-spaces,  _'Tangent Spaces',
+            /many-variables/curved-spaces/metrics,  _'Metrics',
+            /many-variables/curved-spaces/tensors-and-differential-forms,  _'Tensors and Differential Forms',
+            /many-variables/curved-spaces/topological-concerns,  _'Topological Concerns'"
 
 [../public/many-variables/curved-spaces.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"surfaces-in-3d::intro:pebble"
+
+    _"curves::intro:pebble"
+
+    _"coordinates::intro:pebble"
+
+    _"tangent-spaces::intro:pebble"
+
+    _"metrics::intro:pebble"
+
+    _"tensors-and-differential-forms::intro:pebble"
+
+    _"topological-concerns::intro:pebble"
+
+
+[code]()
+
+    _"surfaces-in-3d::intro:code"
+
+    _"curves::intro:code"
+
+    _"coordinates::intro:code"
+
+    _"tangent-spaces::intro:code"
+
+    _"metrics::intro:code"
+
+    _"tensors-and-differential-forms::intro:code"
+
+    _"topological-concerns::intro:code"
+
 
 [header]()
 

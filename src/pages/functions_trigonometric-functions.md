@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/trigonometric-functions, _'intro |md',
             /functions/trigonometric-functions/notions-of-trigonometric-functions,  _'Notions of Trigonometric Functions',
-          /functions/trigonometric-functions/properties-of-trigonometric-functions,  _'Properties of Trigonometric Functions',
-          /functions/trigonometric-functions/approximating-trigonometric-functions,  _'Approximating Trigonometric Functions',
-          /functions/trigonometric-functions/inverse-trigonometric-functions,  _'Inverse Trigonometric Functions',
-          /functions/trigonometric-functions/applications-of-trigonometric-functions,  _'Applications of Trigonometric Functions',
-          /functions/trigonometric-functions/sums-and-products-of-trigonometric-functions,  _'Sums and Products of Trigonometric Functions',
-          /functions/trigonometric-functions/complex-exponentials,  _'Complex Exponentials'"
+            /functions/trigonometric-functions/properties-of-trigonometric-functions,  _'Properties of Trigonometric Functions',
+            /functions/trigonometric-functions/approximating-trigonometric-functions,  _'Approximating Trigonometric Functions',
+            /functions/trigonometric-functions/inverse-trigonometric-functions,  _'Inverse Trigonometric Functions',
+            /functions/trigonometric-functions/applications-of-trigonometric-functions,  _'Applications of Trigonometric Functions',
+            /functions/trigonometric-functions/sums-and-products-of-trigonometric-functions,  _'Sums and Products of Trigonometric Functions',
+            /functions/trigonometric-functions/complex-exponentials,  _'Complex Exponentials'"
 
 [../public/functions/trigonometric-functions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-trigonometric-functions::intro:pebble"
+
+    _"properties-of-trigonometric-functions::intro:pebble"
+
+    _"approximating-trigonometric-functions::intro:pebble"
+
+    _"inverse-trigonometric-functions::intro:pebble"
+
+    _"applications-of-trigonometric-functions::intro:pebble"
+
+    _"sums-and-products-of-trigonometric-functions::intro:pebble"
+
+    _"complex-exponentials::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-trigonometric-functions::intro:code"
+
+    _"properties-of-trigonometric-functions::intro:code"
+
+    _"approximating-trigonometric-functions::intro:code"
+
+    _"inverse-trigonometric-functions::intro:code"
+
+    _"applications-of-trigonometric-functions::intro:code"
+
+    _"sums-and-products-of-trigonometric-functions::intro:code"
+
+    _"complex-exponentials::intro:code"
+
 
 [header]()
 

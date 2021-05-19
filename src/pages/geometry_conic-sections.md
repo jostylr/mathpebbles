@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/conic-sections, _'intro |md',
             /geometry/conic-sections/notions-of-a-conic-section,  _'Notions of a Conic Section',
-          /geometry/conic-sections/ellipses,  _'Ellipses',
-          /geometry/conic-sections/parabolas,  _'Parabolas',
-          /geometry/conic-sections/hyperbolas,  _'Hyperbolas',
-          /geometry/conic-sections/cones,  _'Cones',
-          /geometry/conic-sections/unifying-pictures,  _'Unifying Pictures',
-          /geometry/conic-sections/generalizations,  _'Generalizations'"
+            /geometry/conic-sections/ellipses,  _'Ellipses',
+            /geometry/conic-sections/parabolas,  _'Parabolas',
+            /geometry/conic-sections/hyperbolas,  _'Hyperbolas',
+            /geometry/conic-sections/cones,  _'Cones',
+            /geometry/conic-sections/unifying-pictures,  _'Unifying Pictures',
+            /geometry/conic-sections/generalizations,  _'Generalizations'"
 
 [../public/geometry/conic-sections.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-a-conic-section::intro:pebble"
+
+    _"ellipses::intro:pebble"
+
+    _"parabolas::intro:pebble"
+
+    _"hyperbolas::intro:pebble"
+
+    _"cones::intro:pebble"
+
+    _"unifying-pictures::intro:pebble"
+
+    _"generalizations::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-a-conic-section::intro:code"
+
+    _"ellipses::intro:code"
+
+    _"parabolas::intro:code"
+
+    _"hyperbolas::intro:code"
+
+    _"cones::intro:code"
+
+    _"unifying-pictures::intro:code"
+
+    _"generalizations::intro:code"
+
 
 [header]()
 

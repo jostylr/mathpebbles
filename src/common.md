@@ -29,12 +29,14 @@ things and stuff just propagates. Spreadsheet style, if  you will.
         _"types"
         return [_"typed input", types];
     };
-
     
+    const makeScope = _"local"
+
+
     const MP = {link, Var, Waiter, EventEmitter, 
         mathSub, $, $$, show, hide, 
         initMakeTypedInput,
-        initScaledNumber, initKeys }; 
+        initScaledNumber, initKeys, makeScope }; 
 
     export {MP};
 
@@ -391,26 +393,41 @@ element that we can pass in to limit scope (element can be string that then
 gets queried). The $$$ creates elements and optionally replaces them. 
 
 
+The selector stuff matches the entire css selector to the whole document and
+then filters out descendants! So want to implement just the path starting with
+the chosen element. Thus, we add a fake class and then add that to the
+selector and hope it works well, removing the class when done. 
+
+
     const $ = (sel, el) => {
         if (el) {
             if (typeof el === "string") {
                 el = document.querySelector(el);
             } 
-            return el.querySelector(sel);
+            el.classList.add('fake-root');
+            sel = sel.split(',').map( e => '.fake-root '+e).join(',');
+            let ret = document.querySelector(sel);
+            el.classList.remove('fake-root');
+            return ret;
         } else { 
             return document.querySelector(sel);
         }
     };
 
     const $$ = (sel, el) => {
+        let nodeList;
         if (el) {
             if (typeof el === "string") {
                 el = document.querySelector(el);
             } 
-        return el.querySelectorAll(sel);
+            el.classList.add('fake-root');
+            sel = sel.split(',').map( e => '.fake-root '+e).join(',');
+            nodeList = document.querySelectorAll(sel);
+            el.classList.remove('fake-root');
         } else { 
-            return document.querySelectorAll(sel);
+            nodeList = document.querySelectorAll(sel);
         }
+        return Array.from(nodeList);
     };
     
     const $$$ = (el, options, target) => {
@@ -984,7 +1001,7 @@ Scalerange is set to 0 so rescale calls fromVar -- needed it to be a different v
 
     const scaleRange = new Var(0, {_":scale range"}); 
     const center = new Var(0, {_":center"});
-    const varVal = new Var(0, {_":input"}, {_":numrange"});
+    const varVal = new Var(value || 0, {_":input"}, {_":numrange"});
     const main = varVal; // older code merge TODO Remove
     const setCenter = _":set center";
     const _setCenter = link(setCenter, scaleRange, main); 
@@ -2002,6 +2019,9 @@ but who knows? Actually, maybe we find a null, we stop. That we could have
 some keys that respond specially, but we disable the more general stuff. 
 
     (ev) => {
+        if (ev.target.nodeName === 'TEXTAREA') {
+            return; // disables key listening in text areaas 
+        }
         let key = ev.key;
         keys.some( (el)=>  {
             if (el === null) {
@@ -2233,4 +2253,194 @@ order we have.
         }
     }
 
+
+## Content Loaded
+
+This is the stuff we want to do to the page once stuff is loaded. 
+
+
+        $$('.crumbs  sl-button' ).forEach(el => el.classList.remove('hide'));
+
+
+        $$('a.explore').forEach( (el) => {
+            el.addEventListener( 'click', (ev) => ev.stopPropagation()); 
+        });
+
+        $$('.open-drawer').forEach( (el) => {
+            let drawer = el.nextElementSibling;
+            if (drawer.tagName === 'SL-DRAWER') {
+                el.addEventListener('click', () => drawer.show());
+                drawer.addEventListener('sl-show', (ev) => ev.stopPropagation());
+                $('.close-drawer', drawer).
+                    addEventListener('click', () => {
+                        drawer.hide();
+                    })
+                ; 
+            } else {
+                console.log('Error; no next door drawer', el);
+            }
+        });
+
+        $$('.stopProp').forEach( (el) => {
+            el.addEventListener('click', (ev) => ev.stopPropagation());
+        });
+
+ 
+
+## Local
+
+Here are some setup things but they require access to local scope (could also
+export a function that can be called instead if this gets unwieldy.  
+
+    
+    function makeScope (makeTypedInput) {
+    
+        const inputs = {};
+    
+        const scope = {};
+
+        const outs = {};
+
+        const replace = _":replace";
+
+        const update = _":update";
+
+        $$('body > sl-details').forEach( container => {
+            _":create inputs" 
+            
+            _":deal with outputs"
+        });
+
+
+        console.log(scope);
+        console.log(outs);
+
+        const outputs = _":outputs";
+
+        return {scope, inputs, outputs};
+
+    }
+
+[create inputs]()
+
+This is how we define variables from the text. Easy enough. 
+
+    $$('.input', container).forEach( el=> {
+        let ds = el.dataset;
+        let name = ds.name;
+        let inp = inputs[name] = makeTypedInput(el, ds.type || 'real', {value:ds.value} );
+        let v = scope[name] = inp.varVal;
+        link(update(name), v);
+    });
+
+[deal with outputs]()
+
+This is a little trickier. We need to link the variables to change the output
+expression whenever the variable gets updated. This is what the whole var
+setup is for, but they may not be in existence yet here. 
+
+    $$('.output', container).forEach( el => {
+        let ds = el.dataset;
+        let template = ds.value || '';
+        
+        let bits = template.split('%'); 
+        let first = bits.shift(); //first bit is before percent
+        bits.forEach( (bit) => {
+            if (bit[0] === ' ') {
+                return;  // actual percent, skip 
+            }
+            let ind = bit.indexOf(' ');
+            if (ind === -1) { ind = bit.length;}
+            let vname = bit.slice(0,ind);
+            let o = outs[vname] = outs[vname] || [];
+            o.push(el);
+        });
+        katex.render(replace(el.dataset.value), el);
+    });
+
+[inputs]()
+
+NOT USED NOW
+
+
+This runs through the input expressions and converts them into variables. 
+
+
+    (...names) => {
+        let ret = {};
+        names.forEach( (n) => {
+            let v = scope[n];
+            if (!v) {
+                console.error("missing variable " + n);
+                return;
+            }
+            ret[n] = scope[n].varVal 
+        });
+        return ret;
+    };
+
+
+[outputs]()
+
+This takes in an object whose key is the scope name and whose value is a
+linked variable whose change should trigger an update. 
+
+    (obj) => {
+        Object.keys(obj).forEach( (key) => {
+            let local = update(key);
+            scope[key] = obj[key];
+            link(local, obj[key]);
+            local();
+        });
+    }
+
+
+[update]() 
+
+This creates an update function that basically updates the expressions that
+are linked to the variable. 
+
+    function makeUpdate (name) {
+        return function update () {
+            let o = outs[name];
+            if (o) {
+                o.forEach( (el) => {
+                    let text = replace(el.dataset.value);
+                    katex.render(text, el);
+                });
+            }
+        };
+    }
+
+[replace]() 
+
+This replaces all instances of `%var` with values. If no such var exists,
+console.error it and put a 0.
+
+Tricky bit was to make sure to leave a percent sign there. If an actual
+percent sign, put a space immediately after it. If need an actual space after
+the actual percent, use two spaces. Also true of vars. 
+
+    (txt) => {
+        let bits = txt.split('%'); 
+        let first = bits.shift(); //first bit is before percent
+        let replaced = bits.map( (bit) => {
+            if (bit[0] === ' ') {
+                return '%' + bit.slice(1); //strip space, but no var here actual %
+            }
+            let ind = bit.indexOf(' ');
+            if (ind === -1) { ind = bit.length;}
+            let vname = bit.slice(0,ind);
+            let rest = bit.slice(ind+1);
+            let v = scope[vname];
+            if (!v) { 
+                v = '';
+            } else {
+                v = v.value;
+            }
+            return v + rest;
+        }).join('');
+        return first+replaced;
+    }
+    
 

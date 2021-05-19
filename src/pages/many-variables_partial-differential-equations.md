@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/partial-differential-equations, _'intro |md',
             /many-variables/partial-differential-equations/partial-versus-ordinary,  _'Partial versus Ordinary',
-          /many-variables/partial-differential-equations/verifying-solutions,  _'Verifying Solutions',
-          /many-variables/partial-differential-equations/laplacian-equations,  _'Laplacian Equations',
-          /many-variables/partial-differential-equations/boundary-conditions,  _'Boundary Conditions',
-          /many-variables/partial-differential-equations/time-versus-space,  _'Time versus Space',
-          /many-variables/partial-differential-equations/approximations-in-pdes,  _'Approximations in PDEs',
-          /many-variables/partial-differential-equations/generalized-solutions,  _'Generalized Solutions'"
+            /many-variables/partial-differential-equations/verifying-solutions,  _'Verifying Solutions',
+            /many-variables/partial-differential-equations/laplacian-equations,  _'Laplacian Equations',
+            /many-variables/partial-differential-equations/boundary-conditions,  _'Boundary Conditions',
+            /many-variables/partial-differential-equations/time-versus-space,  _'Time versus Space',
+            /many-variables/partial-differential-equations/approximations-in-pdes,  _'Approximations in PDEs',
+            /many-variables/partial-differential-equations/generalized-solutions,  _'Generalized Solutions'"
 
 [../public/many-variables/partial-differential-equations.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"partial-versus-ordinary::intro:pebble"
+
+    _"verifying-solutions::intro:pebble"
+
+    _"laplacian-equations::intro:pebble"
+
+    _"boundary-conditions::intro:pebble"
+
+    _"time-versus-space::intro:pebble"
+
+    _"approximations-in-pdes::intro:pebble"
+
+    _"generalized-solutions::intro:pebble"
+
+
+[code]()
+
+    _"partial-versus-ordinary::intro:code"
+
+    _"verifying-solutions::intro:code"
+
+    _"laplacian-equations::intro:code"
+
+    _"boundary-conditions::intro:code"
+
+    _"time-versus-space::intro:code"
+
+    _"approximations-in-pdes::intro:code"
+
+    _"generalized-solutions::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /arithmetic/addition, _'intro |md',
             /arithmetic/addition/notions-of-additions,  _'Notions of Additions',
-          /arithmetic/addition/adding-single-digits,  _'Adding Single Digits',
-          /arithmetic/addition/complements-of-ten,  _'Complements of Ten',
-          /arithmetic/addition/left-to-right-addition,  _'Left to Right Addition',
-          /arithmetic/addition/significant-addition,  _'Significant Addition',
-          /arithmetic/addition/tricks-and-checks-of-addition,  _'Tricks and Checks of Addition',
-          /arithmetic/addition/properties-of-addition,  _'Properties of Addition'"
+            /arithmetic/addition/adding-single-digits,  _'Adding Single Digits',
+            /arithmetic/addition/complements-of-ten,  _'Complements of Ten',
+            /arithmetic/addition/left-to-right-addition,  _'Left to Right Addition',
+            /arithmetic/addition/significant-addition,  _'Significant Addition',
+            /arithmetic/addition/tricks-and-checks-of-addition,  _'Tricks and Checks of Addition',
+            /arithmetic/addition/properties-of-addition,  _'Properties of Addition'"
 
 [../public/arithmetic/addition.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-additions::intro:pebble"
+
+    _"adding-single-digits::intro:pebble"
+
+    _"complements-of-ten::intro:pebble"
+
+    _"left-to-right-addition::intro:pebble"
+
+    _"significant-addition::intro:pebble"
+
+    _"tricks-and-checks-of-addition::intro:pebble"
+
+    _"properties-of-addition::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-additions::intro:code"
+
+    _"adding-single-digits::intro:code"
+
+    _"complements-of-ten::intro:code"
+
+    _"left-to-right-addition::intro:code"
+
+    _"significant-addition::intro:code"
+
+    _"tricks-and-checks-of-addition::intro:code"
+
+    _"properties-of-addition::intro:code"
+
 
 [header]()
 

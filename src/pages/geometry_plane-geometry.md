@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/plane-geometry, _'intro |md',
             /geometry/plane-geometry/euclidean-lines,  _'Euclidean Lines',
-          /geometry/plane-geometry/euclidean-triangles,  _'Euclidean Triangles',
-          /geometry/plane-geometry/similarity,  _'Similarity',
-          /geometry/plane-geometry/polygons,  _'Polygons',
-          /geometry/plane-geometry/euclidean-circles,  _'Euclidean Circles',
-          /geometry/plane-geometry/transformations,  _'Transformations',
-          /geometry/plane-geometry/coordinate-proofs,  _'Coordinate Proofs'"
+            /geometry/plane-geometry/euclidean-triangles,  _'Euclidean Triangles',
+            /geometry/plane-geometry/similarity,  _'Similarity',
+            /geometry/plane-geometry/polygons,  _'Polygons',
+            /geometry/plane-geometry/euclidean-circles,  _'Euclidean Circles',
+            /geometry/plane-geometry/transformations,  _'Transformations',
+            /geometry/plane-geometry/coordinate-proofs,  _'Coordinate Proofs'"
 
 [../public/geometry/plane-geometry.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"euclidean-lines::intro:pebble"
+
+    _"euclidean-triangles::intro:pebble"
+
+    _"similarity::intro:pebble"
+
+    _"polygons::intro:pebble"
+
+    _"euclidean-circles::intro:pebble"
+
+    _"transformations::intro:pebble"
+
+    _"coordinate-proofs::intro:pebble"
+
+
+[code]()
+
+    _"euclidean-lines::intro:code"
+
+    _"euclidean-triangles::intro:code"
+
+    _"similarity::intro:code"
+
+    _"polygons::intro:code"
+
+    _"euclidean-circles::intro:code"
+
+    _"transformations::intro:code"
+
+    _"coordinate-proofs::intro:code"
+
 
 [header]()
 

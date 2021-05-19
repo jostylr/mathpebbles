@@ -2,17 +2,21 @@
 
     _"pieces | page /algebra/polynomials, _'intro |md',
             /algebra/polynomials/arithmetic-of-polynomials,  _'Arithmetic of Polynomials',
-          /algebra/polynomials/the-questions-of-polynomials,  _'The Questions of Polynomials',
-          /algebra/polynomials/synthetic-division,  _'Synthetic Division',
-          /algebra/polynomials/zeros-of-polynomials,  _'Zeros of Polynomials',
-          /algebra/polynomials/calculus-of-polynomials,  _'Calculus of Polynomials',
-          /algebra/polynomials/graphing-polynomials,  _'Graphing polynomials',
-          /algebra/polynomials/powering-polynomials,  _'Powering Polynomials'"
+            /algebra/polynomials/the-questions-of-polynomials,  _'The Questions of Polynomials',
+            /algebra/polynomials/synthetic-division,  _'Synthetic Division',
+            /algebra/polynomials/zeros-of-polynomials,  _'Zeros of Polynomials',
+            /algebra/polynomials/calculus-of-polynomials,  _'Calculus of Polynomials',
+            /algebra/polynomials/graphing-polynomials,  _'Graphing polynomials',
+            /algebra/polynomials/powering-polynomials,  _'Powering Polynomials'"
 
 [../public/algebra/polynomials.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"arithmetic-of-polynomials::intro:pebble"
+
+    _"the-questions-of-polynomials::intro:pebble"
+
+    _"synthetic-division::intro:pebble"
+
+    _"zeros-of-polynomials::intro:pebble"
+
+    _"calculus-of-polynomials::intro:pebble"
+
+    _"graphing-polynomials::intro:pebble"
+
+    _"powering-polynomials::intro:pebble"
+
+
+[code]()
+
+    _"arithmetic-of-polynomials::intro:code"
+
+    _"the-questions-of-polynomials::intro:code"
+
+    _"synthetic-division::intro:code"
+
+    _"zeros-of-polynomials::intro:code"
+
+    _"calculus-of-polynomials::intro:code"
+
+    _"graphing-polynomials::intro:code"
+
+    _"powering-polynomials::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/higher-dimensions, _'intro |md',
             /geometry/higher-dimensions/three-dimensions,  _'Three Dimensions',
-          /geometry/higher-dimensions/volumes,  _'Volumes',
-          /geometry/higher-dimensions/surface-area,  _'Surface area',
-          /geometry/higher-dimensions/even-higher-dimensions,  _'Even Higher Dimensions',
-          /geometry/higher-dimensions/many-variable-inequalities,  _'Many Variable Inequalities',
-          /geometry/higher-dimensions/norms-and-angles,  _'Norms and Angles',
-          /geometry/higher-dimensions/transforming-space,  _'Transforming Space'"
+            /geometry/higher-dimensions/volumes,  _'Volumes',
+            /geometry/higher-dimensions/surface-area,  _'Surface area',
+            /geometry/higher-dimensions/even-higher-dimensions,  _'Even Higher Dimensions',
+            /geometry/higher-dimensions/many-variable-inequalities,  _'Many Variable Inequalities',
+            /geometry/higher-dimensions/norms-and-angles,  _'Norms and Angles',
+            /geometry/higher-dimensions/transforming-space,  _'Transforming Space'"
 
 [../public/geometry/higher-dimensions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"three-dimensions::intro:pebble"
+
+    _"volumes::intro:pebble"
+
+    _"surface-area::intro:pebble"
+
+    _"even-higher-dimensions::intro:pebble"
+
+    _"many-variable-inequalities::intro:pebble"
+
+    _"norms-and-angles::intro:pebble"
+
+    _"transforming-space::intro:pebble"
+
+
+[code]()
+
+    _"three-dimensions::intro:code"
+
+    _"volumes::intro:code"
+
+    _"surface-area::intro:code"
+
+    _"even-higher-dimensions::intro:code"
+
+    _"many-variable-inequalities::intro:code"
+
+    _"norms-and-angles::intro:code"
+
+    _"transforming-space::intro:code"
+
 
 [header]()
 

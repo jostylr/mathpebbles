@@ -2,17 +2,21 @@
 
     _"pieces | page /probability-and-statistics/descriptive-statistics, _'intro |md',
             /probability-and-statistics/descriptive-statistics/gathering-data,  _'Gathering Data',
-          /probability-and-statistics/descriptive-statistics/notions-of-centrality,  _'Notions of Centrality',
-          /probability-and-statistics/descriptive-statistics/notions-of-spread,  _'Notions of Spread',
-          /probability-and-statistics/descriptive-statistics/charts,  _'Charts',
-          /probability-and-statistics/descriptive-statistics/other-measures,  _'Other Measures',
-          /probability-and-statistics/descriptive-statistics/stories,  _'Stories',
-          /probability-and-statistics/descriptive-statistics/lies,  _'Lies'"
+            /probability-and-statistics/descriptive-statistics/notions-of-centrality,  _'Notions of Centrality',
+            /probability-and-statistics/descriptive-statistics/notions-of-spread,  _'Notions of Spread',
+            /probability-and-statistics/descriptive-statistics/charts,  _'Charts',
+            /probability-and-statistics/descriptive-statistics/other-measures,  _'Other Measures',
+            /probability-and-statistics/descriptive-statistics/stories,  _'Stories',
+            /probability-and-statistics/descriptive-statistics/lies,  _'Lies'"
 
 [../public/probability-and-statistics/descriptive-statistics.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"gathering-data::intro:pebble"
+
+    _"notions-of-centrality::intro:pebble"
+
+    _"notions-of-spread::intro:pebble"
+
+    _"charts::intro:pebble"
+
+    _"other-measures::intro:pebble"
+
+    _"stories::intro:pebble"
+
+    _"lies::intro:pebble"
+
+
+[code]()
+
+    _"gathering-data::intro:code"
+
+    _"notions-of-centrality::intro:code"
+
+    _"notions-of-spread::intro:code"
+
+    _"charts::intro:code"
+
+    _"other-measures::intro:code"
+
+    _"stories::intro:code"
+
+    _"lies::intro:code"
+
 
 [header]()
 

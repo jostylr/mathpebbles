@@ -2,17 +2,21 @@
 
     _"pieces | page /arithmetic, _'intro |md',
             /arithmetic/counting,  _'Counting',
-          /arithmetic/addition,  _'Addition',
-          /arithmetic/multiplication,  _'Multiplication',
-          /arithmetic/subtraction,  _'Subtraction',
-          /arithmetic/division,  _'Division',
-          /arithmetic/powers,  _'Powers',
-          /arithmetic/constructing-numbers,  _'Constructing Numbers'"
+            /arithmetic/addition,  _'Addition',
+            /arithmetic/multiplication,  _'Multiplication',
+            /arithmetic/subtraction,  _'Subtraction',
+            /arithmetic/division,  _'Division',
+            /arithmetic/powers,  _'Powers',
+            /arithmetic/constructing-numbers,  _'Constructing Numbers'"
 
 [../public/arithmetic.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"counting::intro:pebble"
+
+    _"addition::intro:pebble"
+
+    _"multiplication::intro:pebble"
+
+    _"subtraction::intro:pebble"
+
+    _"division::intro:pebble"
+
+    _"powers::intro:pebble"
+
+    _"constructing-numbers::intro:pebble"
+
+
+[code]()
+
+    _"counting::intro:code"
+
+    _"addition::intro:code"
+
+    _"multiplication::intro:code"
+
+    _"subtraction::intro:code"
+
+    _"division::intro:code"
+
+    _"powers::intro:code"
+
+    _"constructing-numbers::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/linear-algebra, _'intro |md',
             /many-variables/linear-algebra/vectors,  _'Vectors',
-          /many-variables/linear-algebra/subspaces,  _'Subspaces',
-          /many-variables/linear-algebra/matrices,  _'Matrices',
-          /many-variables/linear-algebra/solving-linear-systems,  _'Solving Linear Systems',
-          /many-variables/linear-algebra/changing-the-basis,  _'Changing the Basis',
-          /many-variables/linear-algebra/diagonalizations,  _'Diagonalizations',
-          /many-variables/linear-algebra/complex-linear-spaces,  _'Complex Linear Spaces'"
+            /many-variables/linear-algebra/subspaces,  _'Subspaces',
+            /many-variables/linear-algebra/matrices,  _'Matrices',
+            /many-variables/linear-algebra/solving-linear-systems,  _'Solving Linear Systems',
+            /many-variables/linear-algebra/changing-the-basis,  _'Changing the Basis',
+            /many-variables/linear-algebra/diagonalizations,  _'Diagonalizations',
+            /many-variables/linear-algebra/complex-linear-spaces,  _'Complex Linear Spaces'"
 
 [../public/many-variables/linear-algebra.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"vectors::intro:pebble"
+
+    _"subspaces::intro:pebble"
+
+    _"matrices::intro:pebble"
+
+    _"solving-linear-systems::intro:pebble"
+
+    _"changing-the-basis::intro:pebble"
+
+    _"diagonalizations::intro:pebble"
+
+    _"complex-linear-spaces::intro:pebble"
+
+
+[code]()
+
+    _"vectors::intro:code"
+
+    _"subspaces::intro:code"
+
+    _"matrices::intro:code"
+
+    _"solving-linear-systems::intro:code"
+
+    _"changing-the-basis::intro:code"
+
+    _"diagonalizations::intro:code"
+
+    _"complex-linear-spaces::intro:code"
+
 
 [header]()
 

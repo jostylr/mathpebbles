@@ -39,6 +39,7 @@ By adding to a [prepost](https://github.com/jostylr/literate-programming/blob/ma
         const makePath = _"make path";
         const makeNav = _"make nav";
         const nextPrev = _"next prev";
+        const shoelacify = _"shoelace full";
         const base = `_"html"`;
         let pieces = base.split('!-!');
         const replace = {};
@@ -130,7 +131,8 @@ the section name and the second one being a path for the Explore button.
             heading = `<h2>${name}</h2>`;
         }
         const body = args[i+1].trim();
-        const [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
+        let [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
+        full = shoelacify(full || ''); 
         main += `<sl-details id="${slugify(name)}">
             <div slot="summary">
                 ${heading}
@@ -142,6 +144,182 @@ the section name and the second one being a path for the Explore button.
 
 
 
+## Shoelace full
+
+This is a complicated bit of code where we use our own little crappy DSL to
+slot in elements of the shoelace variety (and maybe others too) 
+
+Here is the lingo. All of the special stuff is of the form !NAME. Some have
+some verbage on that same line, most don't. Many consume stuff in subsequent
+lines until some ending tag. 
+
+* PEBBLE  Single line, takes in a pebble name. The code to create it is found
+  elsewhere. 
+* VIDEO Single line, two pieces: a url with no space and then the rest is a
+  title
+* PROOF: whatever for a proof environment.  QED.
+* DETAILS: Expects a list where per item first paragraph is the summary and
+  the rest are the details. Each list item is its own detail. For now, no
+  sublists please! If you need sublists, use the longer form SUMMARY/DETAIL.
+  Ends with OVER.
+* SUMMARY: (summary stuff) DETAIL: (detail stuff) DONE.  A standalone detail
+  item
+* PROGRAM: whatever for a program environment. STOP.
+* CODE name: starting code block  SOLUTION: Some explanatory text and a code
+  block to sub in for the solution. END.
+
+---
+
+    function shoelacify (text) {
+        let reg = /\!([A-Z]+)(.*)$/;
+        let lines = text.split('\n');
+        let ret = [];
+        let n = lines.length;
+        let i;
+        for (i = 0; i < n; i+= 1) {
+            let line = lines[i];
+            if (line.slice(0,4) === '<p>!') {
+                let match = line.match(reg);
+                let type = match?.[1] || '';
+                let end = (match?.[2] || '').
+                    trim().
+                    slice(0, -4); //slice is to get rid of closing p element
+
+                switch (type) {
+                case 'PEBBLE' : {
+                    let id = end.trim();
+                    ret.push('<div class="pebble" id="'+id+'"></div>');
+                break; }
+                case 'VIDEO':
+                    end = end.trim();
+                    let ind = end.indexOf(' ');
+                    let url = end.slice(0, ind);
+                    let title = end.slice(ind+1);
+                    ret.push('<sl-details summary="Video: '+title+'"><iframe width="560" height="315" src="'+url+'" title="YouTube video player" frameborder="0"  allowfullscreen></iframe></sl-details>');
+                break;
+                case 'PROOF':
+                    ret.push('<button type="button" class="explore open-drawer">Proof</button><sl-drawer class="proof" placement="left">');
+                break;
+                case 'QED':
+                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
+                break;
+                case 'DETAILS':
+                    _":details"
+                break;
+                case 'SUMMARY':
+                    ret.push('<sl-details><div slot="summary">');
+                break;
+                case 'DETAIL': {
+                    ret.push('</div>');
+                break; }
+                case 'DONE':
+                    ret.push('</sl-details>');
+                break;
+                case 'PROGRAM' :
+                    ret.push('<button type="button" class="explore open-drawer">Program</button><sl-drawer placement="right" class="program">');
+                break;
+                case 'STOP':
+                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
+                break;
+                case 'CODE': {
+                    let id = end.slice(0,-1).trim();
+                    ret.push('<sl-details class="code-block" data-id="'+id+'"><div class="try-code code" slot="summary">');
+                break; }
+                case 'SOLUTION':
+                    ret.push('</div><div class="solution-code code" >');
+                break;
+                case 'END':
+                    ret.push('</div></sl-details>');
+                break;
+                default: 
+                    ret.push(line);
+                }
+            } else {
+                ret.push(line);
+            }
+        }
+
+        return ret.join('\n');
+    }
+
+[details]()
+
+This is the one complicated bit. The details takes a list and converts each
+item into a detail object. The first paragraph becomes the summary (slot =
+summary). If a list is not the thing immediately after the details item, then
+we assume it is a detail as well with the list itself being the reveal item
+(so an invitation to do something, then click to get hints in list, then click
+on each hint). 
+
+    let j = i+1;
+    let stuffInBetween = false;
+    let test = lines[j].slice(0,4);
+    while ( (test !== '<ol>') && (test !== '<ul>')) {
+        j += 1;
+        stuffInBetween = true;
+        test = lines[j].slice(0,4);
+    }
+    if (stuffInBetween) { //non list stuff
+        ret.push('<sl-details><div slot="summary">');
+        for (i=i+1; i < j; i += 1) {
+            ret.push(lines[i]);
+        }
+        ret.push('</div>');
+    }
+
+We are now on the list. The first line is the open list one;
+
+Not sure if we should worry about case of `<li>something</li>` Experiments
+suggest that should not happen. 
+    
+
+    ret.push(lines[j]);
+    let listEnd = '</' + lines[j].slice(1);
+    j += 1;
+    let line = lines[j];
+    let summary = false;
+    while (line !== listEnd) {
+        if (summary) {
+            ret.push(line + '</div>');
+            summary = false;
+        } else if (line === '<li>') {
+            ret.push('<li><sl-details><div slot="summary">');
+            summary = true;
+        } else if (line === '</li>') {
+            ret.push('</sl-details></li>');
+        } else {
+            ret.push(line);
+        }
+        j+= 1;
+        line = lines[j];
+    }
+
+    ret.push(line);
+
+    if (stuffInBetween) {
+        ret.push('</sl-details>');
+    }
+
+    i = j;
+
+
+[css]()
+
+We want the sub detail list to have no padding
+
+    sl-details ol, sl-details ul {
+        padding-left:2px;
+    }
+
+    sl-drawer{
+        --size : clamp(200px, 90vw, 600px);
+    }
+
+    sl-drawer[placement=left] [slot=footer] {
+        float:left;
+    }
+
+
 ## Slugify
 
 A simple slugification
@@ -150,7 +328,7 @@ A simple slugification
         return str.
             trim().
             toLowerCase().
-            replace(/[^A-Za-z0-9]/g, '-').
+            replace(/[^A-Za-z0-9]/g, '-');
     }
 
 
@@ -427,7 +605,20 @@ This is where we do some common behavior on event listening.
             } else if (hash !== el.id) {
                 document.location.hash = el.id;
             }
+            let tabby = $('[tabindex]', el);
+            if (tabby) {
+                tabby.focus();
+            } else {
+                el.focus();
+            }
         });
+    });
+
+To have nested details, it was necessary to stop the propagation of the show
+events otherwise they would close. Not sure if it is the accordion part. 
+
+    $$('sl-details').forEach( el => {
+        el.addEventListener('sl-show', (ev) => ev.stopPropagation());
     });
 
     let hash = document.location.hash;
@@ -475,7 +666,20 @@ My homespun Var binding
 Katex  global: katex
 
         <link rel="stylesheet" href="/r/katex.css">
+        <style>.katex { font-size:1em;}</style>
         <script defer src="/r/katex.js" ></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                      {left: '\\\\(', right: '\\\\)', display: false},
+                      {left: '\\\\[', right: '\\\\]', display: true}
+                    ],
+                throwOnError : false
+                });
+            });
+        </script> 
 
 
 
@@ -519,14 +723,150 @@ There is also math.js mainly used for high precision arithmetic.
             let keyInfo = MP.initKeys();
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
             let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys); 
-  
+            
+            let {scope, inputs, outputs} = MP.makeScope(makeTypedInput);
+
             !-!SCRIPT!-!
             
+            _"set trigger for pebbles"
+
+            _"setup code"
         });
 
     </script>
     </body>
     </html>
+
+
+### set trigger for pebbles
+
+Here we listen for show events on details and drawers and then we run the
+initiation code in the pebbles object. Just do this once per detail/drawer.
+Need to filter out sub details. 
+
+The placement of the pebble initiation code gives it access to any of the
+variables in the additional script area. 
+
+
+    const pebbles = {
+        !-!PEBBLES!-!
+    };
+
+    const initiatePebble = function initiatePebble (ev) {
+        const el = this;
+        let allPebbles = $$( '.pebble', el);
+        let subPebbles = $$( 'sl-details .pebble, sl-drawer .pebble', el);
+        let topPebbles = allPebbles.
+            filter( (alEl) => !(subPebbles.some( (subEl) => subEl === alEl ) ) );
+        topPebbles.forEach( (topEl) => {
+            try{
+                pebbles[topEl.id](topEl);
+            } catch (e) {
+                console.log("Problem with pebble:" + topEl.id, e);
+            }
+        });
+        el.removeEventListener('sl-show', initiatePebble);
+    };
+
+
+
+    $$('sl-details, sl-drawer').forEach( el => {
+        el.addEventListener('sl-show', initiatePebble);
+    });
+
+
+### Setup code
+
+
+    const code = {
+        !-!CODE!-!
+    };
+
+
+We need to setup the code block here. It comes to us with a `pre code` nesting
+and we want it to be a textarea. 
+
+We allow for a setup phase of the code. Generally we will want that so that
+the coding can be focused on the cool stuff. This might be setting up a
+jsxgraph board or some kind of data. 
+
+
+    $$('.code').
+        forEach(par => {
+            let codeText = $('code', par)?.innerText || '';
+            $('pre', par).outerHTML = \`<div class="container">_":code html"</div><sl-button>Show Working Program</sl-button> \`;
+            let con = $('.container', par);
+            con.addEventListener('click', (ev) => ev.stopPropagation() );
+
+For the textarea, we want to prevent any other reactions from happening.  
+
+            let ta = $('textarea', par);
+            ta.addEventListener('keydown', (ev) => ev.stopPropagation()); 
+            let logout = $('.log', par);
+            let log = _":log";
+            let out = $('.out', par);
+            let preRun = code[par.parentNode.dataset.id] || '';  
+            $('.run', par).addEventListener('click', () => {
+                _":run code"
+            });
+        })
+    ;
+
+[run code]() 
+
+
+The log function and the out element are available to the eval code. 
+
+    logout.innerText = '';
+    try {
+       eval(preRun+'\\n'+ta.value);
+    } catch(e) {
+        log(e);
+    }
+
+
+[log]() 
+
+This is a simple log function. 
+
+    function log (...args) {
+        let text = logout.innerText;
+        if (text) { args.shift(text) } //adds newline
+        text += args.map(
+                obj => obj.toString()
+            ).join('\\n');
+        logout.innerText = text;
+    }
+
+
+[code html]()
+
+
+    <textarea class="text-code">\${codeText}</textarea>
+    <pre class="log"></pre>
+    <div class="buttons">
+    <sl-button class="save">Save</sl-button>
+    <sl-button class="run">Run</sl-button>
+    <sl-button class="reset">Reset</sl-button>
+    <sl-button class="restore">Restore</sl-button>
+    </div>
+    <div class="out"></div>
+
+[css]()
+
+
+    .text-code {
+        width:clamp(10px, 70vw, 500px);
+        height:150px;
+    }
+
+
+[styling the code]() 
+
+TODO:  https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax-highlighted-code/
+
+This would allow the textareas to have syntax highlighting. 
+
 
 
 ### Global CSS
@@ -536,6 +876,14 @@ There is also math.js mainly used for high precision arithmetic.
         max-width: 80em;
         margin-left: auto;
         margin-right: auto;
+    }
+
+
+
+To give space for underline of number, we increase the line height a bit. 
+
+    p {
+        line-height: 1.2;
     }
 
     sl-input {
@@ -551,7 +899,7 @@ Specifying width otherwise the explore buttons don't line up.
         flex-wrap:wrap;
     }
 
-    .explore:link, .explore:visited {
+    .explore, .explore:link, .explore:visited {
       background-color: #69ceff;
       font-size:80%;
       color: black;
@@ -562,15 +910,23 @@ Specifying width otherwise the explore buttons don't line up.
       font-variant: small-caps;
       border-radius:4px;
     }
+    
+    .explore:visited {
+        filter:brightness(80%);
+    }
 
-    .explore:hover, .explore:active {
+    .explore:hover, .explore:active, .explore:focus {
       filter: drop-shadow(3px 3px 2px);
+      outline:none;
     }
 
     _"make path:css"
     _"next prev:css"
     _"accordion:css"
+    _"shoelace full:css"
+    _"setup code:css"
     _"common::css"
+
         
 
     
@@ -589,13 +945,10 @@ Specifying width otherwise the explore buttons don't line up.
 
 
      document.addEventListener("DOMContentLoaded", function() {
-        $$('.crumbs  sl-button' ).forEach(el => el.classList.remove('hide'));
 
         _"accordion:js"
 
-        $$('a.explore').forEach( (el) => {
-            el.addEventListener( 'click', (ev) => ev.stopPropagation()); 
-        });
+        _"common::content loaded"
     });
 
 

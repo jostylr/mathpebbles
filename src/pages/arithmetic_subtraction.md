@@ -2,17 +2,21 @@
 
     _"pieces | page /arithmetic/subtraction, _'intro |md',
             /arithmetic/subtraction/removal,  _'Removal',
-          /arithmetic/subtraction/complement-subtraction,  _'Complement Subtraction',
-          /arithmetic/subtraction/left-to-right-subtraction,  _'Left to Right Subtraction',
-          /arithmetic/subtraction/negative-numbers,  _'Negative Numbers',
-          /arithmetic/subtraction/significant-subtraction,  _'Significant Subtraction',
-          /arithmetic/subtraction/tricks-and-checks-of-subtraction,  _'Tricks and Checks of Subtraction',
-          /arithmetic/subtraction/properties-of-subtraction,  _'Properties of Subtraction'"
+            /arithmetic/subtraction/complement-subtraction,  _'Complement Subtraction',
+            /arithmetic/subtraction/left-to-right-subtraction,  _'Left to Right Subtraction',
+            /arithmetic/subtraction/negative-numbers,  _'Negative Numbers',
+            /arithmetic/subtraction/significant-subtraction,  _'Significant Subtraction',
+            /arithmetic/subtraction/tricks-and-checks-of-subtraction,  _'Tricks and Checks of Subtraction',
+            /arithmetic/subtraction/properties-of-subtraction,  _'Properties of Subtraction'"
 
 [../public/arithmetic/subtraction.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"removal::intro:pebble"
+
+    _"complement-subtraction::intro:pebble"
+
+    _"left-to-right-subtraction::intro:pebble"
+
+    _"negative-numbers::intro:pebble"
+
+    _"significant-subtraction::intro:pebble"
+
+    _"tricks-and-checks-of-subtraction::intro:pebble"
+
+    _"properties-of-subtraction::intro:pebble"
+
+
+[code]()
+
+    _"removal::intro:code"
+
+    _"complement-subtraction::intro:code"
+
+    _"left-to-right-subtraction::intro:code"
+
+    _"negative-numbers::intro:code"
+
+    _"significant-subtraction::intro:code"
+
+    _"tricks-and-checks-of-subtraction::intro:code"
+
+    _"properties-of-subtraction::intro:code"
+
 
 [header]()
 

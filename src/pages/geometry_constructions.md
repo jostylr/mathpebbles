@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/constructions, _'intro |md',
             /geometry/constructions/ruler-and-compass,  _'Ruler and Compass',
-          /geometry/constructions/constructions-with-lines,  _'Constructions with Lines',
-          /geometry/constructions/constructing-angles,  _'Constructing Angles',
-          /geometry/constructions/drawing-triangles,  _'Drawing Triangles',
-          /geometry/constructions/constructions-with-circles,  _'Constructions with Circles',
-          /geometry/constructions/trisecting-the-angle,  _'Trisecting the Angle',
-          /geometry/constructions/constructing-solutions-to-equations,  _'Constructing Solutions to Equations'"
+            /geometry/constructions/constructions-with-lines,  _'Constructions with Lines',
+            /geometry/constructions/constructing-angles,  _'Constructing Angles',
+            /geometry/constructions/drawing-triangles,  _'Drawing Triangles',
+            /geometry/constructions/constructions-with-circles,  _'Constructions with Circles',
+            /geometry/constructions/trisecting-the-angle,  _'Trisecting the Angle',
+            /geometry/constructions/constructing-solutions-to-equations,  _'Constructing Solutions to Equations'"
 
 [../public/geometry/constructions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"ruler-and-compass::intro:pebble"
+
+    _"constructions-with-lines::intro:pebble"
+
+    _"constructing-angles::intro:pebble"
+
+    _"drawing-triangles::intro:pebble"
+
+    _"constructions-with-circles::intro:pebble"
+
+    _"trisecting-the-angle::intro:pebble"
+
+    _"constructing-solutions-to-equations::intro:pebble"
+
+
+[code]()
+
+    _"ruler-and-compass::intro:code"
+
+    _"constructions-with-lines::intro:code"
+
+    _"constructing-angles::intro:code"
+
+    _"drawing-triangles::intro:code"
+
+    _"constructions-with-circles::intro:code"
+
+    _"trisecting-the-angle::intro:code"
+
+    _"constructing-solutions-to-equations::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/infinite-processes, _'intro |md',
             /functions/infinite-processes/sequences,  _'Sequences',
-          /functions/infinite-processes/sums-and-products,  _'Sums and products',
-          /functions/infinite-processes/off-to-infinity,  _'Off to Infinity',
-          /functions/infinite-processes/limits,  _'Limits',
-          /functions/infinite-processes/iterative-processes,  _'Iterative Processes',
-          /functions/infinite-processes/errors,  _'Errors',
-          /functions/infinite-processes/the-reality-of-infinity,  _'The Reality of Infinity'"
+            /functions/infinite-processes/sums-and-products,  _'Sums and products',
+            /functions/infinite-processes/off-to-infinity,  _'Off to Infinity',
+            /functions/infinite-processes/limits,  _'Limits',
+            /functions/infinite-processes/iterative-processes,  _'Iterative Processes',
+            /functions/infinite-processes/errors,  _'Errors',
+            /functions/infinite-processes/the-reality-of-infinity,  _'The Reality of Infinity'"
 
 [../public/functions/infinite-processes.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"sequences::intro:pebble"
+
+    _"sums-and-products::intro:pebble"
+
+    _"off-to-infinity::intro:pebble"
+
+    _"limits::intro:pebble"
+
+    _"iterative-processes::intro:pebble"
+
+    _"errors::intro:pebble"
+
+    _"the-reality-of-infinity::intro:pebble"
+
+
+[code]()
+
+    _"sequences::intro:code"
+
+    _"sums-and-products::intro:code"
+
+    _"off-to-infinity::intro:code"
+
+    _"limits::intro:code"
+
+    _"iterative-processes::intro:code"
+
+    _"errors::intro:code"
+
+    _"the-reality-of-infinity::intro:code"
+
 
 [header]()
 

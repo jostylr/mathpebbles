@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/analysts, _'intro |md',
             /practitioners/analysts/real-analysis,  _'Real Analysis',
-          /practitioners/analysts/complex-analysis,  _'Complex Analysis',
-          /practitioners/analysts/numerical-analysis,  _'Numerical Analysis',
-          /practitioners/analysts/functional-analysis,  _'Functional Analysis',
-          /practitioners/analysts/calculus-of-variations,  _'Calculus of Variations',
-          /practitioners/analysts/delta-functions,  _'Delta Functions',
-          /practitioners/analysts/optimization,  _'Optimization'"
+            /practitioners/analysts/complex-analysis,  _'Complex Analysis',
+            /practitioners/analysts/numerical-analysis,  _'Numerical Analysis',
+            /practitioners/analysts/functional-analysis,  _'Functional Analysis',
+            /practitioners/analysts/calculus-of-variations,  _'Calculus of Variations',
+            /practitioners/analysts/delta-functions,  _'Delta Functions',
+            /practitioners/analysts/optimization,  _'Optimization'"
 
 [../public/practitioners/analysts.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"real-analysis::intro:pebble"
+
+    _"complex-analysis::intro:pebble"
+
+    _"numerical-analysis::intro:pebble"
+
+    _"functional-analysis::intro:pebble"
+
+    _"calculus-of-variations::intro:pebble"
+
+    _"delta-functions::intro:pebble"
+
+    _"optimization::intro:pebble"
+
+
+[code]()
+
+    _"real-analysis::intro:code"
+
+    _"complex-analysis::intro:code"
+
+    _"numerical-analysis::intro:code"
+
+    _"functional-analysis::intro:code"
+
+    _"calculus-of-variations::intro:code"
+
+    _"delta-functions::intro:code"
+
+    _"optimization::intro:code"
+
 
 [header]()
 

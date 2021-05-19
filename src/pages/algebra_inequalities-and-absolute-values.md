@@ -2,17 +2,21 @@
 
     _"pieces | page /algebra/inequalities-and-absolute-values, _'intro |md',
             /algebra/inequalities-and-absolute-values/basic-inequalities,  _'Basic Inequalities',
-          /algebra/inequalities-and-absolute-values/polynomial-inequalities,  _'Polynomial Inequalities',
-          /algebra/inequalities-and-absolute-values/triangle-inequality,  _'Triangle Inequality',
-          /algebra/inequalities-and-absolute-values/absolute-value,  _'Absolute Value',
-          /algebra/inequalities-and-absolute-values/solving-absolute-value-equations,  _'Solving Absolute Value Equations',
-          /algebra/inequalities-and-absolute-values/absolute-value-inequalities,  _'Absolute Value Inequalities',
-          /algebra/inequalities-and-absolute-values/distance,  _'Distance'"
+            /algebra/inequalities-and-absolute-values/polynomial-inequalities,  _'Polynomial Inequalities',
+            /algebra/inequalities-and-absolute-values/triangle-inequality,  _'Triangle Inequality',
+            /algebra/inequalities-and-absolute-values/absolute-value,  _'Absolute Value',
+            /algebra/inequalities-and-absolute-values/solving-absolute-value-equations,  _'Solving Absolute Value Equations',
+            /algebra/inequalities-and-absolute-values/absolute-value-inequalities,  _'Absolute Value Inequalities',
+            /algebra/inequalities-and-absolute-values/distance,  _'Distance'"
 
 [../public/algebra/inequalities-and-absolute-values.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"basic-inequalities::intro:pebble"
+
+    _"polynomial-inequalities::intro:pebble"
+
+    _"triangle-inequality::intro:pebble"
+
+    _"absolute-value::intro:pebble"
+
+    _"solving-absolute-value-equations::intro:pebble"
+
+    _"absolute-value-inequalities::intro:pebble"
+
+    _"distance::intro:pebble"
+
+
+[code]()
+
+    _"basic-inequalities::intro:code"
+
+    _"polynomial-inequalities::intro:code"
+
+    _"triangle-inequality::intro:code"
+
+    _"absolute-value::intro:code"
+
+    _"solving-absolute-value-equations::intro:code"
+
+    _"absolute-value-inequalities::intro:code"
+
+    _"distance::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/integral-calculus, _'intro |md',
             /functions/integral-calculus/notions-of-integrals,  _'Notions of Integrals',
-          /functions/integral-calculus/fundamental-theorem-of-calculus,  _'Fundamental Theorem of Calculus',
-          /functions/integral-calculus/integral-rules,  _'Integral Rules',
-          /functions/integral-calculus/numerical-integration,  _'Numerical Integration',
-          /functions/integral-calculus/arc-length-of-functions,  _'Arc Length of Functions',
-          /functions/integral-calculus/volumes-of-revolution,  _'Volumes of Revolution',
-          /functions/integral-calculus/error-estimates,  _'Error Estimates'"
+            /functions/integral-calculus/fundamental-theorem-of-calculus,  _'Fundamental Theorem of Calculus',
+            /functions/integral-calculus/integral-rules,  _'Integral Rules',
+            /functions/integral-calculus/numerical-integration,  _'Numerical Integration',
+            /functions/integral-calculus/arc-length-of-functions,  _'Arc Length of Functions',
+            /functions/integral-calculus/volumes-of-revolution,  _'Volumes of Revolution',
+            /functions/integral-calculus/error-estimates,  _'Error Estimates'"
 
 [../public/functions/integral-calculus.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-integrals::intro:pebble"
+
+    _"fundamental-theorem-of-calculus::intro:pebble"
+
+    _"integral-rules::intro:pebble"
+
+    _"numerical-integration::intro:pebble"
+
+    _"arc-length-of-functions::intro:pebble"
+
+    _"volumes-of-revolution::intro:pebble"
+
+    _"error-estimates::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-integrals::intro:code"
+
+    _"fundamental-theorem-of-calculus::intro:code"
+
+    _"integral-rules::intro:code"
+
+    _"numerical-integration::intro:code"
+
+    _"arc-length-of-functions::intro:code"
+
+    _"volumes-of-revolution::intro:code"
+
+    _"error-estimates::intro:code"
+
 
 [header]()
 

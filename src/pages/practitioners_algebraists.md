@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/algebraists, _'intro |md',
             /practitioners/algebraists/abstract-algebra,  _'Abstract Algebra',
-          /practitioners/algebraists/number-theory,  _'Number Theory',
-          /practitioners/algebraists/cryptography,  _'Cryptography',
-          /practitioners/algebraists/algebraic-geometry,  _'Algebraic Geometry',
-          /practitioners/algebraists/algebraic-topology,  _'Algebraic Topology',
-          /practitioners/algebraists/computer-algebra,  _'Computer Algebra',
-          /practitioners/algebraists/category-theory,  _'Category Theory'"
+            /practitioners/algebraists/number-theory,  _'Number Theory',
+            /practitioners/algebraists/cryptography,  _'Cryptography',
+            /practitioners/algebraists/algebraic-geometry,  _'Algebraic Geometry',
+            /practitioners/algebraists/algebraic-topology,  _'Algebraic Topology',
+            /practitioners/algebraists/computer-algebra,  _'Computer Algebra',
+            /practitioners/algebraists/category-theory,  _'Category Theory'"
 
 [../public/practitioners/algebraists.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"abstract-algebra::intro:pebble"
+
+    _"number-theory::intro:pebble"
+
+    _"cryptography::intro:pebble"
+
+    _"algebraic-geometry::intro:pebble"
+
+    _"algebraic-topology::intro:pebble"
+
+    _"computer-algebra::intro:pebble"
+
+    _"category-theory::intro:pebble"
+
+
+[code]()
+
+    _"abstract-algebra::intro:code"
+
+    _"number-theory::intro:code"
+
+    _"cryptography::intro:code"
+
+    _"algebraic-geometry::intro:code"
+
+    _"algebraic-topology::intro:code"
+
+    _"computer-algebra::intro:code"
+
+    _"category-theory::intro:code"
+
 
 [header]()
 

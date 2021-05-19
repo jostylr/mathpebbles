@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/geometers, _'intro |md',
             /practitioners/geometers/toplogy,  _'Toplogy',
-          /practitioners/geometers/differential-geometry,  _'Differential Geometry',
-          /practitioners/geometers/soap-bubbles,  _'Soap Bubbles',
-          /practitioners/geometers/symplectic-geometry,  _'Symplectic Geometry',
-          /practitioners/geometers/control-theory,  _'Control Theory',
-          /practitioners/geometers/mathematical-physics,  _'Mathematical Physics',
-          /practitioners/geometers/infinite-dimensional-spaces,  _'Infinite Dimensional Spaces'"
+            /practitioners/geometers/differential-geometry,  _'Differential Geometry',
+            /practitioners/geometers/soap-bubbles,  _'Soap Bubbles',
+            /practitioners/geometers/symplectic-geometry,  _'Symplectic Geometry',
+            /practitioners/geometers/control-theory,  _'Control Theory',
+            /practitioners/geometers/mathematical-physics,  _'Mathematical Physics',
+            /practitioners/geometers/infinite-dimensional-spaces,  _'Infinite Dimensional Spaces'"
 
 [../public/practitioners/geometers.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"toplogy::intro:pebble"
+
+    _"differential-geometry::intro:pebble"
+
+    _"soap-bubbles::intro:pebble"
+
+    _"symplectic-geometry::intro:pebble"
+
+    _"control-theory::intro:pebble"
+
+    _"mathematical-physics::intro:pebble"
+
+    _"infinite-dimensional-spaces::intro:pebble"
+
+
+[code]()
+
+    _"toplogy::intro:code"
+
+    _"differential-geometry::intro:code"
+
+    _"soap-bubbles::intro:code"
+
+    _"symplectic-geometry::intro:code"
+
+    _"control-theory::intro:code"
+
+    _"mathematical-physics::intro:code"
+
+    _"infinite-dimensional-spaces::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/defining-functions, _'intro |md',
             /functions/defining-functions/taylor-series,  _'Taylor Series',
-          /functions/defining-functions/functional-equations,  _'Functional Equations',
-          /functions/defining-functions/differential-equations,  _'Differential Equations',
-          /functions/defining-functions/special-functions,  _'Special Functions',
-          /functions/defining-functions/laplace-transforms,  _'Laplace Transforms',
-          /functions/defining-functions/fourier-approximations,  _'Fourier Approximations',
-          /functions/defining-functions/tricks,  _'Tricks'"
+            /functions/defining-functions/functional-equations,  _'Functional Equations',
+            /functions/defining-functions/differential-equations,  _'Differential Equations',
+            /functions/defining-functions/special-functions,  _'Special Functions',
+            /functions/defining-functions/laplace-transforms,  _'Laplace Transforms',
+            /functions/defining-functions/fourier-approximations,  _'Fourier Approximations',
+            /functions/defining-functions/tricks,  _'Tricks'"
 
 [../public/functions/defining-functions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"taylor-series::intro:pebble"
+
+    _"functional-equations::intro:pebble"
+
+    _"differential-equations::intro:pebble"
+
+    _"special-functions::intro:pebble"
+
+    _"laplace-transforms::intro:pebble"
+
+    _"fourier-approximations::intro:pebble"
+
+    _"tricks::intro:pebble"
+
+
+[code]()
+
+    _"taylor-series::intro:code"
+
+    _"functional-equations::intro:code"
+
+    _"differential-equations::intro:code"
+
+    _"special-functions::intro:code"
+
+    _"laplace-transforms::intro:code"
+
+    _"fourier-approximations::intro:code"
+
+    _"tricks::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/other-geometries, _'intro |md',
             /geometry/other-geometries/taxicab-geometry,  _'Taxicab Geometry',
-          /geometry/other-geometries/spherical-geometry,  _'Spherical Geometry',
-          /geometry/other-geometries/hyperbolic-geometry,  _'Hyperbolic Geometry',
-          /geometry/other-geometries/discrete-geometries,  _'Discrete Geometries',
-          /geometry/other-geometries/metric-geometries,  _'Metric Geometries',
-          /geometry/other-geometries/infinite-dimensional-geometries,  _'Infinite Dimensional Geometries',
-          /geometry/other-geometries/compact-geometry,  _'Compact Geometry'"
+            /geometry/other-geometries/spherical-geometry,  _'Spherical Geometry',
+            /geometry/other-geometries/hyperbolic-geometry,  _'Hyperbolic Geometry',
+            /geometry/other-geometries/discrete-geometries,  _'Discrete Geometries',
+            /geometry/other-geometries/metric-geometries,  _'Metric Geometries',
+            /geometry/other-geometries/infinite-dimensional-geometries,  _'Infinite Dimensional Geometries',
+            /geometry/other-geometries/compact-geometry,  _'Compact Geometry'"
 
 [../public/geometry/other-geometries.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"taxicab-geometry::intro:pebble"
+
+    _"spherical-geometry::intro:pebble"
+
+    _"hyperbolic-geometry::intro:pebble"
+
+    _"discrete-geometries::intro:pebble"
+
+    _"metric-geometries::intro:pebble"
+
+    _"infinite-dimensional-geometries::intro:pebble"
+
+    _"compact-geometry::intro:pebble"
+
+
+[code]()
+
+    _"taxicab-geometry::intro:code"
+
+    _"spherical-geometry::intro:code"
+
+    _"hyperbolic-geometry::intro:code"
+
+    _"discrete-geometries::intro:code"
+
+    _"metric-geometries::intro:code"
+
+    _"infinite-dimensional-geometries::intro:code"
+
+    _"compact-geometry::intro:code"
+
 
 [header]()
 

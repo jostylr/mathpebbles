@@ -2,17 +2,21 @@
 
     _"pieces | page /arithmetic/powers, _'intro |md',
             /arithmetic/powers/notions-of-exponents,  _'Notions of Exponents',
-          /arithmetic/powers/rules-of-exponents,  _'Rules of Exponents',
-          /arithmetic/powers/scientific-notation,  _'Scientific Notation',
-          /arithmetic/powers/significant-powers,  _'Significant Powers',
-          /arithmetic/powers/guesstimation,  _'Guesstimation',
-          /arithmetic/powers/undoing-exponentiation,  _'Undoing Exponentiation',
-          /arithmetic/powers/sums-and-powers,  _'Sums and Powers'"
+            /arithmetic/powers/rules-of-exponents,  _'Rules of Exponents',
+            /arithmetic/powers/scientific-notation,  _'Scientific Notation',
+            /arithmetic/powers/significant-powers,  _'Significant Powers',
+            /arithmetic/powers/guesstimation,  _'Guesstimation',
+            /arithmetic/powers/undoing-exponentiation,  _'Undoing Exponentiation',
+            /arithmetic/powers/sums-and-powers,  _'Sums and Powers'"
 
 [../public/arithmetic/powers.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-exponents::intro:pebble"
+
+    _"rules-of-exponents::intro:pebble"
+
+    _"scientific-notation::intro:pebble"
+
+    _"significant-powers::intro:pebble"
+
+    _"guesstimation::intro:pebble"
+
+    _"undoing-exponentiation::intro:pebble"
+
+    _"sums-and-powers::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-exponents::intro:code"
+
+    _"rules-of-exponents::intro:code"
+
+    _"scientific-notation::intro:code"
+
+    _"significant-powers::intro:code"
+
+    _"guesstimation::intro:code"
+
+    _"undoing-exponentiation::intro:code"
+
+    _"sums-and-powers::intro:code"
+
 
 [header]()
 

@@ -2,17 +2,21 @@
 
     _"pieces | page /algebra/interest-accumulations, _'intro |md',
             /algebra/interest-accumulations/percentages,  _'Percentages',
-          /algebra/interest-accumulations/simple-interest-and-discount,  _'Simple Interest and Discount',
-          /algebra/interest-accumulations/compound-interest,  _'Compound Interest',
-          /algebra/interest-accumulations/effective-rate,  _'Effective Rate',
-          /algebra/interest-accumulations/payments,  _'Payments',
-          /algebra/interest-accumulations/personal-finances,  _'Personal Finances',
-          /algebra/interest-accumulations/tricks-of-business-mathematics,  _'Tricks of Business Mathematics'"
+            /algebra/interest-accumulations/simple-interest-and-discount,  _'Simple Interest and Discount',
+            /algebra/interest-accumulations/compound-interest,  _'Compound Interest',
+            /algebra/interest-accumulations/effective-rate,  _'Effective Rate',
+            /algebra/interest-accumulations/payments,  _'Payments',
+            /algebra/interest-accumulations/personal-finances,  _'Personal Finances',
+            /algebra/interest-accumulations/tricks-of-business-mathematics,  _'Tricks of Business Mathematics'"
 
 [../public/algebra/interest-accumulations.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"percentages::intro:pebble"
+
+    _"simple-interest-and-discount::intro:pebble"
+
+    _"compound-interest::intro:pebble"
+
+    _"effective-rate::intro:pebble"
+
+    _"payments::intro:pebble"
+
+    _"personal-finances::intro:pebble"
+
+    _"tricks-of-business-mathematics::intro:pebble"
+
+
+[code]()
+
+    _"percentages::intro:code"
+
+    _"simple-interest-and-discount::intro:code"
+
+    _"compound-interest::intro:code"
+
+    _"effective-rate::intro:code"
+
+    _"payments::intro:code"
+
+    _"personal-finances::intro:code"
+
+    _"tricks-of-business-mathematics::intro:code"
+
 
 [header]()
 

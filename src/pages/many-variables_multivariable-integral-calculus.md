@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/multivariable-integral-calculus, _'intro |md',
             /many-variables/multivariable-integral-calculus/volume-integrals,  _'Volume Integrals',
-          /many-variables/multivariable-integral-calculus/surface-area-integrals,  _'Surface Area Integrals',
-          /many-variables/multivariable-integral-calculus/line-integrals,  _'Line Integrals',
-          /many-variables/multivariable-integral-calculus/integral-relations,  _'Integral Relations',
-          /many-variables/multivariable-integral-calculus/change-of-basis-in-integrals,  _'Change of Basis in Integrals',
-          /many-variables/multivariable-integral-calculus/antiderivatives,  _'Antiderivatives',
-          /many-variables/multivariable-integral-calculus/generalizing-multivariable-integrals,  _'Generalizing Multivariable Integrals'"
+            /many-variables/multivariable-integral-calculus/surface-area-integrals,  _'Surface Area Integrals',
+            /many-variables/multivariable-integral-calculus/line-integrals,  _'Line Integrals',
+            /many-variables/multivariable-integral-calculus/integral-relations,  _'Integral Relations',
+            /many-variables/multivariable-integral-calculus/change-of-basis-in-integrals,  _'Change of Basis in Integrals',
+            /many-variables/multivariable-integral-calculus/antiderivatives,  _'Antiderivatives',
+            /many-variables/multivariable-integral-calculus/generalizing-multivariable-integrals,  _'Generalizing Multivariable Integrals'"
 
 [../public/many-variables/multivariable-integral-calculus.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"volume-integrals::intro:pebble"
+
+    _"surface-area-integrals::intro:pebble"
+
+    _"line-integrals::intro:pebble"
+
+    _"integral-relations::intro:pebble"
+
+    _"change-of-basis-in-integrals::intro:pebble"
+
+    _"antiderivatives::intro:pebble"
+
+    _"generalizing-multivariable-integrals::intro:pebble"
+
+
+[code]()
+
+    _"volume-integrals::intro:code"
+
+    _"surface-area-integrals::intro:code"
+
+    _"line-integrals::intro:code"
+
+    _"integral-relations::intro:code"
+
+    _"change-of-basis-in-integrals::intro:code"
+
+    _"antiderivatives::intro:code"
+
+    _"generalizing-multivariable-integrals::intro:code"
+
 
 [header]()
 

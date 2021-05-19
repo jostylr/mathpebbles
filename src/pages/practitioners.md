@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners, _'intro |md',
             /practitioners/algebraists,  _'Algebraists',
-          /practitioners/analysts,  _'Analysts',
-          /practitioners/geometers,  _'Geometers',
-          /practitioners/booleans,  _'Booleans',
-          /practitioners/scientists,  _'Scientists',
-          /practitioners/engineers,  _'Engineers',
-          /practitioners/artists,  _'Artists'"
+            /practitioners/analysts,  _'Analysts',
+            /practitioners/geometers,  _'Geometers',
+            /practitioners/booleans,  _'Booleans',
+            /practitioners/scientists,  _'Scientists',
+            /practitioners/engineers,  _'Engineers',
+            /practitioners/artists,  _'Artists'"
 
 [../public/practitioners.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"algebraists::intro:pebble"
+
+    _"analysts::intro:pebble"
+
+    _"geometers::intro:pebble"
+
+    _"booleans::intro:pebble"
+
+    _"scientists::intro:pebble"
+
+    _"engineers::intro:pebble"
+
+    _"artists::intro:pebble"
+
+
+[code]()
+
+    _"algebraists::intro:code"
+
+    _"analysts::intro:code"
+
+    _"geometers::intro:code"
+
+    _"booleans::intro:code"
+
+    _"scientists::intro:code"
+
+    _"engineers::intro:code"
+
+    _"artists::intro:code"
+
 
 [header]()
 

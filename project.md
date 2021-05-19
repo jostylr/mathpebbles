@@ -13,5 +13,13 @@ then they all get loaded!
 
 [poly](pages/algebra_polynomials.md "load")
 
+[one page](pages/algebra_constructing-the-real-and-complex-numbers_arithmetic-and-geometry-of-complex-numbers.md "load")
+
+
+## Non-Mathy Stuff
+
+We make the non-math pages here. It can be a simpler setup. The initial pages
+are the About, FAQ, Support, Settings (not sure what we are settings, maybe morphs into
+some account page), Table of Contents, and an Index.  
 
 

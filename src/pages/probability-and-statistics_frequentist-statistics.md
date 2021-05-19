@@ -2,17 +2,21 @@
 
     _"pieces | page /probability-and-statistics/frequentist-statistics, _'intro |md',
             /probability-and-statistics/frequentist-statistics/notions-of-frequentist-statistics,  _'Notions of Frequentist Statistics',
-          /probability-and-statistics/frequentist-statistics/varieties-of-statistics,  _'Varieties of Statistics',
-          /probability-and-statistics/frequentist-statistics/proper-data-collection,  _'Proper Data Collection',
-          /probability-and-statistics/frequentist-statistics/z-test,  _'z-Test',
-          /probability-and-statistics/frequentist-statistics/t-test,  _'t-Test',
-          /probability-and-statistics/frequentist-statistics/anova,  _'ANOVA',
-          /probability-and-statistics/frequentist-statistics/categorical-tests,  _'Categorical Tests'"
+            /probability-and-statistics/frequentist-statistics/varieties-of-statistics,  _'Varieties of Statistics',
+            /probability-and-statistics/frequentist-statistics/proper-data-collection,  _'Proper Data Collection',
+            /probability-and-statistics/frequentist-statistics/z-test,  _'z-Test',
+            /probability-and-statistics/frequentist-statistics/t-test,  _'t-Test',
+            /probability-and-statistics/frequentist-statistics/anova,  _'ANOVA',
+            /probability-and-statistics/frequentist-statistics/categorical-tests,  _'Categorical Tests'"
 
 [../public/probability-and-statistics/frequentist-statistics.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-frequentist-statistics::intro:pebble"
+
+    _"varieties-of-statistics::intro:pebble"
+
+    _"proper-data-collection::intro:pebble"
+
+    _"z-test::intro:pebble"
+
+    _"t-test::intro:pebble"
+
+    _"anova::intro:pebble"
+
+    _"categorical-tests::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-frequentist-statistics::intro:code"
+
+    _"varieties-of-statistics::intro:code"
+
+    _"proper-data-collection::intro:code"
+
+    _"z-test::intro:code"
+
+    _"t-test::intro:code"
+
+    _"anova::intro:code"
+
+    _"categorical-tests::intro:code"
+
 
 [header]()
 

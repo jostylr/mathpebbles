@@ -2,17 +2,21 @@
 
     _"pieces | page /algebra/linear-systems, _'intro |md',
             /algebra/linear-systems/two-variable-systems,  _'Two Variable Systems',
-          /algebra/linear-systems/systems-as-matrices,  _'Systems as Matrices',
-          /algebra/linear-systems/solving-systems,  _'Solving Systems',
-          /algebra/linear-systems/applications,  _'Applications',
-          /algebra/linear-systems/not-the-right-amount-of-information,  _'Not the Right Amount of Information',
-          /algebra/linear-systems/linear-programming,  _'Linear Programming',
-          /algebra/linear-systems/simplex-method,  _'Simplex Method'"
+            /algebra/linear-systems/systems-as-matrices,  _'Systems as Matrices',
+            /algebra/linear-systems/solving-systems,  _'Solving Systems',
+            /algebra/linear-systems/applications,  _'Applications',
+            /algebra/linear-systems/not-the-right-amount-of-information,  _'Not the Right Amount of Information',
+            /algebra/linear-systems/linear-programming,  _'Linear Programming',
+            /algebra/linear-systems/simplex-method,  _'Simplex Method'"
 
 [../public/algebra/linear-systems.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"two-variable-systems::intro:pebble"
+
+    _"systems-as-matrices::intro:pebble"
+
+    _"solving-systems::intro:pebble"
+
+    _"applications::intro:pebble"
+
+    _"not-the-right-amount-of-information::intro:pebble"
+
+    _"linear-programming::intro:pebble"
+
+    _"simplex-method::intro:pebble"
+
+
+[code]()
+
+    _"two-variable-systems::intro:code"
+
+    _"systems-as-matrices::intro:code"
+
+    _"solving-systems::intro:code"
+
+    _"applications::intro:code"
+
+    _"not-the-right-amount-of-information::intro:code"
+
+    _"linear-programming::intro:code"
+
+    _"simplex-method::intro:code"
+
 
 [header]()
 

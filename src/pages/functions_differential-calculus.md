@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/differential-calculus, _'intro |md',
             /functions/differential-calculus/notions-of-derivatives,  _'Notions of Derivatives',
-          /functions/differential-calculus/using-derivatives,  _'Using Derivatives',
-          /functions/differential-calculus/derivative-rules,  _'Derivative Rules',
-          /functions/differential-calculus/newtons-method,  _'Newtons Method',
-          /functions/differential-calculus/optimization-problems,  _'Optimization Problems',
-          /functions/differential-calculus/taylor-polynomials,  _'Taylor Polynomials',
-          /functions/differential-calculus/implicit-differentiation,  _'Implicit Differentiation'"
+            /functions/differential-calculus/using-derivatives,  _'Using Derivatives',
+            /functions/differential-calculus/derivative-rules,  _'Derivative Rules',
+            /functions/differential-calculus/newtons-method,  _'Newtons Method',
+            /functions/differential-calculus/optimization-problems,  _'Optimization Problems',
+            /functions/differential-calculus/taylor-polynomials,  _'Taylor Polynomials',
+            /functions/differential-calculus/implicit-differentiation,  _'Implicit Differentiation'"
 
 [../public/functions/differential-calculus.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-derivatives::intro:pebble"
+
+    _"using-derivatives::intro:pebble"
+
+    _"derivative-rules::intro:pebble"
+
+    _"newtons-method::intro:pebble"
+
+    _"optimization-problems::intro:pebble"
+
+    _"taylor-polynomials::intro:pebble"
+
+    _"implicit-differentiation::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-derivatives::intro:code"
+
+    _"using-derivatives::intro:code"
+
+    _"derivative-rules::intro:code"
+
+    _"newtons-method::intro:code"
+
+    _"optimization-problems::intro:code"
+
+    _"taylor-polynomials::intro:code"
+
+    _"implicit-differentiation::intro:code"
+
 
 [header]()
 

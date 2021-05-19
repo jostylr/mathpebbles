@@ -2,17 +2,21 @@
 
     _"pieces | page /algebra/lines, _'intro |md',
             /algebra/lines/shortest-distance,  _'Shortest Distance',
-          /algebra/lines/basic-distance-shapes,  _'Basic Distance Shapes',
-          /algebra/lines/cartesian-coordinate-plane,  _'Cartesian Coordinate Plane',
-          /algebra/lines/slope,  _'Slope',
-          /algebra/lines/solving-a-linear-equation,  _'Solving a Linear Equation',
-          /algebra/lines/families-of-lines,  _'Families of Lines',
-          /algebra/lines/linear-inequalities,  _'Linear Inequalities'"
+            /algebra/lines/basic-distance-shapes,  _'Basic Distance Shapes',
+            /algebra/lines/cartesian-coordinate-plane,  _'Cartesian Coordinate Plane',
+            /algebra/lines/slope,  _'Slope',
+            /algebra/lines/solving-a-linear-equation,  _'Solving a Linear Equation',
+            /algebra/lines/families-of-lines,  _'Families of Lines',
+            /algebra/lines/linear-inequalities,  _'Linear Inequalities'"
 
 [../public/algebra/lines.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"shortest-distance::intro:pebble"
+
+    _"basic-distance-shapes::intro:pebble"
+
+    _"cartesian-coordinate-plane::intro:pebble"
+
+    _"slope::intro:pebble"
+
+    _"solving-a-linear-equation::intro:pebble"
+
+    _"families-of-lines::intro:pebble"
+
+    _"linear-inequalities::intro:pebble"
+
+
+[code]()
+
+    _"shortest-distance::intro:code"
+
+    _"basic-distance-shapes::intro:code"
+
+    _"cartesian-coordinate-plane::intro:code"
+
+    _"slope::intro:code"
+
+    _"solving-a-linear-equation::intro:code"
+
+    _"families-of-lines::intro:code"
+
+    _"linear-inequalities::intro:code"
+
 
 [header]()
 

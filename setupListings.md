@@ -194,16 +194,46 @@ a copy or something.
     let writers =  Promise.all(Object.keys(pages).map( 
         (key)  => {
             const {heading, level, symbol, slug, path, children} = pages[key];
-            const pagechild = children.map(  ({heading, slug, path}, ind) => {
-                return `/${path.join('/')},  \_'${heading}'`; 
-            }).join(',\n          ');
 
-            const sections = children.map( ({heading, slug, path}, ind) => {
+
+            let pagechild = children.map(  ({heading, slug, path}, ind) => {
+                return `/${path.join('/')},  \_'${heading}'`; 
+            }).join(',\n            ');
+
+            let sections = children.map( ({heading, slug, path}, ind) => {
                 return `## ${heading}\n\n` +
 
                 `    \_"${slug}::intro"\n` +
                 `\n\n[${slug}](pages/${path.join('\_')}.md "load:")`;
             }).join('\n\n');
+
+            let pebbles = children.map( ({heading, slug, path}, ind) => {
+                return `    \_"${slug}::intro:pebble"\n`;
+            }).join('\n');
+
+            let code = children.map( ({heading, slug, path}, ind) => {
+                return `    \_"${slug}::intro:code"\n`;
+            }).join('\n');
+
+
+
+            if (children.length === 0) {
+                let pcarr = [];
+                sections = '';
+                pebbles = '';
+                code = '';
+                for (let i = 1; i < 8; i += 1) {
+                    pcarr.push( `ec('sub ${i}'), \_'sub ${i} |md '`);
+                    sections += `## sub ${i}\n\n\n` + 
+                        '\n\n[pebble]()\n\n\n[code]()\n\n\n';
+                    pebbles += `    \_"sub ${i}:pebble"\n\n`;
+                    code += `    \_"sub ${i}:code"\n\n`;
+                }
+                pagechild = pcarr.join(',\n            ');
+            }
+
+
+
 
             let txt = copy.
                 replace('HEADING', heading).
@@ -215,7 +245,9 @@ part, title of the page, intro section and then the title and section.
                 replace('PAGE',`\_"pieces | page ${
                 '/'+path.join('/')}, \_'intro |md',
                 ${pagechild}"`).
-                replace('SECTIONS', sections);
+                replace('SECTIONS', sections).
+                replace('PEBBLES', pebbles).
+                replace('CODE', code);
         
             
 
@@ -242,12 +274,20 @@ part, title of the page, intro section and then the title and section.
 
     ## Intro
 
+    [pebble]()
+
+    [code]()
+
     ## Pieces
 
         !- style
         \_":style"
         !- script
         \_":script"
+        !- pebbles
+        \_":pebbles"
+        !- code
+        \_":code"
         !- header
         \_":header"
         !- begin
@@ -258,6 +298,14 @@ part, title of the page, intro section and then the title and section.
     [style]() 
 
     [script]()
+
+    [pebbles]()
+
+    PEBBLES
+
+    [code]()
+
+    CODE
 
     [header]()
 

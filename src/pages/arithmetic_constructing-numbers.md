@@ -2,17 +2,21 @@
 
     _"pieces | page /arithmetic/constructing-numbers, _'intro |md',
             /arithmetic/constructing-numbers/containers,  _'Containers',
-          /arithmetic/constructing-numbers/natural-numbers,  _'Natural Numbers',
-          /arithmetic/constructing-numbers/addition-and-multiplication,  _'Addition and Multiplication',
-          /arithmetic/constructing-numbers/integers,  _'Integers',
-          /arithmetic/constructing-numbers/rationals,  _'Rationals',
-          /arithmetic/constructing-numbers/properties-revisited,  _'Properties Revisited',
-          /arithmetic/constructing-numbers/relations,  _'Relations'"
+            /arithmetic/constructing-numbers/natural-numbers,  _'Natural Numbers',
+            /arithmetic/constructing-numbers/addition-and-multiplication,  _'Addition and Multiplication',
+            /arithmetic/constructing-numbers/integers,  _'Integers',
+            /arithmetic/constructing-numbers/rationals,  _'Rationals',
+            /arithmetic/constructing-numbers/properties-revisited,  _'Properties Revisited',
+            /arithmetic/constructing-numbers/relations,  _'Relations'"
 
 [../public/arithmetic/constructing-numbers.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"containers::intro:pebble"
+
+    _"natural-numbers::intro:pebble"
+
+    _"addition-and-multiplication::intro:pebble"
+
+    _"integers::intro:pebble"
+
+    _"rationals::intro:pebble"
+
+    _"properties-revisited::intro:pebble"
+
+    _"relations::intro:pebble"
+
+
+[code]()
+
+    _"containers::intro:code"
+
+    _"natural-numbers::intro:code"
+
+    _"addition-and-multiplication::intro:code"
+
+    _"integers::intro:code"
+
+    _"rationals::intro:code"
+
+    _"properties-revisited::intro:code"
+
+    _"relations::intro:code"
+
 
 [header]()
 

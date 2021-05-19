@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables, _'intro |md',
             /many-variables/linear-algebra,  _'Linear Algebra',
-          /many-variables/systems-of-ordinary-differential-equations,  _'Systems of Ordinary Differential Equations',
-          /many-variables/multivariable-functions,  _'Multivariable Functions',
-          /many-variables/multivaribale-differential-calculus,  _'Multivaribale Differential Calculus',
-          /many-variables/multivariable-integral-calculus,  _'Multivariable Integral Calculus',
-          /many-variables/partial-differential-equations,  _'Partial Differential Equations',
-          /many-variables/curved-spaces,  _'Curved Spaces'"
+            /many-variables/systems-of-ordinary-differential-equations,  _'Systems of Ordinary Differential Equations',
+            /many-variables/multivariable-functions,  _'Multivariable Functions',
+            /many-variables/multivaribale-differential-calculus,  _'Multivaribale Differential Calculus',
+            /many-variables/multivariable-integral-calculus,  _'Multivariable Integral Calculus',
+            /many-variables/partial-differential-equations,  _'Partial Differential Equations',
+            /many-variables/curved-spaces,  _'Curved Spaces'"
 
 [../public/many-variables.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"linear-algebra::intro:pebble"
+
+    _"systems-of-ordinary-differential-equations::intro:pebble"
+
+    _"multivariable-functions::intro:pebble"
+
+    _"multivaribale-differential-calculus::intro:pebble"
+
+    _"multivariable-integral-calculus::intro:pebble"
+
+    _"partial-differential-equations::intro:pebble"
+
+    _"curved-spaces::intro:pebble"
+
+
+[code]()
+
+    _"linear-algebra::intro:code"
+
+    _"systems-of-ordinary-differential-equations::intro:code"
+
+    _"multivariable-functions::intro:code"
+
+    _"multivaribale-differential-calculus::intro:code"
+
+    _"multivariable-integral-calculus::intro:code"
+
+    _"partial-differential-equations::intro:code"
+
+    _"curved-spaces::intro:code"
+
 
 [header]()
 

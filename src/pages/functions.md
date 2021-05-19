@@ -2,17 +2,21 @@
 
     _"pieces | page /functions, _'intro |md',
             /functions/rational-and-power-functions,  _'Rational and Power Functions',
-          /functions/infinite-processes,  _'Infinite Processes',
-          /functions/differential-calculus,  _'Differential Calculus',
-          /functions/integral-calculus,  _'Integral Calculus',
-          /functions/exponentials-and-logarithms,  _'Exponentials and Logarithms',
-          /functions/trigonometric-functions,  _'Trigonometric Functions',
-          /functions/defining-functions,  _'Defining Functions'"
+            /functions/infinite-processes,  _'Infinite Processes',
+            /functions/differential-calculus,  _'Differential Calculus',
+            /functions/integral-calculus,  _'Integral Calculus',
+            /functions/exponentials-and-logarithms,  _'Exponentials and Logarithms',
+            /functions/trigonometric-functions,  _'Trigonometric Functions',
+            /functions/defining-functions,  _'Defining Functions'"
 
 [../public/functions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"rational-and-power-functions::intro:pebble"
+
+    _"infinite-processes::intro:pebble"
+
+    _"differential-calculus::intro:pebble"
+
+    _"integral-calculus::intro:pebble"
+
+    _"exponentials-and-logarithms::intro:pebble"
+
+    _"trigonometric-functions::intro:pebble"
+
+    _"defining-functions::intro:pebble"
+
+
+[code]()
+
+    _"rational-and-power-functions::intro:code"
+
+    _"infinite-processes::intro:code"
+
+    _"differential-calculus::intro:code"
+
+    _"integral-calculus::intro:code"
+
+    _"exponentials-and-logarithms::intro:code"
+
+    _"trigonometric-functions::intro:code"
+
+    _"defining-functions::intro:code"
+
 
 [header]()
 

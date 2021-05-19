@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/scientists, _'intro |md',
             /practitioners/scientists/physics,  _'Physics',
-          /practitioners/scientists/chemistry,  _'Chemistry',
-          /practitioners/scientists/biology,  _'Biology',
-          /practitioners/scientists/health,  _'Health',
-          /practitioners/scientists/ecology,  _'Ecology',
-          /practitioners/scientists/economics,  _'Economics',
-          /practitioners/scientists/sociology,  _'Sociology'"
+            /practitioners/scientists/chemistry,  _'Chemistry',
+            /practitioners/scientists/biology,  _'Biology',
+            /practitioners/scientists/health,  _'Health',
+            /practitioners/scientists/ecology,  _'Ecology',
+            /practitioners/scientists/economics,  _'Economics',
+            /practitioners/scientists/sociology,  _'Sociology'"
 
 [../public/practitioners/scientists.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"physics::intro:pebble"
+
+    _"chemistry::intro:pebble"
+
+    _"biology::intro:pebble"
+
+    _"health::intro:pebble"
+
+    _"ecology::intro:pebble"
+
+    _"economics::intro:pebble"
+
+    _"sociology::intro:pebble"
+
+
+[code]()
+
+    _"physics::intro:code"
+
+    _"chemistry::intro:code"
+
+    _"biology::intro:code"
+
+    _"health::intro:code"
+
+    _"ecology::intro:code"
+
+    _"economics::intro:code"
+
+    _"sociology::intro:code"
+
 
 [header]()
 

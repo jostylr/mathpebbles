@@ -2,17 +2,21 @@
 
     _"pieces | page /many-variables/multivariable-functions, _'intro |md',
             /many-variables/multivariable-functions/one-to-many,  _'One to Many',
-          /many-variables/multivariable-functions/many-to-one,  _'Many to One',
-          /many-variables/multivariable-functions/complex-to-complex,  _'Complex to Complex',
-          /many-variables/multivariable-functions/many-to-many,  _'Many to Many',
-          /many-variables/multivariable-functions/graphs,  _'Graphs',
-          /many-variables/multivariable-functions/questions-to-ask,  _'Questions to Ask',
-          /many-variables/multivariable-functions/multivariable-polynomials,  _'Multivariable Polynomials'"
+            /many-variables/multivariable-functions/many-to-one,  _'Many to One',
+            /many-variables/multivariable-functions/complex-to-complex,  _'Complex to Complex',
+            /many-variables/multivariable-functions/many-to-many,  _'Many to Many',
+            /many-variables/multivariable-functions/graphs,  _'Graphs',
+            /many-variables/multivariable-functions/questions-to-ask,  _'Questions to Ask',
+            /many-variables/multivariable-functions/multivariable-polynomials,  _'Multivariable Polynomials'"
 
 [../public/many-variables/multivariable-functions.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"one-to-many::intro:pebble"
+
+    _"many-to-one::intro:pebble"
+
+    _"complex-to-complex::intro:pebble"
+
+    _"many-to-many::intro:pebble"
+
+    _"graphs::intro:pebble"
+
+    _"questions-to-ask::intro:pebble"
+
+    _"multivariable-polynomials::intro:pebble"
+
+
+[code]()
+
+    _"one-to-many::intro:code"
+
+    _"many-to-one::intro:code"
+
+    _"complex-to-complex::intro:code"
+
+    _"many-to-many::intro:code"
+
+    _"graphs::intro:code"
+
+    _"questions-to-ask::intro:code"
+
+    _"multivariable-polynomials::intro:code"
+
 
 [header]()
 

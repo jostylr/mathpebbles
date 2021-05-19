@@ -2,17 +2,21 @@
 
     _"pieces | page /geometry/parametric-curves, _'intro |md',
             /geometry/parametric-curves/notions-of-parametric-curves,  _'Notions of Parametric Curves',
-          /geometry/parametric-curves/functions-of-x-as-a-function-of-t,  _'Functions of x as a Function of t',
-          /geometry/parametric-curves/spirals,  _'Spirals ',
-          /geometry/parametric-curves/tangent-vectors,  _'Tangent Vectors',
-          /geometry/parametric-curves/arc-length,  _'Arc Length',
-          /geometry/parametric-curves/reparametrizations,  _'Reparametrizations',
-          /geometry/parametric-curves/geodesics,  _'Geodesics'"
+            /geometry/parametric-curves/functions-of-x-as-a-function-of-t,  _'Functions of x as a Function of t',
+            /geometry/parametric-curves/spirals,  _'Spirals ',
+            /geometry/parametric-curves/tangent-vectors,  _'Tangent Vectors',
+            /geometry/parametric-curves/arc-length,  _'Arc Length',
+            /geometry/parametric-curves/reparametrizations,  _'Reparametrizations',
+            /geometry/parametric-curves/geodesics,  _'Geodesics'"
 
 [../public/geometry/parametric-curves.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"notions-of-parametric-curves::intro:pebble"
+
+    _"functions-of-x-as-a-function-of-t::intro:pebble"
+
+    _"spirals::intro:pebble"
+
+    _"tangent-vectors::intro:pebble"
+
+    _"arc-length::intro:pebble"
+
+    _"reparametrizations::intro:pebble"
+
+    _"geodesics::intro:pebble"
+
+
+[code]()
+
+    _"notions-of-parametric-curves::intro:code"
+
+    _"functions-of-x-as-a-function-of-t::intro:code"
+
+    _"spirals::intro:code"
+
+    _"tangent-vectors::intro:code"
+
+    _"arc-length::intro:code"
+
+    _"reparametrizations::intro:code"
+
+    _"geodesics::intro:code"
+
 
 [header]()
 

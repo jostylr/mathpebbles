@@ -2,17 +2,21 @@
 
     _"pieces | page /functions/exponentials-and-logarithms, _'intro |md',
             /functions/exponentials-and-logarithms/paths-to-the-exponential,  _'Paths to the Exponential',
-          /functions/exponentials-and-logarithms/properties-of-the-exponential,  _'Properties of the Exponential',
-          /functions/exponentials-and-logarithms/paths-to-the-logarithm,  _'Paths to the Logarithm',
-          /functions/exponentials-and-logarithms/properties-of-the-logarithm,  _'Properties of the Logarithm',
-          /functions/exponentials-and-logarithms/dealing-with-large-numbers,  _'Dealing with Large Numbers',
-          /functions/exponentials-and-logarithms/applications-of-exponentials-and-logarithms,  _'Applications of Exponentials and Logarithms',
-          /functions/exponentials-and-logarithms/asymptotics,  _'Asymptotics'"
+            /functions/exponentials-and-logarithms/properties-of-the-exponential,  _'Properties of the Exponential',
+            /functions/exponentials-and-logarithms/paths-to-the-logarithm,  _'Paths to the Logarithm',
+            /functions/exponentials-and-logarithms/properties-of-the-logarithm,  _'Properties of the Logarithm',
+            /functions/exponentials-and-logarithms/dealing-with-large-numbers,  _'Dealing with Large Numbers',
+            /functions/exponentials-and-logarithms/applications-of-exponentials-and-logarithms,  _'Applications of Exponentials and Logarithms',
+            /functions/exponentials-and-logarithms/asymptotics,  _'Asymptotics'"
 
 [../public/functions/exponentials-and-logarithms.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"paths-to-the-exponential::intro:pebble"
+
+    _"properties-of-the-exponential::intro:pebble"
+
+    _"paths-to-the-logarithm::intro:pebble"
+
+    _"properties-of-the-logarithm::intro:pebble"
+
+    _"dealing-with-large-numbers::intro:pebble"
+
+    _"applications-of-exponentials-and-logarithms::intro:pebble"
+
+    _"asymptotics::intro:pebble"
+
+
+[code]()
+
+    _"paths-to-the-exponential::intro:code"
+
+    _"properties-of-the-exponential::intro:code"
+
+    _"paths-to-the-logarithm::intro:code"
+
+    _"properties-of-the-logarithm::intro:code"
+
+    _"dealing-with-large-numbers::intro:code"
+
+    _"applications-of-exponentials-and-logarithms::intro:code"
+
+    _"asymptotics::intro:code"
+
 
 [header]()
 

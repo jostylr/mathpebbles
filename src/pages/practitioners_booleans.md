@@ -2,17 +2,21 @@
 
     _"pieces | page /practitioners/booleans, _'intro |md',
             /practitioners/booleans/combinatorics,  _'Combinatorics',
-          /practitioners/booleans/graph-theory,  _'Graph Theory',
-          /practitioners/booleans/mathematical-logic,  _'Mathematical Logic',
-          /practitioners/booleans/game-theory,  _'Game Theory',
-          /practitioners/booleans/computer-scientists,  _'Computer Scientists',
-          /practitioners/booleans/politicians,  _'Politicians',
-          /practitioners/booleans/risk-managers,  _'Risk Managers'"
+            /practitioners/booleans/graph-theory,  _'Graph Theory',
+            /practitioners/booleans/mathematical-logic,  _'Mathematical Logic',
+            /practitioners/booleans/game-theory,  _'Game Theory',
+            /practitioners/booleans/computer-scientists,  _'Computer Scientists',
+            /practitioners/booleans/politicians,  _'Politicians',
+            /practitioners/booleans/risk-managers,  _'Risk Managers'"
 
 [../public/practitioners/booleans.html](# "save:")
 
 
 ## Intro
+
+[pebble]()
+
+[code]()
 
 ## Pieces
 
@@ -20,6 +24,10 @@
     _":style"
     !- script
     _":script"
+    !- pebbles
+    _":pebbles"
+    !- code
+    _":code"
     !- header
     _":header"
     !- begin
@@ -30,6 +38,40 @@
 [style]() 
 
 [script]()
+
+[pebbles]()
+
+    _"combinatorics::intro:pebble"
+
+    _"graph-theory::intro:pebble"
+
+    _"mathematical-logic::intro:pebble"
+
+    _"game-theory::intro:pebble"
+
+    _"computer-scientists::intro:pebble"
+
+    _"politicians::intro:pebble"
+
+    _"risk-managers::intro:pebble"
+
+
+[code]()
+
+    _"combinatorics::intro:code"
+
+    _"graph-theory::intro:code"
+
+    _"mathematical-logic::intro:code"
+
+    _"game-theory::intro:code"
+
+    _"computer-scientists::intro:code"
+
+    _"politicians::intro:code"
+
+    _"risk-managers::intro:code"
+
 
 [header]()
 
