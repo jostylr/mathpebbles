@@ -2259,7 +2259,7 @@ order we have.
 This is the stuff we want to do to the page once stuff is loaded. 
 
 
-        $$('.crumbs  sl-button' ).forEach(el => el.classList.remove('hide'));
+        $$('nav  sl-button' ).forEach(el => el.classList.remove('hide'));
 
 
         $$('a.explore').forEach( (el) => {
@@ -2285,7 +2285,130 @@ This is the stuff we want to do to the page once stuff is loaded.
             el.addEventListener('click', (ev) => ev.stopPropagation());
         });
 
+        _":make fano math"
+
+[make fano math]() 
+
+This loops through the nodes of the fano plane and renders the stuff into
+them.
+
+
+    _":safari bug"
+
+
+    $$('.fano-math').forEach( (div) => {
+        if (safari) {
+            div.classList.add('safari-fixed');
+        }
+        let {type, text} = div.dataset;
+        if (type === 'katex') {
+            katex.render(text, div);
+        } else if (type === "html") {
+            div.innerHTML = text;
+        } else {
+
+Should add types as needed in the chain. default is plain text.
+            
+            div.innerText = text;
+
+        }
+
+        _":centering"
+
+    });
+    
+[centering]()
+
+Here we try to center the object in question. The coordinates to use are not
+the coordinates given by bounding rectangle because it is all scaled. To get
+the scale, we get the bounding rectangle for the circle and the foreignObject. We know the size of the circle in the default coordinates so that tell us how to scale. 
+
+    let fo = div.parentElement;
+    let fb = fo.getBoundingClientRect();
+    let scale = fb.width/20; 
+    let child = div.children[0];
+    let cb = child.getBoundingClientRect();
+    let cbW = cb.width/scale;
+    console.log(scale, cbW);
+    if (cbW > 15) {
+        let interval = (cbW-15)*2
+        fo.setAttribute('width', 20 + interval);
+        fo.setAttribute('x', Math.max(-16, -5 - interval) );
+    }
+
+
+
+[safari bug]()
+
+So safari has a bug in svg rendering with a foreign object. See
+https://stackoverflow.com/questions/63690664/safari-macos-foreign-object-not-scaled-properly-inside-svg
+and https://stackoverflow.com/questions/51313873/svg-foreignobject-not-working-properly-on-safari
+
+This detects whether it is Safari and then if so, we will add a fixed class to
+the elements. 
+
+    let safari = false;
+    {
+        let ua = navigator.userAgent.toLowerCase(); 
+        if ( (ua.indexOf('safari') !== -1) && 
+             (ua.indexOf('chrome') === -1) ) {
+            safari = true;
+            console.log("safari found");
+        }
+
+    }   
+
+
+[shift padding]()
+
+TODO REMOVE. This failed because the padding of other elements would change
+where the link would send it. Instead embarking on direct scroll control. 
+
+
+This shifts the padding of the targeted element in case the nav height
+changes. 
+
+Creating style sheet per https://davidwalsh.name/add-rules-stylesheets
+
+    {
+        let style = document.createElement("style");
+
+        style.appendChild(document.createTextNode(""));
+
+	    document.head.appendChild(style);
+
+	    let sheet = style.sheet;
+        let rules = sheet.cssRules;
+
+        let nav = $('body > nav'); 
+        let computePaddingRule = () => {
+            let h = nav.clientHeight;
+            return `:target { padding-top: ${h - 28}px;}`;
+        };
+
+        let currentRule = computePaddingRule();
+        sheet.insertRule(currentRule, 0);
+    
+        let obs = new ResizeObserver( () => {
+            let oldRule = currentRule;
+            currentRule = computePaddingRule();
+            if (currentRule !== oldRule) {
+                sheet.insertRule(currentRule, 0);
+                
+Now we delete the old rule, looping through the ruleslist to catch it all. 
+
+                let n = rules.length;
+                for (let i = 0; i < n; i += 1) {
+                    if (rules[i].cssText === oldRule) {
+                        sheet.deleteRule(i);
+                    }
+                }
+            }
+        });
+
+        obs.observe(nav);
  
+    }
 
 ## Local
 

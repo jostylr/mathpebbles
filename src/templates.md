@@ -58,7 +58,11 @@ The path should start with a slash, but easy to forget.
         _":details"
         replace.MAIN = main;
 
-        replace.FOOTER = nextPrev(path);
+        replace.FOOTER = `<footer>${makePath(path)}</footer>`; //nextPrev(path);
+        
+        const fanoSymbols = [];
+        {_":populate fano"}
+        replace.FANO = `<div class="fano">_"make fano"</div>`;
         
         let ret =  pieces.
             map( key => {
@@ -99,7 +103,57 @@ until the next one
         replace[key] = text;
     }
 
+[populate fano]()
 
+This fills the array that will be used to populate the fano diagram on each
+page. If there are no symbols or children, then we go to the parent. 
+
+
+    let positions = [
+        "(50,500)", //1
+        "(300,500)", //2
+        "(550,500)", //3
+        "(175,283.49)", //4
+        "(425,283.49)", //5
+        "(300,66.987)", //6
+        "(300,355.662)", //7
+    ]
+    let children = [];
+    let curPath = path;
+    for (let i = 0; i < 3; i+= 1) {
+        if (curPath === '/index') {curPath = '/';}
+        let link = links[curPath];
+        children = link.children.slice(0);
+        if ((!children.length) || (!children[0][2]) )  {
+                curPath = link.prefix;
+                continue;
+        }
+        children.forEach( ([name, path, symbol], ind) => {
+
+We have a non-tex thing when the lead character is a percent.
+
+            let type;
+            if (symbol[0] === '%') {
+                let ind = symbol.findIndexOf(':');
+                if (ind === -1) { 
+                    console.log("invalid symbol", symbol, name, path); 
+                    
+                }
+                type = symbol.slice(1,ind).trim(); 
+                symbol = symbol.slice(ind+1).trim(); 
+            } else {
+                type = 'katex';
+            }
+            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
+    <circle r="20" fill="white" />
+    <foreignObject x="-5" y="-9" width="20" height="23">
+        
+        <div class="fano-math" data-type="${type}" data-text="${symbol}"></div>
+    </foreignObject>
+    </a>`);
+        });
+        break;
+    }
 
 
 [details]() 
@@ -342,8 +396,8 @@ nav is initially hidden to avoid FLOUT.
 
     (path) => {
 
-        let ret = '<nav class="crumbs">\n';
-        ret += makePath(path);
+        let ret = '<nav>\n';
+        let {prevB, nextB} = nextPrev(path);
         end = '\n</nav>';
         let lp = links[path];
         if (!lp) {
@@ -352,13 +406,20 @@ nav is initially hidden to avoid FLOUT.
         let type = lp.type;
         let downs;
         if (type === 'main') {
-            downs = []; 
+            downs = [ ['Books', links[lp.prefix].children],
+                ['Chapters', []], 
+                ['Sections', []] 
+            ];  
         } else if (type === 'book') {
-            downs = [ ['Books', links[lp.prefix].children] ]; 
+            downs = [ ['Books', links[lp.prefix].children],
+                ['Chapters', []], 
+                ['Sections', []] 
+            ]; 
         } else if (type === 'chapter') {
             downs = [ 
                 ['Books', links[links[lp.prefix].prefix].children ],
-                ['Chapters', links[lp.prefix].children]
+                ['Chapters', links[lp.prefix].children],
+                ['Sections', []]
             ];
         } else if (type === 'section') {
             downs = [ 
@@ -367,19 +428,123 @@ nav is initially hidden to avoid FLOUT.
                 ['Sections', links[lp.prefix].children]
             ];
         }
+        downs.push(['Other', [
+            _":other"
+        ]]);
         const drops = downs.map( ([top, items]) => {
             let mret = '<sl-dropdown>\n';
-            mret += `<sl-button slot="trigger" caret>${top}</sl-button>\n`;
+            let cls = items.length ? '' : 'class="empty"';
+            mret += `<sl-button slot="trigger" ${cls} caret>${top}</sl-button>\n`;
             mret += items.map( 
                 ([name, path]) => `<sl-button class="hide" href="${path}.html">${name}</sl-button>`).
                 join('\n');
             mret += '\n</sl-dropdown>\n';
             return mret;
         }).join('\n');
-        ret += `<div>${drops}</div>`;
+        let fano = `_":plain fano"`;
+        ret += `<div class="prevnext"> ${prevB} ${fano} ${nextB}</div> <div class="drops">${drops}</div> `;
         ret += end;
         return ret;
     }
+
+
+[other]()
+
+These are the items in the other dropdown.
+
+    ['About', '/about'], 
+    ['FAQ', '/faq'],
+    ['Support','/support'],
+    ['Settings', '/settings'],
+    ['Table of Contents', '/toc'],
+    ['Index of Content', '/book-index']
+
+
+[css]()
+
+Styling the nav
+
+    nav {
+        border-bottom: 1px solid black;
+        font-variant: small-caps;
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+
+        --sl-input-border-radius-medium : 0px;
+        --sl-input-border-width : 0px;
+    }
+
+
+    nav sl-dropdown {
+        margin-right:1px;
+    }
+
+    sl-dropdown sl-button {
+        width:100%
+    }
+
+    nav .empty {
+        visibility:hidden;
+    }
+
+    nav svg {
+        position:relative;
+        top: 6px;
+    }
+
+    @media only screen and (max-width:570px) {
+        nav .drops {
+            --sl-spacing-small:0;
+        }
+    }
+
+    @media only screen and (max-width: 476px) {
+        nav .drops {
+            --sl-spacing-medium:0;
+        }
+        
+    }
+
+    @media only screen and (max-width: 405px) {
+        nav .prevnext > a {
+            display:none;
+        }
+        nav  {
+            --sl-spacing-medium:2px;
+        }
+    }
+
+
+[plain fano]()
+
+This makes a little svg favicon of a plain pebbles as a little icon.
+
+    <a title="MathPebbles" href="/index.html"><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.5em" viewbox="0 0 600 600">
+          <g id="layer1">
+             <circle cx="300" cy="350" r="300" fill="#2b5797" />
+            <polygon fill="white" stroke="black" stroke-width="12"
+                points="50,500 550,500 300,66.98729" />
+                <circle cx="300" cy="355.66243" r="144.33756" fill="none"
+                stroke="black" stroke-width="12" />
+            <line x1="50" y1="500" x2="425" y2="283.49364"
+                stroke="black" stroke-width="12" />
+            <line x1="550" y1="500" x2="175" y2="283.49364"
+                stroke="black" stroke-width="12" />
+            <line x1="300" y1="500" x2="300" y2="66.98729"
+                stroke="black" stroke-width="12" />
+           </g>
+           <g fill="#69ceff" stroke="none">
+            <circle class="node" cx="50" cy="500" r="40" />
+            <circle cx="550" cy="500" r="40"  />
+            <circle cx="300" cy="66.98729" r="40"  />
+            <circle cx="300" cy="355.66243" r="40"  />
+            <circle cx="300" cy="500" r="40"  />
+            <circle cx="175" cy="283.49364" r="40" />
+            <circle cx="425" cy="283.49364" r="40"  />
+          </g>
+        </svg></a>
+
 
 ## Make Path
 
@@ -391,7 +556,7 @@ is the reason for the various branches.
     (path) => {
         const item = _":item";
         const [ignore, book, chapter, section] = path.split('/').map(e=>e.trim());
-        let ret = '<ol>';
+        let ret = '<ol class="crumbs">';
         const end = '</ol>';
         if (!book) {
             ret += item('mp', 'MathPebbles', ''); 
@@ -438,14 +603,21 @@ The crumb setup and css was originally from
     .crumbs {
         border-bottom: 1px solid black;
         font-variant: small-caps;
-        display:flex;
-        justify-content:space-between;
-        flex-wrap:wrap;
     }
 
-    .crumbs ol {
+    .crumbs {
         list-style-type: none;
         padding-left: 5px;
+        padding-top:5px;
+        margin:0;
+
+The following bits are a hack to cutoff the breadcrumb if it overflows. I
+don't want that to grow. 
+
+        display:block;
+        white-space:nowrap;
+        overflow: auto;
+
     }
 
     .crumb {
@@ -461,19 +633,15 @@ The crumb setup and css was originally from
         padding: 0 3px;
     }
 
-    .crumbs > div {
-        display:inline-flex;
-        justify-content: flex-end;
-        flex-wrap:wrap;
+    footer {
+        position:fixed;
+        bottom:0;
+        left:0;
+        background-color:whitesmoke;
+        width:100%;
+
     }
 
-    .crumbs sl-dropdown {
-        margin-right:10px;
-    }
-
-    sl-dropdown sl-button {
-        width:100%
-    }
 
 [junk]()
 
@@ -505,27 +673,41 @@ This creates the next and previous buttons. We need the [listings](listings.md
 
     (path) => {
         const tr = _":transform";
-        const home = '\index';
+        const home = '/index';
         let prev, next;   
         if (!links.hasOwnProperty(path) ) { 
             console.log('no such path:', path); 
-            next = '\arithmetic';
-            prev = home;
+            next = '/arithmetic';
+            prev = '';
         } else {
             ({prev, next} = ( links[path.trim()] ) );
         }
-        const prevB = `<sl-button class="prev ${progress(prev)}" href="${prev || home}.html">
-            <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>${tr(prev)}
-            </sl-button>`;
-        const nextB = `<sl-button class="next ${progress(prev)}" href="${next || home}.html">${tr(next)}<sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
-        return `<footer>${prevB} _":middle" ${nextB}</footer>`;
+
+        if (prev==='/') { prev = '/index'; }
+
+If not prev, then we are on the main page and we have no previous. We add a
+div to maintain consistency of the three items. 
+
+        const prevB = prev ? `<sl-button class="prev ${progress(prev)}" href="${prev || home}.html" title="${tr(prev)}">
+            <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
+            </sl-button> ` : 
+            `<sl-button class="prev" aria-hidden="true" style="visibility:hidden;" href="/index.html" title="Ignore">
+            <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
+            </sl-button> ` ;
+        const nextB = `<sl-button class="next ${progress(prev)}" href="${next || home}.html" title="${tr(next)}"><sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
+        return {prevB, nextB};
     }
 
 [transform]()
 
 This gives the name for the path. 
 
-    (path) => links[path]?.name || 'MathPebbles' 
+    (path) => { 
+        if (path === '/index') {
+            return 'MathPebbles';
+        }
+        return links[path]?.name || path.slice(1).toUpperCase() || 'MathPebbles' 
+    }
 
 
 [middle]()
@@ -560,18 +742,18 @@ This transforms the path info into human pleasing ideas.
 
 [css]() 
 
-    footer {
+    #lotherr {
         display: flex;
         flex-wrap:wrap;
         justify-content: space-between;
     }
 
-    footer sl-icon {
+    #lotherr sl-icon {
         margin-left: 2px;
         margin-right: 2px;
     }
     
-    footer {
+    #lotherr {
         font-variant: small-caps;
     }
 
@@ -591,20 +773,46 @@ This is where we put stuff related to making the accordion style detail stuff.
 This is where we do some common behavior on event listening. 
 
 
+    let nav = $('body > nav');
+
+    let scrollToEl = _":scroll to el";
+
     const details = $$('body > sl-details');
     details.forEach( el => { 
         el.addEventListener('sl-show', ev => {
             details.forEach( elEv => (elEv.open = ev.target === details) );
             let path = document.location.pathname.split('/').slice(-1)[0].split('.')[0];
             let hash = document.location.hash.slice(1);
-            console.log(hash, path, el.id);
+            let h2 = $('h2', el);
+            let title = h2.innerText;
+            console.log(hash, path, el.id, hash!==el.id);
+
+Manage the history state; push state is so that there is no scrolling, but we
+do have back/forward behavior. The first if is for the first element. If it is
+visible to show, then it should already be at the top so no scroll. The second
+is if it is a different element than last shown in which case we scroll.
+
             if (el.id === path) {
-                if (hash.length) {
-                    document.location.hash = '';
+                if (hash.length) { // top default, clear hash
+                    history.pushState({}, title, document.location.pathname); 
                 }
             } else if (hash !== el.id) {
-                document.location.hash = el.id;
+                history.pushState({},title, document.location.pathname+'#'+el.id);
+                setTimeout( () => {
+                    scrollToEl(el);
+                }, 250);
+            } else {
+                return; //no action, same element in view
             }
+
+
+Now we do the scrolling. Since the previous item may be open and then closes,
+altering scroll placement, we do a timeout to have that done afterwards.
+Hopefully, this also gives context to the user to not be too jarring. 
+
+
+Now we try to get an item in the newly visible elment focused. 
+
             let tabby = $('[tabindex]', el);
             if (tabby) {
                 tabby.focus();
@@ -621,13 +829,87 @@ events otherwise they would close. Not sure if it is the accordion part.
         el.addEventListener('sl-show', (ev) => ev.stopPropagation());
     });
 
+
+On initial load, open up the relevant detail from the hash or open up the
+default one. 
+
     let hash = document.location.hash;
     if (hash) {
-        $(hash).show();
+        let el = $(hash);
+        if (el) {
+            el.show();
+            window.addEventListener('load', () => {
+               setTimeout( () => {
+                    console.log("scrolling");
+                    scrollToEl(el);
+                }, 250);
+            });
+            
+        }
     } else {
         details[0].show();
     }
 
+
+
+[junk]()
+
+Waiting to shift the page. The delay is in art 
+
+        setTimeout( () => {
+            let hash = document.location.hash;
+            let el = $(hash);
+            if (!el) {return;} // no action
+            scrollToEl(el);
+        }, 150);
+
+
+[scroll to el]()
+
+
+Positive scrolls up, negative scrolls down. The -6 is just a visual shift of
+the heading, kind of a padding. We do smooth so that the use can see what's
+going on, even on load. 
+
+    function (el) { 
+        let navB = nav.getBoundingClientRect().bottom;
+        let h2 = $('h2', el);
+        let h2Top = h2.getBoundingClientRect().top;
+        scrollBy({top: (h2Top - navB) - 6, behavior:"smooth"});
+    }
+
+
+### Make Fano
+
+This makes the fano symbol which is currently sitting at the end of the
+sections. 
+
+    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" viewbox="0 0 600 600" id="svg2">
+      <defs id="defs4"/>
+      <g id="layer1">
+        <circle cx="300" cy="355.66243" r="144.33756" fill="none" stroke="black" stroke-width="2"/>
+        <polygon fill="none" stroke="black" stroke-width="2" points="50,500 550,500 300,66.98729"/>
+        <line x1="50" y1="500" x2="425" y2="283.49364" stroke="black" stroke-width="2"/>
+        <line x1="550" y1="500" x2="175" y2="283.49364" stroke="black" stroke-width="2"/>
+        <line x1="300" y1="500" x2="300" y2="66.98729" stroke="black" stroke-width="2"/>
+        ${fanoSymbols.join('\n')}
+      </g>
+    </svg>
+
+[css]() 
+
+    .fano {
+        display:flex;
+        justify-content:center;
+
+    }
+
+    .fano svg {
+        width:90vw;
+        height:90vw;
+        max-width:30em;
+        max-height:30em;
+    }
 
 
 ## HTML
@@ -713,6 +995,7 @@ There is also math.js mainly used for high precision arithmetic.
     !-!BEGIN!-!
     !-!MAIN!-!
     !-!END!-!
+    !-!FANO!-!
     !-!FOOTER!-!
     <script>
          let m;
@@ -872,12 +1155,29 @@ This would allow the textareas to have syntax highlighting.
 ### Global CSS
 
 
+
     body {
         max-width: 80em;
         margin-left: auto;
         margin-right: auto;
+
+The top margin being 0 helps the nav not have a gap. We need to have a full
+page width on the bottom to have it be able to scroll up. 
+
+        margin-top: 0;
+        padding-bottom: 120vh;
     }
 
+
+This styles the header bit
+
+    body > nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: white; /*rosybrown;  /*#33007d; purple*/
+        z-index: 2;
+    }
 
 
 To give space for underline of number, we increase the line height a bit. 
@@ -894,9 +1194,12 @@ Specifying width otherwise the explore buttons don't line up.
 
     h2.with-explore {
         width:min(90vw, 50em);
-        display:flex;
-        justify-content: space-between;
-        flex-wrap:wrap;
+
+grid to put the explore buttons on the right and have long text drop down. To
+keep the explore button from growing, we give it a height of 1em.
+
+        display: grid;
+        grid-template-columns: 1fr auto;
     }
 
     .explore, .explore:link, .explore:visited {
@@ -911,6 +1214,10 @@ Specifying width otherwise the explore buttons don't line up.
       border-radius:4px;
     }
     
+    h2.with-explore .explore {
+      height: 1em;
+    }
+    
     .explore:visited {
         filter:brightness(80%);
     }
@@ -920,13 +1227,28 @@ Specifying width otherwise the explore buttons don't line up.
       outline:none;
     }
 
+Safari requires fixed positioning for the foreign object so we make a class
+for that.
+
+    .safari-fixed {
+        position:fixed;
+    }
+
+    @media only screen and (max-width:440px) {
+        .safari-fixed {
+            top: -10px;
+            left: -7px;
+        }
+    }
+
     _"make path:css"
     _"next prev:css"
     _"accordion:css"
     _"shoelace full:css"
     _"setup code:css"
     _"common::css"
-
+    _"make nav:css"
+    _"make fano:css"
         
 
     

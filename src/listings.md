@@ -20,7 +20,7 @@ not write below it.
              return {progress, path, name, symbol};
         });
         arr.
-            forEach( ({progress, path, name}, ind, arr) => {
+            forEach( ({progress, path, name, symbol}, ind, arr) => {
             let pieces = path.split('/');
             if (!pieces[1]) {pieces.pop(); } //main should have 1
             let type;
@@ -43,7 +43,7 @@ not write below it.
                 children: [] 
             };
             if (name !== 'MathPebbles') {  //prevents main from being added
-                ret[prefix].children.push( [name, path]);
+                ret[prefix].children.push( [name, path, symbol]);
             }
         });
         return JSON.stringify(ret);
@@ -54,6 +54,13 @@ not write below it.
 [createlinks.js](# "save:")
 
 ## FULL
+
+Symbols are the third item and are treated as katex rendering by default. To
+have it treated as something else do %type:text where type is the kind of
+thing (such as a remix icon; should be known in the parsing) and text is
+whatever needs to be fed into the function (icon name). Using percent since
+that's a comment in latex and should never be used as the first character
+
 
     0 | MathPebbles
     0arithmetic | Arithmetic | +
@@ -170,6 +177,63 @@ not write below it.
     0algebra/constructing-the-real-and-complex-numbers/complex-number-construction | Complex Number Construction | 
     0algebra/constructing-the-real-and-complex-numbers/arithmetic-and-geometry-of-complex-numbers | Arithmetic and Geometry of Complex Numbers | 
     0algebra/constructing-the-real-and-complex-numbers/sizes-of-infinity | Sizes of Infinity | 
+    0geometry | Geometry | \Delta
+    0geometry/plane-geometry | Plane Geometry | \parallel
+    0geometry/plane-geometry/euclidean-lines | Euclidean Lines | 
+    0geometry/plane-geometry/euclidean-triangles | Euclidean Triangles | 
+    0geometry/plane-geometry/similarity | Similarity | 
+    0geometry/plane-geometry/polygons | Polygons | 
+    0geometry/plane-geometry/euclidean-circles | Euclidean Circles | 
+    0geometry/plane-geometry/transformations | Transformations | 
+    0geometry/plane-geometry/coordinate-proofs | Coordinate Proofs | 
+    0geometry/constructions | Constructions | \underline \circ
+    0geometry/constructions/ruler-and-compass | Ruler and Compass | 
+    0geometry/constructions/constructions-with-lines | Constructions with Lines | 
+    0geometry/constructions/constructing-angles | Constructing Angles | 
+    0geometry/constructions/drawing-triangles | Drawing Triangles | 
+    0geometry/constructions/constructions-with-circles | Constructions with Circles | 
+    0geometry/constructions/trisecting-the-angle | Trisecting the Angle | 
+    0geometry/constructions/constructing-solutions-to-equations | Constructing Solutions to Equations | 
+    0geometry/trigonometry | Trigonometry | \triangle
+    0geometry/trigonometry/right-triangle | Right Triangle | 
+    0geometry/trigonometry/any-triangle | Any Triangle | 
+    0geometry/trigonometry/regular-polygons | Regular Polygons | 
+    0geometry/trigonometry/areas | Areas | 
+    0geometry/trigonometry/measuring-from-a-distance | Measuring from a Distance | 
+    0geometry/trigonometry/parallax | Parallax | 
+    0geometry/trigonometry/circumference-of-the-earth | Circumference of the Earth | 
+    0geometry/conic-sections | Conic Sections | \asymp
+    0geometry/conic-sections/notions-of-a-conic-section | Notions of a Conic Section | 
+    0geometry/conic-sections/ellipses | Ellipses | 
+    0geometry/conic-sections/parabolas | Parabolas | 
+    0geometry/conic-sections/hyperbolas | Hyperbolas | 
+    0geometry/conic-sections/cones | Cones | 
+    0geometry/conic-sections/unifying-pictures | Unifying Pictures | 
+    0geometry/conic-sections/generalizations | Generalizations | 
+    0geometry/parametric-curves | Parametric Curves | \propto
+    0geometry/parametric-curves/notions-of-parametric-curves | Notions of Parametric Curves | 
+    0geometry/parametric-curves/functions-of-x-as-a-function-of-t | Functions of x as a Function of t | 
+    0geometry/parametric-curves/spirals | Spirals  | 
+    0geometry/parametric-curves/tangent-vectors | Tangent Vectors | 
+    0geometry/parametric-curves/arc-length | Arc Length | 
+    0geometry/parametric-curves/reparametrizations | Reparametrizations | 
+    0geometry/parametric-curves/geodesics | Geodesics | 
+    0geometry/higher-dimensions | Higher Dimensions | \mathbb{R}^N
+    0geometry/higher-dimensions/three-dimensions | Three Dimensions | 
+    0geometry/higher-dimensions/volumes | Volumes | 
+    0geometry/higher-dimensions/surface-area | Surface area | 
+    0geometry/higher-dimensions/even-higher-dimensions | Even Higher Dimensions | 
+    0geometry/higher-dimensions/many-variable-inequalities | Many Variable Inequalities | 
+    0geometry/higher-dimensions/norms-and-angles | Norms and Angles | 
+    0geometry/higher-dimensions/transforming-space | Transforming Space | 
+    0geometry/other-geometries | Other Geometries | d
+    0geometry/other-geometries/taxicab-geometry | Taxicab Geometry | 
+    0geometry/other-geometries/spherical-geometry | Spherical Geometry | 
+    0geometry/other-geometries/hyperbolic-geometry | Hyperbolic Geometry | 
+    0geometry/other-geometries/discrete-geometries | Discrete Geometries | 
+    0geometry/other-geometries/metric-geometries | Metric Geometries | 
+    0geometry/other-geometries/infinite-dimensional-geometries | Infinite Dimensional Geometries | 
+    0geometry/other-geometries/compact-geometry | Compact Geometry | 
     0functions | Functions | f
     0functions/rational-and-power-functions | Rational and Power Functions | \sqrt{x}
     0functions/rational-and-power-functions/rational-functions | Rational Functions | 
@@ -284,63 +348,6 @@ not write below it.
     0many-variables/curved-spaces/metrics | Metrics | 
     0many-variables/curved-spaces/tensors-and-differential-forms | Tensors and Differential Forms | 
     0many-variables/curved-spaces/topological-concerns | Topological Concerns | 
-    0geometry | Geometry | \Delta
-    0geometry/plane-geometry | Plane Geometry | ||
-    0geometry/plane-geometry/euclidean-lines | Euclidean Lines | 
-    0geometry/plane-geometry/euclidean-triangles | Euclidean Triangles | 
-    0geometry/plane-geometry/similarity | Similarity | 
-    0geometry/plane-geometry/polygons | Polygons | 
-    0geometry/plane-geometry/euclidean-circles | Euclidean Circles | 
-    0geometry/plane-geometry/transformations | Transformations | 
-    0geometry/plane-geometry/coordinate-proofs | Coordinate Proofs | 
-    0geometry/constructions | Constructions | \underline \circ
-    0geometry/constructions/ruler-and-compass | Ruler and Compass | 
-    0geometry/constructions/constructions-with-lines | Constructions with Lines | 
-    0geometry/constructions/constructing-angles | Constructing Angles | 
-    0geometry/constructions/drawing-triangles | Drawing Triangles | 
-    0geometry/constructions/constructions-with-circles | Constructions with Circles | 
-    0geometry/constructions/trisecting-the-angle | Trisecting the Angle | 
-    0geometry/constructions/constructing-solutions-to-equations | Constructing Solutions to Equations | 
-    0geometry/trigonometry | Trigonometry | \triangle
-    0geometry/trigonometry/right-triangle | Right Triangle | 
-    0geometry/trigonometry/any-triangle | Any Triangle | 
-    0geometry/trigonometry/regular-polygons | Regular Polygons | 
-    0geometry/trigonometry/areas | Areas | 
-    0geometry/trigonometry/measuring-from-a-distance | Measuring from a Distance | 
-    0geometry/trigonometry/parallax | Parallax | 
-    0geometry/trigonometry/circumference-of-the-earth | Circumference of the Earth | 
-    0geometry/conic-sections | Conic Sections | \asymp
-    0geometry/conic-sections/notions-of-a-conic-section | Notions of a Conic Section | 
-    0geometry/conic-sections/ellipses | Ellipses | 
-    0geometry/conic-sections/parabolas | Parabolas | 
-    0geometry/conic-sections/hyperbolas | Hyperbolas | 
-    0geometry/conic-sections/cones | Cones | 
-    0geometry/conic-sections/unifying-pictures | Unifying Pictures | 
-    0geometry/conic-sections/generalizations | Generalizations | 
-    0geometry/parametric-curves | Parametric Curves | \propto
-    0geometry/parametric-curves/notions-of-parametric-curves | Notions of Parametric Curves | 
-    0geometry/parametric-curves/functions-of-x-as-a-function-of-t | Functions of x as a Function of t | 
-    0geometry/parametric-curves/spirals | Spirals  | 
-    0geometry/parametric-curves/tangent-vectors | Tangent Vectors | 
-    0geometry/parametric-curves/arc-length | Arc Length | 
-    0geometry/parametric-curves/reparametrizations | Reparametrizations | 
-    0geometry/parametric-curves/geodesics | Geodesics | 
-    0geometry/higher-dimensions | Higher Dimensions | \mathbb{R}^N
-    0geometry/higher-dimensions/three-dimensions | Three Dimensions | 
-    0geometry/higher-dimensions/volumes | Volumes | 
-    0geometry/higher-dimensions/surface-area | Surface area | 
-    0geometry/higher-dimensions/even-higher-dimensions | Even Higher Dimensions | 
-    0geometry/higher-dimensions/many-variable-inequalities | Many Variable Inequalities | 
-    0geometry/higher-dimensions/norms-and-angles | Norms and Angles | 
-    0geometry/higher-dimensions/transforming-space | Transforming Space | 
-    0geometry/other-geometries | Other Geometries | d
-    0geometry/other-geometries/taxicab-geometry | Taxicab Geometry | 
-    0geometry/other-geometries/spherical-geometry | Spherical Geometry | 
-    0geometry/other-geometries/hyperbolic-geometry | Hyperbolic Geometry | 
-    0geometry/other-geometries/discrete-geometries | Discrete Geometries | 
-    0geometry/other-geometries/metric-geometries | Metric Geometries | 
-    0geometry/other-geometries/infinite-dimensional-geometries | Infinite Dimensional Geometries | 
-    0geometry/other-geometries/compact-geometry | Compact Geometry | 
     0probability-and-statistics | Probability and Statistics | \mu 
     0probability-and-statistics/descriptive-statistics | Descriptive Statistics | \sigma
     0probability-and-statistics/descriptive-statistics/gathering-data | Gathering Data | 
