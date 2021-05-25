@@ -25,7 +25,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
         return _"scaled number"
     };
 
-    const initMakeTypedInput = (math, jsx, keys) => {
+    const initMakeTypedInput = (math, jsx, keys, controller) => {
         _"types"
         return [_"typed input", types];
     };
@@ -543,9 +543,10 @@ This is the hook for the CSS to go with the HTML page.
 ## Typed Input
 
 This creates a Var that is displayed in a span by default and, when
-selected/clicked, it transforms into an input depending on type. The main two
-types are real and complex. The real is a linear scale whose scale can be
-easily changed. The complex is a planar scale choice whose underlying scale. 
+selected/clicked, it adds a bottom element to the page for the input. 
+
+We will have various different types, but primarily a real and complex type
+being used. 
 
 Other types include discrete (basically normal range element), set/sequence
 (basically select option, maybe a slider for the sequence exploration), and
@@ -560,7 +561,11 @@ options object to deal with everything else.
 It returns the container element, the Var that the value is related to, and a
 settings object that everything else can be tweaked. 
 
-type is a creation function
+This function is also defined in a context of a keys scope object, a
+controller (with a vars, container, and active list), in addition to access to
+the math and JXG objects (
+
+type is a creation function.
 
     function makeTypedInput (container, type, specifics, options) {
         _":initiate container"

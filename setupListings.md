@@ -8,9 +8,10 @@ We read from the manifest page
 
     import * as fs from 'fs/promises';
 
-    const [txt, listings] = await Promise.all([
+    const [txt, listings, toc] = await Promise.all([
         fs.readFile('manifest.txt', {encoding:'utf8'}),
-        fs.readFile('src/listings.md')
+        fs.readFile('src/listings.md', {encoding:'utf8'}),
+        fs.readFile('src/other/toc.md', {encoding:'utf8'})
     ]);
 
     const slugify = _"slugify";
@@ -25,29 +26,56 @@ We read from the manifest page
 
     let book = '';
     let chapter = '';
-    let newlist = lines.map( ({heading, level, symbol}) => {
+    let newlist = [];
+    let newtoc = [];
+    let cur = 0; 
+    newlist.push('    0 | MathPebbles'); 
+    newtoc.push('    <h3> <a href="/index.html">MathPebbles</a></h3>');
+    lines.forEach( ({heading, level, symbol, cls}) => {
+        let path;
         if (level === 2) {
-            return  `0${book}/${chapter}/${slugify(heading)} | ${heading} | ${symbol || ''}`;
-
-        }
-        if (level === 1) {
+            path = `${book}/${chapter}/${slugify(heading)}`;
+            if (cur !== 2) {
+                newtoc.push('<ol class="sections">');
+            }
+            cur = 2;
+        } else if (level === 1) {
             chapter = slugify(heading);
-            return `0${book}/${chapter} | ${heading} | ${symbol}`;
-        }
-        if (level === 0) {
+            path = `${book}/${chapter}`; 
+            if (cur === 2) {
+                newtoc.push('</ol>');
+            } else if (cur === 0) {
+                newtoc.push('<ol class="chapters">');
+            }
+            cur = 1;
+        } else if (level === 0) {
+            if (cur === 2) {
+                newtoc.push('</ol>'); //close section
+                newtoc.push('</ol>'); //close chapter;
+            } else if (cur == 1) { //shouldn't happen
+                newtoc.push('</ol>'); //close chapter;
+            } else if (cur === 0) { //should only happen at start
+                newtoc.push('<ol class="books">');
+            }
+            cur = 0;
             book = slugify(heading);
-            return `0${book} | ${heading} | ${symbol}`;
         }
+        newlist.push(${cls}${path} | ${heading} | ${symbol || ''}`);
+        newtoc.push(`<li class="progress-${cls}"><a href="{${path}.html">${heading}</a></li>
     });
 
-    newlist = '    0 | MathPebbles\n    ' + newlist.join('\n    ');
-
     let ind = listings.indexOf('## FULL');
-    let newlisting = listings.slice(0,ind) + '## FULL\n\n' + newlist;
+    let newlisting = listings.slice(0,ind) + '## FULL\n\n' + newlist.join('\n    ');
 
-    await fs.writeFile('src/listings.md', newlisting);
+    let tocInd = toc.indexOf('## CONTENT');
+    let newtochtml = toc.slice(0,tocInd) + '## CONTENT\n\n' + newtoc.join('\n    ');
 
-    console.log('successfully wrote listings.md ');
+    await Promise.all([
+        //fs.writeFile('src/listings.md', newlisting),
+        //fs.writeFile('src/other/toc.md', newtochtml)
+    ]);
+
+    console.log('successfully wrote listings.md  and toc.md');
 
 [../setupListings.mjs](# "save:")
 
@@ -90,26 +118,26 @@ The classes are based on the symbol.
 
     switch (first) {
     case '-' : 
-        cls = 'empty';
+        cls = '0'; //very little done
     break;
     case 't' : 
-        cls = 'text';
+        cls = '1'; //text written, planned out
     break;
 
     case 'v' : 
-        cls = 'video';
+        cls = '3'; // videos done
     break;
     case 'p' : 
-        cls = 'pebble';
+        cls = '2'; //pebbles done
     break;
     case '~' : 
-        cls = 'draft';
+        cls = '4'; //most things done
     break;
     case '=' :
-        cls = 'done';
+        cls = '5'; //reviewed and done
     break;
     default: 
-        cls = first;
+        cls = first;  //could just use numbers
     break;
     }
 
@@ -260,7 +288,7 @@ part, title of the page, intro section and then the title and section.
 
 
 
-[../setupPages.mjs](# "save")   VERY DANGEROUS TO USE; REWRITES ALL CONTENT
+[../setupPages.mjs](# "save:")   VERY DANGEROUS TO USE; REWRITES ALL CONTENT
 
 
 ### Generated content
@@ -284,10 +312,14 @@ part, title of the page, intro section and then the title and section.
         \_":style"
         !- script
         \_":script"
+        !- functions
+        \_":functions"
         !- pebbles
         \_":pebbles"
         !- code
         \_":code"
+        !- problems
+        \_":problems"
         !- header
         \_":header"
         !- begin
@@ -299,6 +331,10 @@ part, title of the page, intro section and then the title and section.
 
     [script]()
 
+    [functions]()
+
+    FUNCTIONS
+
     [pebbles]()
 
     PEBBLES
@@ -306,6 +342,10 @@ part, title of the page, intro section and then the title and section.
     [code]()
 
     CODE
+
+    [problems]()
+
+    PROBLEMS
 
     [header]()
 

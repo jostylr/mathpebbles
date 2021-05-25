@@ -112,6 +112,63 @@
 -       Complex Number Construction
 -       Arithmetic and Geometry of Complex Numbers
 -       Sizes of Infinity
+-Geometry. \Delta
+-   Plane Geometry. \parallel
+-       Euclidean Lines
+-       Euclidean Triangles
+-       Similarity
+-       Polygons
+-       Euclidean Circles
+-       Transformations
+-       Coordinate Proofs
+-   Constructions. \underline \circ
+-       Ruler and Compass
+-       Constructions with Lines
+-       Constructing Angles
+-       Drawing Triangles
+-       Constructions with Circles
+-       Trisecting the Angle
+-       Constructing Solutions to Equations
+-   Trigonometry. \triangle
+-       Right Triangle
+-       Any Triangle
+-       Regular Polygons
+-       Areas
+-       Measuring from a Distance
+-       Parallax
+-       Circumference of the Earth
+-   Conic Sections. \asymp
+-       Notions of a Conic Section
+-       Ellipses
+-       Parabolas
+-       Hyperbolas
+-       Cones
+-       Unifying Pictures
+-       Generalizations
+-   Parametric Curves. \propto
+-       Notions of Parametric Curves
+-       Functions of x as a Function of t
+-       Spirals 
+-       Tangent Vectors
+-       Arc Length
+-       Reparametrizations
+-       Geodesics
+-   Higher Dimensions. \mathbb{R}^N
+-       Three Dimensions
+-       Volumes
+-       Surface area
+-       Even Higher Dimensions
+-       Many Variable Inequalities
+-       Norms and Angles
+-       Transforming Space
+-   Other Geometries. d
+-       Taxicab Geometry
+-       Spherical Geometry
+-       Hyperbolic Geometry
+-       Discrete Geometries
+-       Metric Geometries
+-       Infinite Dimensional Geometries
+-       Compact Geometry
 -Functions. f
 -   Rational and Power Functions. \sqrt{x}
 -       Rational Functions
@@ -226,63 +283,6 @@
 -       Metrics
 -       Tensors and Differential Forms
 -       Topological Concerns
--Geometry. \Delta
--   Plane Geometry. ||
--       Euclidean Lines
--       Euclidean Triangles
--       Similarity
--       Polygons
--       Euclidean Circles
--       Transformations
--       Coordinate Proofs
--   Constructions. \underline \circ
--       Ruler and Compass
--       Constructions with Lines
--       Constructing Angles
--       Drawing Triangles
--       Constructions with Circles
--       Trisecting the Angle
--       Constructing Solutions to Equations
--   Trigonometry. \triangle
--       Right Triangle
--       Any Triangle
--       Regular Polygons
--       Areas
--       Measuring from a Distance
--       Parallax
--       Circumference of the Earth
--   Conic Sections. \asymp
--       Notions of a Conic Section
--       Ellipses
--       Parabolas
--       Hyperbolas
--       Cones
--       Unifying Pictures
--       Generalizations
--   Parametric Curves. \propto
--       Notions of Parametric Curves
--       Functions of x as a Function of t
--       Spirals 
--       Tangent Vectors
--       Arc Length
--       Reparametrizations
--       Geodesics
--   Higher Dimensions. \mathbb{R}^N
--       Three Dimensions
--       Volumes
--       Surface area
--       Even Higher Dimensions
--       Many Variable Inequalities
--       Norms and Angles
--       Transforming Space
--   Other Geometries. d
--       Taxicab Geometry
--       Spherical Geometry
--       Hyperbolic Geometry
--       Discrete Geometries
--       Metric Geometries
--       Infinite Dimensional Geometries
--       Compact Geometry
 -Probability and Statistics. \mu 
 -   Descriptive Statistics. \sigma
 -       Gathering Data

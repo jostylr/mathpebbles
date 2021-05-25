@@ -53,13 +53,18 @@ not write below it.
 
 [createlinks.js](# "save:")
 
-## FULL
+
+## For next section
 
 Symbols are the third item and are treated as katex rendering by default. To
 have it treated as something else do %type:text where type is the kind of
 thing (such as a remix icon; should be known in the parsing) and text is
 whatever needs to be fed into the function (icon name). Using percent since
 that's a comment in latex and should never be used as the first character
+
+THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
+
+## FULL
 
 
     0 | MathPebbles

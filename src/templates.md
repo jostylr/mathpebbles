@@ -454,6 +454,7 @@ These are the items in the other dropdown.
 
     ['About', '/about'], 
     ['FAQ', '/faq'],
+    ['Resources', '/resources'],
     ['Support','/support'],
     ['Settings', '/settings'],
     ['Table of Contents', '/toc'],
@@ -691,12 +692,17 @@ div to maintain consistency of the three items.
         const prevB = prev ? `<sl-button class="prev ${progress(prev)}" href="${prev || home}.html" title="${tr(prev)}">
             <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
             </sl-button> ` : 
-            `<sl-button class="prev" aria-hidden="true" style="visibility:hidden;" href="/index.html" title="Ignore">
-            <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
-            </sl-button> ` ;
+            `_":empty"` ;
         const nextB = `<sl-button class="next ${progress(prev)}" href="${next || home}.html" title="${tr(next)}"><sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
         return {prevB, nextB};
     }
+
+[empty]()
+
+    <sl-button class="prev" aria-hidden="true" style="visibility:hidden;" href="/index.html" title="Ignore">
+        <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
+    </sl-button> 
+
 
 [transform]()
 
@@ -997,6 +1003,7 @@ There is also math.js mainly used for high precision arithmetic.
     !-!END!-!
     !-!FANO!-!
     !-!FOOTER!-!
+    <div id="inputControl"></div>
     <script>
          let m;
          document.addEventListener("DOMContentLoaded", function() {
@@ -1005,15 +1012,27 @@ There is also math.js mainly used for high precision arithmetic.
             math.config({number:'BigNumber'});
             let keyInfo = MP.initKeys();
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
-            let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys); 
-            
+            let controller = {
+                scopes : {},
+                vars : {},
+                container : $('#inputControl'),
+                active : []
+            };  
+            let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys, controller); 
+            MP.controller = controller;
             let {scope, inputs, outputs} = MP.makeScope(makeTypedInput);
 
             !-!SCRIPT!-!
+
+            const fun = {
+                !-!FUNCTIONS!-!
+            };
             
             _"set trigger for pebbles"
 
             _"setup code"
+
+            _"setup problems"
         });
 
     </script>
@@ -1150,7 +1169,13 @@ TODO:  https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax
 
 This would allow the textareas to have syntax highlighting. 
 
+# Setup Problems
 
+    const problems = {
+        !-!PROBLEMS!-!
+    }
+
+TODO: Add stuff for using problems, doing quiz objects or practice objects.     
 
 ### Global CSS
 
