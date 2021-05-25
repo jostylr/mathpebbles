@@ -66,7 +66,6 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
 
 ## FULL
 
-
     0 | MathPebbles
     0arithmetic | Arithmetic | +
     0arithmetic/counting | Counting | \ldots
@@ -273,7 +272,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0functions/integral-calculus/volumes-of-revolution | Volumes of Revolution | 
     0functions/integral-calculus/error-estimates | Error Estimates | 
     0functions/exponentials-and-logarithms | Exponentials and Logarithms | e^x
-    0functions/exponentials-and-logarithms/paths-to-the-exponential | Paths to the Exponential | 
+     functions/exponentials-and-logarithms/paths-to-the-exponential | Paths to the Exponential | 
     0functions/exponentials-and-logarithms/properties-of-the-exponential | Properties of the Exponential | 
     0functions/exponentials-and-logarithms/paths-to-the-logarithm | Paths to the Logarithm | 
     0functions/exponentials-and-logarithms/properties-of-the-logarithm | Properties of the Logarithm | 

@@ -32,37 +32,42 @@ We read from the manifest page
     newlist.push('    0 | MathPebbles'); 
     newtoc.push('    <h3> <a href="/index.html">MathPebbles</a></h3>');
     lines.forEach( ({heading, level, symbol, cls}) => {
-        let path;
+        let path = '';
         if (level === 2) {
             path = `${book}/${chapter}/${slugify(heading)}`;
             if (cur !== 2) {
                 newtoc.push('<ol class="sections">');
+            } else {
+                newtoc.push('</li>');
             }
             cur = 2;
         } else if (level === 1) {
             chapter = slugify(heading);
             path = `${book}/${chapter}`; 
             if (cur === 2) {
-                newtoc.push('</ol>');
+                newtoc.push('</li>','</ol>');
             } else if (cur === 0) {
                 newtoc.push('<ol class="chapters">');
             }
             cur = 1;
         } else if (level === 0) {
             if (cur === 2) {
-                newtoc.push('</ol>'); //close section
-                newtoc.push('</ol>'); //close chapter;
+                newtoc.push('</li>','</ol>'); //close section
+                newtoc.push('</li>','</ol>'); //close chapter;
             } else if (cur == 1) { //shouldn't happen
-                newtoc.push('</ol>'); //close chapter;
+                console.log('a book finished a chapter instead of a section', heading);
             } else if (cur === 0) { //should only happen at start
                 newtoc.push('<ol class="books">');
             }
             cur = 0;
             book = slugify(heading);
+            path = book;
         }
-        newlist.push(${cls}${path} | ${heading} | ${symbol || ''}`);
-        newtoc.push(`<li class="progress-${cls}"><a href="{${path}.html">${heading}</a></li>
+        newlist.push(`${cls}${path} | ${heading} | ${symbol || ''}`);
+        newtoc.push(`<li class="progress-${cls}"><a href="${path}.html">${heading}</a>`);
     });
+    let close = ['</li>','</ol>'];
+    newtoc.push(...close, ...close, ...close);
 
     let ind = listings.indexOf('## FULL');
     let newlisting = listings.slice(0,ind) + '## FULL\n\n' + newlist.join('\n    ');
@@ -70,9 +75,12 @@ We read from the manifest page
     let tocInd = toc.indexOf('## CONTENT');
     let newtochtml = toc.slice(0,tocInd) + '## CONTENT\n\n' + newtoc.join('\n    ');
 
+    //console.log(newlisting);
+    //console.log(newtochtml);
+
     await Promise.all([
-        //fs.writeFile('src/listings.md', newlisting),
-        //fs.writeFile('src/other/toc.md', newtochtml)
+        fs.writeFile('src/listings.md', newlisting),
+        fs.writeFile('src/other/toc.md', newtochtml)
     ]);
 
     console.log('successfully wrote listings.md  and toc.md');
