@@ -1,13 +1,13 @@
 # Descriptive Statistics
 
     _"pieces | page /probability-and-statistics/descriptive-statistics, _'intro |md',
-            /probability-and-statistics/descriptive-statistics/gathering-data,  _'Gathering Data',
-            /probability-and-statistics/descriptive-statistics/notions-of-centrality,  _'Notions of Centrality',
-            /probability-and-statistics/descriptive-statistics/notions-of-spread,  _'Notions of Spread',
-            /probability-and-statistics/descriptive-statistics/charts,  _'Charts',
-            /probability-and-statistics/descriptive-statistics/other-measures,  _'Other Measures',
-            /probability-and-statistics/descriptive-statistics/stories,  _'Stories',
-            /probability-and-statistics/descriptive-statistics/lies,  _'Lies'"
+            /probability-and-statistics/descriptive-statistics/gathering-data,  _'Gathering Data |md',
+            /probability-and-statistics/descriptive-statistics/notions-of-centrality,  _'Notions of Centrality |md',
+            /probability-and-statistics/descriptive-statistics/notions-of-spread,  _'Notions of Spread |md',
+            /probability-and-statistics/descriptive-statistics/charts,  _'Charts |md',
+            /probability-and-statistics/descriptive-statistics/other-measures,  _'Other Measures |md',
+            /probability-and-statistics/descriptive-statistics/stories,  _'Stories |md',
+            /probability-and-statistics/descriptive-statistics/lies,  _'Lies |md'"
 
 [../public/probability-and-statistics/descriptive-statistics.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"gathering-data::intro:pebble"
+    _"gathering-data::teaser:pebble"
 
-    _"notions-of-centrality::intro:pebble"
+    _"notions-of-centrality::teaser:pebble"
 
-    _"notions-of-spread::intro:pebble"
+    _"notions-of-spread::teaser:pebble"
 
-    _"charts::intro:pebble"
+    _"charts::teaser:pebble"
 
-    _"other-measures::intro:pebble"
+    _"other-measures::teaser:pebble"
 
-    _"stories::intro:pebble"
+    _"stories::teaser:pebble"
 
-    _"lies::intro:pebble"
+    _"lies::teaser:pebble"
 
 
 [code]()
 
-    _"gathering-data::intro:code"
-
-    _"notions-of-centrality::intro:code"
-
-    _"notions-of-spread::intro:code"
-
-    _"charts::intro:code"
-
-    _"other-measures::intro:code"
-
-    _"stories::intro:code"
-
-    _"lies::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Gathering Data
 
-    _"gathering-data::intro"
+    _"gathering-data::teaser"
 
 
 [gathering-data](pages/probability-and-statistics_descriptive-statistics_gathering-data.md "load:")
 
 ## Notions of Centrality
 
-    _"notions-of-centrality::intro"
+    _"notions-of-centrality::teaser"
 
 
 [notions-of-centrality](pages/probability-and-statistics_descriptive-statistics_notions-of-centrality.md "load:")
 
 ## Notions of Spread
 
-    _"notions-of-spread::intro"
+    _"notions-of-spread::teaser"
 
 
 [notions-of-spread](pages/probability-and-statistics_descriptive-statistics_notions-of-spread.md "load:")
 
 ## Charts
 
-    _"charts::intro"
+    _"charts::teaser"
 
 
 [charts](pages/probability-and-statistics_descriptive-statistics_charts.md "load:")
 
 ## Other Measures
 
-    _"other-measures::intro"
+    _"other-measures::teaser"
 
 
 [other-measures](pages/probability-and-statistics_descriptive-statistics_other-measures.md "load:")
 
 ## Stories
 
-    _"stories::intro"
+    _"stories::teaser"
 
 
 [stories](pages/probability-and-statistics_descriptive-statistics_stories.md "load:")
 
 ## Lies
 
-    _"lies::intro"
+    _"lies::teaser"
 
 
 [lies](pages/probability-and-statistics_descriptive-statistics_lies.md "load:")

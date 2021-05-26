@@ -66,7 +66,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
 
 ## FULL
 
-    0 | MathPebbles
+    0 | MathPebbles | 
     0arithmetic | Arithmetic | +
     0arithmetic/counting | Counting | \ldots
     0arithmetic/counting/number-as-matching | Number as Matching | 

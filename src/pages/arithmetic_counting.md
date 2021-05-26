@@ -1,13 +1,13 @@
 # Counting
 
     _"pieces | page /arithmetic/counting, _'intro |md',
-            /arithmetic/counting/number-as-matching,  _'Number as Matching',
-            /arithmetic/counting/pebbles-of-various-sizes,  _'Pebbles of Various Sizes',
-            /arithmetic/counting/digits,  _'Digits',
-            /arithmetic/counting/carry-overs,  _'Carry Overs',
-            /arithmetic/counting/units,  _'Units',
-            /arithmetic/counting/base-representations,  _'Base Representations',
-            /arithmetic/counting/largest-number,  _'Largest Number'"
+            /arithmetic/counting/number-as-matching,  _'Number as Matching |md',
+            /arithmetic/counting/pebbles-of-various-sizes,  _'Pebbles of Various Sizes |md',
+            /arithmetic/counting/digits,  _'Digits |md',
+            /arithmetic/counting/carry-overs,  _'Carry Overs |md',
+            /arithmetic/counting/units,  _'Units |md',
+            /arithmetic/counting/base-representations,  _'Base Representations |md',
+            /arithmetic/counting/largest-number,  _'Largest Number |md'"
 
 [../public/arithmetic/counting.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"number-as-matching::intro:pebble"
+    _"number-as-matching::teaser:pebble"
 
-    _"pebbles-of-various-sizes::intro:pebble"
+    _"pebbles-of-various-sizes::teaser:pebble"
 
-    _"digits::intro:pebble"
+    _"digits::teaser:pebble"
 
-    _"carry-overs::intro:pebble"
+    _"carry-overs::teaser:pebble"
 
-    _"units::intro:pebble"
+    _"units::teaser:pebble"
 
-    _"base-representations::intro:pebble"
+    _"base-representations::teaser:pebble"
 
-    _"largest-number::intro:pebble"
+    _"largest-number::teaser:pebble"
 
 
 [code]()
 
-    _"number-as-matching::intro:code"
-
-    _"pebbles-of-various-sizes::intro:code"
-
-    _"digits::intro:code"
-
-    _"carry-overs::intro:code"
-
-    _"units::intro:code"
-
-    _"base-representations::intro:code"
-
-    _"largest-number::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Number as Matching
 
-    _"number-as-matching::intro"
+    _"number-as-matching::teaser"
 
 
 [number-as-matching](pages/arithmetic_counting_number-as-matching.md "load:")
 
 ## Pebbles of Various Sizes
 
-    _"pebbles-of-various-sizes::intro"
+    _"pebbles-of-various-sizes::teaser"
 
 
 [pebbles-of-various-sizes](pages/arithmetic_counting_pebbles-of-various-sizes.md "load:")
 
 ## Digits
 
-    _"digits::intro"
+    _"digits::teaser"
 
 
 [digits](pages/arithmetic_counting_digits.md "load:")
 
 ## Carry Overs
 
-    _"carry-overs::intro"
+    _"carry-overs::teaser"
 
 
 [carry-overs](pages/arithmetic_counting_carry-overs.md "load:")
 
 ## Units
 
-    _"units::intro"
+    _"units::teaser"
 
 
 [units](pages/arithmetic_counting_units.md "load:")
 
 ## Base Representations
 
-    _"base-representations::intro"
+    _"base-representations::teaser"
 
 
 [base-representations](pages/arithmetic_counting_base-representations.md "load:")
 
 ## Largest Number
 
-    _"largest-number::intro"
+    _"largest-number::teaser"
 
 
 [largest-number](pages/arithmetic_counting_largest-number.md "load:")

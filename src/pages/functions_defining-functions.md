@@ -1,13 +1,13 @@
 # Defining Functions
 
     _"pieces | page /functions/defining-functions, _'intro |md',
-            /functions/defining-functions/taylor-series,  _'Taylor Series',
-            /functions/defining-functions/functional-equations,  _'Functional Equations',
-            /functions/defining-functions/differential-equations,  _'Differential Equations',
-            /functions/defining-functions/special-functions,  _'Special Functions',
-            /functions/defining-functions/laplace-transforms,  _'Laplace Transforms',
-            /functions/defining-functions/fourier-approximations,  _'Fourier Approximations',
-            /functions/defining-functions/tricks,  _'Tricks'"
+            /functions/defining-functions/taylor-series,  _'Taylor Series |md',
+            /functions/defining-functions/functional-equations,  _'Functional Equations |md',
+            /functions/defining-functions/differential-equations,  _'Differential Equations |md',
+            /functions/defining-functions/special-functions,  _'Special Functions |md',
+            /functions/defining-functions/laplace-transforms,  _'Laplace Transforms |md',
+            /functions/defining-functions/fourier-approximations,  _'Fourier Approximations |md',
+            /functions/defining-functions/tricks,  _'Tricks |md'"
 
 [../public/functions/defining-functions.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"taylor-series::intro:pebble"
+    _"taylor-series::teaser:pebble"
 
-    _"functional-equations::intro:pebble"
+    _"functional-equations::teaser:pebble"
 
-    _"differential-equations::intro:pebble"
+    _"differential-equations::teaser:pebble"
 
-    _"special-functions::intro:pebble"
+    _"special-functions::teaser:pebble"
 
-    _"laplace-transforms::intro:pebble"
+    _"laplace-transforms::teaser:pebble"
 
-    _"fourier-approximations::intro:pebble"
+    _"fourier-approximations::teaser:pebble"
 
-    _"tricks::intro:pebble"
+    _"tricks::teaser:pebble"
 
 
 [code]()
 
-    _"taylor-series::intro:code"
-
-    _"functional-equations::intro:code"
-
-    _"differential-equations::intro:code"
-
-    _"special-functions::intro:code"
-
-    _"laplace-transforms::intro:code"
-
-    _"fourier-approximations::intro:code"
-
-    _"tricks::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Taylor Series
 
-    _"taylor-series::intro"
+    _"taylor-series::teaser"
 
 
 [taylor-series](pages/functions_defining-functions_taylor-series.md "load:")
 
 ## Functional Equations
 
-    _"functional-equations::intro"
+    _"functional-equations::teaser"
 
 
 [functional-equations](pages/functions_defining-functions_functional-equations.md "load:")
 
 ## Differential Equations
 
-    _"differential-equations::intro"
+    _"differential-equations::teaser"
 
 
 [differential-equations](pages/functions_defining-functions_differential-equations.md "load:")
 
 ## Special Functions
 
-    _"special-functions::intro"
+    _"special-functions::teaser"
 
 
 [special-functions](pages/functions_defining-functions_special-functions.md "load:")
 
 ## Laplace Transforms
 
-    _"laplace-transforms::intro"
+    _"laplace-transforms::teaser"
 
 
 [laplace-transforms](pages/functions_defining-functions_laplace-transforms.md "load:")
 
 ## Fourier Approximations
 
-    _"fourier-approximations::intro"
+    _"fourier-approximations::teaser"
 
 
 [fourier-approximations](pages/functions_defining-functions_fourier-approximations.md "load:")
 
 ## Tricks
 
-    _"tricks::intro"
+    _"tricks::teaser"
 
 
 [tricks](pages/functions_defining-functions_tricks.md "load:")

@@ -1,13 +1,13 @@
 # Constructions
 
     _"pieces | page /geometry/constructions, _'intro |md',
-            /geometry/constructions/ruler-and-compass,  _'Ruler and Compass',
-            /geometry/constructions/constructions-with-lines,  _'Constructions with Lines',
-            /geometry/constructions/constructing-angles,  _'Constructing Angles',
-            /geometry/constructions/drawing-triangles,  _'Drawing Triangles',
-            /geometry/constructions/constructions-with-circles,  _'Constructions with Circles',
-            /geometry/constructions/trisecting-the-angle,  _'Trisecting the Angle',
-            /geometry/constructions/constructing-solutions-to-equations,  _'Constructing Solutions to Equations'"
+            /geometry/constructions/ruler-and-compass,  _'Ruler and Compass |md',
+            /geometry/constructions/constructions-with-lines,  _'Constructions with Lines |md',
+            /geometry/constructions/constructing-angles,  _'Constructing Angles |md',
+            /geometry/constructions/drawing-triangles,  _'Drawing Triangles |md',
+            /geometry/constructions/constructions-with-circles,  _'Constructions with Circles |md',
+            /geometry/constructions/trisecting-the-angle,  _'Trisecting the Angle |md',
+            /geometry/constructions/constructing-solutions-to-equations,  _'Constructing Solutions to Equations |md'"
 
 [../public/geometry/constructions.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"ruler-and-compass::intro:pebble"
+    _"ruler-and-compass::teaser:pebble"
 
-    _"constructions-with-lines::intro:pebble"
+    _"constructions-with-lines::teaser:pebble"
 
-    _"constructing-angles::intro:pebble"
+    _"constructing-angles::teaser:pebble"
 
-    _"drawing-triangles::intro:pebble"
+    _"drawing-triangles::teaser:pebble"
 
-    _"constructions-with-circles::intro:pebble"
+    _"constructions-with-circles::teaser:pebble"
 
-    _"trisecting-the-angle::intro:pebble"
+    _"trisecting-the-angle::teaser:pebble"
 
-    _"constructing-solutions-to-equations::intro:pebble"
+    _"constructing-solutions-to-equations::teaser:pebble"
 
 
 [code]()
 
-    _"ruler-and-compass::intro:code"
-
-    _"constructions-with-lines::intro:code"
-
-    _"constructing-angles::intro:code"
-
-    _"drawing-triangles::intro:code"
-
-    _"constructions-with-circles::intro:code"
-
-    _"trisecting-the-angle::intro:code"
-
-    _"constructing-solutions-to-equations::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Ruler and Compass
 
-    _"ruler-and-compass::intro"
+    _"ruler-and-compass::teaser"
 
 
 [ruler-and-compass](pages/geometry_constructions_ruler-and-compass.md "load:")
 
 ## Constructions with Lines
 
-    _"constructions-with-lines::intro"
+    _"constructions-with-lines::teaser"
 
 
 [constructions-with-lines](pages/geometry_constructions_constructions-with-lines.md "load:")
 
 ## Constructing Angles
 
-    _"constructing-angles::intro"
+    _"constructing-angles::teaser"
 
 
 [constructing-angles](pages/geometry_constructions_constructing-angles.md "load:")
 
 ## Drawing Triangles
 
-    _"drawing-triangles::intro"
+    _"drawing-triangles::teaser"
 
 
 [drawing-triangles](pages/geometry_constructions_drawing-triangles.md "load:")
 
 ## Constructions with Circles
 
-    _"constructions-with-circles::intro"
+    _"constructions-with-circles::teaser"
 
 
 [constructions-with-circles](pages/geometry_constructions_constructions-with-circles.md "load:")
 
 ## Trisecting the Angle
 
-    _"trisecting-the-angle::intro"
+    _"trisecting-the-angle::teaser"
 
 
 [trisecting-the-angle](pages/geometry_constructions_trisecting-the-angle.md "load:")
 
 ## Constructing Solutions to Equations
 
-    _"constructing-solutions-to-equations::intro"
+    _"constructing-solutions-to-equations::teaser"
 
 
 [constructing-solutions-to-equations](pages/geometry_constructions_constructing-solutions-to-equations.md "load:")

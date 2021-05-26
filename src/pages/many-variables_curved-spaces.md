@@ -1,13 +1,13 @@
 # Curved Spaces
 
     _"pieces | page /many-variables/curved-spaces, _'intro |md',
-            /many-variables/curved-spaces/surfaces-in-3d,  _'Surfaces in 3D',
-            /many-variables/curved-spaces/curves,  _'Curves',
-            /many-variables/curved-spaces/coordinates,  _'Coordinates',
-            /many-variables/curved-spaces/tangent-spaces,  _'Tangent Spaces',
-            /many-variables/curved-spaces/metrics,  _'Metrics',
-            /many-variables/curved-spaces/tensors-and-differential-forms,  _'Tensors and Differential Forms',
-            /many-variables/curved-spaces/topological-concerns,  _'Topological Concerns'"
+            /many-variables/curved-spaces/surfaces-in-3d,  _'Surfaces in 3D |md',
+            /many-variables/curved-spaces/curves,  _'Curves |md',
+            /many-variables/curved-spaces/coordinates,  _'Coordinates |md',
+            /many-variables/curved-spaces/tangent-spaces,  _'Tangent Spaces |md',
+            /many-variables/curved-spaces/metrics,  _'Metrics |md',
+            /many-variables/curved-spaces/tensors-and-differential-forms,  _'Tensors and Differential Forms |md',
+            /many-variables/curved-spaces/topological-concerns,  _'Topological Concerns |md'"
 
 [../public/many-variables/curved-spaces.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"surfaces-in-3d::intro:pebble"
+    _"surfaces-in-3d::teaser:pebble"
 
-    _"curves::intro:pebble"
+    _"curves::teaser:pebble"
 
-    _"coordinates::intro:pebble"
+    _"coordinates::teaser:pebble"
 
-    _"tangent-spaces::intro:pebble"
+    _"tangent-spaces::teaser:pebble"
 
-    _"metrics::intro:pebble"
+    _"metrics::teaser:pebble"
 
-    _"tensors-and-differential-forms::intro:pebble"
+    _"tensors-and-differential-forms::teaser:pebble"
 
-    _"topological-concerns::intro:pebble"
+    _"topological-concerns::teaser:pebble"
 
 
 [code]()
 
-    _"surfaces-in-3d::intro:code"
-
-    _"curves::intro:code"
-
-    _"coordinates::intro:code"
-
-    _"tangent-spaces::intro:code"
-
-    _"metrics::intro:code"
-
-    _"tensors-and-differential-forms::intro:code"
-
-    _"topological-concerns::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Surfaces in 3D
 
-    _"surfaces-in-3d::intro"
+    _"surfaces-in-3d::teaser"
 
 
 [surfaces-in-3d](pages/many-variables_curved-spaces_surfaces-in-3d.md "load:")
 
 ## Curves
 
-    _"curves::intro"
+    _"curves::teaser"
 
 
 [curves](pages/many-variables_curved-spaces_curves.md "load:")
 
 ## Coordinates
 
-    _"coordinates::intro"
+    _"coordinates::teaser"
 
 
 [coordinates](pages/many-variables_curved-spaces_coordinates.md "load:")
 
 ## Tangent Spaces
 
-    _"tangent-spaces::intro"
+    _"tangent-spaces::teaser"
 
 
 [tangent-spaces](pages/many-variables_curved-spaces_tangent-spaces.md "load:")
 
 ## Metrics
 
-    _"metrics::intro"
+    _"metrics::teaser"
 
 
 [metrics](pages/many-variables_curved-spaces_metrics.md "load:")
 
 ## Tensors and Differential Forms
 
-    _"tensors-and-differential-forms::intro"
+    _"tensors-and-differential-forms::teaser"
 
 
 [tensors-and-differential-forms](pages/many-variables_curved-spaces_tensors-and-differential-forms.md "load:")
 
 ## Topological Concerns
 
-    _"topological-concerns::intro"
+    _"topological-concerns::teaser"
 
 
 [topological-concerns](pages/many-variables_curved-spaces_topological-concerns.md "load:")

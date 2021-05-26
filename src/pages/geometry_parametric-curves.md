@@ -1,13 +1,13 @@
 # Parametric Curves
 
     _"pieces | page /geometry/parametric-curves, _'intro |md',
-            /geometry/parametric-curves/notions-of-parametric-curves,  _'Notions of Parametric Curves',
-            /geometry/parametric-curves/functions-of-x-as-a-function-of-t,  _'Functions of x as a Function of t',
-            /geometry/parametric-curves/spirals,  _'Spirals ',
-            /geometry/parametric-curves/tangent-vectors,  _'Tangent Vectors',
-            /geometry/parametric-curves/arc-length,  _'Arc Length',
-            /geometry/parametric-curves/reparametrizations,  _'Reparametrizations',
-            /geometry/parametric-curves/geodesics,  _'Geodesics'"
+            /geometry/parametric-curves/notions-of-parametric-curves,  _'Notions of Parametric Curves |md',
+            /geometry/parametric-curves/functions-of-x-as-a-function-of-t,  _'Functions of x as a Function of t |md',
+            /geometry/parametric-curves/spirals,  _'Spirals  |md',
+            /geometry/parametric-curves/tangent-vectors,  _'Tangent Vectors |md',
+            /geometry/parametric-curves/arc-length,  _'Arc Length |md',
+            /geometry/parametric-curves/reparametrizations,  _'Reparametrizations |md',
+            /geometry/parametric-curves/geodesics,  _'Geodesics |md'"
 
 [../public/geometry/parametric-curves.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"notions-of-parametric-curves::intro:pebble"
+    _"notions-of-parametric-curves::teaser:pebble"
 
-    _"functions-of-x-as-a-function-of-t::intro:pebble"
+    _"functions-of-x-as-a-function-of-t::teaser:pebble"
 
-    _"spirals::intro:pebble"
+    _"spirals::teaser:pebble"
 
-    _"tangent-vectors::intro:pebble"
+    _"tangent-vectors::teaser:pebble"
 
-    _"arc-length::intro:pebble"
+    _"arc-length::teaser:pebble"
 
-    _"reparametrizations::intro:pebble"
+    _"reparametrizations::teaser:pebble"
 
-    _"geodesics::intro:pebble"
+    _"geodesics::teaser:pebble"
 
 
 [code]()
 
-    _"notions-of-parametric-curves::intro:code"
-
-    _"functions-of-x-as-a-function-of-t::intro:code"
-
-    _"spirals::intro:code"
-
-    _"tangent-vectors::intro:code"
-
-    _"arc-length::intro:code"
-
-    _"reparametrizations::intro:code"
-
-    _"geodesics::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Notions of Parametric Curves
 
-    _"notions-of-parametric-curves::intro"
+    _"notions-of-parametric-curves::teaser"
 
 
 [notions-of-parametric-curves](pages/geometry_parametric-curves_notions-of-parametric-curves.md "load:")
 
 ## Functions of x as a Function of t
 
-    _"functions-of-x-as-a-function-of-t::intro"
+    _"functions-of-x-as-a-function-of-t::teaser"
 
 
 [functions-of-x-as-a-function-of-t](pages/geometry_parametric-curves_functions-of-x-as-a-function-of-t.md "load:")
 
 ## Spirals 
 
-    _"spirals::intro"
+    _"spirals::teaser"
 
 
 [spirals](pages/geometry_parametric-curves_spirals.md "load:")
 
 ## Tangent Vectors
 
-    _"tangent-vectors::intro"
+    _"tangent-vectors::teaser"
 
 
 [tangent-vectors](pages/geometry_parametric-curves_tangent-vectors.md "load:")
 
 ## Arc Length
 
-    _"arc-length::intro"
+    _"arc-length::teaser"
 
 
 [arc-length](pages/geometry_parametric-curves_arc-length.md "load:")
 
 ## Reparametrizations
 
-    _"reparametrizations::intro"
+    _"reparametrizations::teaser"
 
 
 [reparametrizations](pages/geometry_parametric-curves_reparametrizations.md "load:")
 
 ## Geodesics
 
-    _"geodesics::intro"
+    _"geodesics::teaser"
 
 
 [geodesics](pages/geometry_parametric-curves_geodesics.md "load:")

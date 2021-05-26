@@ -1,13 +1,13 @@
 # Multiplication
 
     _"pieces | page /arithmetic/multiplication, _'intro |md',
-            /arithmetic/multiplication/notions-of-multiplication,  _'Notions of Multiplication',
-            /arithmetic/multiplication/single-digit-multiplication,  _'Single Digit Multiplication',
-            /arithmetic/multiplication/no-carry-left-to-right-multiplication,  _'No Carry Left to Right Multiplication',
-            /arithmetic/multiplication/carry-left-to-right-multiplication,  _'Carry Left to Right Multiplication',
-            /arithmetic/multiplication/significant-multiplication,  _'Significant Multiplication',
-            /arithmetic/multiplication/tricks-and-checks-of-multiplication,  _'Tricks and Checks of Multiplication',
-            /arithmetic/multiplication/properties-of-multiplication,  _'Properties of Multiplication '"
+            /arithmetic/multiplication/notions-of-multiplication,  _'Notions of Multiplication |md',
+            /arithmetic/multiplication/single-digit-multiplication,  _'Single Digit Multiplication |md',
+            /arithmetic/multiplication/no-carry-left-to-right-multiplication,  _'No Carry Left to Right Multiplication |md',
+            /arithmetic/multiplication/carry-left-to-right-multiplication,  _'Carry Left to Right Multiplication |md',
+            /arithmetic/multiplication/significant-multiplication,  _'Significant Multiplication |md',
+            /arithmetic/multiplication/tricks-and-checks-of-multiplication,  _'Tricks and Checks of Multiplication |md',
+            /arithmetic/multiplication/properties-of-multiplication,  _'Properties of Multiplication  |md'"
 
 [../public/arithmetic/multiplication.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"notions-of-multiplication::intro:pebble"
+    _"notions-of-multiplication::teaser:pebble"
 
-    _"single-digit-multiplication::intro:pebble"
+    _"single-digit-multiplication::teaser:pebble"
 
-    _"no-carry-left-to-right-multiplication::intro:pebble"
+    _"no-carry-left-to-right-multiplication::teaser:pebble"
 
-    _"carry-left-to-right-multiplication::intro:pebble"
+    _"carry-left-to-right-multiplication::teaser:pebble"
 
-    _"significant-multiplication::intro:pebble"
+    _"significant-multiplication::teaser:pebble"
 
-    _"tricks-and-checks-of-multiplication::intro:pebble"
+    _"tricks-and-checks-of-multiplication::teaser:pebble"
 
-    _"properties-of-multiplication::intro:pebble"
+    _"properties-of-multiplication::teaser:pebble"
 
 
 [code]()
 
-    _"notions-of-multiplication::intro:code"
-
-    _"single-digit-multiplication::intro:code"
-
-    _"no-carry-left-to-right-multiplication::intro:code"
-
-    _"carry-left-to-right-multiplication::intro:code"
-
-    _"significant-multiplication::intro:code"
-
-    _"tricks-and-checks-of-multiplication::intro:code"
-
-    _"properties-of-multiplication::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Notions of Multiplication
 
-    _"notions-of-multiplication::intro"
+    _"notions-of-multiplication::teaser"
 
 
 [notions-of-multiplication](pages/arithmetic_multiplication_notions-of-multiplication.md "load:")
 
 ## Single Digit Multiplication
 
-    _"single-digit-multiplication::intro"
+    _"single-digit-multiplication::teaser"
 
 
 [single-digit-multiplication](pages/arithmetic_multiplication_single-digit-multiplication.md "load:")
 
 ## No Carry Left to Right Multiplication
 
-    _"no-carry-left-to-right-multiplication::intro"
+    _"no-carry-left-to-right-multiplication::teaser"
 
 
 [no-carry-left-to-right-multiplication](pages/arithmetic_multiplication_no-carry-left-to-right-multiplication.md "load:")
 
 ## Carry Left to Right Multiplication
 
-    _"carry-left-to-right-multiplication::intro"
+    _"carry-left-to-right-multiplication::teaser"
 
 
 [carry-left-to-right-multiplication](pages/arithmetic_multiplication_carry-left-to-right-multiplication.md "load:")
 
 ## Significant Multiplication
 
-    _"significant-multiplication::intro"
+    _"significant-multiplication::teaser"
 
 
 [significant-multiplication](pages/arithmetic_multiplication_significant-multiplication.md "load:")
 
 ## Tricks and Checks of Multiplication
 
-    _"tricks-and-checks-of-multiplication::intro"
+    _"tricks-and-checks-of-multiplication::teaser"
 
 
 [tricks-and-checks-of-multiplication](pages/arithmetic_multiplication_tricks-and-checks-of-multiplication.md "load:")
 
 ## Properties of Multiplication 
 
-    _"properties-of-multiplication::intro"
+    _"properties-of-multiplication::teaser"
 
 
 [properties-of-multiplication](pages/arithmetic_multiplication_properties-of-multiplication.md "load:")

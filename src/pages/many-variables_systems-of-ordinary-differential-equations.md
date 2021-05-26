@@ -1,13 +1,13 @@
 # Systems of Ordinary Differential Equations
 
     _"pieces | page /many-variables/systems-of-ordinary-differential-equations, _'intro |md',
-            /many-variables/systems-of-ordinary-differential-equations/predator-prey,  _'Predator Prey',
-            /many-variables/systems-of-ordinary-differential-equations/two-dimensional-systems,  _'Two Dimensional Systems',
-            /many-variables/systems-of-ordinary-differential-equations/matrix-solutions,  _'Matrix Solutions',
-            /many-variables/systems-of-ordinary-differential-equations/numerical-systems,  _'Numerical Systems',
-            /many-variables/systems-of-ordinary-differential-equations/non-linear-differential-systems,  _'Non-linear Differential Systems',
-            /many-variables/systems-of-ordinary-differential-equations/chaos,  _'Chaos',
-            /many-variables/systems-of-ordinary-differential-equations/critical-points,  _'Critical Points'"
+            /many-variables/systems-of-ordinary-differential-equations/predator-prey,  _'Predator Prey |md',
+            /many-variables/systems-of-ordinary-differential-equations/two-dimensional-systems,  _'Two Dimensional Systems |md',
+            /many-variables/systems-of-ordinary-differential-equations/matrix-solutions,  _'Matrix Solutions |md',
+            /many-variables/systems-of-ordinary-differential-equations/numerical-systems,  _'Numerical Systems |md',
+            /many-variables/systems-of-ordinary-differential-equations/non-linear-differential-systems,  _'Non-linear Differential Systems |md',
+            /many-variables/systems-of-ordinary-differential-equations/chaos,  _'Chaos |md',
+            /many-variables/systems-of-ordinary-differential-equations/critical-points,  _'Critical Points |md'"
 
 [../public/many-variables/systems-of-ordinary-differential-equations.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"predator-prey::intro:pebble"
+    _"predator-prey::teaser:pebble"
 
-    _"two-dimensional-systems::intro:pebble"
+    _"two-dimensional-systems::teaser:pebble"
 
-    _"matrix-solutions::intro:pebble"
+    _"matrix-solutions::teaser:pebble"
 
-    _"numerical-systems::intro:pebble"
+    _"numerical-systems::teaser:pebble"
 
-    _"non-linear-differential-systems::intro:pebble"
+    _"non-linear-differential-systems::teaser:pebble"
 
-    _"chaos::intro:pebble"
+    _"chaos::teaser:pebble"
 
-    _"critical-points::intro:pebble"
+    _"critical-points::teaser:pebble"
 
 
 [code]()
 
-    _"predator-prey::intro:code"
-
-    _"two-dimensional-systems::intro:code"
-
-    _"matrix-solutions::intro:code"
-
-    _"numerical-systems::intro:code"
-
-    _"non-linear-differential-systems::intro:code"
-
-    _"chaos::intro:code"
-
-    _"critical-points::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Predator Prey
 
-    _"predator-prey::intro"
+    _"predator-prey::teaser"
 
 
 [predator-prey](pages/many-variables_systems-of-ordinary-differential-equations_predator-prey.md "load:")
 
 ## Two Dimensional Systems
 
-    _"two-dimensional-systems::intro"
+    _"two-dimensional-systems::teaser"
 
 
 [two-dimensional-systems](pages/many-variables_systems-of-ordinary-differential-equations_two-dimensional-systems.md "load:")
 
 ## Matrix Solutions
 
-    _"matrix-solutions::intro"
+    _"matrix-solutions::teaser"
 
 
 [matrix-solutions](pages/many-variables_systems-of-ordinary-differential-equations_matrix-solutions.md "load:")
 
 ## Numerical Systems
 
-    _"numerical-systems::intro"
+    _"numerical-systems::teaser"
 
 
 [numerical-systems](pages/many-variables_systems-of-ordinary-differential-equations_numerical-systems.md "load:")
 
 ## Non-linear Differential Systems
 
-    _"non-linear-differential-systems::intro"
+    _"non-linear-differential-systems::teaser"
 
 
 [non-linear-differential-systems](pages/many-variables_systems-of-ordinary-differential-equations_non-linear-differential-systems.md "load:")
 
 ## Chaos
 
-    _"chaos::intro"
+    _"chaos::teaser"
 
 
 [chaos](pages/many-variables_systems-of-ordinary-differential-equations_chaos.md "load:")
 
 ## Critical Points
 
-    _"critical-points::intro"
+    _"critical-points::teaser"
 
 
 [critical-points](pages/many-variables_systems-of-ordinary-differential-equations_critical-points.md "load:")

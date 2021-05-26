@@ -1,13 +1,13 @@
 # Subtraction
 
     _"pieces | page /arithmetic/subtraction, _'intro |md',
-            /arithmetic/subtraction/removal,  _'Removal',
-            /arithmetic/subtraction/complement-subtraction,  _'Complement Subtraction',
-            /arithmetic/subtraction/left-to-right-subtraction,  _'Left to Right Subtraction',
-            /arithmetic/subtraction/negative-numbers,  _'Negative Numbers',
-            /arithmetic/subtraction/significant-subtraction,  _'Significant Subtraction',
-            /arithmetic/subtraction/tricks-and-checks-of-subtraction,  _'Tricks and Checks of Subtraction',
-            /arithmetic/subtraction/properties-of-subtraction,  _'Properties of Subtraction'"
+            /arithmetic/subtraction/removal,  _'Removal |md',
+            /arithmetic/subtraction/complement-subtraction,  _'Complement Subtraction |md',
+            /arithmetic/subtraction/left-to-right-subtraction,  _'Left to Right Subtraction |md',
+            /arithmetic/subtraction/negative-numbers,  _'Negative Numbers |md',
+            /arithmetic/subtraction/significant-subtraction,  _'Significant Subtraction |md',
+            /arithmetic/subtraction/tricks-and-checks-of-subtraction,  _'Tricks and Checks of Subtraction |md',
+            /arithmetic/subtraction/properties-of-subtraction,  _'Properties of Subtraction |md'"
 
 [../public/arithmetic/subtraction.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"removal::intro:pebble"
+    _"removal::teaser:pebble"
 
-    _"complement-subtraction::intro:pebble"
+    _"complement-subtraction::teaser:pebble"
 
-    _"left-to-right-subtraction::intro:pebble"
+    _"left-to-right-subtraction::teaser:pebble"
 
-    _"negative-numbers::intro:pebble"
+    _"negative-numbers::teaser:pebble"
 
-    _"significant-subtraction::intro:pebble"
+    _"significant-subtraction::teaser:pebble"
 
-    _"tricks-and-checks-of-subtraction::intro:pebble"
+    _"tricks-and-checks-of-subtraction::teaser:pebble"
 
-    _"properties-of-subtraction::intro:pebble"
+    _"properties-of-subtraction::teaser:pebble"
 
 
 [code]()
 
-    _"removal::intro:code"
-
-    _"complement-subtraction::intro:code"
-
-    _"left-to-right-subtraction::intro:code"
-
-    _"negative-numbers::intro:code"
-
-    _"significant-subtraction::intro:code"
-
-    _"tricks-and-checks-of-subtraction::intro:code"
-
-    _"properties-of-subtraction::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Removal
 
-    _"removal::intro"
+    _"removal::teaser"
 
 
 [removal](pages/arithmetic_subtraction_removal.md "load:")
 
 ## Complement Subtraction
 
-    _"complement-subtraction::intro"
+    _"complement-subtraction::teaser"
 
 
 [complement-subtraction](pages/arithmetic_subtraction_complement-subtraction.md "load:")
 
 ## Left to Right Subtraction
 
-    _"left-to-right-subtraction::intro"
+    _"left-to-right-subtraction::teaser"
 
 
 [left-to-right-subtraction](pages/arithmetic_subtraction_left-to-right-subtraction.md "load:")
 
 ## Negative Numbers
 
-    _"negative-numbers::intro"
+    _"negative-numbers::teaser"
 
 
 [negative-numbers](pages/arithmetic_subtraction_negative-numbers.md "load:")
 
 ## Significant Subtraction
 
-    _"significant-subtraction::intro"
+    _"significant-subtraction::teaser"
 
 
 [significant-subtraction](pages/arithmetic_subtraction_significant-subtraction.md "load:")
 
 ## Tricks and Checks of Subtraction
 
-    _"tricks-and-checks-of-subtraction::intro"
+    _"tricks-and-checks-of-subtraction::teaser"
 
 
 [tricks-and-checks-of-subtraction](pages/arithmetic_subtraction_tricks-and-checks-of-subtraction.md "load:")
 
 ## Properties of Subtraction
 
-    _"properties-of-subtraction::intro"
+    _"properties-of-subtraction::teaser"
 
 
 [properties-of-subtraction](pages/arithmetic_subtraction_properties-of-subtraction.md "load:")

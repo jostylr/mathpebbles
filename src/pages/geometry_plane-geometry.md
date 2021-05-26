@@ -1,13 +1,13 @@
 # Plane Geometry
 
     _"pieces | page /geometry/plane-geometry, _'intro |md',
-            /geometry/plane-geometry/euclidean-lines,  _'Euclidean Lines',
-            /geometry/plane-geometry/euclidean-triangles,  _'Euclidean Triangles',
-            /geometry/plane-geometry/similarity,  _'Similarity',
-            /geometry/plane-geometry/polygons,  _'Polygons',
-            /geometry/plane-geometry/euclidean-circles,  _'Euclidean Circles',
-            /geometry/plane-geometry/transformations,  _'Transformations',
-            /geometry/plane-geometry/coordinate-proofs,  _'Coordinate Proofs'"
+            /geometry/plane-geometry/euclidean-lines,  _'Euclidean Lines |md',
+            /geometry/plane-geometry/euclidean-triangles,  _'Euclidean Triangles |md',
+            /geometry/plane-geometry/similarity,  _'Similarity |md',
+            /geometry/plane-geometry/polygons,  _'Polygons |md',
+            /geometry/plane-geometry/euclidean-circles,  _'Euclidean Circles |md',
+            /geometry/plane-geometry/transformations,  _'Transformations |md',
+            /geometry/plane-geometry/coordinate-proofs,  _'Coordinate Proofs |md'"
 
 [../public/geometry/plane-geometry.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"euclidean-lines::intro:pebble"
+    _"euclidean-lines::teaser:pebble"
 
-    _"euclidean-triangles::intro:pebble"
+    _"euclidean-triangles::teaser:pebble"
 
-    _"similarity::intro:pebble"
+    _"similarity::teaser:pebble"
 
-    _"polygons::intro:pebble"
+    _"polygons::teaser:pebble"
 
-    _"euclidean-circles::intro:pebble"
+    _"euclidean-circles::teaser:pebble"
 
-    _"transformations::intro:pebble"
+    _"transformations::teaser:pebble"
 
-    _"coordinate-proofs::intro:pebble"
+    _"coordinate-proofs::teaser:pebble"
 
 
 [code]()
 
-    _"euclidean-lines::intro:code"
-
-    _"euclidean-triangles::intro:code"
-
-    _"similarity::intro:code"
-
-    _"polygons::intro:code"
-
-    _"euclidean-circles::intro:code"
-
-    _"transformations::intro:code"
-
-    _"coordinate-proofs::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Euclidean Lines
 
-    _"euclidean-lines::intro"
+    _"euclidean-lines::teaser"
 
 
 [euclidean-lines](pages/geometry_plane-geometry_euclidean-lines.md "load:")
 
 ## Euclidean Triangles
 
-    _"euclidean-triangles::intro"
+    _"euclidean-triangles::teaser"
 
 
 [euclidean-triangles](pages/geometry_plane-geometry_euclidean-triangles.md "load:")
 
 ## Similarity
 
-    _"similarity::intro"
+    _"similarity::teaser"
 
 
 [similarity](pages/geometry_plane-geometry_similarity.md "load:")
 
 ## Polygons
 
-    _"polygons::intro"
+    _"polygons::teaser"
 
 
 [polygons](pages/geometry_plane-geometry_polygons.md "load:")
 
 ## Euclidean Circles
 
-    _"euclidean-circles::intro"
+    _"euclidean-circles::teaser"
 
 
 [euclidean-circles](pages/geometry_plane-geometry_euclidean-circles.md "load:")
 
 ## Transformations
 
-    _"transformations::intro"
+    _"transformations::teaser"
 
 
 [transformations](pages/geometry_plane-geometry_transformations.md "load:")
 
 ## Coordinate Proofs
 
-    _"coordinate-proofs::intro"
+    _"coordinate-proofs::teaser"
 
 
 [coordinate-proofs](pages/geometry_plane-geometry_coordinate-proofs.md "load:")

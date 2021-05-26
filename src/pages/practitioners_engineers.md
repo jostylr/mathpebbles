@@ -1,13 +1,13 @@
 # Engineers
 
     _"pieces | page /practitioners/engineers, _'intro |md',
-            /practitioners/engineers/mechanical-engineering,  _'Mechanical Engineering',
-            /practitioners/engineers/electrical-engineering,  _'Electrical Engineering',
-            /practitioners/engineers/chemical-engineering,  _'Chemical Engineering',
-            /practitioners/engineers/aerospace-engineering,  _'Aerospace Engineering',
-            /practitioners/engineers/actuarial-science,  _'Actuarial Science',
-            /practitioners/engineers/meterology,  _'Meterology',
-            /practitioners/engineers/finance,  _'Finance'"
+            /practitioners/engineers/mechanical-engineering,  _'Mechanical Engineering |md',
+            /practitioners/engineers/electrical-engineering,  _'Electrical Engineering |md',
+            /practitioners/engineers/chemical-engineering,  _'Chemical Engineering |md',
+            /practitioners/engineers/aerospace-engineering,  _'Aerospace Engineering |md',
+            /practitioners/engineers/actuarial-science,  _'Actuarial Science |md',
+            /practitioners/engineers/meterology,  _'Meterology |md',
+            /practitioners/engineers/finance,  _'Finance |md'"
 
 [../public/practitioners/engineers.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"mechanical-engineering::intro:pebble"
+    _"mechanical-engineering::teaser:pebble"
 
-    _"electrical-engineering::intro:pebble"
+    _"electrical-engineering::teaser:pebble"
 
-    _"chemical-engineering::intro:pebble"
+    _"chemical-engineering::teaser:pebble"
 
-    _"aerospace-engineering::intro:pebble"
+    _"aerospace-engineering::teaser:pebble"
 
-    _"actuarial-science::intro:pebble"
+    _"actuarial-science::teaser:pebble"
 
-    _"meterology::intro:pebble"
+    _"meterology::teaser:pebble"
 
-    _"finance::intro:pebble"
+    _"finance::teaser:pebble"
 
 
 [code]()
 
-    _"mechanical-engineering::intro:code"
-
-    _"electrical-engineering::intro:code"
-
-    _"chemical-engineering::intro:code"
-
-    _"aerospace-engineering::intro:code"
-
-    _"actuarial-science::intro:code"
-
-    _"meterology::intro:code"
-
-    _"finance::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Mechanical Engineering
 
-    _"mechanical-engineering::intro"
+    _"mechanical-engineering::teaser"
 
 
 [mechanical-engineering](pages/practitioners_engineers_mechanical-engineering.md "load:")
 
 ## Electrical Engineering
 
-    _"electrical-engineering::intro"
+    _"electrical-engineering::teaser"
 
 
 [electrical-engineering](pages/practitioners_engineers_electrical-engineering.md "load:")
 
 ## Chemical Engineering
 
-    _"chemical-engineering::intro"
+    _"chemical-engineering::teaser"
 
 
 [chemical-engineering](pages/practitioners_engineers_chemical-engineering.md "load:")
 
 ## Aerospace Engineering
 
-    _"aerospace-engineering::intro"
+    _"aerospace-engineering::teaser"
 
 
 [aerospace-engineering](pages/practitioners_engineers_aerospace-engineering.md "load:")
 
 ## Actuarial Science
 
-    _"actuarial-science::intro"
+    _"actuarial-science::teaser"
 
 
 [actuarial-science](pages/practitioners_engineers_actuarial-science.md "load:")
 
 ## Meterology
 
-    _"meterology::intro"
+    _"meterology::teaser"
 
 
 [meterology](pages/practitioners_engineers_meterology.md "load:")
 
 ## Finance
 
-    _"finance::intro"
+    _"finance::teaser"
 
 
 [finance](pages/practitioners_engineers_finance.md "load:")

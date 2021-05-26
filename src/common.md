@@ -2282,6 +2282,13 @@ This is the stuff we want to do to the page once stuff is loaded.
             el.addEventListener( 'click', (ev) => ev.stopPropagation()); 
         });
 
+        $$('.plain').forEach( (el) => {
+            el.addEventListener( 'click', (ev) => {
+                $('.explore', el).click();
+            });
+        });
+
+
         $$('.open-drawer').forEach( (el) => {
             let drawer = el.nextElementSibling;
             if (drawer.tagName === 'SL-DRAWER') {

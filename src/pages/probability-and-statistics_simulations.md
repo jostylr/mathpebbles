@@ -1,13 +1,13 @@
 # Simulations
 
     _"pieces | page /probability-and-statistics/simulations, _'intro |md',
-            /probability-and-statistics/simulations/exploring-probability,  _'Exploring Probability',
-            /probability-and-statistics/simulations/randomness,  _'Randomness',
-            /probability-and-statistics/simulations/simulating-random-variables,  _'Simulating Random Variables',
-            /probability-and-statistics/simulations/central-limit-theorem-explorations,  _'Central Limit Theorem Explorations',
-            /probability-and-statistics/simulations/z-test-explorations,  _'z-Test Explorations',
-            /probability-and-statistics/simulations/t-test-explorations,  _'t-Test Explorations',
-            /probability-and-statistics/simulations/bayesian-explorations,  _'Bayesian Explorations'"
+            /probability-and-statistics/simulations/exploring-probability,  _'Exploring Probability |md',
+            /probability-and-statistics/simulations/randomness,  _'Randomness |md',
+            /probability-and-statistics/simulations/simulating-random-variables,  _'Simulating Random Variables |md',
+            /probability-and-statistics/simulations/central-limit-theorem-explorations,  _'Central Limit Theorem Explorations |md',
+            /probability-and-statistics/simulations/z-test-explorations,  _'z-Test Explorations |md',
+            /probability-and-statistics/simulations/t-test-explorations,  _'t-Test Explorations |md',
+            /probability-and-statistics/simulations/bayesian-explorations,  _'Bayesian Explorations |md'"
 
 [../public/probability-and-statistics/simulations.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"exploring-probability::intro:pebble"
+    _"exploring-probability::teaser:pebble"
 
-    _"randomness::intro:pebble"
+    _"randomness::teaser:pebble"
 
-    _"simulating-random-variables::intro:pebble"
+    _"simulating-random-variables::teaser:pebble"
 
-    _"central-limit-theorem-explorations::intro:pebble"
+    _"central-limit-theorem-explorations::teaser:pebble"
 
-    _"z-test-explorations::intro:pebble"
+    _"z-test-explorations::teaser:pebble"
 
-    _"t-test-explorations::intro:pebble"
+    _"t-test-explorations::teaser:pebble"
 
-    _"bayesian-explorations::intro:pebble"
+    _"bayesian-explorations::teaser:pebble"
 
 
 [code]()
 
-    _"exploring-probability::intro:code"
-
-    _"randomness::intro:code"
-
-    _"simulating-random-variables::intro:code"
-
-    _"central-limit-theorem-explorations::intro:code"
-
-    _"z-test-explorations::intro:code"
-
-    _"t-test-explorations::intro:code"
-
-    _"bayesian-explorations::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Exploring Probability
 
-    _"exploring-probability::intro"
+    _"exploring-probability::teaser"
 
 
 [exploring-probability](pages/probability-and-statistics_simulations_exploring-probability.md "load:")
 
 ## Randomness
 
-    _"randomness::intro"
+    _"randomness::teaser"
 
 
 [randomness](pages/probability-and-statistics_simulations_randomness.md "load:")
 
 ## Simulating Random Variables
 
-    _"simulating-random-variables::intro"
+    _"simulating-random-variables::teaser"
 
 
 [simulating-random-variables](pages/probability-and-statistics_simulations_simulating-random-variables.md "load:")
 
 ## Central Limit Theorem Explorations
 
-    _"central-limit-theorem-explorations::intro"
+    _"central-limit-theorem-explorations::teaser"
 
 
 [central-limit-theorem-explorations](pages/probability-and-statistics_simulations_central-limit-theorem-explorations.md "load:")
 
 ## z-Test Explorations
 
-    _"z-test-explorations::intro"
+    _"z-test-explorations::teaser"
 
 
 [z-test-explorations](pages/probability-and-statistics_simulations_z-test-explorations.md "load:")
 
 ## t-Test Explorations
 
-    _"t-test-explorations::intro"
+    _"t-test-explorations::teaser"
 
 
 [t-test-explorations](pages/probability-and-statistics_simulations_t-test-explorations.md "load:")
 
 ## Bayesian Explorations
 
-    _"bayesian-explorations::intro"
+    _"bayesian-explorations::teaser"
 
 
 [bayesian-explorations](pages/probability-and-statistics_simulations_bayesian-explorations.md "load:")

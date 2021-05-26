@@ -1,13 +1,13 @@
 # Conic Sections
 
     _"pieces | page /geometry/conic-sections, _'intro |md',
-            /geometry/conic-sections/notions-of-a-conic-section,  _'Notions of a Conic Section',
-            /geometry/conic-sections/ellipses,  _'Ellipses',
-            /geometry/conic-sections/parabolas,  _'Parabolas',
-            /geometry/conic-sections/hyperbolas,  _'Hyperbolas',
-            /geometry/conic-sections/cones,  _'Cones',
-            /geometry/conic-sections/unifying-pictures,  _'Unifying Pictures',
-            /geometry/conic-sections/generalizations,  _'Generalizations'"
+            /geometry/conic-sections/notions-of-a-conic-section,  _'Notions of a Conic Section |md',
+            /geometry/conic-sections/ellipses,  _'Ellipses |md',
+            /geometry/conic-sections/parabolas,  _'Parabolas |md',
+            /geometry/conic-sections/hyperbolas,  _'Hyperbolas |md',
+            /geometry/conic-sections/cones,  _'Cones |md',
+            /geometry/conic-sections/unifying-pictures,  _'Unifying Pictures |md',
+            /geometry/conic-sections/generalizations,  _'Generalizations |md'"
 
 [../public/geometry/conic-sections.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"notions-of-a-conic-section::intro:pebble"
+    _"notions-of-a-conic-section::teaser:pebble"
 
-    _"ellipses::intro:pebble"
+    _"ellipses::teaser:pebble"
 
-    _"parabolas::intro:pebble"
+    _"parabolas::teaser:pebble"
 
-    _"hyperbolas::intro:pebble"
+    _"hyperbolas::teaser:pebble"
 
-    _"cones::intro:pebble"
+    _"cones::teaser:pebble"
 
-    _"unifying-pictures::intro:pebble"
+    _"unifying-pictures::teaser:pebble"
 
-    _"generalizations::intro:pebble"
+    _"generalizations::teaser:pebble"
 
 
 [code]()
 
-    _"notions-of-a-conic-section::intro:code"
-
-    _"ellipses::intro:code"
-
-    _"parabolas::intro:code"
-
-    _"hyperbolas::intro:code"
-
-    _"cones::intro:code"
-
-    _"unifying-pictures::intro:code"
-
-    _"generalizations::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Notions of a Conic Section
 
-    _"notions-of-a-conic-section::intro"
+    _"notions-of-a-conic-section::teaser"
 
 
 [notions-of-a-conic-section](pages/geometry_conic-sections_notions-of-a-conic-section.md "load:")
 
 ## Ellipses
 
-    _"ellipses::intro"
+    _"ellipses::teaser"
 
 
 [ellipses](pages/geometry_conic-sections_ellipses.md "load:")
 
 ## Parabolas
 
-    _"parabolas::intro"
+    _"parabolas::teaser"
 
 
 [parabolas](pages/geometry_conic-sections_parabolas.md "load:")
 
 ## Hyperbolas
 
-    _"hyperbolas::intro"
+    _"hyperbolas::teaser"
 
 
 [hyperbolas](pages/geometry_conic-sections_hyperbolas.md "load:")
 
 ## Cones
 
-    _"cones::intro"
+    _"cones::teaser"
 
 
 [cones](pages/geometry_conic-sections_cones.md "load:")
 
 ## Unifying Pictures
 
-    _"unifying-pictures::intro"
+    _"unifying-pictures::teaser"
 
 
 [unifying-pictures](pages/geometry_conic-sections_unifying-pictures.md "load:")
 
 ## Generalizations
 
-    _"generalizations::intro"
+    _"generalizations::teaser"
 
 
 [generalizations](pages/geometry_conic-sections_generalizations.md "load:")

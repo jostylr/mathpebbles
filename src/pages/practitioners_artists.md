@@ -1,13 +1,13 @@
 # Artists
 
     _"pieces | page /practitioners/artists, _'intro |md',
-            /practitioners/artists/music,  _'Music',
-            /practitioners/artists/writing,  _'Writing',
-            /practitioners/artists/architecture,  _'Architecture',
-            /practitioners/artists/visualizations,  _'Visualizations',
-            /practitioners/artists/computer-generation,  _'Computer Generation',
-            /practitioners/artists/entertainment,  _'Entertainment',
-            /practitioners/artists/fractals,  _'Fractals'"
+            /practitioners/artists/music,  _'Music |md',
+            /practitioners/artists/writing,  _'Writing |md',
+            /practitioners/artists/architecture,  _'Architecture |md',
+            /practitioners/artists/visualizations,  _'Visualizations |md',
+            /practitioners/artists/computer-generation,  _'Computer Generation |md',
+            /practitioners/artists/entertainment,  _'Entertainment |md',
+            /practitioners/artists/fractals,  _'Fractals |md'"
 
 [../public/practitioners/artists.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"music::intro:pebble"
+    _"music::teaser:pebble"
 
-    _"writing::intro:pebble"
+    _"writing::teaser:pebble"
 
-    _"architecture::intro:pebble"
+    _"architecture::teaser:pebble"
 
-    _"visualizations::intro:pebble"
+    _"visualizations::teaser:pebble"
 
-    _"computer-generation::intro:pebble"
+    _"computer-generation::teaser:pebble"
 
-    _"entertainment::intro:pebble"
+    _"entertainment::teaser:pebble"
 
-    _"fractals::intro:pebble"
+    _"fractals::teaser:pebble"
 
 
 [code]()
 
-    _"music::intro:code"
-
-    _"writing::intro:code"
-
-    _"architecture::intro:code"
-
-    _"visualizations::intro:code"
-
-    _"computer-generation::intro:code"
-
-    _"entertainment::intro:code"
-
-    _"fractals::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Music
 
-    _"music::intro"
+    _"music::teaser"
 
 
 [music](pages/practitioners_artists_music.md "load:")
 
 ## Writing
 
-    _"writing::intro"
+    _"writing::teaser"
 
 
 [writing](pages/practitioners_artists_writing.md "load:")
 
 ## Architecture
 
-    _"architecture::intro"
+    _"architecture::teaser"
 
 
 [architecture](pages/practitioners_artists_architecture.md "load:")
 
 ## Visualizations
 
-    _"visualizations::intro"
+    _"visualizations::teaser"
 
 
 [visualizations](pages/practitioners_artists_visualizations.md "load:")
 
 ## Computer Generation
 
-    _"computer-generation::intro"
+    _"computer-generation::teaser"
 
 
 [computer-generation](pages/practitioners_artists_computer-generation.md "load:")
 
 ## Entertainment
 
-    _"entertainment::intro"
+    _"entertainment::teaser"
 
 
 [entertainment](pages/practitioners_artists_entertainment.md "load:")
 
 ## Fractals
 
-    _"fractals::intro"
+    _"fractals::teaser"
 
 
 [fractals](pages/practitioners_artists_fractals.md "load:")

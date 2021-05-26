@@ -196,13 +196,17 @@ the section name and the second one being a path for the Explore button.
         const body = args[i+1].trim();
         let [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
         full = shoelacify(full || ''); 
-        main += `<sl-details id="${slugify(name)}">
-            <div slot="summary">
-                ${heading}
-                ${preview}
-            </div>
-            ${full || ''}
-            </sl-details>`;
+        if (full) {
+            main += `<sl-details id="${slugify(name)}">
+                <div slot="summary">
+                    ${heading}
+                    ${preview}
+                </div>
+                ${full || ''}
+                </sl-details>`;
+        } else {
+            main += `<div class="plain">${heading}${body}</div>`;
+        }
     }
 
 
@@ -863,7 +867,16 @@ default one.
             
         }
     } else {
-        details[0].show();
+
+
+We want to open the top level detail if it is a detail. But it could not be in
+which case we do nothing. 
+
+        let firstEl = $('nav + *');
+        let nn = firstEl.nodeName.toLocaleLowerCase();
+        if (nn === 'sl-details') {
+            firstEl.show();
+        }
     }
 
 
@@ -1261,6 +1274,19 @@ keep the explore button from growing, we give it a height of 1em.
     .explore:hover, .explore:active, .explore:focus {
       filter: drop-shadow(3px 3px 2px);
       outline:none;
+    }
+
+
+This simulates the detail block for the non-detail stuff on the pages: 
+
+    .plain {
+        padding-left: 1em;
+        border: 1px solid var(--sl-color-gray-200);
+        border-radius: 5px;
+    }
+
+    .plain + sl-details, sl-details + .plain, .plain + .plain { 
+        margin-top: 5px;
     }
 
 Safari requires fixed positioning for the foreign object so we make a class

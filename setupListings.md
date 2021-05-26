@@ -233,25 +233,21 @@ a copy or something.
 
 
             let pagechild = children.map(  ({heading, slug, path}, ind) => {
-                return `/${path.join('/')},  \_'${heading}'`; 
+                return `/${path.join('/')},  \_'${heading} |md'`; 
             }).join(',\n            ');
 
             let sections = children.map( ({heading, slug, path}, ind) => {
                 return `## ${heading}\n\n` +
 
-                `    \_"${slug}::intro"\n` +
+                `    \_"${slug}::teaser"\n` +
                 `\n\n[${slug}](pages/${path.join('\_')}.md "load:")`;
             }).join('\n\n');
 
             let pebbles = children.map( ({heading, slug, path}, ind) => {
-                return `    \_"${slug}::intro:pebble"\n`;
+                return `    \_"${slug}::teaser:pebble"\n`;
             }).join('\n');
 
-            let code = children.map( ({heading, slug, path}, ind) => {
-                return `    \_"${slug}::intro:code"\n`;
-            }).join('\n');
-
-
+            let code = '';
 
             if (children.length === 0) {
                 let pcarr = [];
@@ -312,7 +308,9 @@ part, title of the page, intro section and then the title and section.
 
     [pebble]()
 
-    [code]()
+    ## Teaser
+
+    [pebble]()
 
     ## Pieces
 

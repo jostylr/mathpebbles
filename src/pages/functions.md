@@ -1,13 +1,13 @@
 # Functions
 
     _"pieces | page /functions, _'intro |md',
-            /functions/rational-and-power-functions,  _'Rational and Power Functions',
-            /functions/infinite-processes,  _'Infinite Processes',
-            /functions/differential-calculus,  _'Differential Calculus',
-            /functions/integral-calculus,  _'Integral Calculus',
-            /functions/exponentials-and-logarithms,  _'Exponentials and Logarithms',
-            /functions/trigonometric-functions,  _'Trigonometric Functions',
-            /functions/defining-functions,  _'Defining Functions'"
+            /functions/rational-and-power-functions,  _'Rational and Power Functions |md',
+            /functions/infinite-processes,  _'Infinite Processes |md',
+            /functions/differential-calculus,  _'Differential Calculus |md',
+            /functions/integral-calculus,  _'Integral Calculus |md',
+            /functions/exponentials-and-logarithms,  _'Exponentials and Logarithms |md',
+            /functions/trigonometric-functions,  _'Trigonometric Functions |md',
+            /functions/defining-functions,  _'Defining Functions |md'"
 
 [../public/functions.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"rational-and-power-functions::intro:pebble"
+    _"rational-and-power-functions::teaser:pebble"
 
-    _"infinite-processes::intro:pebble"
+    _"infinite-processes::teaser:pebble"
 
-    _"differential-calculus::intro:pebble"
+    _"differential-calculus::teaser:pebble"
 
-    _"integral-calculus::intro:pebble"
+    _"integral-calculus::teaser:pebble"
 
-    _"exponentials-and-logarithms::intro:pebble"
+    _"exponentials-and-logarithms::teaser:pebble"
 
-    _"trigonometric-functions::intro:pebble"
+    _"trigonometric-functions::teaser:pebble"
 
-    _"defining-functions::intro:pebble"
+    _"defining-functions::teaser:pebble"
 
 
 [code]()
 
-    _"rational-and-power-functions::intro:code"
-
-    _"infinite-processes::intro:code"
-
-    _"differential-calculus::intro:code"
-
-    _"integral-calculus::intro:code"
-
-    _"exponentials-and-logarithms::intro:code"
-
-    _"trigonometric-functions::intro:code"
-
-    _"defining-functions::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Rational and Power Functions
 
-    _"rational-and-power-functions::intro"
+    _"rational-and-power-functions::teaser"
 
 
 [rational-and-power-functions](pages/functions_rational-and-power-functions.md "load:")
 
 ## Infinite Processes
 
-    _"infinite-processes::intro"
+    _"infinite-processes::teaser"
 
 
 [infinite-processes](pages/functions_infinite-processes.md "load:")
 
 ## Differential Calculus
 
-    _"differential-calculus::intro"
+    _"differential-calculus::teaser"
 
 
 [differential-calculus](pages/functions_differential-calculus.md "load:")
 
 ## Integral Calculus
 
-    _"integral-calculus::intro"
+    _"integral-calculus::teaser"
 
 
 [integral-calculus](pages/functions_integral-calculus.md "load:")
 
 ## Exponentials and Logarithms
 
-    _"exponentials-and-logarithms::intro"
+    _"exponentials-and-logarithms::teaser"
 
 
 [exponentials-and-logarithms](pages/functions_exponentials-and-logarithms.md "load:")
 
 ## Trigonometric Functions
 
-    _"trigonometric-functions::intro"
+    _"trigonometric-functions::teaser"
 
 
 [trigonometric-functions](pages/functions_trigonometric-functions.md "load:")
 
 ## Defining Functions
 
-    _"defining-functions::intro"
+    _"defining-functions::teaser"
 
 
 [defining-functions](pages/functions_defining-functions.md "load:")

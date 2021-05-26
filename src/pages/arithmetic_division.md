@@ -1,13 +1,13 @@
 # Division
 
     _"pieces | page /arithmetic/division, _'intro |md',
-            /arithmetic/division/notions-of-division,  _'Notions of Division',
-            /arithmetic/division/foundational-divisions,  _'Foundational Divisions',
-            /arithmetic/division/long-division,  _'Long Division',
-            /arithmetic/division/significant-division,  _'Significant Division',
-            /arithmetic/division/fractions,  _'Fractions',
-            /arithmetic/division/decimals,  _'Decimals',
-            /arithmetic/division/tricks-and-checks-of-division,  _'Tricks and Checks of Division'"
+            /arithmetic/division/notions-of-division,  _'Notions of Division |md',
+            /arithmetic/division/foundational-divisions,  _'Foundational Divisions |md',
+            /arithmetic/division/long-division,  _'Long Division |md',
+            /arithmetic/division/significant-division,  _'Significant Division |md',
+            /arithmetic/division/fractions,  _'Fractions |md',
+            /arithmetic/division/decimals,  _'Decimals |md',
+            /arithmetic/division/tricks-and-checks-of-division,  _'Tricks and Checks of Division |md'"
 
 [../public/arithmetic/division.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"notions-of-division::intro:pebble"
+    _"notions-of-division::teaser:pebble"
 
-    _"foundational-divisions::intro:pebble"
+    _"foundational-divisions::teaser:pebble"
 
-    _"long-division::intro:pebble"
+    _"long-division::teaser:pebble"
 
-    _"significant-division::intro:pebble"
+    _"significant-division::teaser:pebble"
 
-    _"fractions::intro:pebble"
+    _"fractions::teaser:pebble"
 
-    _"decimals::intro:pebble"
+    _"decimals::teaser:pebble"
 
-    _"tricks-and-checks-of-division::intro:pebble"
+    _"tricks-and-checks-of-division::teaser:pebble"
 
 
 [code]()
 
-    _"notions-of-division::intro:code"
-
-    _"foundational-divisions::intro:code"
-
-    _"long-division::intro:code"
-
-    _"significant-division::intro:code"
-
-    _"fractions::intro:code"
-
-    _"decimals::intro:code"
-
-    _"tricks-and-checks-of-division::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Notions of Division
 
-    _"notions-of-division::intro"
+    _"notions-of-division::teaser"
 
 
 [notions-of-division](pages/arithmetic_division_notions-of-division.md "load:")
 
 ## Foundational Divisions
 
-    _"foundational-divisions::intro"
+    _"foundational-divisions::teaser"
 
 
 [foundational-divisions](pages/arithmetic_division_foundational-divisions.md "load:")
 
 ## Long Division
 
-    _"long-division::intro"
+    _"long-division::teaser"
 
 
 [long-division](pages/arithmetic_division_long-division.md "load:")
 
 ## Significant Division
 
-    _"significant-division::intro"
+    _"significant-division::teaser"
 
 
 [significant-division](pages/arithmetic_division_significant-division.md "load:")
 
 ## Fractions
 
-    _"fractions::intro"
+    _"fractions::teaser"
 
 
 [fractions](pages/arithmetic_division_fractions.md "load:")
 
 ## Decimals
 
-    _"decimals::intro"
+    _"decimals::teaser"
 
 
 [decimals](pages/arithmetic_division_decimals.md "load:")
 
 ## Tricks and Checks of Division
 
-    _"tricks-and-checks-of-division::intro"
+    _"tricks-and-checks-of-division::teaser"
 
 
 [tricks-and-checks-of-division](pages/arithmetic_division_tricks-and-checks-of-division.md "load:")

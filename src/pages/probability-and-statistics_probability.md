@@ -1,13 +1,13 @@
 # Probability
 
     _"pieces | page /probability-and-statistics/probability, _'intro |md',
-            /probability-and-statistics/probability/counting-outcomes,  _'Counting Outcomes',
-            /probability-and-statistics/probability/combinatorial-probability,  _'Combinatorial Probability',
-            /probability-and-statistics/probability/random-variables,  _'Random variables',
-            /probability-and-statistics/probability/special-random-variables,  _'Special Random Variables',
-            /probability-and-statistics/probability/conditional-probabilities,  _'Conditional Probabilities',
-            /probability-and-statistics/probability/central-limit-theorem,  _'Central Limit Theorem',
-            /probability-and-statistics/probability/to-ponder,  _'To Ponder'"
+            /probability-and-statistics/probability/counting-outcomes,  _'Counting Outcomes |md',
+            /probability-and-statistics/probability/combinatorial-probability,  _'Combinatorial Probability |md',
+            /probability-and-statistics/probability/random-variables,  _'Random variables |md',
+            /probability-and-statistics/probability/special-random-variables,  _'Special Random Variables |md',
+            /probability-and-statistics/probability/conditional-probabilities,  _'Conditional Probabilities |md',
+            /probability-and-statistics/probability/central-limit-theorem,  _'Central Limit Theorem |md',
+            /probability-and-statistics/probability/to-ponder,  _'To Ponder |md'"
 
 [../public/probability-and-statistics/probability.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"counting-outcomes::intro:pebble"
+    _"counting-outcomes::teaser:pebble"
 
-    _"combinatorial-probability::intro:pebble"
+    _"combinatorial-probability::teaser:pebble"
 
-    _"random-variables::intro:pebble"
+    _"random-variables::teaser:pebble"
 
-    _"special-random-variables::intro:pebble"
+    _"special-random-variables::teaser:pebble"
 
-    _"conditional-probabilities::intro:pebble"
+    _"conditional-probabilities::teaser:pebble"
 
-    _"central-limit-theorem::intro:pebble"
+    _"central-limit-theorem::teaser:pebble"
 
-    _"to-ponder::intro:pebble"
+    _"to-ponder::teaser:pebble"
 
 
 [code]()
 
-    _"counting-outcomes::intro:code"
-
-    _"combinatorial-probability::intro:code"
-
-    _"random-variables::intro:code"
-
-    _"special-random-variables::intro:code"
-
-    _"conditional-probabilities::intro:code"
-
-    _"central-limit-theorem::intro:code"
-
-    _"to-ponder::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Counting Outcomes
 
-    _"counting-outcomes::intro"
+    _"counting-outcomes::teaser"
 
 
 [counting-outcomes](pages/probability-and-statistics_probability_counting-outcomes.md "load:")
 
 ## Combinatorial Probability
 
-    _"combinatorial-probability::intro"
+    _"combinatorial-probability::teaser"
 
 
 [combinatorial-probability](pages/probability-and-statistics_probability_combinatorial-probability.md "load:")
 
 ## Random variables
 
-    _"random-variables::intro"
+    _"random-variables::teaser"
 
 
 [random-variables](pages/probability-and-statistics_probability_random-variables.md "load:")
 
 ## Special Random Variables
 
-    _"special-random-variables::intro"
+    _"special-random-variables::teaser"
 
 
 [special-random-variables](pages/probability-and-statistics_probability_special-random-variables.md "load:")
 
 ## Conditional Probabilities
 
-    _"conditional-probabilities::intro"
+    _"conditional-probabilities::teaser"
 
 
 [conditional-probabilities](pages/probability-and-statistics_probability_conditional-probabilities.md "load:")
 
 ## Central Limit Theorem
 
-    _"central-limit-theorem::intro"
+    _"central-limit-theorem::teaser"
 
 
 [central-limit-theorem](pages/probability-and-statistics_probability_central-limit-theorem.md "load:")
 
 ## To Ponder
 
-    _"to-ponder::intro"
+    _"to-ponder::teaser"
 
 
 [to-ponder](pages/probability-and-statistics_probability_to-ponder.md "load:")

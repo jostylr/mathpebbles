@@ -1,13 +1,13 @@
 # Analysts
 
     _"pieces | page /practitioners/analysts, _'intro |md',
-            /practitioners/analysts/real-analysis,  _'Real Analysis',
-            /practitioners/analysts/complex-analysis,  _'Complex Analysis',
-            /practitioners/analysts/numerical-analysis,  _'Numerical Analysis',
-            /practitioners/analysts/functional-analysis,  _'Functional Analysis',
-            /practitioners/analysts/calculus-of-variations,  _'Calculus of Variations',
-            /practitioners/analysts/delta-functions,  _'Delta Functions',
-            /practitioners/analysts/optimization,  _'Optimization'"
+            /practitioners/analysts/real-analysis,  _'Real Analysis |md',
+            /practitioners/analysts/complex-analysis,  _'Complex Analysis |md',
+            /practitioners/analysts/numerical-analysis,  _'Numerical Analysis |md',
+            /practitioners/analysts/functional-analysis,  _'Functional Analysis |md',
+            /practitioners/analysts/calculus-of-variations,  _'Calculus of Variations |md',
+            /practitioners/analysts/delta-functions,  _'Delta Functions |md',
+            /practitioners/analysts/optimization,  _'Optimization |md'"
 
 [../public/practitioners/analysts.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"real-analysis::intro:pebble"
+    _"real-analysis::teaser:pebble"
 
-    _"complex-analysis::intro:pebble"
+    _"complex-analysis::teaser:pebble"
 
-    _"numerical-analysis::intro:pebble"
+    _"numerical-analysis::teaser:pebble"
 
-    _"functional-analysis::intro:pebble"
+    _"functional-analysis::teaser:pebble"
 
-    _"calculus-of-variations::intro:pebble"
+    _"calculus-of-variations::teaser:pebble"
 
-    _"delta-functions::intro:pebble"
+    _"delta-functions::teaser:pebble"
 
-    _"optimization::intro:pebble"
+    _"optimization::teaser:pebble"
 
 
 [code]()
 
-    _"real-analysis::intro:code"
-
-    _"complex-analysis::intro:code"
-
-    _"numerical-analysis::intro:code"
-
-    _"functional-analysis::intro:code"
-
-    _"calculus-of-variations::intro:code"
-
-    _"delta-functions::intro:code"
-
-    _"optimization::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Real Analysis
 
-    _"real-analysis::intro"
+    _"real-analysis::teaser"
 
 
 [real-analysis](pages/practitioners_analysts_real-analysis.md "load:")
 
 ## Complex Analysis
 
-    _"complex-analysis::intro"
+    _"complex-analysis::teaser"
 
 
 [complex-analysis](pages/practitioners_analysts_complex-analysis.md "load:")
 
 ## Numerical Analysis
 
-    _"numerical-analysis::intro"
+    _"numerical-analysis::teaser"
 
 
 [numerical-analysis](pages/practitioners_analysts_numerical-analysis.md "load:")
 
 ## Functional Analysis
 
-    _"functional-analysis::intro"
+    _"functional-analysis::teaser"
 
 
 [functional-analysis](pages/practitioners_analysts_functional-analysis.md "load:")
 
 ## Calculus of Variations
 
-    _"calculus-of-variations::intro"
+    _"calculus-of-variations::teaser"
 
 
 [calculus-of-variations](pages/practitioners_analysts_calculus-of-variations.md "load:")
 
 ## Delta Functions
 
-    _"delta-functions::intro"
+    _"delta-functions::teaser"
 
 
 [delta-functions](pages/practitioners_analysts_delta-functions.md "load:")
 
 ## Optimization
 
-    _"optimization::intro"
+    _"optimization::teaser"
 
 
 [optimization](pages/practitioners_analysts_optimization.md "load:")

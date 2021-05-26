@@ -1,13 +1,13 @@
 # Booleans
 
     _"pieces | page /practitioners/booleans, _'intro |md',
-            /practitioners/booleans/combinatorics,  _'Combinatorics',
-            /practitioners/booleans/graph-theory,  _'Graph Theory',
-            /practitioners/booleans/mathematical-logic,  _'Mathematical Logic',
-            /practitioners/booleans/game-theory,  _'Game Theory',
-            /practitioners/booleans/computer-scientists,  _'Computer Scientists',
-            /practitioners/booleans/politicians,  _'Politicians',
-            /practitioners/booleans/risk-managers,  _'Risk Managers'"
+            /practitioners/booleans/combinatorics,  _'Combinatorics |md',
+            /practitioners/booleans/graph-theory,  _'Graph Theory |md',
+            /practitioners/booleans/mathematical-logic,  _'Mathematical Logic |md',
+            /practitioners/booleans/game-theory,  _'Game Theory |md',
+            /practitioners/booleans/computer-scientists,  _'Computer Scientists |md',
+            /practitioners/booleans/politicians,  _'Politicians |md',
+            /practitioners/booleans/risk-managers,  _'Risk Managers |md'"
 
 [../public/practitioners/booleans.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"combinatorics::intro:pebble"
+    _"combinatorics::teaser:pebble"
 
-    _"graph-theory::intro:pebble"
+    _"graph-theory::teaser:pebble"
 
-    _"mathematical-logic::intro:pebble"
+    _"mathematical-logic::teaser:pebble"
 
-    _"game-theory::intro:pebble"
+    _"game-theory::teaser:pebble"
 
-    _"computer-scientists::intro:pebble"
+    _"computer-scientists::teaser:pebble"
 
-    _"politicians::intro:pebble"
+    _"politicians::teaser:pebble"
 
-    _"risk-managers::intro:pebble"
+    _"risk-managers::teaser:pebble"
 
 
 [code]()
 
-    _"combinatorics::intro:code"
-
-    _"graph-theory::intro:code"
-
-    _"mathematical-logic::intro:code"
-
-    _"game-theory::intro:code"
-
-    _"computer-scientists::intro:code"
-
-    _"politicians::intro:code"
-
-    _"risk-managers::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Combinatorics
 
-    _"combinatorics::intro"
+    _"combinatorics::teaser"
 
 
 [combinatorics](pages/practitioners_booleans_combinatorics.md "load:")
 
 ## Graph Theory
 
-    _"graph-theory::intro"
+    _"graph-theory::teaser"
 
 
 [graph-theory](pages/practitioners_booleans_graph-theory.md "load:")
 
 ## Mathematical Logic
 
-    _"mathematical-logic::intro"
+    _"mathematical-logic::teaser"
 
 
 [mathematical-logic](pages/practitioners_booleans_mathematical-logic.md "load:")
 
 ## Game Theory
 
-    _"game-theory::intro"
+    _"game-theory::teaser"
 
 
 [game-theory](pages/practitioners_booleans_game-theory.md "load:")
 
 ## Computer Scientists
 
-    _"computer-scientists::intro"
+    _"computer-scientists::teaser"
 
 
 [computer-scientists](pages/practitioners_booleans_computer-scientists.md "load:")
 
 ## Politicians
 
-    _"politicians::intro"
+    _"politicians::teaser"
 
 
 [politicians](pages/practitioners_booleans_politicians.md "load:")
 
 ## Risk Managers
 
-    _"risk-managers::intro"
+    _"risk-managers::teaser"
 
 
 [risk-managers](pages/practitioners_booleans_risk-managers.md "load:")

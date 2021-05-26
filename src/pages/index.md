@@ -3,13 +3,13 @@
     _"pieces | page /index, _'intro |md',
             ec("Moser's Circle Problem"), _"Moser | md",
             ec("Hammer Method"), _"hammer | md",
-            /arithmetic,  _'Arithmetic',
-            /algebra,  _'Algebra',
-            /functions,  _'Functions',
-            /many-variables,  _'Many Variables',
-            /geometry,  _'Geometry',
-            /probability-and-statistics,  _'Probability and Statistics',
-            /practitioners,  _'Practitioners'"
+            /arithmetic,  _'Arithmetic |md',
+            /algebra,  _'Algebra |md',
+            /geometry,  _'Geometry |md',
+            /functions,  _'Functions |md',
+            /many-variables,  _'Many Variables |md',
+            /probability-and-statistics,  _'Probability and Statistics |md',
+            /practitioners,  _'Practitioners |md'"
 
 [../public/index.html](# "save:")
 
@@ -18,7 +18,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -43,43 +45,30 @@
 
 [pebbles]()
 
-    _"arithmetic::intro:pebble"
+    _"arithmetic::teaser:pebble"
 
-    _"algebra::intro:pebble"
+    _"algebra::teaser:pebble"
 
-    _"functions::intro:pebble"
+    _"geometry::teaser:pebble"
 
-    _"many-variables::intro:pebble"
+    _"functions::teaser:pebble"
 
-    _"geometry::intro:pebble"
+    _"many-variables::teaser:pebble"
 
-    _"probability-and-statistics::intro:pebble"
+    _"probability-and-statistics::teaser:pebble"
 
-    _"practitioners::intro:pebble"
-    
+    _"practitioners::teaser:pebble"
+
 
     _"moser:pebble"
 
 
     _"hammer:pebble"
 
-
 [code]()
 
-    _"arithmetic::intro:code"
 
-    _"algebra::intro:code"
-
-    _"functions::intro:code"
-
-    _"many-variables::intro:code"
-
-    _"geometry::intro:code"
-
-    _"probability-and-statistics::intro:code"
-
-    _"practitioners::intro:code"
-
+    _"moser:code"
 
 [header]()
 
@@ -279,52 +268,52 @@ The one method to rule them all.
 
     },
 
+    
 ## Arithmetic
 
-    _"arithmetic::intro"
+    _"arithmetic::teaser"
 
 
 [arithmetic](pages/arithmetic.md "load:")
 
 ## Algebra
 
-    _"algebra::intro"
+    _"algebra::teaser"
 
 
 [algebra](pages/algebra.md "load:")
 
 ## Geometry
 
-    _"geometry::intro"
+    _"geometry::teaser"
 
 
 [geometry](pages/geometry.md "load:")
 
 ## Functions
 
-    _"functions::intro"
+    _"functions::teaser"
 
 
 [functions](pages/functions.md "load:")
 
 ## Many Variables
 
-    _"many-variables::intro"
+    _"many-variables::teaser"
 
 
 [many-variables](pages/many-variables.md "load:")
 
-
 ## Probability and Statistics
 
-    _"probability-and-statistics::intro"
+    _"probability-and-statistics::teaser"
 
 
 [probability-and-statistics](pages/probability-and-statistics.md "load:")
 
 ## Practitioners
 
-    _"practitioners::intro"
+    _"practitioners::teaser"
 
 
 [practitioners](pages/practitioners.md "load:")

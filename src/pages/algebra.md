@@ -1,13 +1,13 @@
 # Algebra
 
     _"pieces | page /algebra, _'intro |md',
-            /algebra/lines,  _'Lines',
-            /algebra/quadratics,  _'Quadratics',
-            /algebra/polynomials,  _'Polynomials',
-            /algebra/interest-accumulations,  _'Interest Accumulations',
-            /algebra/inequalities-and-absolute-values,  _'Inequalities and Absolute Values',
-            /algebra/linear-systems,  _'Linear Systems',
-            /algebra/constructing-the-real-and-complex-numbers,  _'Constructing the Real and Complex Numbers'"
+            /algebra/lines,  _'Lines |md',
+            /algebra/quadratics,  _'Quadratics |md',
+            /algebra/polynomials,  _'Polynomials |md',
+            /algebra/interest-accumulations,  _'Interest Accumulations |md',
+            /algebra/inequalities-and-absolute-values,  _'Inequalities and Absolute Values |md',
+            /algebra/linear-systems,  _'Linear Systems |md',
+            /algebra/constructing-the-real-and-complex-numbers,  _'Constructing the Real and Complex Numbers |md'"
 
 [../public/algebra.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"lines::intro:pebble"
+    _"lines::teaser:pebble"
 
-    _"quadratics::intro:pebble"
+    _"quadratics::teaser:pebble"
 
-    _"polynomials::intro:pebble"
+    _"polynomials::teaser:pebble"
 
-    _"interest-accumulations::intro:pebble"
+    _"interest-accumulations::teaser:pebble"
 
-    _"inequalities-and-absolute-values::intro:pebble"
+    _"inequalities-and-absolute-values::teaser:pebble"
 
-    _"linear-systems::intro:pebble"
+    _"linear-systems::teaser:pebble"
 
-    _"constructing-the-real-and-complex-numbers::intro:pebble"
+    _"constructing-the-real-and-complex-numbers::teaser:pebble"
 
 
 [code]()
 
-    _"lines::intro:code"
-
-    _"quadratics::intro:code"
-
-    _"polynomials::intro:code"
-
-    _"interest-accumulations::intro:code"
-
-    _"inequalities-and-absolute-values::intro:code"
-
-    _"linear-systems::intro:code"
-
-    _"constructing-the-real-and-complex-numbers::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Lines
 
-    _"lines::intro"
+    _"lines::teaser"
 
 
 [lines](pages/algebra_lines.md "load:")
 
 ## Quadratics
 
-    _"quadratics::intro"
+    _"quadratics::teaser"
 
 
 [quadratics](pages/algebra_quadratics.md "load:")
 
 ## Polynomials
 
-    _"polynomials::intro"
+    _"polynomials::teaser"
 
 
 [polynomials](pages/algebra_polynomials.md "load:")
 
 ## Interest Accumulations
 
-    _"interest-accumulations::intro"
+    _"interest-accumulations::teaser"
 
 
 [interest-accumulations](pages/algebra_interest-accumulations.md "load:")
 
 ## Inequalities and Absolute Values
 
-    _"inequalities-and-absolute-values::intro"
+    _"inequalities-and-absolute-values::teaser"
 
 
 [inequalities-and-absolute-values](pages/algebra_inequalities-and-absolute-values.md "load:")
 
 ## Linear Systems
 
-    _"linear-systems::intro"
+    _"linear-systems::teaser"
 
 
 [linear-systems](pages/algebra_linear-systems.md "load:")
 
 ## Constructing the Real and Complex Numbers
 
-    _"constructing-the-real-and-complex-numbers::intro"
+    _"constructing-the-real-and-complex-numbers::teaser"
 
 
 [constructing-the-real-and-complex-numbers](pages/algebra_constructing-the-real-and-complex-numbers.md "load:")

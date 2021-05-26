@@ -1,13 +1,13 @@
 # Constructing Numbers
 
     _"pieces | page /arithmetic/constructing-numbers, _'intro |md',
-            /arithmetic/constructing-numbers/containers,  _'Containers',
-            /arithmetic/constructing-numbers/natural-numbers,  _'Natural Numbers',
-            /arithmetic/constructing-numbers/addition-and-multiplication,  _'Addition and Multiplication',
-            /arithmetic/constructing-numbers/integers,  _'Integers',
-            /arithmetic/constructing-numbers/rationals,  _'Rationals',
-            /arithmetic/constructing-numbers/properties-revisited,  _'Properties Revisited',
-            /arithmetic/constructing-numbers/relations,  _'Relations'"
+            /arithmetic/constructing-numbers/containers,  _'Containers |md',
+            /arithmetic/constructing-numbers/natural-numbers,  _'Natural Numbers |md',
+            /arithmetic/constructing-numbers/addition-and-multiplication,  _'Addition and Multiplication |md',
+            /arithmetic/constructing-numbers/integers,  _'Integers |md',
+            /arithmetic/constructing-numbers/rationals,  _'Rationals |md',
+            /arithmetic/constructing-numbers/properties-revisited,  _'Properties Revisited |md',
+            /arithmetic/constructing-numbers/relations,  _'Relations |md'"
 
 [../public/arithmetic/constructing-numbers.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"containers::intro:pebble"
+    _"containers::teaser:pebble"
 
-    _"natural-numbers::intro:pebble"
+    _"natural-numbers::teaser:pebble"
 
-    _"addition-and-multiplication::intro:pebble"
+    _"addition-and-multiplication::teaser:pebble"
 
-    _"integers::intro:pebble"
+    _"integers::teaser:pebble"
 
-    _"rationals::intro:pebble"
+    _"rationals::teaser:pebble"
 
-    _"properties-revisited::intro:pebble"
+    _"properties-revisited::teaser:pebble"
 
-    _"relations::intro:pebble"
+    _"relations::teaser:pebble"
 
 
 [code]()
 
-    _"containers::intro:code"
-
-    _"natural-numbers::intro:code"
-
-    _"addition-and-multiplication::intro:code"
-
-    _"integers::intro:code"
-
-    _"rationals::intro:code"
-
-    _"properties-revisited::intro:code"
-
-    _"relations::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Containers
 
-    _"containers::intro"
+    _"containers::teaser"
 
 
 [containers](pages/arithmetic_constructing-numbers_containers.md "load:")
 
 ## Natural Numbers
 
-    _"natural-numbers::intro"
+    _"natural-numbers::teaser"
 
 
 [natural-numbers](pages/arithmetic_constructing-numbers_natural-numbers.md "load:")
 
 ## Addition and Multiplication
 
-    _"addition-and-multiplication::intro"
+    _"addition-and-multiplication::teaser"
 
 
 [addition-and-multiplication](pages/arithmetic_constructing-numbers_addition-and-multiplication.md "load:")
 
 ## Integers
 
-    _"integers::intro"
+    _"integers::teaser"
 
 
 [integers](pages/arithmetic_constructing-numbers_integers.md "load:")
 
 ## Rationals
 
-    _"rationals::intro"
+    _"rationals::teaser"
 
 
 [rationals](pages/arithmetic_constructing-numbers_rationals.md "load:")
 
 ## Properties Revisited
 
-    _"properties-revisited::intro"
+    _"properties-revisited::teaser"
 
 
 [properties-revisited](pages/arithmetic_constructing-numbers_properties-revisited.md "load:")
 
 ## Relations
 
-    _"relations::intro"
+    _"relations::teaser"
 
 
 [relations](pages/arithmetic_constructing-numbers_relations.md "load:")

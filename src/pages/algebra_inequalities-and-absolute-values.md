@@ -1,13 +1,13 @@
 # Inequalities and Absolute Values
 
     _"pieces | page /algebra/inequalities-and-absolute-values, _'intro |md',
-            /algebra/inequalities-and-absolute-values/basic-inequalities,  _'Basic Inequalities',
-            /algebra/inequalities-and-absolute-values/polynomial-inequalities,  _'Polynomial Inequalities',
-            /algebra/inequalities-and-absolute-values/triangle-inequality,  _'Triangle Inequality',
-            /algebra/inequalities-and-absolute-values/absolute-value,  _'Absolute Value',
-            /algebra/inequalities-and-absolute-values/solving-absolute-value-equations,  _'Solving Absolute Value Equations',
-            /algebra/inequalities-and-absolute-values/absolute-value-inequalities,  _'Absolute Value Inequalities',
-            /algebra/inequalities-and-absolute-values/distance,  _'Distance'"
+            /algebra/inequalities-and-absolute-values/basic-inequalities,  _'Basic Inequalities |md',
+            /algebra/inequalities-and-absolute-values/polynomial-inequalities,  _'Polynomial Inequalities |md',
+            /algebra/inequalities-and-absolute-values/triangle-inequality,  _'Triangle Inequality |md',
+            /algebra/inequalities-and-absolute-values/absolute-value,  _'Absolute Value |md',
+            /algebra/inequalities-and-absolute-values/solving-absolute-value-equations,  _'Solving Absolute Value Equations |md',
+            /algebra/inequalities-and-absolute-values/absolute-value-inequalities,  _'Absolute Value Inequalities |md',
+            /algebra/inequalities-and-absolute-values/distance,  _'Distance |md'"
 
 [../public/algebra/inequalities-and-absolute-values.html](# "save:")
 
@@ -16,7 +16,21 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+    Inequalities and absolute values are notorious for being confusing.
+    Building on our notion of distance, we hopefully will convey some
+    interesting ideas about it. We will explore some stuff using polynomials,
+    but the majority of an introduction to this material is with lines. 
+
+    !-
+
+    With our core example set in place, we then move on into exploring
+    inequalities fully, including the extremely useful but confusing topic of
+    abslute values. 
+
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +55,23 @@
 
 [pebbles]()
 
-    _"basic-inequalities::intro:pebble"
+    _"basic-inequalities::teaser:pebble"
 
-    _"polynomial-inequalities::intro:pebble"
+    _"polynomial-inequalities::teaser:pebble"
 
-    _"triangle-inequality::intro:pebble"
+    _"triangle-inequality::teaser:pebble"
 
-    _"absolute-value::intro:pebble"
+    _"absolute-value::teaser:pebble"
 
-    _"solving-absolute-value-equations::intro:pebble"
+    _"solving-absolute-value-equations::teaser:pebble"
 
-    _"absolute-value-inequalities::intro:pebble"
+    _"absolute-value-inequalities::teaser:pebble"
 
-    _"distance::intro:pebble"
+    _"distance::teaser:pebble"
 
 
 [code]()
 
-    _"basic-inequalities::intro:code"
-
-    _"polynomial-inequalities::intro:code"
-
-    _"triangle-inequality::intro:code"
-
-    _"absolute-value::intro:code"
-
-    _"solving-absolute-value-equations::intro:code"
-
-    _"absolute-value-inequalities::intro:code"
-
-    _"distance::intro:code"
 
 
 [header]()
@@ -81,49 +82,49 @@
 
 ## Basic Inequalities
 
-    _"basic-inequalities::intro"
+    _"basic-inequalities::teaser"
 
 
 [basic-inequalities](pages/algebra_inequalities-and-absolute-values_basic-inequalities.md "load:")
 
 ## Polynomial Inequalities
 
-    _"polynomial-inequalities::intro"
+    _"polynomial-inequalities::teaser"
 
 
 [polynomial-inequalities](pages/algebra_inequalities-and-absolute-values_polynomial-inequalities.md "load:")
 
 ## Triangle Inequality
 
-    _"triangle-inequality::intro"
+    _"triangle-inequality::teaser"
 
 
 [triangle-inequality](pages/algebra_inequalities-and-absolute-values_triangle-inequality.md "load:")
 
 ## Absolute Value
 
-    _"absolute-value::intro"
+    _"absolute-value::teaser"
 
 
 [absolute-value](pages/algebra_inequalities-and-absolute-values_absolute-value.md "load:")
 
 ## Solving Absolute Value Equations
 
-    _"solving-absolute-value-equations::intro"
+    _"solving-absolute-value-equations::teaser"
 
 
 [solving-absolute-value-equations](pages/algebra_inequalities-and-absolute-values_solving-absolute-value-equations.md "load:")
 
 ## Absolute Value Inequalities
 
-    _"absolute-value-inequalities::intro"
+    _"absolute-value-inequalities::teaser"
 
 
 [absolute-value-inequalities](pages/algebra_inequalities-and-absolute-values_absolute-value-inequalities.md "load:")
 
 ## Distance
 
-    _"distance::intro"
+    _"distance::teaser"
 
 
 [distance](pages/algebra_inequalities-and-absolute-values_distance.md "load:")

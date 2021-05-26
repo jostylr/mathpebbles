@@ -53,4 +53,8 @@ Also separate is the actual math function computations. They should be written
 in a functional style of inputs giving outputs. These are called in pebbles.
 They are accessible via the MP.f object. 
 
+The teaser is something for the above page and should be something to entice
+the reader to move on and to give an idea of what they may learn. The intro is
+more of a guide to actually learning the material below, a quick overview
+rather than something to entice. 
 

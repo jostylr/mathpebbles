@@ -1,13 +1,13 @@
 # Bayesian Statistics
 
     _"pieces | page /probability-and-statistics/bayesian-statistics, _'intro |md',
-            /probability-and-statistics/bayesian-statistics/using-bayes-theorem,  _'Using Bayes Theorem',
-            /probability-and-statistics/bayesian-statistics/parameter-estimation,  _'Parameter Estimation',
-            /probability-and-statistics/bayesian-statistics/priors,  _'Priors',
-            /probability-and-statistics/bayesian-statistics/posteriors,  _'Posteriors',
-            /probability-and-statistics/bayesian-statistics/sampling,  _'Sampling',
-            /probability-and-statistics/bayesian-statistics/monte-carlo,  _'Monte Carlo',
-            /probability-and-statistics/bayesian-statistics/comparing-methods,  _'Comparing Methods'"
+            /probability-and-statistics/bayesian-statistics/using-bayes-theorem,  _'Using Bayes Theorem |md',
+            /probability-and-statistics/bayesian-statistics/parameter-estimation,  _'Parameter Estimation |md',
+            /probability-and-statistics/bayesian-statistics/priors,  _'Priors |md',
+            /probability-and-statistics/bayesian-statistics/posteriors,  _'Posteriors |md',
+            /probability-and-statistics/bayesian-statistics/sampling,  _'Sampling |md',
+            /probability-and-statistics/bayesian-statistics/monte-carlo,  _'Monte Carlo |md',
+            /probability-and-statistics/bayesian-statistics/comparing-methods,  _'Comparing Methods |md'"
 
 [../public/probability-and-statistics/bayesian-statistics.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"using-bayes-theorem::intro:pebble"
+    _"using-bayes-theorem::teaser:pebble"
 
-    _"parameter-estimation::intro:pebble"
+    _"parameter-estimation::teaser:pebble"
 
-    _"priors::intro:pebble"
+    _"priors::teaser:pebble"
 
-    _"posteriors::intro:pebble"
+    _"posteriors::teaser:pebble"
 
-    _"sampling::intro:pebble"
+    _"sampling::teaser:pebble"
 
-    _"monte-carlo::intro:pebble"
+    _"monte-carlo::teaser:pebble"
 
-    _"comparing-methods::intro:pebble"
+    _"comparing-methods::teaser:pebble"
 
 
 [code]()
 
-    _"using-bayes-theorem::intro:code"
-
-    _"parameter-estimation::intro:code"
-
-    _"priors::intro:code"
-
-    _"posteriors::intro:code"
-
-    _"sampling::intro:code"
-
-    _"monte-carlo::intro:code"
-
-    _"comparing-methods::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Using Bayes Theorem
 
-    _"using-bayes-theorem::intro"
+    _"using-bayes-theorem::teaser"
 
 
 [using-bayes-theorem](pages/probability-and-statistics_bayesian-statistics_using-bayes-theorem.md "load:")
 
 ## Parameter Estimation
 
-    _"parameter-estimation::intro"
+    _"parameter-estimation::teaser"
 
 
 [parameter-estimation](pages/probability-and-statistics_bayesian-statistics_parameter-estimation.md "load:")
 
 ## Priors
 
-    _"priors::intro"
+    _"priors::teaser"
 
 
 [priors](pages/probability-and-statistics_bayesian-statistics_priors.md "load:")
 
 ## Posteriors
 
-    _"posteriors::intro"
+    _"posteriors::teaser"
 
 
 [posteriors](pages/probability-and-statistics_bayesian-statistics_posteriors.md "load:")
 
 ## Sampling
 
-    _"sampling::intro"
+    _"sampling::teaser"
 
 
 [sampling](pages/probability-and-statistics_bayesian-statistics_sampling.md "load:")
 
 ## Monte Carlo
 
-    _"monte-carlo::intro"
+    _"monte-carlo::teaser"
 
 
 [monte-carlo](pages/probability-and-statistics_bayesian-statistics_monte-carlo.md "load:")
 
 ## Comparing Methods
 
-    _"comparing-methods::intro"
+    _"comparing-methods::teaser"
 
 
 [comparing-methods](pages/probability-and-statistics_bayesian-statistics_comparing-methods.md "load:")

@@ -1,13 +1,13 @@
 # Practitioners
 
     _"pieces | page /practitioners, _'intro |md',
-            /practitioners/algebraists,  _'Algebraists',
-            /practitioners/analysts,  _'Analysts',
-            /practitioners/geometers,  _'Geometers',
-            /practitioners/booleans,  _'Booleans',
-            /practitioners/scientists,  _'Scientists',
-            /practitioners/engineers,  _'Engineers',
-            /practitioners/artists,  _'Artists'"
+            /practitioners/algebraists,  _'Algebraists |md',
+            /practitioners/analysts,  _'Analysts |md',
+            /practitioners/geometers,  _'Geometers |md',
+            /practitioners/booleans,  _'Booleans |md',
+            /practitioners/scientists,  _'Scientists |md',
+            /practitioners/engineers,  _'Engineers |md',
+            /practitioners/artists,  _'Artists |md'"
 
 [../public/practitioners.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"algebraists::intro:pebble"
+    _"algebraists::teaser:pebble"
 
-    _"analysts::intro:pebble"
+    _"analysts::teaser:pebble"
 
-    _"geometers::intro:pebble"
+    _"geometers::teaser:pebble"
 
-    _"booleans::intro:pebble"
+    _"booleans::teaser:pebble"
 
-    _"scientists::intro:pebble"
+    _"scientists::teaser:pebble"
 
-    _"engineers::intro:pebble"
+    _"engineers::teaser:pebble"
 
-    _"artists::intro:pebble"
+    _"artists::teaser:pebble"
 
 
 [code]()
 
-    _"algebraists::intro:code"
-
-    _"analysts::intro:code"
-
-    _"geometers::intro:code"
-
-    _"booleans::intro:code"
-
-    _"scientists::intro:code"
-
-    _"engineers::intro:code"
-
-    _"artists::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Algebraists
 
-    _"algebraists::intro"
+    _"algebraists::teaser"
 
 
 [algebraists](pages/practitioners_algebraists.md "load:")
 
 ## Analysts
 
-    _"analysts::intro"
+    _"analysts::teaser"
 
 
 [analysts](pages/practitioners_analysts.md "load:")
 
 ## Geometers
 
-    _"geometers::intro"
+    _"geometers::teaser"
 
 
 [geometers](pages/practitioners_geometers.md "load:")
 
 ## Booleans
 
-    _"booleans::intro"
+    _"booleans::teaser"
 
 
 [booleans](pages/practitioners_booleans.md "load:")
 
 ## Scientists
 
-    _"scientists::intro"
+    _"scientists::teaser"
 
 
 [scientists](pages/practitioners_scientists.md "load:")
 
 ## Engineers
 
-    _"engineers::intro"
+    _"engineers::teaser"
 
 
 [engineers](pages/practitioners_engineers.md "load:")
 
 ## Artists
 
-    _"artists::intro"
+    _"artists::teaser"
 
 
 [artists](pages/practitioners_artists.md "load:")

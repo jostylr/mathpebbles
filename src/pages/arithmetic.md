@@ -1,13 +1,13 @@
 # Arithmetic
 
     _"pieces | page /arithmetic, _'intro |md',
-            /arithmetic/counting,  _'Counting',
-            /arithmetic/addition,  _'Addition',
-            /arithmetic/multiplication,  _'Multiplication',
-            /arithmetic/subtraction,  _'Subtraction',
-            /arithmetic/division,  _'Division',
-            /arithmetic/powers,  _'Powers',
-            /arithmetic/constructing-numbers,  _'Constructing Numbers'"
+            /arithmetic/counting,  _'Counting |md',
+            /arithmetic/addition,  _'Addition |md',
+            /arithmetic/multiplication,  _'Multiplication |md',
+            /arithmetic/subtraction,  _'Subtraction |md',
+            /arithmetic/division,  _'Division |md',
+            /arithmetic/powers,  _'Powers |md',
+            /arithmetic/constructing-numbers,  _'Constructing Numbers |md'"
 
 [../public/arithmetic.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"counting::intro:pebble"
+    _"counting::teaser:pebble"
 
-    _"addition::intro:pebble"
+    _"addition::teaser:pebble"
 
-    _"multiplication::intro:pebble"
+    _"multiplication::teaser:pebble"
 
-    _"subtraction::intro:pebble"
+    _"subtraction::teaser:pebble"
 
-    _"division::intro:pebble"
+    _"division::teaser:pebble"
 
-    _"powers::intro:pebble"
+    _"powers::teaser:pebble"
 
-    _"constructing-numbers::intro:pebble"
+    _"constructing-numbers::teaser:pebble"
 
 
 [code]()
 
-    _"counting::intro:code"
-
-    _"addition::intro:code"
-
-    _"multiplication::intro:code"
-
-    _"subtraction::intro:code"
-
-    _"division::intro:code"
-
-    _"powers::intro:code"
-
-    _"constructing-numbers::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Counting
 
-    _"counting::intro"
+    _"counting::teaser"
 
 
 [counting](pages/arithmetic_counting.md "load:")
 
 ## Addition
 
-    _"addition::intro"
+    _"addition::teaser"
 
 
 [addition](pages/arithmetic_addition.md "load:")
 
 ## Multiplication
 
-    _"multiplication::intro"
+    _"multiplication::teaser"
 
 
 [multiplication](pages/arithmetic_multiplication.md "load:")
 
 ## Subtraction
 
-    _"subtraction::intro"
+    _"subtraction::teaser"
 
 
 [subtraction](pages/arithmetic_subtraction.md "load:")
 
 ## Division
 
-    _"division::intro"
+    _"division::teaser"
 
 
 [division](pages/arithmetic_division.md "load:")
 
 ## Powers
 
-    _"powers::intro"
+    _"powers::teaser"
 
 
 [powers](pages/arithmetic_powers.md "load:")
 
 ## Constructing Numbers
 
-    _"constructing-numbers::intro"
+    _"constructing-numbers::teaser"
 
 
 [constructing-numbers](pages/arithmetic_constructing-numbers.md "load:")

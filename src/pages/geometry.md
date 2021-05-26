@@ -1,13 +1,13 @@
 # Geometry
 
     _"pieces | page /geometry, _'intro |md',
-            /geometry/plane-geometry,  _'Plane Geometry',
-            /geometry/constructions,  _'Constructions',
-            /geometry/trigonometry,  _'Trigonometry',
-            /geometry/conic-sections,  _'Conic Sections',
-            /geometry/parametric-curves,  _'Parametric Curves',
-            /geometry/higher-dimensions,  _'Higher Dimensions',
-            /geometry/other-geometries,  _'Other Geometries'"
+            /geometry/plane-geometry,  _'Plane Geometry |md',
+            /geometry/constructions,  _'Constructions |md',
+            /geometry/trigonometry,  _'Trigonometry |md',
+            /geometry/conic-sections,  _'Conic Sections |md',
+            /geometry/parametric-curves,  _'Parametric Curves |md',
+            /geometry/higher-dimensions,  _'Higher Dimensions |md',
+            /geometry/other-geometries,  _'Other Geometries |md'"
 
 [../public/geometry.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"plane-geometry::intro:pebble"
+    _"plane-geometry::teaser:pebble"
 
-    _"constructions::intro:pebble"
+    _"constructions::teaser:pebble"
 
-    _"trigonometry::intro:pebble"
+    _"trigonometry::teaser:pebble"
 
-    _"conic-sections::intro:pebble"
+    _"conic-sections::teaser:pebble"
 
-    _"parametric-curves::intro:pebble"
+    _"parametric-curves::teaser:pebble"
 
-    _"higher-dimensions::intro:pebble"
+    _"higher-dimensions::teaser:pebble"
 
-    _"other-geometries::intro:pebble"
+    _"other-geometries::teaser:pebble"
 
 
 [code]()
 
-    _"plane-geometry::intro:code"
-
-    _"constructions::intro:code"
-
-    _"trigonometry::intro:code"
-
-    _"conic-sections::intro:code"
-
-    _"parametric-curves::intro:code"
-
-    _"higher-dimensions::intro:code"
-
-    _"other-geometries::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Plane Geometry
 
-    _"plane-geometry::intro"
+    _"plane-geometry::teaser"
 
 
 [plane-geometry](pages/geometry_plane-geometry.md "load:")
 
 ## Constructions
 
-    _"constructions::intro"
+    _"constructions::teaser"
 
 
 [constructions](pages/geometry_constructions.md "load:")
 
 ## Trigonometry
 
-    _"trigonometry::intro"
+    _"trigonometry::teaser"
 
 
 [trigonometry](pages/geometry_trigonometry.md "load:")
 
 ## Conic Sections
 
-    _"conic-sections::intro"
+    _"conic-sections::teaser"
 
 
 [conic-sections](pages/geometry_conic-sections.md "load:")
 
 ## Parametric Curves
 
-    _"parametric-curves::intro"
+    _"parametric-curves::teaser"
 
 
 [parametric-curves](pages/geometry_parametric-curves.md "load:")
 
 ## Higher Dimensions
 
-    _"higher-dimensions::intro"
+    _"higher-dimensions::teaser"
 
 
 [higher-dimensions](pages/geometry_higher-dimensions.md "load:")
 
 ## Other Geometries
 
-    _"other-geometries::intro"
+    _"other-geometries::teaser"
 
 
 [other-geometries](pages/geometry_other-geometries.md "load:")

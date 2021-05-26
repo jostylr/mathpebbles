@@ -1,13 +1,13 @@
 # Scientists
 
     _"pieces | page /practitioners/scientists, _'intro |md',
-            /practitioners/scientists/physics,  _'Physics',
-            /practitioners/scientists/chemistry,  _'Chemistry',
-            /practitioners/scientists/biology,  _'Biology',
-            /practitioners/scientists/health,  _'Health',
-            /practitioners/scientists/ecology,  _'Ecology',
-            /practitioners/scientists/economics,  _'Economics',
-            /practitioners/scientists/sociology,  _'Sociology'"
+            /practitioners/scientists/physics,  _'Physics |md',
+            /practitioners/scientists/chemistry,  _'Chemistry |md',
+            /practitioners/scientists/biology,  _'Biology |md',
+            /practitioners/scientists/health,  _'Health |md',
+            /practitioners/scientists/ecology,  _'Ecology |md',
+            /practitioners/scientists/economics,  _'Economics |md',
+            /practitioners/scientists/sociology,  _'Sociology |md'"
 
 [../public/practitioners/scientists.html](# "save:")
 
@@ -16,7 +16,9 @@
 
 [pebble]()
 
-[code]()
+## Teaser
+
+[pebble]()
 
 ## Pieces
 
@@ -41,36 +43,23 @@
 
 [pebbles]()
 
-    _"physics::intro:pebble"
+    _"physics::teaser:pebble"
 
-    _"chemistry::intro:pebble"
+    _"chemistry::teaser:pebble"
 
-    _"biology::intro:pebble"
+    _"biology::teaser:pebble"
 
-    _"health::intro:pebble"
+    _"health::teaser:pebble"
 
-    _"ecology::intro:pebble"
+    _"ecology::teaser:pebble"
 
-    _"economics::intro:pebble"
+    _"economics::teaser:pebble"
 
-    _"sociology::intro:pebble"
+    _"sociology::teaser:pebble"
 
 
 [code]()
 
-    _"physics::intro:code"
-
-    _"chemistry::intro:code"
-
-    _"biology::intro:code"
-
-    _"health::intro:code"
-
-    _"ecology::intro:code"
-
-    _"economics::intro:code"
-
-    _"sociology::intro:code"
 
 
 [header]()
@@ -81,49 +70,49 @@
 
 ## Physics
 
-    _"physics::intro"
+    _"physics::teaser"
 
 
 [physics](pages/practitioners_scientists_physics.md "load:")
 
 ## Chemistry
 
-    _"chemistry::intro"
+    _"chemistry::teaser"
 
 
 [chemistry](pages/practitioners_scientists_chemistry.md "load:")
 
 ## Biology
 
-    _"biology::intro"
+    _"biology::teaser"
 
 
 [biology](pages/practitioners_scientists_biology.md "load:")
 
 ## Health
 
-    _"health::intro"
+    _"health::teaser"
 
 
 [health](pages/practitioners_scientists_health.md "load:")
 
 ## Ecology
 
-    _"ecology::intro"
+    _"ecology::teaser"
 
 
 [ecology](pages/practitioners_scientists_ecology.md "load:")
 
 ## Economics
 
-    _"economics::intro"
+    _"economics::teaser"
 
 
 [economics](pages/practitioners_scientists_economics.md "load:")
 
 ## Sociology
 
-    _"sociology::intro"
+    _"sociology::teaser"
 
 
 [sociology](pages/practitioners_scientists_sociology.md "load:")
