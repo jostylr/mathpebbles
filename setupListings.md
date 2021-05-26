@@ -29,7 +29,7 @@ We read from the manifest page
     let newlist = [];
     let newtoc = [];
     let cur = 0; 
-    newlist.push('    0 | MathPebbles'); 
+    newlist.push('    0 | MathPebbles | '); 
     newtoc.push('    <h3> <a href="/index.html">MathPebbles</a></h3>');
     lines.forEach( ({heading, level, symbol, cls}) => {
         let path = '';
@@ -296,7 +296,7 @@ part, title of the page, intro section and then the title and section.
 
 
 
-[../setupPages.mjs](# "save:")   VERY DANGEROUS TO USE; REWRITES ALL CONTENT
+[../setupPages.mjs](# "save")   VERY DANGEROUS TO USE; REWRITES ALL CONTENT
 
 
 ### Generated content
@@ -320,14 +320,10 @@ part, title of the page, intro section and then the title and section.
         \_":style"
         !- script
         \_":script"
-        !- functions
-        \_":functions"
         !- pebbles
         \_":pebbles"
         !- code
         \_":code"
-        !- problems
-        \_":problems"
         !- header
         \_":header"
         !- begin
@@ -339,10 +335,6 @@ part, title of the page, intro section and then the title and section.
 
     [script]()
 
-    [functions]()
-
-    FUNCTIONS
-
     [pebbles]()
 
     PEBBLES
@@ -350,10 +342,6 @@ part, title of the page, intro section and then the title and section.
     [code]()
 
     CODE
-
-    [problems]()
-
-    PROBLEMS
 
     [header]()
 

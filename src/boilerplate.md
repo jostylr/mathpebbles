@@ -26,6 +26,9 @@ katex and jsxgraph were first, then they block loading of elements.
             .hide  {
                 display:none;
             }
+            main {
+                margin-left:10px;
+            }
             /*STYLE*/
         </style>
 
@@ -34,10 +37,13 @@ katex and jsxgraph were first, then they block loading of elements.
     </head>
     <body>
     <nav>_"nav"</nav>
+    <main>
     <h1>TITLE</h1>
     BODY
+    </main>
     <script>
         _"onload"
+        //SCRIPT
     </script>
     </body>
     </html>
@@ -72,13 +78,7 @@ without chapter/sections, but with all of those areas invisibled out.
 
     <sl-dropdown>
     <sl-button slot="trigger"  caret>Other</sl-button>
-    <sl-button class="hide" href="/about.html">About</sl-button>
-    <sl-button class="hide" href="/faq.html">FAQ</sl-button>
-    <sl-button class="hide" href="/resources.html">Resources</sl-button>
-    <sl-button class="hide" href="/support.html">Support</sl-button>
-    <sl-button class="hide" href="/settings.html">Settings</sl-button>
-    <sl-button class="hide" href="/toc.html">Table of Contents</sl-button>
-    <sl-button class="hide" href="/book-index.html">Index of Content</sl-button>
+    _"templates::make nav:other | processOther"
     </sl-dropdown>
     </div> 
 
@@ -92,4 +92,19 @@ is to unhide the drop down stuff.
     document.addEventListener("DOMContentLoaded", function() {
         $$('nav  sl-button' ).forEach(el => el.classList.remove('hide'));
     });
+
+
+## Process Other
+
+This converts the other list into the drop down. 
+
+    function processOther (text) { 
+        text = '['+text.replace(/'/g, '"') +']';
+        let arr = JSON.parse(text);
+        return arr.
+          map( ([name, path]) => `<sl-button class="hide" href="${path}.html">${name}</sl-button>` ).
+          join('\n');
+    }
+
+[processOther](# "define:")
 

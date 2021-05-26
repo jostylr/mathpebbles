@@ -1,8 +1,10 @@
 
+//let htmlmin = require('html-minifier');
 
 /*global module, require */
 module.exports = function(Folder, args) {
 
+   // Folder.plugins.htmlmin = htmlmin.minify;
 
     Folder.plugins.md.prepost.push( 
         function varsub (code) {

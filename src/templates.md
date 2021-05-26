@@ -73,6 +73,15 @@ The path should start with a slash, but easy to forget.
                 }
             }).
             join('\n');
+       
+       /*
+        let minify = this.Folder.plugins.htmlmin;
+
+        minify(ret, {
+            minifyCSS : true,
+            minifyJS : true
+        });
+       */
 
         return ret;
     }
@@ -412,14 +421,14 @@ nav is initially hidden to avoid FLOUT.
             ];  
         } else if (type === 'book') {
             downs = [ ['Books', links[lp.prefix].children],
-                ['Chapters', []], 
+                ['Chapters', links[path].children], 
                 ['Sections', []] 
             ]; 
         } else if (type === 'chapter') {
             downs = [ 
                 ['Books', links[links[lp.prefix].prefix].children ],
                 ['Chapters', links[lp.prefix].children],
-                ['Sections', []]
+                ['Sections', links[path].children]
             ];
         } else if (type === 'section') {
             downs = [ 
@@ -452,13 +461,14 @@ nav is initially hidden to avoid FLOUT.
 
 These are the items in the other dropdown.
 
-    ['About', '/about'], 
-    ['FAQ', '/faq'],
-    ['Resources', '/resources'],
-    ['Support','/support'],
-    ['Settings', '/settings'],
     ['Table of Contents', '/toc'],
-    ['Index of Content', '/book-index']
+    ['About', '/about'], 
+    ['Resources', '/resources'],
+    ['Notes', '/notes'],
+    ['Settings', '/settings'],
+    ['FAQ', '/faq'],
+    ['Index of Content', '/book-index'],
+    ['Support','/support']
 
 
 [css]()
@@ -1010,6 +1020,7 @@ There is also math.js mainly used for high precision arithmetic.
             const {link, Var, show, hide } = MP;
             MP.mathSub(math);
             math.config({number:'BigNumber'});
+            MP.makeF(math);
             let keyInfo = MP.initKeys();
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
             let controller = {

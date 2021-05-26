@@ -30,18 +30,27 @@ things and stuff just propagates. Spreadsheet style, if  you will.
         return [_"typed input", types];
     };
     
-    const makeScope = _"local"
-
+    const makeScope = _"local";
+    
+    const makeF = function makeF (math) {
+        const f = _"function defs::f";
+        this.f = f;
+        return f;
+    }
 
     const MP = {link, Var, Waiter, EventEmitter, 
         mathSub, $, $$, show, hide, 
         initMakeTypedInput,
-        initScaledNumber, initKeys, makeScope }; 
+        initScaledNumber, initKeys, makeScope, makeF }; 
 
     export {MP};
 
 
 [../public/r/common.mjs](# "save")
+
+
+[function defs](function-defs.md "load:")  These are the mathematical functions we
+will use. 
 
 ## Link
 
@@ -528,7 +537,9 @@ painful to use.
         div: "divide", 
         eq : "equal", 
         gt : "larger", 
-        lt : "smaller"
+        lt : "smaller",
+        neq : "unequal",
+        neg : "unaryNegative",
     }
 
 ## CSS

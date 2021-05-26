@@ -203,7 +203,7 @@
 -       Volumes of Revolution
 -       Error Estimates
 -   Exponentials and Logarithms. e^x
-        Paths to the Exponential
+-       Paths to the Exponential
 -       Properties of the Exponential
 -       Paths to the Logarithm
 -       Properties of the Logarithm
