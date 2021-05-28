@@ -27,6 +27,23 @@ roughly where they are most prominently presented or defined.
 
     }
         
+## Module
+
+There is a standalone module that we have produced as well. This is the file
+for this. It depends on mathjs. 
+
+    import {create, all} from 'mathjs';
+    const math = create(all);
+    math.config({number:'BigNumber'});
+    (_"common::math helpers")(math);
+    
+    const f = _"f";
+
+    export {f, math}; 
+
+[f/index.mjs](# "save:")
+
+
 ## Arithmetic
 
 ## Algebra
@@ -90,16 +107,16 @@ Prepoplate rows with 0's. There should be one row for each of the divs.
         let rows = [];
         let zeroRow = poly.map( () => zero);
 
-        for (let i = 0; i<n; i += 1) {
+        for (let i = 0; i<m; i += 1) {
             rows[i] = [...zeroRow];
         }
         
         let quot = [];
         let rem = [];
-        for (let i = n; i >= 0; i -= 1) {
+        for (let i = n-1; i >= 0; i -= 1) {
             let a = poly[i];
             let sum = rows.reduce( (acc, row) => {
-                math.add(a, row[i]);
+                return math.add(a, row[i]);
             }, a);
 
 We want to be able place each of the items in div into a slot. We are
@@ -108,11 +125,11 @@ if we can still do this otherwise it is in the remainder.
 
             if ( (i-m) >= 0) {
                 div.forEach( (b, ind) => {
-                   row[ind][i-(m-ind)] = math.mul(b, sum);
+                   rows[ind][i-(m-ind)] = math.mul(b, sum);
                 });
-                quot.shift(sum);
+                quot.unshift(sum);
             } else {
-                rem.shift(sum);
+                rem.unshift(sum);
             }
         }
 

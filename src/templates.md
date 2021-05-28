@@ -129,40 +129,42 @@ page. If there are no symbols or children, then we go to the parent.
     ]
     let children = [];
     let curPath = path;
-    for (let i = 0; i < 3; i+= 1) {
-        if (curPath === '/index') {curPath = '/';}
-        let link = links[curPath];
-        children = link.children.slice(0);
-        if ((!children.length) || (!children[0][2]) )  {
-                curPath = link.prefix;
-                continue;
+    if (path === '/index') { curPath = '/';}
+    let link = links[curPath];
+    if ( (link.type === 'main') || (link.type === 'book') ) {
+        link = links['/'];
+    } else if (link.type === 'section') {
+        link = links[link.prefix]; // chapter
+        if (!link.children[0][2]) { //no section symbols so use chapter
+            link = links[link.prefix];
         }
-        children.forEach( ([name, path, symbol], ind) => {
+    }  else {// chapters
+        link = links[link.prefix];
+    }
+    children = link.children.slice(0);
+    children.forEach( ([name, path, symbol], ind) => {
 
 We have a non-tex thing when the lead character is a percent.
 
-            let type;
-            if (symbol[0] === '%') {
-                let ind = symbol.findIndexOf(':');
-                if (ind === -1) { 
-                    console.log("invalid symbol", symbol, name, path); 
-                    
-                }
-                type = symbol.slice(1,ind).trim(); 
-                symbol = symbol.slice(ind+1).trim(); 
-            } else {
-                type = 'katex';
+        let type;
+        if (symbol[0] === '%') {
+            let ind = symbol.findIndexOf(':');
+            if (ind === -1) { 
+                console.log("invalid symbol", symbol, name, path); 
+                
             }
-            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
+            type = symbol.slice(1,ind).trim(); 
+            symbol = symbol.slice(ind+1).trim(); 
+        } else {
+            type = 'katex';
+        }
+        fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
     <circle r="20" fill="white" />
     <foreignObject x="-5" y="-9" width="20" height="23">
-        
-        <div class="fano-math" data-type="${type}" data-text="${symbol}"></div>
+    <div class="fano-math" data-type="${type}" data-text="${symbol}"></div>
     </foreignObject>
     </a>`);
-        });
-        break;
-    }
+    });
 
 
 [details]() 
@@ -938,6 +940,13 @@ sections.
         height:90vw;
         max-width:30em;
         max-height:30em;
+    }
+
+
+This should be the relevant parent circle in the fano. 
+
+    circle.parent {
+        fill:#69ceff;
     }
 
 

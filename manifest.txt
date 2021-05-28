@@ -1,12 +1,12 @@
 -Arithmetic. +
 -   Counting. \ldots
--       Number as Matching
--       Pebbles of Various Sizes
--       Digits
--       Carry Overs
--       Units
--       Base Representations
--       Largest Number
+-       Number as Matching. .. 
+-       Pebbles of Various Sizes. oO
+-       Digits.. 09
+-       Carry Overs. \_
+-       Units. \textrm{in}
+-       Base Representations. 01
+-       Largest Number. \infty
 -   Addition. + 
 -       Notions of Additions
 -       Adding Single Digits

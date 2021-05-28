@@ -5,7 +5,7 @@
   "main": "init.js",
   "dependencies": {
     "html-minifier": "^4.0.0",
-    "mathjs": "^9.2.0",
+    "mathjs": "^9.4.1",
     "standard": "^16.0.3"
   },
   "devDependencies": {

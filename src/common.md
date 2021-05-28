@@ -539,7 +539,7 @@ painful to use.
         gt : "larger", 
         lt : "smaller",
         neq : "unequal",
-        neg : "unaryNegative",
+        neg : "unaryMinus",
     }
 
 ## CSS
@@ -2309,6 +2309,9 @@ This is the stuff we want to do to the page once stuff is loaded.
         });
 
         _":make fano math"
+    
+        _":highlight fano"
+
 
 [make fano math]() 
 
@@ -2382,6 +2385,22 @@ the elements.
     }   
 
 
+[highlight fano]() 
+
+This should highlight the parent pebble in the fano diagram. This is a way of
+escalating up. 
+
+    $$('.fano a').forEach( el => {
+        let path = el.attributes.href.value.slice(0,-5);
+        console.log(path, location.pathname,
+        location.pathname.includes(path));
+        if (location.pathname.includes(path) ) {
+            $('circle', el).classList.add('parent');
+        }
+    });
+
+
+
 [shift padding]()
 
 TODO REMOVE. This failed because the padding of other elements would change
@@ -2422,7 +2441,7 @@ Now we delete the old rule, looping through the ruleslist to catch it all.
 
                 let n = rules.length;
                 for (let i = 0; i < n; i += 1) {
-                    if (rules[i].cssText === oldRule) {
+                    if (rules[i]cssText === oldRule) {
                         sheet.deleteRule(i);
                     }
                 }

@@ -35,6 +35,10 @@ There is  a more plain version of the template for the other pages: [boilerplate
 * [support](other/support.md "load:") Support
 * [notes](other/notes.md "load:") Notes
 
+We also have a testing setup for the purely math functions.
+
+* [testf](testfunctions.md "load:")
+
 
 ## Organization
 

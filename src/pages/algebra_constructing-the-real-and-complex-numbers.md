@@ -21,7 +21,6 @@
     How do we make sense of a number whose decimal portion goes on forever in
     new and exciting ways? How can we make sense of imaginary numbers?
 
-
     Here we investigate in what sense we can say the real and complex numbers
     are real. How do we define them such that it is clear that they exist?
     What are their properties? In addition to exploring real numbers, we also

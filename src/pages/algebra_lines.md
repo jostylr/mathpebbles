@@ -18,13 +18,6 @@
 
 ## Teaser
 
-    We start with lines as this is the perfect blend of real-life, geometry,
-    and algebra. We talk about a variety of geometric figures that come from
-    this which we will use as examples for doing a variety of problems. The
-    concept of slope is of particular note and interest. Lines are fundamental
-    to solving equations.
-
-    !- 
 
     Lines are where we begin. We take the notion of a straight line as being
     the objects that, given two destinations on the line (points), the
