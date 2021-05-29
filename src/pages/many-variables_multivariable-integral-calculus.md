@@ -11,14 +11,16 @@
 
 [../public/many-variables/multivariable-integral-calculus.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"volume-integrals::teaser:pebble"
-
-    _"surface-area-integrals::teaser:pebble"
-
-    _"line-integrals::teaser:pebble"
-
-    _"integral-relations::teaser:pebble"
-
-    _"change-of-basis-in-integrals::teaser:pebble"
-
-    _"antiderivatives::teaser:pebble"
-
-    _"generalizing-multivariable-integrals::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

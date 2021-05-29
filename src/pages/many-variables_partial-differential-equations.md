@@ -11,14 +11,16 @@
 
 [../public/many-variables/partial-differential-equations.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"partial-versus-ordinary::teaser:pebble"
-
-    _"verifying-solutions::teaser:pebble"
-
-    _"laplacian-equations::teaser:pebble"
-
-    _"boundary-conditions::teaser:pebble"
-
-    _"time-versus-space::teaser:pebble"
-
-    _"approximations-in-pdes::teaser:pebble"
-
-    _"generalized-solutions::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

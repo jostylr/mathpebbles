@@ -11,14 +11,16 @@
 
 [../public/practitioners/algebraists.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"abstract-algebra::teaser:pebble"
-
-    _"number-theory::teaser:pebble"
-
-    _"cryptography::teaser:pebble"
-
-    _"algebraic-geometry::teaser:pebble"
-
-    _"algebraic-topology::teaser:pebble"
-
-    _"computer-algebra::teaser:pebble"
-
-    _"category-theory::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

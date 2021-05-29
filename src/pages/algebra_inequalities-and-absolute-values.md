@@ -11,26 +11,16 @@
 
 [../public/algebra/inequalities-and-absolute-values.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-    Inequalities and absolute values are notorious for being confusing.
-    Building on our notion of distance, we hopefully will convey some
-    interesting ideas about it. We will explore some stuff using polynomials,
-    but the majority of an introduction to this material is with lines. 
-
-    !-
-
-    With our core example set in place, we then move on into exploring
-    inequalities fully, including the extremely useful but confusing topic of
-    abslute values. 
-
-
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -39,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -49,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"basic-inequalities::teaser:pebble"
-
-    _"polynomial-inequalities::teaser:pebble"
-
-    _"triangle-inequality::teaser:pebble"
-
-    _"absolute-value::teaser:pebble"
-
-    _"solving-absolute-value-equations::teaser:pebble"
-
-    _"absolute-value-inequalities::teaser:pebble"
-
-    _"distance::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

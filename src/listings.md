@@ -69,12 +69,12 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0 | MathPebbles | 
     0arithmetic | Arithmetic | +
     0arithmetic/counting | Counting | \ldots
-    0arithmetic/counting/number-as-matching | Number as Matching | .. 
+    0arithmetic/counting/number-as-matching | Number as Matching | %t:..=2 
     0arithmetic/counting/pebbles-of-various-sizes | Pebbles of Various Sizes | oO
-    0arithmetic/counting/digits | Digits | 09
-    0arithmetic/counting/carry-overs | Carry Overs | \_
-    0arithmetic/counting/units | Units | \textrm{in}
-    0arithmetic/counting/base-representations | Base Representations | 01
+    0arithmetic/counting/digits | Digits | %t:0-9
+    0arithmetic/counting/carry-overs | Carry Overs | %t:10
+    0arithmetic/counting/units | Units | %img:ruler.svg
+    0arithmetic/counting/base-representations | Base Representations | %t: 0-1
     0arithmetic/counting/largest-number | Largest Number | \infty
     0arithmetic/addition | Addition | + 
     0arithmetic/addition/notions-of-additions | Notions of Additions | 

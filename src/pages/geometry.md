@@ -11,14 +11,16 @@
 
 [../public/geometry.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"plane-geometry::teaser:pebble"
-
-    _"constructions::teaser:pebble"
-
-    _"trigonometry::teaser:pebble"
-
-    _"conic-sections::teaser:pebble"
-
-    _"parametric-curves::teaser:pebble"
-
-    _"higher-dimensions::teaser:pebble"
-
-    _"other-geometries::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

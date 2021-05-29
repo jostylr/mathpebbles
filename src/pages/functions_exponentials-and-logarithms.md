@@ -11,14 +11,16 @@
 
 [../public/functions/exponentials-and-logarithms.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"paths-to-the-exponential::teaser:pebble"
-
-    _"properties-of-the-exponential::teaser:pebble"
-
-    _"paths-to-the-logarithm::teaser:pebble"
-
-    _"properties-of-the-logarithm::teaser:pebble"
-
-    _"dealing-with-large-numbers::teaser:pebble"
-
-    _"applications-of-exponentials-and-logarithms::teaser:pebble"
-
-    _"asymptotics::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

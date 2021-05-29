@@ -11,14 +11,16 @@
 
 [../public/many-variables/linear-algebra.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"vectors::teaser:pebble"
-
-    _"subspaces::teaser:pebble"
-
-    _"matrices::teaser:pebble"
-
-    _"solving-linear-systems::teaser:pebble"
-
-    _"changing-the-basis::teaser:pebble"
-
-    _"diagonalizations::teaser:pebble"
-
-    _"complex-linear-spaces::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

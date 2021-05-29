@@ -11,14 +11,16 @@
 
 [../public/many-variables.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"linear-algebra::teaser:pebble"
-
-    _"systems-of-ordinary-differential-equations::teaser:pebble"
-
-    _"multivariable-functions::teaser:pebble"
-
-    _"multivaribale-differential-calculus::teaser:pebble"
-
-    _"multivariable-integral-calculus::teaser:pebble"
-
-    _"partial-differential-equations::teaser:pebble"
-
-    _"curved-spaces::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

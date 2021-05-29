@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/simulations.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"exploring-probability::teaser:pebble"
-
-    _"randomness::teaser:pebble"
-
-    _"simulating-random-variables::teaser:pebble"
-
-    _"central-limit-theorem-explorations::teaser:pebble"
-
-    _"z-test-explorations::teaser:pebble"
-
-    _"t-test-explorations::teaser:pebble"
-
-    _"bayesian-explorations::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

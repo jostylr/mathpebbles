@@ -11,14 +11,16 @@
 
 [../public/practitioners.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"algebraists::teaser:pebble"
-
-    _"analysts::teaser:pebble"
-
-    _"geometers::teaser:pebble"
-
-    _"booleans::teaser:pebble"
-
-    _"scientists::teaser:pebble"
-
-    _"engineers::teaser:pebble"
-
-    _"artists::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

@@ -1,24 +1,35 @@
 # Linear Inequalities
 
     _"pieces | page /algebra/lines/linear-inequalities, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Inequality Problems'), _'Inequality Problems |md ',
+            ec('Graphical Solutions'), _'Graphical Solutions |md ',
+            ec('Guess, Check, Repeat'), _'Guess, Check, Repeat |md ',
+            ec('Algebraic Solutions'), _'Algebraic Solutions |md ',
+            ec('Rules for Manipulating Inequalities'), _'Rules for
+            Manipulating Inequalities |md ',
+            ec('Two Point Solution Method'), _'Two Point Solution Method |md '"
 
 [../public/algebra/lines/linear-inequalities.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+    If we are on a budget, we care about spending less than the budgeted
+    amount, not spending exactly the budgeted amount. Inequalities are how we
+    describe that situation. With a few modifications, we can approach them
+    the same way we did solving lines. 
+
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+    Inequalities are notoriously difficult. But we can tackle them almost the
+    same way as we tackle solving a line. We just have to be mindful of
+    direction. 
+
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +38,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +48,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -83,80 +60,85 @@
 
 [end]()
 
-## sub 1
-
-
-
+## Ideas
 
 [pebble]()
 
+    Graphical exploration of inequalitis linked to algebraic manipulations
 
-[code]()
+[proof]()
 
+    Prove inequality properties    
 
-## sub 2
+[program]()
 
-
-
-
-[pebble]()
-
-
-[code]()
+    Solving the inequalities programmatically. 
 
 
-## sub 3
+
+## Inequality Problems
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 4
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 5
+## Graphical Solutions
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 6
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 7
+## Guess, Check, Repeat
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
+
+
+## Algebraic Solutions
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Rules for Manipulating Inequalities
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Two Point Solution Method
+
+
+
+
+##### Pebble
+
+
+##### Code
 
 

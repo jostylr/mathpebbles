@@ -11,14 +11,16 @@
 
 [../public/arithmetic/multiplication/properties-of-multiplication.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -88,10 +56,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 2
@@ -99,10 +67,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 3
@@ -110,10 +78,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 4
@@ -121,10 +89,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 5
@@ -132,10 +100,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 6
@@ -143,10 +111,10 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
 ## sub 7
@@ -154,9 +122,9 @@
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 

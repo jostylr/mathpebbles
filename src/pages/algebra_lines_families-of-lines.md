@@ -1,24 +1,28 @@
 # Families of Lines
 
     _"pieces | page /algebra/lines/families-of-lines, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Parallel Lines'), _'Parallel Lines |md ',
+            ec('Perpendicular Lines'), _'Perpendicular Lines |md ',
+            ec('Co-Intersecting Lines'), _'Co Intersecting Lines |md ',
+            ec('Co-Angle Lines'), _'Co Angle Lines |md '"
 
 [../public/algebra/lines/families-of-lines.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+    Here we look at some questions of categorizing lines based on some
+    relational criteria. 
+
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+    Lines that never meet? Lines that make corners?
+
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +31,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +41,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -83,80 +53,66 @@
 
 [end]()
 
-## sub 1
-
-
-
+## Ideas
 
 [pebble]()
 
+    Explore the properties of the lines, interseciton solutions, angles. 
 
-[code]()
+[proof]()
 
+    Full proof of these families of lines having the common properties. 
 
-## sub 2
+[program]()
 
-
-
-
-[pebble]()
-
-
-[code]()
+    Implement choosing a member of a family with functions. 
 
 
-## sub 3
+## Parallel Lines
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 4
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 5
+## Perpendicular Lines
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 6
+## Co Intersecting Lines
+
+    common form being (y-b) = m (x-a) where m varies
 
 
+##### Pebble
 
 
-[pebble]()
+##### Code
 
 
-[code]()
+## Co Angle Lines
+
+    ultimately same as parallel, but deduce that. Concrete way to determine
+    parallelity. See if we can get distance to intersection of nearly
+    co-angle. 
 
 
-## sub 7
+##### Pebble
 
 
+##### Code
 
 
-[pebble]()
-
-
-[code]()
 
 

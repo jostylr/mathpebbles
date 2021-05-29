@@ -11,14 +11,16 @@
 
 [../public/many-variables/curved-spaces.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"surfaces-in-3d::teaser:pebble"
-
-    _"curves::teaser:pebble"
-
-    _"coordinates::teaser:pebble"
-
-    _"tangent-spaces::teaser:pebble"
-
-    _"metrics::teaser:pebble"
-
-    _"tensors-and-differential-forms::teaser:pebble"
-
-    _"topological-concerns::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

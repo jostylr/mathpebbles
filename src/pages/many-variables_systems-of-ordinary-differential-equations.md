@@ -11,14 +11,16 @@
 
 [../public/many-variables/systems-of-ordinary-differential-equations.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"predator-prey::teaser:pebble"
-
-    _"two-dimensional-systems::teaser:pebble"
-
-    _"matrix-solutions::teaser:pebble"
-
-    _"numerical-systems::teaser:pebble"
-
-    _"non-linear-differential-systems::teaser:pebble"
-
-    _"chaos::teaser:pebble"
-
-    _"critical-points::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

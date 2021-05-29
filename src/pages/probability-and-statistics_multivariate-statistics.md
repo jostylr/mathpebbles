@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/multivariate-statistics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"random-multivariates::teaser:pebble"
-
-    _"joint-distribution::teaser:pebble"
-
-    _"multivariate-distributions::teaser:pebble"
-
-    _"multivariate-means::teaser:pebble"
-
-    _"multivariate-normals::teaser:pebble"
-
-    _"multivariate-analysis::teaser:pebble"
-
-    _"multivariate-regression::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

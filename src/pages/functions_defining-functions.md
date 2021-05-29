@@ -11,14 +11,16 @@
 
 [../public/functions/defining-functions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"taylor-series::teaser:pebble"
-
-    _"functional-equations::teaser:pebble"
-
-    _"differential-equations::teaser:pebble"
-
-    _"special-functions::teaser:pebble"
-
-    _"laplace-transforms::teaser:pebble"
-
-    _"fourier-approximations::teaser:pebble"
-
-    _"tricks::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

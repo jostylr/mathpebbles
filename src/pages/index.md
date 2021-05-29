@@ -13,14 +13,16 @@
 
 [../public/index.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -29,9 +31,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -39,36 +41,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"arithmetic::teaser:pebble"
-
-    _"algebra::teaser:pebble"
-
-    _"geometry::teaser:pebble"
-
-    _"functions::teaser:pebble"
-
-    _"many-variables::teaser:pebble"
-
-    _"probability-and-statistics::teaser:pebble"
-
-    _"practitioners::teaser:pebble"
-
-
-    _"moser:pebble"
-
-
-    _"hammer:pebble"
-
-[code]()
-
-
-    _"moser:code"
 
 [header]()
 
@@ -164,7 +141,8 @@
     !STOP.
 
 
-[pebble]()
+
+##### Pebble
 
     moser : (el) => {
        el.id = 'cool';
@@ -182,7 +160,8 @@
         el.innerHTML = "<h2>INDUCTION</h2>";
     },
 
-[code]()
+##### Code
+
 
     counting1regions : (text, out) => {
         console.log("Moser code was here");
@@ -190,7 +169,7 @@
         let regions;
         eval(text);
         out.innerHTML =`<p>${regions}</p>`;
-    }
+    },
 
 
 ## Hammer
@@ -239,7 +218,7 @@ The one method to rule them all.
     
 
 
-[pebble]() 
+##### Pebble
 
     'hammer-text' : (el) => {
         let {
@@ -268,7 +247,7 @@ The one method to rule them all.
 
     },
 
-    
+
 ## Arithmetic
 
     _"arithmetic::teaser"

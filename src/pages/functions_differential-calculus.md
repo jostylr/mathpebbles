@@ -11,14 +11,16 @@
 
 [../public/functions/differential-calculus.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-derivatives::teaser:pebble"
-
-    _"using-derivatives::teaser:pebble"
-
-    _"derivative-rules::teaser:pebble"
-
-    _"newtons-method::teaser:pebble"
-
-    _"optimization-problems::teaser:pebble"
-
-    _"taylor-polynomials::teaser:pebble"
-
-    _"implicit-differentiation::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

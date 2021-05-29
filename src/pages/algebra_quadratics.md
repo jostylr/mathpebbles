@@ -11,10 +11,12 @@
 
 [../public/algebra/quadratics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
@@ -38,8 +40,7 @@
     numbers. We conclude with examing a variety of common quadratic problems
     for solving both quadratic equations and inequalities. 
 
-
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -48,9 +49,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -58,30 +59,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-quadratics::teaser:pebble"
-
-    _"the-vertex-of-a-quadratic::teaser:pebble"
-
-    _"square-roots::teaser:pebble"
-
-    _"solving-quadratics::teaser:pebble"
-
-    _"complex-numbers::teaser:pebble"
-
-    _"common-quadratic-problems::teaser:pebble"
-
-    _"quadratic-inequalities::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

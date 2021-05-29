@@ -11,14 +11,16 @@
 
 [../public/arithmetic/division.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-division::teaser:pebble"
-
-    _"foundational-divisions::teaser:pebble"
-
-    _"long-division::teaser:pebble"
-
-    _"significant-division::teaser:pebble"
-
-    _"fractions::teaser:pebble"
-
-    _"decimals::teaser:pebble"
-
-    _"tricks-and-checks-of-division::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

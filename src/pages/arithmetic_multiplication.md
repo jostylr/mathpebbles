@@ -11,14 +11,16 @@
 
 [../public/arithmetic/multiplication.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-multiplication::teaser:pebble"
-
-    _"single-digit-multiplication::teaser:pebble"
-
-    _"no-carry-left-to-right-multiplication::teaser:pebble"
-
-    _"carry-left-to-right-multiplication::teaser:pebble"
-
-    _"significant-multiplication::teaser:pebble"
-
-    _"tricks-and-checks-of-multiplication::teaser:pebble"
-
-    _"properties-of-multiplication::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

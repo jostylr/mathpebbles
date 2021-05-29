@@ -4,6 +4,7 @@
   "description": "webpages for math pebbles",
   "main": "init.js",
   "dependencies": {
+    "@shoelace-style/shoelace": "^2.0.0-beta.41",
     "html-minifier": "^4.0.0",
     "mathjs": "^9.4.1",
     "standard": "^16.0.3"

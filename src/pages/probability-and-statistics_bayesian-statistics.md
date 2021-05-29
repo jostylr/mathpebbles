@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/bayesian-statistics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"using-bayes-theorem::teaser:pebble"
-
-    _"parameter-estimation::teaser:pebble"
-
-    _"priors::teaser:pebble"
-
-    _"posteriors::teaser:pebble"
-
-    _"sampling::teaser:pebble"
-
-    _"monte-carlo::teaser:pebble"
-
-    _"comparing-methods::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

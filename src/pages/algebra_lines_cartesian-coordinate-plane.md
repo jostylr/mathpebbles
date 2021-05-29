@@ -1,24 +1,35 @@
 # Cartesian Coordinate Plane
 
     _"pieces | page /algebra/lines/cartesian-coordinate-plane, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Rulers'), _'Rulers |md ',
+            ec('Rectangular Grid'), _'Rectangular Grid |md ',
+            ec(' Label Tick Marks'), _' Label Tick Marks |md ',
+            ec(' Unit Changes'), _' Unit Changes |md ',
+            ec('Cartesian Coordinates'), _'Cartesian Coordinates |md ',
+            ec('Language and Convention'), _'Language and Convention |md ',
+            ec('Zoom and Different Units'), _'Zoom and Different Units |md '"
+            ec('Distance Between Points'), _'Distance Between Points |md '"
 
 [../public/algebra/lines/cartesian-coordinate-plane.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+    Now that we have a notion of distance, straight lines, and right angles,
+    we can finally create a coordinate plane. This will allow us to say how
+    far we are from the agreed upon center in terms of horizontal and vertical
+    distance; we need to choose an orientation for what positive and negative
+    mean as well. 
+
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+    Grids, grids, everywhere there's grids. 
+
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +38,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +48,10 @@
     !- end
     _":end"
 
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -83,80 +59,118 @@
 
 [end]()
 
-## sub 1
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 2
-
-
+## Ideas
 
 
 [pebble]()
 
+    Construct the grid and axes
 
-[code]()
+    distances between points
 
+    change grids without changing units but same distance
 
-## sub 3
+    change grids with changing units, then different distance. 
 
+[proof]()
 
+    prove distance is the same for grids using the same units even if rotated.
+    Not sure if we can do that with just these tools. 
 
+[program]()
 
-[pebble]()
-
-
-[code]()
-
-
-## sub 4
-
-
+    Plotting points, measuring distances. 
 
 
-[pebble]()
-
-
-[code]()
-
-
-## sub 5
+## Rulers
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 6
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 7
+## Rectangular Grid
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
+
+##  Label Tick Marks
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+##  Unit Changes
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Cartesian Coordinates
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Language and Convention
+
+
+    quadrants, sign representation, axes, origin, ...
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Zoom and Different Units
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+## Distance Between Points
+
+
+    are angles useful to explore in this context at all?
+
+
+
+
+##### Pebble
+
+
+##### Code
 

@@ -2284,7 +2284,8 @@ This is the stuff we want to do to the page once stuff is loaded.
 
         $$('.plain').forEach( (el) => {
             el.addEventListener( 'click', (ev) => {
-                $('.explore', el).click();
+                const a = $('.explore', el)
+                if (a) {a.click();}
             });
         });
 
@@ -2331,11 +2332,16 @@ them.
             katex.render(text, div);
         } else if (type === "html") {
             div.innerHTML = text;
+        } else if (type==="s") { //shoelace icon
+            div.innerHTML = `<sl-icon name="${text}"></sl-icon>`;
+        } else if (type==="img") { //remixicon
+            div.innerHTML = `<img width="18" height="18" src="/img/${text}" />`;
         } else {
 
-Should add types as needed in the chain. default is plain text.
+Should add types as needed in the chain. default is plain text. Need children
+for measuring actual size. 
             
-            div.innerText = text;
+            div.innerHTML = `<span>${text}</span>`;
 
         }
 

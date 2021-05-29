@@ -11,14 +11,16 @@
 
 [../public/arithmetic/addition.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-additions::teaser:pebble"
-
-    _"adding-single-digits::teaser:pebble"
-
-    _"complements-of-ten::teaser:pebble"
-
-    _"left-to-right-addition::teaser:pebble"
-
-    _"significant-addition::teaser:pebble"
-
-    _"tricks-and-checks-of-addition::teaser:pebble"
-
-    _"properties-of-addition::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

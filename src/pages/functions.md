@@ -11,14 +11,16 @@
 
 [../public/functions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"rational-and-power-functions::teaser:pebble"
-
-    _"infinite-processes::teaser:pebble"
-
-    _"differential-calculus::teaser:pebble"
-
-    _"integral-calculus::teaser:pebble"
-
-    _"exponentials-and-logarithms::teaser:pebble"
-
-    _"trigonometric-functions::teaser:pebble"
-
-    _"defining-functions::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

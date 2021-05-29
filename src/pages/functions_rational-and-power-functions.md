@@ -11,14 +11,16 @@
 
 [../public/functions/rational-and-power-functions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"rational-functions::teaser:pebble"
-
-    _"graphing-rational-functions::teaser:pebble"
-
-    _"calculus-of-rational-functions::teaser:pebble"
-
-    _"rational-approximations::teaser:pebble"
-
-    _"powering-functions::teaser:pebble"
-
-    _"graphing-radical-functions::teaser:pebble"
-
-    _"calculus-of-radical-functions::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

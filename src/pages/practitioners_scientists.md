@@ -11,14 +11,16 @@
 
 [../public/practitioners/scientists.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"physics::teaser:pebble"
-
-    _"chemistry::teaser:pebble"
-
-    _"biology::teaser:pebble"
-
-    _"health::teaser:pebble"
-
-    _"ecology::teaser:pebble"
-
-    _"economics::teaser:pebble"
-
-    _"sociology::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

@@ -1,11 +1,11 @@
 -Arithmetic. +
 -   Counting. \ldots
--       Number as Matching. .. 
+-       Number as Matching. %t:..=2 
 -       Pebbles of Various Sizes. oO
--       Digits.. 09
--       Carry Overs. \_
--       Units. \textrm{in}
--       Base Representations. 01
+-       Digits. %t:0-9
+-       Carry Overs. %t:10
+-       Units. %img:ruler.svg
+-       Base Representations. %t: 0-1
 -       Largest Number. \infty
 -   Addition. + 
 -       Notions of Additions

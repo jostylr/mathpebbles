@@ -11,14 +11,16 @@
 
 [../public/practitioners/booleans.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"combinatorics::teaser:pebble"
-
-    _"graph-theory::teaser:pebble"
-
-    _"mathematical-logic::teaser:pebble"
-
-    _"game-theory::teaser:pebble"
-
-    _"computer-scientists::teaser:pebble"
-
-    _"politicians::teaser:pebble"
-
-    _"risk-managers::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

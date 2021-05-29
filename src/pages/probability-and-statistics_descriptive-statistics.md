@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/descriptive-statistics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"gathering-data::teaser:pebble"
-
-    _"notions-of-centrality::teaser:pebble"
-
-    _"notions-of-spread::teaser:pebble"
-
-    _"charts::teaser:pebble"
-
-    _"other-measures::teaser:pebble"
-
-    _"stories::teaser:pebble"
-
-    _"lies::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

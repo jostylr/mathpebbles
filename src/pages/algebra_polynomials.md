@@ -11,10 +11,12 @@
 
 [../public/algebra/polynomials.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
@@ -39,7 +41,7 @@
     expansions. 
 
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -48,9 +50,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -58,30 +60,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"arithmetic-of-polynomials::teaser:pebble"
-
-    _"the-questions-of-polynomials::teaser:pebble"
-
-    _"synthetic-division::teaser:pebble"
-
-    _"zeros-of-polynomials::teaser:pebble"
-
-    _"calculus-of-polynomials::teaser:pebble"
-
-    _"graphing-polynomials::teaser:pebble"
-
-    _"powering-polynomials::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

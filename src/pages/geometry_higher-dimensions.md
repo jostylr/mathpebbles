@@ -11,14 +11,16 @@
 
 [../public/geometry/higher-dimensions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"three-dimensions::teaser:pebble"
-
-    _"volumes::teaser:pebble"
-
-    _"surface-area::teaser:pebble"
-
-    _"even-higher-dimensions::teaser:pebble"
-
-    _"many-variable-inequalities::teaser:pebble"
-
-    _"norms-and-angles::teaser:pebble"
-
-    _"transforming-space::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

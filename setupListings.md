@@ -257,7 +257,7 @@ a copy or something.
                 for (let i = 1; i < 8; i += 1) {
                     pcarr.push( `ec('sub ${i}'), \_'sub ${i} |md '`);
                     sections += `## sub ${i}\n\n\n` + 
-                        '\n\n[pebble]()\n\n\n[code]()\n\n\n';
+                        '\n\n##### Pebble\n\n\n##### Code\n\n\n';
                     pebbles += `    \_"sub ${i}:pebble"\n\n`;
                     code += `    \_"sub ${i}:code"\n\n`;
                 }
@@ -302,15 +302,17 @@ part, title of the page, intro section and then the title and section.
         PAGE
 
     [../public/URL.html](# "save:")
-
+    
+    [pebbles](#pebble "h5: | .join \\n")
+    [code runs](#code "h5: | .join \\n")
 
     ## Intro
 
-    [pebble]()
+    ##### Pebble
 
     ## Teaser
 
-    [pebble]()
+    ##### Pebble
 
     ## Pieces
 
@@ -319,27 +321,21 @@ part, title of the page, intro section and then the title and section.
         !- script
         \_":script"
         !- pebbles
-        \_":pebbles"
+        \_"pebbles"
         !- code
-        \_":code"
+        \_"code runs"
         !- header
         \_":header"
         !- begin
         \_":begin"
         !- end
         \_":end"
-    
+
+
+
     [style]() 
 
     [script]()
-
-    [pebbles]()
-
-    PEBBLES
-
-    [code]()
-
-    CODE
 
     [header]()
 

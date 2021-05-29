@@ -11,14 +11,16 @@
 
 [../public/functions/trigonometric-functions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-trigonometric-functions::teaser:pebble"
-
-    _"properties-of-trigonometric-functions::teaser:pebble"
-
-    _"approximating-trigonometric-functions::teaser:pebble"
-
-    _"inverse-trigonometric-functions::teaser:pebble"
-
-    _"applications-of-trigonometric-functions::teaser:pebble"
-
-    _"sums-and-products-of-trigonometric-functions::teaser:pebble"
-
-    _"complex-exponentials::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

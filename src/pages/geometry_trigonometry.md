@@ -11,14 +11,16 @@
 
 [../public/geometry/trigonometry.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"right-triangle::teaser:pebble"
-
-    _"any-triangle::teaser:pebble"
-
-    _"regular-polygons::teaser:pebble"
-
-    _"areas::teaser:pebble"
-
-    _"measuring-from-a-distance::teaser:pebble"
-
-    _"parallax::teaser:pebble"
-
-    _"circumference-of-the-earth::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

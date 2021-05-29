@@ -11,14 +11,16 @@
 
 [../public/geometry/other-geometries.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"taxicab-geometry::teaser:pebble"
-
-    _"spherical-geometry::teaser:pebble"
-
-    _"hyperbolic-geometry::teaser:pebble"
-
-    _"discrete-geometries::teaser:pebble"
-
-    _"metric-geometries::teaser:pebble"
-
-    _"infinite-dimensional-geometries::teaser:pebble"
-
-    _"compact-geometry::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

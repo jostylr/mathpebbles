@@ -11,14 +11,16 @@
 
 [../public/practitioners/engineers.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"mechanical-engineering::teaser:pebble"
-
-    _"electrical-engineering::teaser:pebble"
-
-    _"chemical-engineering::teaser:pebble"
-
-    _"aerospace-engineering::teaser:pebble"
-
-    _"actuarial-science::teaser:pebble"
-
-    _"meterology::teaser:pebble"
-
-    _"finance::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

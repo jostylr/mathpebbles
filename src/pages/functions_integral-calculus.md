@@ -11,14 +11,16 @@
 
 [../public/functions/integral-calculus.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-integrals::teaser:pebble"
-
-    _"fundamental-theorem-of-calculus::teaser:pebble"
-
-    _"integral-rules::teaser:pebble"
-
-    _"numerical-integration::teaser:pebble"
-
-    _"arc-length-of-functions::teaser:pebble"
-
-    _"volumes-of-revolution::teaser:pebble"
-
-    _"error-estimates::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

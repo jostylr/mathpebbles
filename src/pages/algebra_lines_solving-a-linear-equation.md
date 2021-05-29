@@ -1,24 +1,34 @@
 # Solving a Linear Equation
 
-    _"pieces | page /algebra/lines/solving-a-linear-equation, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+    _"pieces | page /algebra/lines/slope, _'intro |md',
+            ec('Some Linear Problems to Solve'), _'Some Linear Problems to
+            Solve |md ',
+            ec('Graphical Solution'), _'Graphical Solution |md ',
+            ec('Guess, Check, Repeat'), _'Guess, Check, Repeat |md ',
+            ec('Algebraic Solution'), _'Algebraic Solution |md ',
+            ec('Rules for Manipulation Equations'), _'Rules for Manipulation
+            Equations |md ',
+            ec('Two Point Solution'), _'Two Point Solution |md ' "
+
 
 [../public/algebra/lines/solving-a-linear-equation.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+    We have a notion of lines. There is also some talk of linear equations.
+    What's the relation? What is a linear equation? How do we solve it? What
+    does that mean? 
+
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+    Let's solve some linear equations. It will be fun!
+    
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +37,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +47,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -83,80 +59,83 @@
 
 [end]()
 
-## sub 1
-
-
-
+## Ideas
 
 [pebble]()
 
+    Link graphical exploration with equation manipulation
 
-[code]()
+[proof]()
 
+    Prove rules work
 
-## sub 2
+[program]()
 
-
-
-
-[pebble]()
-
-
-[code]()
+    Implement solving linear equations with algebra as well as rules
 
 
-## sub 3
+
+## Some Linear Problems to Solve
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 4
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 5
+## Graphical Solution
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 6
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 7
+## Guess, Check, Repeat
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
+## Algebraic Solution
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Rules for Manipulation Equations
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Two Point Solution
+
+
+
+
+##### Pebble
+
+
+##### Code

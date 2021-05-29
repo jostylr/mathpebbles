@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/probability.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"counting-outcomes::teaser:pebble"
-
-    _"combinatorial-probability::teaser:pebble"
-
-    _"random-variables::teaser:pebble"
-
-    _"special-random-variables::teaser:pebble"
-
-    _"conditional-probabilities::teaser:pebble"
-
-    _"central-limit-theorem::teaser:pebble"
-
-    _"to-ponder::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

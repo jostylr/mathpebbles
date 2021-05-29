@@ -11,14 +11,16 @@
 
 [../public/geometry/plane-geometry.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"euclidean-lines::teaser:pebble"
-
-    _"euclidean-triangles::teaser:pebble"
-
-    _"similarity::teaser:pebble"
-
-    _"polygons::teaser:pebble"
-
-    _"euclidean-circles::teaser:pebble"
-
-    _"transformations::teaser:pebble"
-
-    _"coordinate-proofs::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

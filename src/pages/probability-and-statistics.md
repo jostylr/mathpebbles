@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"descriptive-statistics::teaser:pebble"
-
-    _"fitting-functions::teaser:pebble"
-
-    _"probability::teaser:pebble"
-
-    _"frequentist-statistics::teaser:pebble"
-
-    _"bayesian-statistics::teaser:pebble"
-
-    _"simulations::teaser:pebble"
-
-    _"multivariate-statistics::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

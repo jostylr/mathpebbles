@@ -11,10 +11,12 @@
 
 [../public/algebra/linear-systems.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
@@ -32,7 +34,8 @@
     inequalities, a topic called linear programming. It has a rather fun
     algorithmic solution method called the simplex method. 
 
-[pebble]()
+
+##### Pebble
 
 ## Pieces
 
@@ -41,9 +44,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -51,30 +54,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"two-variable-systems::teaser:pebble"
-
-    _"systems-as-matrices::teaser:pebble"
-
-    _"solving-systems::teaser:pebble"
-
-    _"applications::teaser:pebble"
-
-    _"not-the-right-amount-of-information::teaser:pebble"
-
-    _"linear-programming::teaser:pebble"
-
-    _"simplex-method::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

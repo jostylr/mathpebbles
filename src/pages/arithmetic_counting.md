@@ -11,14 +11,16 @@
 
 [../public/arithmetic/counting.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"number-as-matching::teaser:pebble"
-
-    _"pebbles-of-various-sizes::teaser:pebble"
-
-    _"digits::teaser:pebble"
-
-    _"carry-overs::teaser:pebble"
-
-    _"units::teaser:pebble"
-
-    _"base-representations::teaser:pebble"
-
-    _"largest-number::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

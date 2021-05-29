@@ -11,10 +11,12 @@
 
 [../public/algebra/constructing-the-real-and-complex-numbers.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
@@ -28,7 +30,8 @@
     rotations in the realm of complex numbers. We conclude this chapter with
     an investigation into what sense are there different sizes of infinity.
 
-[pebble]()
+
+##### Pebble
 
 ## Pieces
 
@@ -37,9 +40,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -47,30 +50,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"square-root-2::teaser:pebble"
-
-    _"zeroing-in-on-zeros::teaser:pebble"
-
-    _"notions-of-real-numbers::teaser:pebble"
-
-    _"polynomial-zeros-beyond-radicals::teaser:pebble"
-
-    _"complex-number-construction::teaser:pebble"
-
-    _"arithmetic-and-geometry-of-complex-numbers::teaser:pebble"
-
-    _"sizes-of-infinity::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

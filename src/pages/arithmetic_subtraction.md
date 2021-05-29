@@ -11,14 +11,16 @@
 
 [../public/arithmetic/subtraction.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"removal::teaser:pebble"
-
-    _"complement-subtraction::teaser:pebble"
-
-    _"left-to-right-subtraction::teaser:pebble"
-
-    _"negative-numbers::teaser:pebble"
-
-    _"significant-subtraction::teaser:pebble"
-
-    _"tricks-and-checks-of-subtraction::teaser:pebble"
-
-    _"properties-of-subtraction::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

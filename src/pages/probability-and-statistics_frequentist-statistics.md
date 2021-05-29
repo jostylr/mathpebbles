@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/frequentist-statistics.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-frequentist-statistics::teaser:pebble"
-
-    _"varieties-of-statistics::teaser:pebble"
-
-    _"proper-data-collection::teaser:pebble"
-
-    _"z-test::teaser:pebble"
-
-    _"t-test::teaser:pebble"
-
-    _"anova::teaser:pebble"
-
-    _"categorical-tests::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

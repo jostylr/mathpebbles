@@ -11,10 +11,12 @@
 
 [../public/algebra/interest-accumulations.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
@@ -30,7 +32,8 @@
     and other related topics to personal financial mathematics. 
     
 
-[pebble]()
+
+##### Pebble
 
 ## Pieces
 
@@ -39,9 +42,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -49,30 +52,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"percentages::teaser:pebble"
-
-    _"simple-interest-and-discount::teaser:pebble"
-
-    _"compound-interest::teaser:pebble"
-
-    _"effective-rate::teaser:pebble"
-
-    _"payments::teaser:pebble"
-
-    _"personal-finances::teaser:pebble"
-
-    _"tricks-of-business-mathematics::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

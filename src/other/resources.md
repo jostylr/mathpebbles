@@ -31,6 +31,9 @@ A HUGE list of resources
 
     ## Blogs
 
-    ## 
+    ## Websites
+
+    [Steam Coded(https://steamcoded.org/math.html) A collection of free
+    resources in a retro website. Has a variety of SVG resources. 
 
 ## Styling

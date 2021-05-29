@@ -11,14 +11,16 @@
 
 [../public/arithmetic/powers.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"notions-of-exponents::teaser:pebble"
-
-    _"rules-of-exponents::teaser:pebble"
-
-    _"scientific-notation::teaser:pebble"
-
-    _"significant-powers::teaser:pebble"
-
-    _"guesstimation::teaser:pebble"
-
-    _"undoing-exponentiation::teaser:pebble"
-
-    _"sums-and-powers::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

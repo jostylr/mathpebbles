@@ -148,7 +148,7 @@ We have a non-tex thing when the lead character is a percent.
 
         let type;
         if (symbol[0] === '%') {
-            let ind = symbol.findIndexOf(':');
+            let ind = symbol.indexOf(':');
             if (ind === -1) { 
                 console.log("invalid symbol", symbol, name, path); 
                 
@@ -968,6 +968,7 @@ katex and jsxgraph were first, then they block loading of elements.
 
         <link rel="stylesheet" href="/r/shoelace/shoelace.css">
         <script type="module" src="/r/shoelace/shoelace.esm.js"></script>
+
 
 My homespun Var binding
 

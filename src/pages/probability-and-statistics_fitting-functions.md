@@ -11,14 +11,16 @@
 
 [../public/probability-and-statistics/fitting-functions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"exact-fits::teaser:pebble"
-
-    _"least-squares::teaser:pebble"
-
-    _"linear-regression::teaser:pebble"
-
-    _"polynomial-regression::teaser:pebble"
-
-    _"logging-data-for-regression::teaser:pebble"
-
-    _"trust-and-regression::teaser:pebble"
-
-    _"general-linear-model::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

@@ -11,14 +11,16 @@
 
 [../public/arithmetic.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"counting::teaser:pebble"
-
-    _"addition::teaser:pebble"
-
-    _"multiplication::teaser:pebble"
-
-    _"subtraction::teaser:pebble"
-
-    _"division::teaser:pebble"
-
-    _"powers::teaser:pebble"
-
-    _"constructing-numbers::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

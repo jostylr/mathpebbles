@@ -11,14 +11,16 @@
 
 [../public/geometry/constructions.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"ruler-and-compass::teaser:pebble"
-
-    _"constructions-with-lines::teaser:pebble"
-
-    _"constructing-angles::teaser:pebble"
-
-    _"drawing-triangles::teaser:pebble"
-
-    _"constructions-with-circles::teaser:pebble"
-
-    _"trisecting-the-angle::teaser:pebble"
-
-    _"constructing-solutions-to-equations::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

@@ -11,14 +11,16 @@
 
 [../public/practitioners/analysts.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"real-analysis::teaser:pebble"
-
-    _"complex-analysis::teaser:pebble"
-
-    _"numerical-analysis::teaser:pebble"
-
-    _"functional-analysis::teaser:pebble"
-
-    _"calculus-of-variations::teaser:pebble"
-
-    _"delta-functions::teaser:pebble"
-
-    _"optimization::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

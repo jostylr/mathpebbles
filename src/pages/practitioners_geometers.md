@@ -11,14 +11,16 @@
 
 [../public/practitioners/geometers.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"toplogy::teaser:pebble"
-
-    _"differential-geometry::teaser:pebble"
-
-    _"soap-bubbles::teaser:pebble"
-
-    _"symplectic-geometry::teaser:pebble"
-
-    _"control-theory::teaser:pebble"
-
-    _"mathematical-physics::teaser:pebble"
-
-    _"infinite-dimensional-spaces::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

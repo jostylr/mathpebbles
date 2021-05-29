@@ -11,14 +11,16 @@
 
 [../public/functions/infinite-processes.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +29,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,30 +39,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sequences::teaser:pebble"
-
-    _"sums-and-products::teaser:pebble"
-
-    _"off-to-infinity::teaser:pebble"
-
-    _"limits::teaser:pebble"
-
-    _"iterative-processes::teaser:pebble"
-
-    _"errors::teaser:pebble"
-
-    _"the-reality-of-infinity::teaser:pebble"
-
-
-[code]()
-
-
 
 [header]()
 

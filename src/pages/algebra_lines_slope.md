@@ -1,24 +1,30 @@
 # Slope
 
-    _"pieces | page /algebra/lines/slope, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+    _"pieces | page /algebra/lines/solving-a-linear-equation, _'intro |md',
+            ec('Slope Between Two Points'), _'Slope Between Two Points |md ',
+            ec('Lines as Fixed Slopes'), _'Lines as Fixed Slopes |md ',
+            ec(' Equation of a Line'), _' Equation of a Line |md ',
+            ec('Plotting a Line'), _'Plotting a Line |md ',
+            ec('Slope and Angle'), _'Slope and Angle |md ' "
 
 [../public/algebra/lines/slope.html](# "save:")
 
+[pebbles](#pebble "h5: | .join \n")
+[code runs](#code "h5: | .join \n")
 
 ## Intro
 
-[pebble]()
+    The slope of a line is a fundamental property of what it means to be a
+    line so much so that it is often taken as a definition. We will explore
+    slope thoroughly, how to compute it and what it tells us. 
+
+##### Pebble
 
 ## Teaser
 
-[pebble]()
+    This hill is steep! What does that mean? Let's talk slope.
+    
+##### Pebble
 
 ## Pieces
 
@@ -27,9 +33,9 @@
     !- script
     _":script"
     !- pebbles
-    _":pebbles"
+    _"pebbles"
     !- code
-    _":code"
+    _"code runs"
     !- header
     _":header"
     !- begin
@@ -37,45 +43,11 @@
     !- end
     _":end"
 
+
+
 [style]() 
 
 [script]()
-
-[pebbles]()
-
-    _"sub 1:pebble"
-
-    _"sub 2:pebble"
-
-    _"sub 3:pebble"
-
-    _"sub 4:pebble"
-
-    _"sub 5:pebble"
-
-    _"sub 6:pebble"
-
-    _"sub 7:pebble"
-
-
-
-[code]()
-
-    _"sub 1:code"
-
-    _"sub 2:code"
-
-    _"sub 3:code"
-
-    _"sub 4:code"
-
-    _"sub 5:code"
-
-    _"sub 6:code"
-
-    _"sub 7:code"
-
-
 
 [header]()
 
@@ -83,80 +55,75 @@
 
 [end]()
 
-## sub 1
-
-
-
+## Ideas
 
 [pebble]()
 
+    Exploring different slopes, circles as distance and slopes of points 
 
-[code]()
+    Equation of line graphing
 
+[proof]()
 
-## sub 2
+    Prove fixed slope from minimal distance definition of line
 
+[program]()
 
+    Generating points on a line, computing slope.
 
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 3
+## Slope Between Two Points
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 4
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 5
+## Lines as Fixed Slopes
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
 
 
-## sub 6
-
-
-
-
-[pebble]()
-
-
-[code]()
-
-
-## sub 7
+##  Equation of a Line
 
 
 
 
-[pebble]()
+##### Pebble
 
 
-[code]()
+##### Code
+
+
+## Plotting a Line
+
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Slope and Angle
+
+
+
+
+##### Pebble
+
+
+##### Code
+
 
 
