@@ -122,8 +122,8 @@ page. If there are no symbols or children, then we go to the parent.
         "(50,500)", //1
         "(300,500)", //2
         "(550,500)", //3
-        "(175,283.49)", //4
-        "(425,283.49)", //5
+        "(425,283.49)", //4
+        "(175,283.49)", //5
         "(300,66.987)", //6
         "(300,355.662)", //7
     ]
@@ -207,7 +207,7 @@ the section name and the second one being a path for the Explore button.
                 ${full || ''}
                 </sl-details>`;
         } else {
-            main += `<div class="plain">${heading}${body}</div>`;
+            main += `<div id="${slugify(name)}" class="plain">${heading}${body}</div>`;
         }
     }
 
@@ -237,10 +237,13 @@ lines until some ending tag.
 * CODE name: starting code block  SOLUTION: Some explanatory text and a code
   block to sub in for the solution. END.
 
+
+Colons are totally optional, I hope. 
+
 ---
 
     function shoelacify (text) {
-        let reg = /\!([A-Z]+)(.*)$/;
+        let reg = /\!([A-Z]+)\:?(.*)$/;
         let lines = text.split('\n');
         let ret = [];
         let n = lines.length;
@@ -253,11 +256,12 @@ lines until some ending tag.
                 let end = (match?.[2] || '').
                     trim().
                     slice(0, -4); //slice is to get rid of closing p element
+                let id = end ? ' data-scope="'+end.trim().toLowerCase()+'"' : ''; //may be needed
 
                 switch (type) {
                 case 'PEBBLE' : {
-                    let id = end.trim();
-                    ret.push('<div class="pebble" id="'+id+'"></div>');
+                    id = ' id="'+end+'"';
+                    ret.push('<div class="pebble"' + id + '></div>');
                 break; }
                 case 'VIDEO':
                     end = end.trim();
@@ -267,7 +271,7 @@ lines until some ending tag.
                     ret.push('<sl-details summary="Video: '+title+'"><iframe width="560" height="315" src="'+url+'" title="YouTube video player" frameborder="0"  allowfullscreen></iframe></sl-details>');
                 break;
                 case 'PROOF':
-                    ret.push('<button type="button" class="explore open-drawer">Proof</button><sl-drawer class="proof" placement="left">');
+                    ret.push('<button type="button" class="explore open-drawer">Proof</button><sl-drawer class="proof" placement="left"' + id + '>');
                 break;
                 case 'QED':
                     ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
@@ -285,14 +289,13 @@ lines until some ending tag.
                     ret.push('</sl-details>');
                 break;
                 case 'PROGRAM' :
-                    ret.push('<button type="button" class="explore open-drawer">Program</button><sl-drawer placement="right" class="program">');
+                    ret.push('<button type="button" class="explore open-drawer">Program</button><sl-drawer placement="right" class="program"' + id + '>');
                 break;
                 case 'STOP':
                     ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
                 break;
                 case 'CODE': {
-                    let id = end.slice(0,-1).trim();
-                    ret.push('<sl-details class="code-block" data-id="'+id+'"><div class="try-code code" slot="summary">');
+                    ret.push('<sl-details class="code-block"'+id+'"><div class="try-code code" slot="summary">');
                 break; }
                 case 'SOLUTION':
                     ret.push('</div><div class="solution-code code" >');
@@ -1036,7 +1039,7 @@ There is also math.js mainly used for high precision arithmetic.
     !-!END!-!
     !-!FANO!-!
     !-!FOOTER!-!
-    <div id="inputControl"></div>
+    <div class="inputControl"></div>
     <script>
          let m;
          document.addEventListener("DOMContentLoaded", function() {
@@ -1044,17 +1047,17 @@ There is also math.js mainly used for high precision arithmetic.
             MP.mathSub(math);
             math.config({number:'BigNumber'});
             MP.makeF(math);
-            let keyInfo = MP.initKeys();
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
             let controller = {
                 scopes : {},
-                vars : {},
-                container : $('#inputControl'),
+                current : null, //put the current selected scope here
+                container : $('.inputControl'),
                 active : []
             };  
+            let keyInfo = MP.initKeys(controller);
             let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys, controller); 
             MP.controller = controller;
-            let {scope, inputs, outputs} = MP.makeScope(makeTypedInput);
+            let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller);
 
             !-!SCRIPT!-!
 
@@ -1078,7 +1081,10 @@ There is also math.js mainly used for high precision arithmetic.
 
 Here we listen for show events on details and drawers and then we run the
 initiation code in the pebbles object. Just do this once per detail/drawer.
-Need to filter out sub details. 
+Need to filter out sub details and drawers. So basically, we take all the
+pebbles in a container and then if they are contained in another detail or
+drawer, we ignore ($$ will filter stuff in actual subfashion). 
+We also grab the scope that the pebble finds itself in. 
 
 The placement of the pebble initiation code gives it access to any of the
 variables in the additional script area. 
@@ -1096,7 +1102,8 @@ variables in the additional script area.
             filter( (alEl) => !(subPebbles.some( (subEl) => subEl === alEl ) ) );
         topPebbles.forEach( (topEl) => {
             try{
-                pebbles[topEl.id](topEl);
+                let scope = openScope(scanParents(topEl));
+                pebbles[topEl.id](topEl, scope);
             } catch (e) {
                 console.log("Problem with pebble:" + topEl.id, e);
             }

@@ -85,7 +85,7 @@
 
     * Next step 
 
-    !PROOF: 
+    !PROOF: Induction
 
     Inductive, 
 
@@ -110,7 +110,7 @@
 
     !QED.
 
-    !PROGRAM: 
+    !PROGRAM countProgram 
 
     How to count the regions (find all the intersections, then trace
     out each polygon (head in a direction to the next intersection, then turn
@@ -118,7 +118,7 @@
     point), name them in a canonical way, and then count them.
     Special case of adjacent points on the circle. 
 
-    !CODE counting1regions:
+    !CODE: counting1regions
 
     ```
     log(points); 
@@ -220,12 +220,13 @@ The one method to rule them all.
 
 ##### Pebble
 
-    'hammer-text' : (el) => {
+    'hammer-text' : (el, scope) => {
+        console.log(scope, controller);
         let {
             'h-width':target, 
             'h-overLength':overLength, 
             'h-underHeight':underHeight, 
-             'h-width':width} = scope; 
+             'h-width':width} = scope.vars; 
         let computeVolume = (w, h, l) => {
             let ret = math.mul(w, 
                 math.sub(w,h), 
@@ -235,7 +236,7 @@ The one method to rule them all.
             return ret;
         };
         let volume =  link( computeVolume, [width, underHeight, overLength]);
-        outputs({'h-volume': volume});
+        outputs({'h-volume': volume}, scope);
     },
 
     'hammer-table' : (el) => {

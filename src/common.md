@@ -30,7 +30,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
         return [_"typed input", types];
     };
     
-    const makeScope = _"local";
+    const makeScopes = _"local";
     
     const makeF = function makeF (math) {
         const f = _"function defs::f";
@@ -41,7 +41,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
     const MP = {link, Var, Waiter, EventEmitter, 
         mathSub, $, $$, show, hide, 
         initMakeTypedInput,
-        initScaledNumber, initKeys, makeScope, makeF }; 
+        initScaledNumber, initKeys, makeScopes, makeF }; 
 
     export {MP};
 
@@ -651,6 +651,8 @@ and unneeded.
     .typed-input {
         outline:none;
     }
+    
+But it is nice to outline the input ones. 
 
     .typed-input .display {
         border-bottom: 2px solid green;
@@ -662,6 +664,13 @@ and unneeded.
 
     .hide { 
         display:none;
+    }
+
+Needed some kind of callout for the changing text. Figured blue color looked
+nice. 
+
+    .output {
+        color: blue;
     }
 
 
@@ -1157,7 +1166,7 @@ v and center are different signs or center is zero.
 [set center]()
 
 This resets the main slider to the middle and sets the center value to the
-current value of the main variable
+current value of the main variabe
 
     function setCenter (v) {
         center.change( v );
@@ -2460,35 +2469,35 @@ Now we delete the old rule, looping through the ruleslist to catch it all.
 
 ## Local
 
-Here are some setup things but they require access to local scope (could also
-export a function that can be called instead if this gets unwieldy.  
+So this creates scoped variables. For each input or output classed variable
+element, it checks if there is a data-scope on it. If not, it looks for the
+next parent. It also looks for an id until it finds one. If no scope, then it
+takes the first id it finds as a scope, but a later data-scope always
+overrides. It will stop at body. Those with same data-scope will have a merged
+scope. 
 
     
-    function makeScope (makeTypedInput) {
-    
-        const inputs = {};
-    
-        const scope = {};
+    function makeScopes (makeTypedInput, controller) {
 
-        const outs = {};
+        const scopes = controller.scopes;
+
+        console.log("makescopre", scopes, controller);
+
+        let scanParents = _":scan parents";
+
+        let openScope = _":open scope";
 
         const replace = _":replace";
 
         const update = _":update";
 
-        $$('body > sl-details').forEach( container => {
-            _":create inputs" 
-            
-            _":deal with outputs"
-        });
+        _":create inputs" 
 
-
-        console.log(scope);
-        console.log(outs);
+        _":deal with outputs"
 
         const outputs = _":outputs";
 
-        return {scope, inputs, outputs};
+        return {scanParents, openScope, outputs};
 
     }
 
@@ -2496,26 +2505,32 @@ export a function that can be called instead if this gets unwieldy.
 
 This is how we define variables from the text. Easy enough. 
 
-    $$('.input', container).forEach( el=> {
-        let ds = el.dataset;
-        let name = ds.name;
-        let inp = inputs[name] = makeTypedInput(el, ds.type || 'real', {value:ds.value} );
-        let v = scope[name] = inp.varVal;
-        link(update(name), v);
+    $$('.input').forEach( el => {
+        const scopeName = scanParents(el) || '';
+        const scope = openScope(scopeName, scopes);
+        const ds = el.dataset;
+        const name = ds.name;
+        const inp = scope.inputs[name] = makeTypedInput(el, ds.type || 'real', {value:ds.value} );
+        let v = scope.vars[name] = inp.varVal;
+        link(update(name, scope), v);
     });
 
+  
 [deal with outputs]()
 
 This is a little trickier. We need to link the variables to change the output
 expression whenever the variable gets updated. This is what the whole var
 setup is for, but they may not be in existence yet here. 
 
-    $$('.output', container).forEach( el => {
+    $$('.output').forEach( el => {
+        const scopeName = scanParents(el) || '';
+        const scope = openScope(scopeName);
+        let outs = scope.outs;
         let ds = el.dataset;
         let template = ds.value || '';
         
         let bits = template.split('%'); 
-        let first = bits.shift(); //first bit is before percent
+        let first = bits.shift(); //first bit before percent is not relevant for variable 
         bits.forEach( (bit) => {
             if (bit[0] === ' ') {
                 return;  // actual percent, skip 
@@ -2526,29 +2541,9 @@ setup is for, but they may not be in existence yet here.
             let o = outs[vname] = outs[vname] || [];
             o.push(el);
         });
-        katex.render(replace(el.dataset.value), el);
+        katex.render(replace(el.dataset.value, scope), el);
     });
 
-[inputs]()
-
-NOT USED NOW
-
-
-This runs through the input expressions and converts them into variables. 
-
-
-    (...names) => {
-        let ret = {};
-        names.forEach( (n) => {
-            let v = scope[n];
-            if (!v) {
-                console.error("missing variable " + n);
-                return;
-            }
-            ret[n] = scope[n].varVal 
-        });
-        return ret;
-    };
 
 
 [outputs]()
@@ -2556,11 +2551,14 @@ This runs through the input expressions and converts them into variables.
 This takes in an object whose key is the scope name and whose value is a
 linked variable whose change should trigger an update. 
 
-    (obj) => {
+Doesn't seem to be used?
+
+    (obj, scope) => {
         Object.keys(obj).forEach( (key) => {
-            let local = update(key);
-            scope[key] = obj[key];
-            link(local, obj[key]);
+            let pebbleProducedVar = obj[key];
+            let local = update(key, scope);
+            scope.vars[key] = pebbleProducedVar;
+            link(local, pebbleProducedVar);
             local();
         });
     }
@@ -2571,12 +2569,12 @@ linked variable whose change should trigger an update.
 This creates an update function that basically updates the expressions that
 are linked to the variable. 
 
-    function makeUpdate (name) {
+    function makeUpdate (name, scope) {
         return function update () {
-            let o = outs[name];
+            let o = scope.outs[name];
             if (o) {
                 o.forEach( (el) => {
-                    let text = replace(el.dataset.value);
+                    let text = replace(el.dataset.value, scope);
                     katex.render(text, el);
                 });
             }
@@ -2592,7 +2590,7 @@ Tricky bit was to make sure to leave a percent sign there. If an actual
 percent sign, put a space immediately after it. If need an actual space after
 the actual percent, use two spaces. Also true of vars. 
 
-    (txt) => {
+    (txt, scope) => {
         let bits = txt.split('%'); 
         let first = bits.shift(); //first bit is before percent
         let replaced = bits.map( (bit) => {
@@ -2602,8 +2600,17 @@ the actual percent, use two spaces. Also true of vars.
             let ind = bit.indexOf(' ');
             if (ind === -1) { ind = bit.length;}
             let vname = bit.slice(0,ind);
+            let [sc, na] = vname.split('/');
+            let localScope;
+            if (na) { 
+                 localScope = scopes[sc];
+                 vname = na;
+            } else {
+                 localScope = scope;
+                 vname = sc;
+            };
             let rest = bit.slice(ind+1);
-            let v = scope[vname];
+            let v = localScope.vars[vname];
             if (!v) { 
                 v = '';
             } else {
@@ -2614,4 +2621,36 @@ the actual percent, use two spaces. Also true of vars.
         return first+replaced;
     }
     
+[scan parents]()
 
+This scans parent  elements for a data-scope or, as fallback, an id. This
+becomes the scope. An item might also have data-scope so we start there.
+It should return a string. We ignore the element's actual id which is why we 
+
+    function scanParents (el) {
+        let id, scope;
+        while (el.nodeName !== 'BODY') {
+            scope = el.dataset.scope || '';
+            if (scope) {break;}
+            el = el.parentElement;
+            if (!el) {break;}
+            if (!id) { id = el.id; } //take id once, placed here for parent sake
+        }
+        return scope || id || '';
+    }
+
+
+[open scope]() 
+
+This retrieves the named scope, creating it if necessary. 
+
+    function openScope (name) {
+        let scope = scopes[name];
+        if (scope) {return scope;}
+        scope = scopes[name] = {
+            inputs: {},
+            outs : {},
+            vars :{},
+        };
+        return scope;
+    }
