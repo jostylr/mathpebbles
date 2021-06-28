@@ -1,13 +1,13 @@
 # Rules of Exponents
 
     _"pieces | page /arithmetic/powers/rules-of-exponents, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Terminology'), _'Terminology |md ',
+            ec('Multiplying'), _'Multiplying |md ',
+            ec('Dividing'), _'Dividing |md ',
+            ec('Exponentiating'), _'Exponentiating |md ',
+            ec('Sums and Powers'), _'Sums and Powers |md ',
+            ec('Distributive'), _'Distributive |md ',
+            ec('Zero'), _'Zero |md '"
 
 [../public/arithmetic/powers/rules-of-exponents.html](# "save:")
 
@@ -51,7 +51,37 @@
 
 [end]()
 
-## sub 1
+
+## Ideas
+
+[pebble]()
+
+    Explore possible rule variations as results
+
+    Try to find when they are equal?
+
+[proof]()
+
+    Give a few common expansions
+
+[program]()
+
+    Test runs of possible combinations
+
+
+
+## Terminology
+
+Base, exponent, power,  roots
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Multiplying
 
 
 
@@ -62,7 +92,7 @@
 ##### Code
 
 
-## sub 2
+## Dividing
 
 
 
@@ -73,8 +103,37 @@
 ##### Code
 
 
-## sub 3
+## Exponentiating
 
+
+##### Pebble
+
+
+##### Code
+
+
+## Distributive
+
+
+Distributing across multiplication and division
+
+##### Pebble
+
+
+##### Code
+
+## Sums and Powers
+
+
+    ### Order of Operations
+
+    ### Do Not Distribute Powers Acorss Sums
+
+    ### What Can Be Done
+
+    Expansions, growth of terms
+
+    ### Box Picture
 
 
 
@@ -84,40 +143,8 @@
 ##### Code
 
 
-## sub 4
 
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
+## Zero
 
 
 

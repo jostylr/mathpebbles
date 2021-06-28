@@ -16,6 +16,33 @@
 
 ## Intro
 
+
+    units, guesstimating, relative precision
+
+    mention left to right automatically gets initial bits right as we go
+    along. 
+
+    explore the range of uncertainty
+
+    mention adding of numbers must have same units, relate to counting
+    discussion. example of inches and feet or something
+
+[pebble]()
+
+    guesstimate practice 
+
+    explore range of uncertainty
+
+[proof]()
+
+    prove when the initial numbers are settled. (depends on number of numbers
+    being added) 
+
+[program]()
+
+    exploration of possible uncertainties in the numbers, max/min, random
+    choice and average. 
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,33 @@
 
 ## Intro
 
+    ### One by Two Multiplication
+
+    ### Two by Two Multiplication
+
+    ### Many by Many Multipication
+
+    ### Box Method
+
+    ### Conventional Method
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    Lots of multiplication problems, allow for setting number of digits
+
+[proof]()
+
+    Explore worse cases
+
+[program]()
+
+    Implement full left to right algorithm
+
+
 ##### Pebble
 
 ## Teaser

@@ -21,9 +21,9 @@ things and stuff just propagates. Spreadsheet style, if  you will.
     const mathSub = _"math helpers"
     // small wrapper here to pass in mathjs and jsxgraph
     const initKeys = _"init keys";
-    const initScaledNumber = (math, jsx, keys) => {
-        return _"scaled number"
-    };
+
+
+    const initController = _"make controller";
 
     const initMakeTypedInput = (math, jsx, keys, controller) => {
         _"types"
@@ -41,7 +41,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
     const MP = {link, Var, Waiter, EventEmitter, 
         mathSub, $, $$, show, hide, 
         initMakeTypedInput,
-        initScaledNumber, initKeys, makeScopes, makeF }; 
+        initKeys, makeScopes, makeF, initController}; 
 
     export {MP};
 
@@ -93,6 +93,11 @@ This checks if the function is ready for computing. A null value in any of the
 variables means the computation should not proceed and a null value should
 return. 
 
+We want to allow multiple inputs so that's why we do an array and then a
+spread although later functions in the chain should expect to just take in a
+single input variable. Ultimately, we just take a non-array as output. 
+
+
     function makeComputer (funs, ret, vars) {
         return function gCompute () {
             if (ret.paused) { return;} // avoids retriggering
@@ -100,7 +105,7 @@ return.
             let ready = inputs.every( (val) => val !== null );
             if (ready) {
                 ret.paused = true;
-                let out = funs.reduce( (prev, f) => {
+                let [out] = funs.reduce( (prev, f) => {
                     let fOut = f(...prev);
                     return [fOut];
                 }, inputs);
@@ -527,6 +532,35 @@ painful to use.
         for (const prop in subs) {
             math[prop] = math[subs[prop]];
         }
+
+
+This does spacing of numbers (based on
+[stackoverflow](https://stackoverflow.com/a/16637170)
+
+This is for rendering in katex.
+
+
+        math.spacedNumber = (a) => { 
+            let n, d, e;
+            [n, d] = a.toString().split(".");
+            if (d) {
+                 [d, e] = d.split('e')
+                 if (d) {
+                     d = d.split('').reverse().join('')
+                     d = d.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                     d = d.split('').reverse().join('')
+                 }
+                 if (e) {
+                    d = d+'\\mathrm{E}'+e;
+                 }
+            }
+            n = n.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            if (d) {
+                n = n + '.' + d;
+            }
+            n = n.replace(/ /g,'\\ '); //for katex not collapse spacing
+            return n;
+        };
     }
 
 [subs]()
@@ -536,10 +570,13 @@ painful to use.
         mul : "multiply", 
         div: "divide", 
         eq : "equal", 
-        gt : "larger", 
-        lt : "smaller",
         neq : "unequal",
+        gt : "larger", 
+        gteq : "largerEq",
+        lt : "smaller",
+        lteq : "smallerEq",
         neg : "unaryMinus",
+
     }
 
 ## CSS
@@ -550,6 +587,61 @@ This is the hook for the CSS to go with the HTML page.
 
     _"real:css"
 
+    _"active nav"
+    
+### Active nav
+
+This is for knowing which element is currently active.
+
+    .currentActive {
+        outline: dotted 2px #69ceff; 
+    }
+
+    sl-drawer.currentActive + .open-drawer {
+        outline: dotted 2px #69ceff; 
+    }
+
+## Make Controller
+
+This manages the variables and is available to all. 
+
+    function () {
+        let pNull = {container:null, line:null, localKeys:{}}; //empty primary
+        let controller = {
+            scopes : {},
+            current : null, //put the current selected scope here
+            container : $('.inputControl'),
+            primary : pNull,
+            activate : _":activate",
+            deactivate : _":deactivate"
+        };  
+
+        return controller;
+    }
+
+[activate]() 
+
+    function activate (container, line, localKeys)  {
+        this.deactivate();
+        line.classList.add('active');
+        container.classList.add('active');
+        controller.primary = {container, line, localKeys};
+    }
+
+[deactivate]()
+
+    () => {
+        let {container, line} = controller.primary;
+        controller.primary = pNull;
+        if (container && line) {
+            container.classList.remove('active');
+            line.classList.remove('active');
+        } 
+    }
+
+
+
+        
 
 ## Typed Input
 
@@ -583,65 +675,51 @@ type is a creation function.
         _":initiate type"
         _":apply specifics"
 
-        let [varVal, settings, typeDestroy, typeKeys] = type(value, options, {
-            container, sp, inp, div}
-        );
+        let [varVal, varScale, localKeys] = type(value, options, { container, line});
 
-        let genKeys = {};
-        const loadKeys = () => {
-            if (!keys.includes(genKeys) ) {
-                keys.unshift(genKeys);
-            }
-            if (!keys.includes(typeKeys) ) {
-                keys.unshift(typeKeys);
-            }
-            console.log("keys", keys);
-        };
-        const removeKeys = () => {
-            let ind;
-            ind = keys.findIndex( (el) => el === typeKeys);
-            if (ind !== -1) {
-                keys.splice(ind, 1);
-            }
-            ind = keys.findIndex((el) => el === genKeys);
-            if (ind !== -1) {
-                keys.splice(ind, 1);
-            }
-            console.log("removed keys", keys);
-        };
+        container.addEventListener('click', _":toggle activate");
 
-        _":hook in behavior"
-
-        const destroy = () => {
-            typeDestroy();
-            _":unhook behavior"
-            container.remove();
-        };
-
-        const replace = (newType, options) => {
-            typeDestroy();
-            type = newType;
-            [varVal, settings, typeDestroy] = type(varVal.value, options);
-            return {container, varVal, settings, destroy};
-        };
-
-        return {container, varVal, settings, destroy};
+        return {container, varVal, varScale, line, localKeys};
     }
 
 [initiate container]()
 
+The given container will be the display and will handle the click (will have
+enter function this way, to I think). The click will toggle whether the input
+is displayed or not. 
+
     if (container === null) {
-        container = $$$('div');
+        container = $$$('span');
     } else if (typeof container === "string") {
         container = $(container);
     } 
     $$$(container, {class:'typed-input', tabIndex: 0});
     
-    let sp = $$$('span', {class:'display'}, ['prepend', container]);
-    let inp = $$$('sl-input', {class:'numinp hide'}, ['append', container]);
-    let div = $$$('div', {class:'type hide'}, ['append', container]);
-    let closeButton = $$$('sl-icon-button', {class:'hide', name:'x', label:'close'}, ['append', container]);
+    let footBoss = controller.container;
 
+    let line = $$$('div', {class:'hide'}); // this will contain the input elements
+    footBoss.append(line);
+
+
+[toggle activate]()
+
+This checks the status of line and acts appropriately: activate if not active
+(unhide if needed), deactivate and hide if active.
+
+    () => {
+        let cl = line.classList;
+        if (cl.contains('hide') ) {
+            cl.remove('hide');
+            container.classList.add('open');
+            controller.activate(container, line, localKeys);
+        } else if (controller.primary.line === line ) {
+            cl.add('hide');
+            container.classList.remove('open');
+            controller.deactivate();
+        } else {  //already visible, not active, mostly for keyboard
+            controller.activate(container, line, localKeys);
+        }
+    }
 
 [css]() 
 
@@ -654,12 +732,22 @@ and unneeded.
     
 But it is nice to outline the input ones. 
 
-    .typed-input .display {
+    .typed-input {
         border-bottom: 2px solid green;
     }
 
-    .typed-input.focus .display {
+    .typed-input.open {
+        border: 2px dotted green;
+        border-bottom: 2px solid green;
+    }
+
+    .typed-input.active {
         border: 2px solid green;
+        background-color: rgba(105,206,255, 0.3)
+    }
+
+    .typed-input:focus {
+        border-bottom-color: red;
     }
 
     .hide { 
@@ -703,130 +791,6 @@ variable of interest.
         }
     }
 
-    
-[hook in behavior]()
-
-This is for common functionality across all the inputs. 
-
-There is a span prepended as the first child of container. This is where the
-value is shown. It is styled with a green underline (as of this writing).
-Clicking on it activates the type's input stuff. (hide/show stuff, basically).
-focusing on the div should activate type's keys while blurring should
-deactivate them. 
-
-    let state = 'closed';
-    let edit = 'closed';
-    _":focus behavior"
-
-
-    const open = () => {
-        state = 'open';
-        show(div);
-        div.classList.add('ignore');
-        container.classList.add('edit');
-        show(closeButton);
-    };
-    const close = () => {
-        state = 'closed';
-        edit = 'closed';
-        show(sp);
-        hide(inp);
-        hide(div);
-        div.classList.remove('ignore');
-        container.classList.remove('edit');
-        hide(closeButton);
-        removeKeys();
-    };
-    const openEdit = () => {
-        console.log("open edit");
-        hide(sp);
-        show(inp);
-        console.log(inp);
-        inp.setFocus();
-        inp.setSelectionRange(0, inp.value.length, 'forward');
-        edit = 'open';
-    }
-    const closeEdit = () => {
-        console.log("close edit");
-        show(sp);
-        hide(inp);
-        edit = 'closed';
-    }
-    const cli = () => {
-        console.log('clicked', state);
-        if (state === 'open') {
-            openEdit();
-        } else {
-            open();
-        }
-    };
-    
-    genKeys['Enter'] = () => {
-        if (edit === 'open') {
-            closeEdit();
-        } else {
-            openEdit();
-        }
-    };
-    
-    genKeys['Escape'] = () => {
-        console.log("escape pressed", edit);
-        if (edit === 'open') {
-            closeEdit();
-        } else {
-           close(); 
-        }
-    };
-
-    genKeys['o'] = () => {
-        if (state === 'open') {
-            close();
-        } else {
-            open();
-        }
-    }
-
-
-
-
-    closeButton.addEventListener('click', close);
-    container.addEventListener('focusin', foc);
-    container.addEventListener('focusout', focOut);
-    sp.addEventListener('click', cli);
-    inp.addEventListener('sl-blur', closeEdit); 
-    
-
-[focus behavior]()
-
-The focus in and out stuff is tricky. Focusout seems to fire first and then
-focusin. It is rather unstable and not clear that we really want something
-that acts like this. We have the control panel interface and the keys
-interface. For the keys, we should outline the number while the keys are
-active. The keys should remain active until another key interactive item is
-activated. The panel interface opens when clicking on the number 
-
-
-    const foc = () => {
-        console.log("focusin fired");
-        container.classList.add('focus');
-        loadKeys();
-    };
-    const focOut =() => {
-        console.log("focusout fired");
-        container.classList.remove('focus');
-    };
-
-
-[unhook behavior]()
-
-This is to remove any listeners. 
-
-    closeButton.removeEventListener('click', close);
-    container.removeEventListener('focusin', foc);
-    sp.removeEventListener('click', cli);
-    inp.removeEventListener('sl-blur', closeEdit); 
-
-
 ## Types
 
 These are the defined types. 
@@ -849,264 +813,125 @@ These are the defined types.
 This is the most common type, being just a number with a linear scale to use. 
 
 
-    (value, options, {container, sp, inp, div}) => {
-        div.innerHTML = `_":html"`;
-        container.classList.add('real');
+    (value, options, {container, line}) => {
+        line.innerHTML = `_":html"`;
+        container.classList.add('real-display');
+        line.classList.add('real');
         let round = (v) => v;  //placeholder while things boot up
-        let f = { _":value range functions" };
         _":children"
         _":variables"
-        const keys = {_":local keys"};
-        const settings = {};
-        const destroy = _":destroy"; 
+        
+        let defVal = varVal.value;
 
-        return [varVal, settings, destroy, keys]; 
+        _":incrementing"
+        _":ui functions"
+        
+        $sub.addEventListener('click', subX);
+        $add.addEventListener('click', addX);
+        $low.addEventListener('click', lowerScale);
+        $rai.addEventListener('click', raiseScale);
+
+        const localKeys = { _":local keys"};
+
+        const destroy = _":destroy"; 
+        
+
+        return [varVal, varScale, localKeys]; 
     }
 
 
 [html]() 
 
-    <sl-range class="numrange" min=0 max=100 step=1 tooltip="none"></sl-range>
-    <sl-range class="scalerange" min=0 max=40 step=1 tooltip="none"></sl-range>
-    <span class="scale-number"></span>
-    <sl-tooltip content="Scale Settings">
-        <sl-icon-button name="gear" label="Scale Settings"></sl-icon-button>
-    </sl-tooltip>
-    <sl-tooltip content="Redefine Center">
-        <sl-icon-button name="chevron-bar-up" label="Redefine Center"></sl-icon-button>
-    </sl-tooltip>
-    <sl-tooltip content="Open History">
-        <sl-icon-button name="skip-backward" label="Open History"></sl-icon-button>
-    </sl-tooltip>
-    <sl-dialog class="scale-settings" label="Scale Settings">
-        <p>This is where we can change how the ranges change. For scale, we
-        have it setup so that we can do two alternating scale factors. The
-        default is that we first multiply the lowest scale factor by 5, then
-        that one by 2, then by 5, then by 2, etc. This allows us to go up by
-        multiples of 5. So from 0.1 we got to 0.5 and then to 1 then to 5 then
-        to 10, etc.  Here is where one can change those scale factors and the
-        lowest value to start. </p>
-        <sl-input type="text" label="First Scale Factor"></sl-input>
-        <sl-input type="text" label="Second Scale Factor"></sl-input>
-        <sl-input type="text" label="Lowest Value"></sl-input>
-    </sl-dialog>
-    <sl-dialog class="history" label="History of Number">
-        <p>Simply select the value you wish to return to and then close the
-        dialog. To delete a history item, click the trash icon next to it.
-        The history gets populated whenever the main text changes by direct
-        input or the main slider gets recentered to a current value.</p>
-        <sl-select clearable>
+    <div class="primary">
+        <sl-button class="subtract" size="small">-</sl-button>
+        <sl-input size="small"></sl-input>
+        <sl-button class="add" size="small">+</sl-button>
+    </div>
 
-        </sl-select>
-    </sl-dialog>
+    <div class="exponent">
+        <sl-button class="lower" size="small">_</sl-button>
+        <span>1E</span><sl-input size="small"></sl-input>
+        <sl-button class="raise" size="small">^</sl-button>
+    </div>
+
+    <div class="controls">
+       <sl-icon-button name="x" label="close"></sl-icon-button>
+    </div>
 
 [children]()
 
 This is grabbing the html elements of the children of the container. We use
 them for the variables
 
-    const [$firstScale, $secondScale, $startScale] = $$('sl-input', div);
-    const $numrange = $('.numrange', container);
-    const $scaleRange = $('.scalerange', container);
-    const $gear   = $('sl-icon-button[name="gear"]', container);
-    const $openHistory = $('sl-icon-button[name="skip-backward"]', container);
-    const $redefineCenter = $('sl-icon-button[name="chevron-bar-up"]', container);
-    const $dialog = $('sl-dialog.scale-settings', container);
-    const $history = $('sl-dialog.history', container);
-    const $hisSel = $('sl-select', $history);
-    const $scaleDisplay = $('.scale-number', container);
+    const [$varVal, $varScale] = $$('sl-input', line);
+    const [$sub, $add, $low, $rai] = $$('sl-button', line);
+    const $close = $('sl-icon-button', line);
     
-
-Should have focus listeners for dialogs to change initial focus if needed
-
-    const openSS = () => $dialog.show();
-    $gear.addEventListener('click', openSS);
-
-    const openH = () => $history.show();
-    $openHistory.addEventListener('click', openH);
 
 [css]()
 
+    .inputControl {
+        position:fixed;
+        width:100vw;
+        bottom: 1.5em;
+        background-color: whitesmoke;
+        border-bottom: 1px solid gray;
+        padding-top: 4px;
+    }
 
-    .real.edit {
-        display: inline-grid;
-        grid-template-columns : 40px 40px 40px  30px 30px;
-        grid-template-areas: 
-            "num num num num num"
-            "nr nr nr sr close"
-            "hist center gear sr scnum";   
+    .inputControl > * {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        width:100%;
+    }
+
+    .inputControl > * > * {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
+    .inputControl sl-input {
+        width:30ch;
+    }
+ 
+    .exponent sl-input {
+        width: 8ch;
     }
     
-    .real * {
-        justify-self:center;
-        align-self:center;
-    }
-
-    .real .display, .real .numinp {
-        justify-self : start;
-    }
-
-    .ignore {   
-        display:contents;
-    }
-
-    .real .numrange {
-        grid-area: nr;
-    }
-
-
-Want the scalerange thumb to have a different color, the same as the scale
-number. So we hack different colors here. TODO REVIEW. 
-
-    .real .scalerange {
-        grid-area: sr;
-        --sl-color-primary-500 : red;
-        --sl-color-primary-400 : red;
-        --sl-color-primary-600 : darkred;
-        --sl-focus-ring-color-primary : lightsalmon;
-    } 
-
-    .real .scalerange::part(input) {
-        width: 9ch;
-        height: 3ch;
-        margin: 0;
-        transform-origin: 4.6ch 1.6ch;
-        transform: rotate(-90deg);
-    }
-
-    .real .scalerange::part(input)::moz-range-thumb {
-        background: red;
-    }
-
-    .real sl-icon-button[name="gear"] {
-        grid-area: gear;
-    }
-
-    .real sl-icon-button[name="skip-backward"] {
-        grid-area:hist;
-    }
-
-    .real sl-icon-button[name="chevron-bar-up"] {
-        grid-area:center;
+    .inputControl .active .primary sl-input {
+        --sl-input-background-color: rgba(105,206,255, 0.3);
     }
     
-    .real sl-icon-button[name="x"] {
-        grid-area:close;
-    }
 
-    .real .scale-number {
-        grid-area: scnum;
-        color: red;
-        font-family: monospace;
-        justify-self:start;
-        white-space:nowrap;
-
-Min width is for making a bigger click area. 
-
-        min-width:4ch; 
-    }
-
-
+ 
 [variables]()
 
 We link up the html and the variables. 
 
-We also track the mode we are in. There are three modes: plain text of just
-the main number, text input for the number, or the whole slider construct. The
-mode is toggled by 't' and reversed by 'T'. could actually consider the
-complex part with this. (plain,  linear, plane)
-
-    let scale = [];
-
-    const firstScale = new Var(5, {_":input| sub inp, $firstScale"});
-    const secondScale = new Var(2, {_":input| sub inp, $secondScale"});
-    const startScale = new Var(1e-10, {_":input| sub inp, $startScale"});
 
 Scalerange is set to 0 so rescale calls fromVar -- needed it to be a different value otherwise it does not call. And the range is not set correctly with that because the scale array is not setup yet. 
 
-    const scaleRange = new Var(0, {_":scale range"}); 
-    const center = new Var(0, {_":center"});
-    const varVal = new Var(value || 0, {_":input"}, {_":numrange"});
-    const main = varVal; // older code merge TODO Remove
-    const setCenter = _":set center";
-    const _setCenter = link(setCenter, scaleRange, main); 
+    const varScale = new Var(0, {_":input|sub $varVal, $varScale"}); 
+    const varVal = new Var(value || 0, {_":input"});
     
-    link((v)=>{$scaleDisplay.innerText=v}, scaleRange);
-    link((v)=>{sp.innerText=v}, main);
 
-
-    const precision = link(_":precision", scaleRange);
+    link((v)=>{ katex.render(math.spacedNumber(v), container);}, varVal);
+    
 
 The rounding is really rounding the center. Not sure where else this would
 make sense to do.
 
     round = _":round";
 
-    link(() => center.value=round(center.value) , precision);
-
-
-This handles the main scale setup where we generally want to center the scale
-range in the middle of the range and reset parameters after the dialog closes. 
-
-    const rescale = () => {
-        let cur = math.evaluate(startScale.value);
-        let fir = math.evaluate(firstScale.value);
-        let sec = math.evaluate(secondScale.value);
-        scale[0] = cur;
-        for (let i = 0; i<20; i+=1) {
-            cur = scale[2*i+1] = math.mul(cur, fir);
-            cur = scale[2*i+2] = math.mul(cur, sec); 
-        }
-        scaleRange.change(scale[20]);
-    };
-    $dialog.addEventListener('sl-hide', rescale);
-    rescale();
-
-    _":key helpers"
-
-    $scaleDisplay.addEventListener('click', lowerScale);
-
-
 
 [input]()
 
-    el: inp,
+    el: $varVal,
     evt: 'sl-change',
-    toVar: (el) => el.value,
+    toVar: (el) => math.bignumber(el.value),
     fromVar: (v, el) => el.value = v
-
-[numrange]()
-
-This relates the slider value to the main value. We do the shifts manually as
-this allows us to use the f functions with complex stuff just be converting
-them into their values appropriately.
-
-
-    el: $numrange,
-    evt: 'sl-change',
-    toVar: (el) =>  {
-        let shift = math.sub(math.evaluate(el.value), 50);
-        let newV = f.add(shift, scaleRange.value, center.value); 
-        return newV;
-    },
-    fromVar: (v, el) =>  {
-        let newPlace = f.addInv(v, scaleRange.value, center.value);
-        el.value = math.round(math.add(newPlace, 50));
-    }
-
-
-
-
-[scale range]()
-
-This handles the var for shifting the scale. 
-
-Not sure how variable would be changed, but if it was, we do a reverse lookup.
-
-    el: $scaleRange,
-    evt: 'sl-change',
-    toVar : (el) => scale[el.value] || scale[20],
-    fromVar : (v, el) => { el.value = scale.findIndex( (sc) => math.largerEq(sc, v) ) }
 
 
 [round]() 
@@ -1116,7 +941,7 @@ past where the scale is sitting. We do this by computing
 
     ( v ) => {
 
-        let p = precision.value;
+        let p = varScale.value;
 
         let ret;
         if ( p < 0) {
@@ -1126,91 +951,37 @@ past where the scale is sitting. We do this by computing
             ret = math.mul(math.round(math.div(v, pow)), pow);
         }
 
-        //console.log(v.toString(), p.toString(), ret.toString());
         return ret;
     }
-
-
-[precision]()
-
-This takes in the scalerange value and converts it to the power of 10 that
-implements our significance. 
-
-    (s) => {
-        if (s <= 0) {
-            return 1;
-        } else {
-            let ret = math.sub(math.round(math.log10(s)), 1);
-            //console.log("pre", s, ret);
-            return ret;
-        }
-    }
-
-
-[value range functions]()
-
-These are simple arithmetic functions that given the value or the scale
-pointer will yield the other. The inverse goes from the value to the pointer. 
-
-Adding implements `v = (place - 50)*scale + centerValue` Inverted it is `place
-= (v- center)/scale + 50`
-
-Multiplying implements `v = center*scale^(place-50)` Inverting, we need the
-value and center to be the same sign to have this make actual sense and
-non-zero, but anyway:  `log(v /center)/log(scale) + 50 = place` will error if
-v and center are different signs or center is zero. 
-
-    add : (shift, scale, center) => round(math.add( math.mul(shift, scale), center)),
-    addInv : (v, scale, center) => math.div(math.sub(v, center), scale),
-
-[set center]()
-
-This resets the main slider to the middle and sets the center value to the
-current value of the main variabe
-
-    function setCenter (v) {
-        center.change( v );
-        $numrange.value = 50;
-    }
-
-[center]()
-
-    el : $redefineCenter,
-    evt: 'click',
-    toVar: () => {$numrange.value=50; return main.value;},
-    fromVar: () => {}
-
 
 
 [local keys]()
 
 This is manipulating the number. We have
-q -- raise scale
-a -- center scale to current value
-z -- lower scale
-w -- increase imaginary
+q -- quit 
+w -- decrease imaginary
+e -- increase imaginary
+a -- lower scale 
 s -- decrease main or decrease real
 d -- increase main or increase real
-c -- decrease imaginary
-f -- text main edit
-g -- open setting for scale stuff
-v -- toggle view of complex or main slider
-b -- select history of main input
-t -- cycle forward through edit modes (plain, input, linear, plane)
-T -- cycle backward through edit modes
+f -- raise scale
+z -- return to default
+x -- main input edit
+c -- scale input edit
 
-    q : addScale,
-    a : () => setCenter(main.value),
-    z : lowerScale,
-    s : lowerX,
+    q : close,
+    a : lowerScale,
+    s : subX,
     d : addX,
-    g : openSS,
-    b : openH
+    f : raiseScale,
+    z : def, 
+    x : focusMain,
+    c : focusScale
 
 
-[key helpers]()
+[incrementing]()
 
-This adds the functions that the keypresses do.  
+This adds the functions that the keypresses and buttons do.  
 
 So we want to manipulate the slider just as if we were dragging it. So we
 add/subtract 1 accordingly. We don't want to manipulate the value of the Var
@@ -1220,33 +991,43 @@ the range element in to the toVar as if the event of change had been issued
 (it does not get emitted for js imposed changes). 
 
 
-    const addScale = () => {
-        let v = $scaleRange.value*1;
-        if (v < 40) {
-            $scaleRange.value = v + 1;
-            scaleRange.bound[0].toVar($scaleRange);
-        }
+    const raiseScale = () => {
+        varScale.change(math.add(varScale.value, 1));
     };
     const lowerScale = () => {
-        let v = $scaleRange.value*1;
-        if (v > 0) {
-            $scaleRange.value = v -1;
-            scaleRange.bound[0].toVar($scaleRange);
-        }
+        varScale.change(math.sub(varScale.value, 1));
     };
     
     const addX = () => {
-        let m = $numrange.value*1;
-        $numrange.value = m+ 1;
-        main.bound[1].toVar($numrange);
+        varVal.change(round(math.add(varVal.value, math.pow(10,$varScale.value) ) ) );
+    };
+    addX.repeatable = true;
+
+    const subX = () => {
+        varVal.change(round(math.sub(varVal.value, math.pow(10,$varScale.value) ) ) );
+    };
+    subX.repeatable = true;
+
+
+[ui functions]()
+
+    const close = () => {
+        if (controller.primary.line === line) {
+            controller.deactivate();
+        }
+        line.classList.add('hide');
     };
 
+    const def = () => {
 
+    };
 
-    const lowerX = () => {
-        let m = $numrange.value*1;
-        $numrange.value = m- 1;
-        main.bound[1].toVar($numrange);
+    const focusMain = () => {
+        $varVal.focus();
+    };
+
+    const focusScale = () => {
+        $varScale.focus();
     };
 
 [destroy]()
@@ -1311,731 +1092,56 @@ number (10 by default) which we call the base.
 
     
 
-### Scaled Number
-
-This is a function that takes in some data (id, label, initial value, settings
-options), and produces a containerized input number environment, one which has
-a text input for whatever, a slider for changing the value, another slider for
-changing the scale of the change, and a gear button to tweak some of the
-settings. These will be arranged in a grid with the main slider being the
-bottom row, spanning the other three columns.  
-
-The function should return the html element for embedding, and the various relevant
-variables. 
-
-This is included in a constructor that has access to math, jsx, and keys
-
-
-        function makeScaledNumber (id, label, value, settings) {
-        
-            let round = (v) => v;  //placeholder while things boot up
-            let f = { _":value range functions" };
-            let container = document.createElement('div');
-            container.id = id;
-            container.classList.add("scaled-number");
-            container.innerHTML= `_":html"`;
-            container.tabIndex = 0; // tabbable!
-            _":children"
-            _":variables"
-            /* $numrange.tooltipFormatter = () => main.value;
-            $scaleRange.tooltipFormatter = () => scaleRange.value;*/
-            _":keypresses"
-
-            const destroy = _":destroy"; 
-            return {container, firstScale, secondScale, scaleRange, center, multiply,
-                complex, main, setCenter, destroy};
-
-        }
-
-[html]()
-
-    
-    <span class="sn-main"></span>
-    <sl-input type="text" label="${label}"></sl-input>
-    <sl-tooltip content="Edit mode">
-        <sl-icon-button name="sliders" label="Edit mode"></sl-icon-button>
-    </sl-tooltip>
-
-   
-
-    <div class="sn-sliders">
-    <sl-range class="numrange" min=0 max=100 step=1 tooltip="none"></sl-range>
-    <sl-range class="scalerange" min=0 max=40 step=1 tooltip="none"></sl-range>
-    <span class="scale-number"></span>
-    <sl-tooltip content="Scale Settings">
-        <sl-icon-button name="gear" label="Scale Settings"></sl-icon-button>
-    </sl-tooltip>
-    <sl-tooltip content="Redefine Center">
-        <sl-icon-button name="chevron-bar-up" label="Redefine Center"></sl-icon-button>
-    </sl-tooltip>
-    <sl-tooltip content="Open History">
-        <sl-icon-button name="skip-backward" label="Open History"></sl-icon-button>
-    </sl-tooltip>
-    <sl-dialog class="scale-settings" label="Scale Settings">
-        <p>This is where we can change how the ranges change. For scale, we
-        have it setup so that we can do two alternating scale factors. The
-        default is that we first multiply the lowest scale factor by 5, then
-        that one by 2, then by 5, then by 2, etc. This allows us to go up by
-        multiples of 5. So from 0.1 we got to 0.5 and then to 1 then to 5 then
-        to 10, etc.  Here is where one can change those scale factors and the
-        lowest value to start. </p>
-        <sl-input type="text" label="First Scale Factor"></sl-input>
-        <sl-input type="text" label="Second Scale Factor"></sl-input>
-        <sl-input type="text" label="Lowest Value"></sl-input>
-        <p>We can also toggle whether to add that amount or multiply that
-        amount as we change the scale. Typically it should be to add, but
-        multiplication has some good uses to.</p>
-        <sl-switch>Multiply</sl-switch> 
-        <p>Our final option is to do a complex plane input option for the main
-        value. It works by using the scale to modify the two independent
-        diretions as directed by moving the point. </p>
-        <sl-switch>Complex Input</sl-switch>
-    </sl-dialog>
-    <sl-dialog class="history" label="History of Number">
-        <p>Simply select the value you wish to return to and then close the
-        dialog. To delete a history item, click the trash icon next to it.
-        The history gets populated whenever the main text changes by direct
-        input or the main slider gets recentered to a current value.</p>
-        <sl-select clearable>
-
-        </sl-select>
-    </sl-dialog>
-    <div class="complex-input"></div> 
-    </div>
-
-[css]() 
-
-This is to be loaded into the primary css, not here. But this is where the
-structure is so...
-
-We want the container to be a grid, with 3 columns. The first row has the
-input, a vertical scalerange, and the gear icon. The second row has the number
-scale spanning all three columns. 
-
-TODO
-
-    
-
-    .scaled-number .sn-main { 
-        border-bottom: solid 2px green;
-    }
-
-    .scaled-number.linear .complex-input {
-    }
-    
-    .complex-input {
-        width:100px;
-        height:100px;
-        border: black solid 1px;
-    }
-
-
-    
-
-[children]()
-
-This is grabbing the html elements of the children of the container. We use
-them for the variables
-
-    const [$main, $firstScale, $secondScale, $startScale] = $$('sl-input', container);
-    const $numrange = $('.numrange', container);
-    const $scaleRange = $('.scalerange', container);
-    const $gear   = $('sl-icon-button[name="gear"]', container);
-    const $openHistory = $('sl-icon-button[name="skip-backward"]', container);
-    const $redefineCenter = $('sl-icon-button[name="chevron-bar-up"]', container);
-    const $edit = $('sl-icon-button[name="sliders"]', container);
-    const $dialog = $('sl-dialog.scale-settings', container);
-    const $history = $('sl-dialog.history', container);
-    const $hisSel = $('sl-select', $history);
-    const [$multiply, $complex] = $$('sl-switch', container);
-    const $comInp = $('.complex-input', container);
-    const $scaleDisplay = $('.scale-number', container);
-    const $mainDisplay = $('.sn-main', container);
-    const $snSliders = $('.sn-sliders', container);
-    
-JSXGraph seems to need an id for the element instead of the element itself. 
-
-    $comInp.id = id+'-complex-input';
-    
-
-Should have focus listeners for dialogs to change initial focus if needed
-
-    const openSS = () => $dialog.show();
-    $gear.addEventListener('click', openSS);
-
-    const openH = () => $history.show();
-    $openHistory.addEventListener('click', openH);
-
-
-    const openMain = () => {
-        hide($mainDisplay);
-        show($main);
-        $main.setFocus();
-        $main.setSelectionRange(0, $main.value.length, 'forward');
-    }
-    const closeMain = () => {
-        show($mainDisplay);
-        hide($main);
-    }
-    $mainDisplay.addEventListener('click', openMain);
-    $main.addEventListener('sl-blur', closeMain);
-
-    let ci;
-    let makeComplex = () => {
-        let board = jsx.JSXGraph.initBoard($comInp.id, {boundingbox: [0, 100, 100, 0], 
-            axis:false,showCopyright : false, showNavigation : false , zoom
-            :{enabled:false}, pan: {enabled:false} });
-        let point = board.create('point', [50,50], {size:1, visible:true, withLabel:false});
-        ci = {board, point};
-    }
-
-
-Zoom and pan options:  https://github.com/jsxgraph/jsxgraph/blob/53dcec661e0fd819158c30e365a2058fc07ca8b9/src/options.js#L558  from https://stackoverflow.com/questions/23227360/jsxgraph-zoom-property
-
-
-
-[variables]()
-
-We link up the html and the variables. 
-
-We also track the mode we are in. There are three modes: plain text of just
-the main number, text input for the number, or the whole slider construct. The
-mode is toggled by 't' and reversed by 'T'. could actually consider the
-complex part with this. (plain,  linear, plane)
-
-    let scale = [];
-
-    const firstScale = new Var(5, {_":input| sub main, firstScale"});
-    const secondScale = new Var(2, {_":input| sub main, secondScale"});
-    const startScale = new Var(1e-10, {_":input| sub main, startScale"});
-
-Scalerange is set to 0 so rescale calls fromVar -- needed it to be a different value otherwise it does not call. And the range is not set correctly with that because the scale array is not setup yet. 
-
-    const scaleRange = new Var(0, {_":scale range"}); 
-    const center = new Var(0, {_":center"});
-    const multiply = new Var(false, {_":multiply"});
-    const complex = new Var(false, {_":complex"});
-    const main = new Var(0, {_":input"}, {_":numrange"});
-    const setCenter = _":set center";
-    const _setCenter = link(setCenter, scaleRange, main); 
-    
-    _":modes setup"
-
-    const mode = new Var('plain', {_":edit click"});
-
-    link(_":complex toggle", complex);
-    link((v)=>{$scaleDisplay.innerText=v}, scaleRange);
-    link((v)=>{$mainDisplay.innerText=v}, main);
-
-    link( _":toggle edit mode", mode );
-
-    const precision = link(_":precision", scaleRange);
-
-The rounding is really rounding the center. Not sure where else this would
-make sense to do.
-
-    round = _":round";
-
-    link(() => center.value=round(center.value) , precision);
-
-
-This handles the main scale setup where we generally want to center the scale
-range in the middle of the range and reset parameters after the dialog closes. 
-
-    const rescale = () => {
-        let cur = math.evaluate(startScale.value);
-        let fir = math.evaluate(firstScale.value);
-        let sec = math.evaluate(secondScale.value);
-        scale[0] = cur;
-        for (let i = 0; i<20; i+=1) {
-            cur = scale[2*i+1] = math.mul(cur, fir);
-            cur = scale[2*i+2] = math.mul(cur, sec); 
-        }
-        scaleRange.change(scale[20]);
-    };
-    $dialog.addEventListener('sl-hide', rescale);
-    rescale();
-
-    _":key helpers"
-
-
-[modes setup]()
-
-
-    const modes = ['plain', 'linear', 'plane'];
-    const forwardEdit = (m) => {
-        let ind = modes.indexOf(m);
-        ind += 1;
-        if (ind >= modes.length) { ind = 0; }
-        return modes[ind];
-    };
-
-    const backwardEdit = (m) => {
-        let ind = modes.indexOf(m);
-        ind -= 1;
-        if (ind < 0 ) { ind = modes.length-1; }
-        return modes[ind];
-    };
-
-[toggle edit mode]()
-
-This is the function that toggles the edit mode.
-
-
-    (v) => { 
-        setCenter(main.value);
-        switch (v) {
-        case 'plain' : 
-            show($mainDisplay);
-            hide($main);
-            hide($snSliders);
-        break;
-        case 'input' :  //deprecated
-            hide($mainDisplay);
-            show($main);
-            hide($snSliders);
-        break;
-        case 'linear' : 
-            show($mainDisplay);
-            hide($main);
-            show($snSliders);
-            complex.change(false);
-        break;
-        case 'plane' : 
-            show($mainDisplay);
-            hide($main);
-            show($snSliders);
-            complex.change(true);
-        break;
-        }
-    }
-
-
-[edit click]()
-
-    el : $edit,
-    evt : 'click',
-    toVar : (el, self) => forwardEdit(self.value),
-    fromVar : () => {}
-
-[input]()
-
-    el: $main,
-    evt: 'sl-change',
-    toVar: (el) => el.value,
-    fromVar: (v, el) => el.value = v
-
-[numrange]()
-
-This relates the slider value to the main value. We do the shifts manually as
-this allows us to use the f functions with complex stuff just be converting
-them into their values appropriately.
-
-TODO: Review the use of math.re for making sure slider value is right. It
-should, but try to some complex scenarios. 
-
-    el: $numrange,
-    evt: 'sl-change',
-    toVar: (el) =>  {
-        let shift = math.sub(math.evaluate(el.value), 50);
-        let newV;
-        if (multiply.value) {
-            newV = f.mul(shift, scaleRange.value, center.value); 
-            console.log("mul", newV.toString());
-        } else { //we add
-            newV = f.add(shift, scaleRange.value, center.value); 
-        }
-        return newV; 
-    },
-    fromVar: (v, el) =>  {
-        let newPlace;
-        if (multiply.value) {
-            newPlace = f.mulInv(v, scaleRange.value, center.value);
-            console.log("mulInv", newPlace.toString());
-        } else {
-            newPlace = f.addInv(v, scaleRange.value, center.value);
-        }
-        el.value = math.round(math.re(math.add(newPlace, 50)));
-    }
-
-
-
-[comInp]()
-
-This handles the var corresponding to the point in the jsxgraph plane input.
-The board is where we deal with updates: https://stackoverflow.com/questions/25447207/jsxgraph-point-update-event
-
-This ignores the multiply option as that uses the main slider as a power and
-doing a complex power is complicated. 
-
-    el: ci.board,
-    evt : 'update',
-    toVar : (el) => {
-        let p = [ci.point.X(), ci.point.Y()];
-        let shift = math.complex(math.sub(p[0] , 50), math.sub(p[1],50) );
-        let newV;
-        if (multiply.value) {
-            newV = f.mul(shift, scaleRange.value, center.value); 
-        } else { //we add
-            newV = f.add(shift, scaleRange.value, center.value); 
-        }
-        return newV; 
-    },
-    fromVar : (v, el) => {
-        let newPlace;
-        if (multiply.value) {
-            newPlace = f.mulInv(v, scaleRange.value, center.value);
-        } else {
-            newPlace = f.addInv(v, scaleRange.value, center.value);
-        }
-        // should have a complex number that represents the point in the plane
-        ci.point.moveTo([math.round(math.add(math.re(newPlace), 50)), math.round(math.add(math.im(newPlace), 50))]);
-        
-
-    }
-
-[complex toggle]()
-
-This toggles whether we are using the plane input or the slider input. 
-
-    (showPlane) => {
-        if (showPlane) {
-            show($comInp);
-            hide($numrange);
-            if (!ci) {
-                makeComplex(); 
-                main.bind( {_":comInp"});
-            }
-            ci.point.moveTo([50, 50]);
-        } else {
-            hide($comInp);
-            show($numrange);
-        }
-    }
-
-
-[scale range]()
-
-This handles the var for shifting the scale. 
-
-Not sure how variable would be changed, but if it was, we do a reverse lookup.
-
-    el: $scaleRange,
-    evt: 'sl-change',
-    toVar : (el) => scale[el.value] || scale[20],
-    fromVar : (v, el) => { el.value = scale.findIndex( (sc) => math.largerEq(sc, v) ) }
-
-
-[round]() 
-
-This is a function that will round the variable to the precision of one digit
-past where the scale is sitting. We do this by computing 
-
-    ( v ) => {
-
-        if (multiply.value) {
-            return v;  // not sure best way to handle multiplying precision
-        }
-        let p = precision.value;
-
-        let ret;
-        if ( p < 0) {
-            ret = math.round(math.evaluate(v.toString()), math.abs(p));
-        } else {
-            let pow = math.pow(10, p.toString());
-            ret = math.mul(math.round(math.div(v, pow)), pow);
-        }
-
-        //console.log(v.toString(), p.toString(), ret.toString());
-        return ret;
-    }
-
-
-[precision]()
-
-This takes in the scalerange value and converts it to the power of 10 that
-implements our significance. 
-
-    (s) => {
-        if (s <= 0) {
-            return 1;
-        } else {
-            let ret = math.sub(math.round(math.log10(s)), 1);
-            //console.log("pre", s, ret);
-            return ret;
-        }
-    }
-
-
-[value range functions]()
-
-These are simple arithmetic functions that given the value or the scale
-pointer will yield the other. The inverse goes from the value to the pointer. 
-
-Adding implements `v = (place - 50)*scale + centerValue` Inverted it is `place
-= (v- center)/scale + 50`
-
-Multiplying implements `v = center*scale^(place-50)` Inverting, we need the
-value and center to be the same sign to have this make actual sense and
-non-zero, but anyway:  `log(v /center)/log(scale) + 50 = place` will error if
-v and center are different signs or center is zero. 
-
-    add : (shift, scale, center) => round(math.add( math.mul(shift, scale), center)),
-    addInv : (v, scale, center) => math.div(math.sub(v, center), scale),
-    mul : (shift, scale, center) => round(math.mul(center, math.pow(scale, shift ) )),  
-    mulInv : (v, scale, center) => math.div(math.log(math.div(v, center)), math.log(scale))
-
-[multiply]()
-
-
-This toggles the multiply option. 
-
-    el : $multiply,
-    evt: 'sl-change',
-    toVar : (el) => {
-        let bool = el.checked
-        if (bool && center.value === 0) {
-            if (main.value === 0) {
-                main.change(1);
-                center.change(1);  //otherwise we just get 1. 
-            } else {
-                center.change(main.value);
-            }
-        }
-        return bool;},
-    fromVar: (v, el) => el.checked = v
-
-[complex]()
-
-    el : $complex,
-    evt: 'sl-change',
-    toVar : (el) => el.checked,
-    fromVar: (v, el) => el.checked = v
-
-[set center]()
-
-This resets the main slider to the middle and sets the center value to the
-current value of the main variable
-
-    function setCenter (v) {
-        center.change( v );
-        $numrange.value = 50;
-        if (ci) {
-            ci.point.moveTo([50,50]);
-        }
-    }
-
-[center]()
-
-    el : $redefineCenter,
-    evt: 'click',
-    toVar: () => {$numrange.value=50; return main.value;},
-    fromVar: () => {}
-
-
-[keypresses]()
-
-This handles keypresses. The functionality is encapsulated in an object whose
-keys are the keycodes and whose values are the functions to act on. 
-
-We use the "focusin" and out events on the container to activate this, which
-is done by pushing this object onto the key processing which allows us to have
-other key installations. 
-
-    const localKeys = { _":local keys" };
-    const shift = () => keys.shift();
-    const unshift = () => keys.unshift(localKeys);
-    container.addEventListener('focusin', unshift);
-    container.addEventListener('focusout', shift);
-
-[local keys]()
-
-This is manipulating the number. We have
-q -- raise scale
-a -- center scale to current value
-z -- lower scale
-w -- increase imaginary
-s -- decrease main or decrease real
-d -- increase main or increase real
-c -- decrease imaginary
-f -- text main edit
-g -- open setting for scale stuff
-v -- toggle view of complex or main slider
-b -- select history of main input
-t -- cycle forward through edit modes (plain, input, linear, plane)
-T -- cycle backward through edit modes
-
-    q : addScale,
-    a : () => setCenter(main.value),
-    z : lowerScale,
-    w : addY,
-    s : lowerX,
-    d : addX,
-    c : lowerY,
-    f : () => $main.setFocus(),
-    g : openSS,
-    v : () => $comInp.click(),
-    b : openH,
-    t : () => mode.change(forwardEdit(mode.value)),
-    T : () => mode.change(backwardEdit(mode.value)),
-    '=' : openMain
-
-
-[key helpers]()
-
-This adds the functions that the keypresses do.  
-
-So we want to manipulate the slider just as if we were dragging it. So we
-add/subtract 1 accordingly. We don't want to manipulate the value of the Var
-directly because then we need to convert back and forth which is handled in
-toVar's of the bound elements. So we manipulate the range value and then feed
-the range element in to the toVar as if the event of change had been issued
-(it does not get emitted for js imposed changes). 
-
-
-    const addScale = () => {
-        let v = $scaleRange.value*1;
-        if (v < 40) {
-            $scaleRange.value = v + 1;
-            scaleRange.bound[0].toVar($scaleRange);
-        }
-    };
-    const lowerScale = () => {
-        let v = $scaleRange.value*1;
-        if (v > 0) {
-            $scaleRange.value = v -1;
-            scaleRange.bound[0].toVar($scaleRange);
-        }
-    };
-    
-    const addX = () => {
-        if (complex.value) {
-            let x = ci.point.X();
-            if (x < 100) {
-                x += 1;
-                ci.point.moveTo([x,ci.point.Y()]);
-            }
-        } else {
-            let m = $numrange.value*1;
-            $numrange.value = m+ 1;
-            main.bound[1].toVar($numrange);
-        }
-    };
-
-    const addY = () => {
-        if (!complex.value) { return;}
-        let y = ci.point.Y();
-        if (y < 100) {
-            y += 1;
-            ci.point.moveTo([ci.point.X(), y]);
-        }
-    };
-
-    const lowerX = () => {
-        if (complex.value) {
-            let x = ci.point.X();
-            if (x < 100) {
-                x -= 1;
-                ci.point.moveTo([x,ci.point.Y()]);
-            }
-        } else {
-            let m = $numrange.value*1;
-            $numrange.value = m- 1;
-            main.bound[1].toVar($numrange);
-        }
-    };
-
-    const lowerY = () => {
-        if (!complex.value) { return;}
-        let y = ci.point.Y();
-        if (y > 0) {
-            y -= 1;
-            ci.point.moveTo([ci.point.X(), y]);
-        }
-    };
-
-
-[destroy]()
-
-Lots of stuff to do. Just a stub. Got to undo all the listeners, I presume. 
-
-    () => {
-        console.error("DESTROY needs to be implemented!");
-    }
-
 ### Init keys
 
 This loads the key listening event and does the loading operation. It will
 return the listener for removal if needed (should not be, but...)
 
 For main navigation, we have: 
-hjkl doing the vim thing on inputs. It requires figuring out how to manage the
-ordering. Some kind of two dimensional array representing up down an
-left/right (child). 
+we use h and l for left-right navigation in a given level (sibling order for
+relevant blocks). We use j and k for going up and down levels, closing and
+opening as needed. The keys n and m will do input travels, previous and later,
+respectively. This allows us to not worry too much about the tabbing order
+issue. These are known by inputs. We use b to activate them. 
 
-n, p   for next, previous in terms of major tabs on the page. N and P can
-navigate between pages. 
+o and p can navigate between pages. 
 
-Need to pass in the order and tabs arrays. They have a current property. The
-order has a parent property. Probably need to do some kind of add/remove that
-scalednumber can tap into.
+The keys will have the default page keys (right hand) and the input will have
+their own keys (left). We use the keys on the primary current for those. 
 
-    () => {
-        const group = $('sl-tab-group');
-        const focus = _":focus"; 
-        const obj = {
-            tabs : [...$$('sl-tab')],
-        };
-        obj.tabs.current = 0;
-
-So to implement an up/down and left/right navigation, we have a parent object
-with class order-parent and then children objects of class order. Ideally the
-order elements should all be focusable as that is the point. I believe that as
-long there is at least one tab, this should produce an array of arrays. 
-
-        obj.tabOrder = obj.tabs.
-            map((t) => [...$$('.order-parent', t)]).
-            map((arr) => { 
-                    return arr.map( (par) => {
-                        let ret = [...$$('.order', par)];
-                        ret.parentElement = par;  //so that the parent element can be known
-                        ret.current = 0;
-                        ret.parent = 0;
-                        return ret;
-                    }); 
-                } 
-            );
-
-We need the panel name to show the tabs. 
-
-        obj.panels = obj.tabs.map( (el) => el.getAttribute('panel') );
-
-        const newOrder = () => {
-            obj.order = obj.tabOrder[ obj.tabs.findIndex( el=> el.active) ];
-        }
-
+    (controller) => {
         
-        //$('sl-tab-group').addEventListener('sl-tab-show', newOrder);
-        //newOrder();
- 
- For the orders, we want to attach the add and remove functions which will
- take in a this and become a method. 
+        const focus = _":focus";
+        const getCurrent = () => $('.currentActive') || document.activeElement; 
+        const newCurrent = (nxt,cur) => {
+            cur = cur ?? getCurrent();
+            cur.classList.remove('currentActive');
+            console.log("nexted", nxt);
+            nxt.classList.add('currentActive');
+            nxt.scrollIntoView({behavior:'smooth', block:'center' }); 
+        };
 
-        const add = _":add order";
-        const remove = _":remove order";
+        const filter = _":filtering for cur level";
 
-        obj.tabOrder.forEach( arr => {
-            arr.add = add;
-            arr.remove = remove;
-        });
-   
-        const keys = [{_":global"}];
-        const f = _":listener";
-        document.addEventListener('keydown', f);
-        return {keyListener:f, navStructure: obj, keys};
+        const keys = {_":global"};
+        const getKC = _":get key command";
+
+        const keyDown = _":key down listener";
+        document.addEventListener('keydown', keyDown);
+        return {keyDown, keys};
     }
 
-[listener]()
+
+[get key command]()
+
+This looks up the key 
+
+    (key) => {
+        return controller.primary.localKeys[key] || keys[key] || null
+    }
+
+
+[key down listener]()
 
 If we put null as the first element in keys, we effectively cut this off. This
 would be useful for allowing unrestricted use of a text input. Since most of
@@ -2044,85 +1150,221 @@ but who knows? Actually, maybe we find a null, we stop. That we could have
 some keys that respond specially, but we disable the more general stuff. 
 
     (ev) => {
+
+Textareas are their own thing entirely. 
+
         if (ev.target.nodeName === 'TEXTAREA') {
             return; // disables key listening in text areaas 
         }
-        let key = ev.key;
-        keys.some( (el)=>  {
-            if (el === null) {
-                return true;
-            }
-            if (el[key]) {
-                el[key]();
+
+        let f = getKC(ev.key);
+        
+        if (!f) { return;}
+
+        let bool = (ev.target.nodeName === 'SL-INPUT') ||
+           (ev.target.nodeName === 'INPUT')  ;
+
+        if (ev.repeat) {
+            if (!f.repeatable) {
+                if (bool) {
+                    if (!f.input) {
+                        return;
+                    }
+                }
                 ev.preventDefault();
                 return true;
             }
-        });
+        }
 
+
+Text inputs are left alone unless the relevant key command says it is okay to
+be used in an input. 
+
+        if (bool) {
+            if (ev.target.type === 'text') {
+                if (f.input) {
+                    f();
+                    ev.preventDefault();
+                    return true;
+                }
+                return; 
+            }
+        }
+
+If we are here, then we want to check for key command.
+
+        f(ev.target);
+        
+        ev.preventDefault();
+        return true;
     }
+
 
 [global]()
 
-    h : () => {
-        let order = obj.order;
-        let c = order.current;
-        let arr = order[order.parent];
-        if (c > 0 ) {
-            c -= 1;
-            order.current = c;
-            focus(arr[c]);
+
+Tried to just click on the buttons programmatically, but that did not work. So
+doing next thing of assigning window. 
+
+    o: _":prev nav",
+    p : _":prev nav |sub prev, next",
+    m : _":item focus",
+    n : _":item focus | sub += 1, -= 1",
+    b : _":toggle input",
+    l : _":item focus | sub .typed-input, .hier",
+    h : _":item focus | sub .typed-input, .hier, += 1, -= 1",
+    j : _":descend",
+    k : _":ascend" 
+
+
+
+[prev nav]()
+
+For traveling to other pages in sequence. 
+
+    () => {
+        let b = $('.prev');
+        let h = b.getAttribute('aria-hidden');
+        if (h) { return;} // not clickable
+        window.location = window.location.origin + b.getAttribute('href');
+    }
+
+[item focus]()
+
+This should be focused on input types. We grab the active element. If it is of
+typed-input, then we cycle from there. 
+
+    () => {
+        let cur = getCurrent(); 
+        _":deal with being in input control"
+        let {siblings, index} = filter(cur, '.typed-input');
+        index += 1;
+        let n = siblings.length;
+        console.log(index,n, siblings, cur);
+        if (n === 0) { 
+            console.error("no siblings", cur);
+            return;
         }
-    },
-    j : () => {
-        let order = obj.order;
-        let c = order.parent;
-        if (c > 0 ) {
-            c -= 1;
-            order.parent = c;
-            order.current = 0;
-            focus(order[c][0]);
+        while (index >= n) {
+            index -= n;
         }
-    },
-    k : () => {
-        let order = obj.order;
-        let c = order.parent;
-        if (c < (order.length-1)) {
-            c += 1;
-            order.parent = c;
-            order.current = 0;
-            focus(arr[c]);
+        while (index < 0) {
+            index += n;
         }
-    },
-    l : () => {
-        let order = obj.order;
-        let c = order.current;
-        let arr = order[order.parent];
-        if (c < (arr.length-1)) {
-            c += 1;
-            order.current = c;
-            focus(order[c][0]);
+        newCurrent(siblings[index]);
+    }
+  
+        
+        
+[deal with being in input control]()
+
+We could be an active element in input control. We don't want to navigate
+there. So we find its partner container in the main body. 
+
+    let inCo = cur.closest('.inputControl');
+    if (inCo) {
+        let line = cur.closest('.inputControl > *');
+        let inps = controller.scopes.inputs;
+        for (const key in inps) {
+            if (line === inps[key].line) {
+                cur = inps[key].container;
+                break;
+            }
         }
-    },
-    n : () => {
-        let tabs = obj.tabs;
-        let c = tabs.current;
-        if (c < (obj.tabs.length-1)) {
-            c += 1;
-            tabs.current = c;
-            group.show(obj.panels[c]);
+    }
+
+
+[filtering for cur level]()
+
+So this is a function that takes in an element and a selector. It then returns
+an array of siblings that match the selector, the index of the current element
+if it matches the selector, and its parent in the hierarchy, and any children
+of the hierarchy.
+
+    (el, sel) => {
+        let parent = el.parentElement.closest('.hier, body');
+
+        let children = $$('.hier', parent);
+
+        let siblings = $$(sel, parent);
+
+        siblings = siblings.filter( (el) => {
+            let anc = el.parentElement.closest('.hier, body',);
+            return (anc === parent);
+        });
+
+        let index = siblings.indexOf(el); 
+
+        //console.log("filter", el, parent, children, siblings, index);
+
+        return {parent, children, siblings, index};
+    }
+
+
+[toggle input]()
+
+We want to click an input. 
+
+    () => {
+        let cur = getCurrent();
+        if (cur.matches('.typed-input') ) {
+            cur.click();
         }
-    },
-    p : () => {
-        let tabs = obj.tabs;
-        let c = tabs.current;
-        if (c > 0) {
-            c -= 1;
-            tabs.current = c;
-            group.show(obj.panels[c]);
+    }
+
+
+[descend]()
+
+This opens up 
+
+    () => {
+        let cur = getCurrent();
+        
+If it is an explore link, then we want to follow that link and we are done
+here. 
+
+        if (cur.matches('a.explore')) {
+            cur.click();
+            return;
         }
-    },
-    N : () => { if (obj.nxt)  window.location = obj.nxt },
-    P : () => { if (obj.prv) window.location = obj.prv }
+        if (cur.show) {
+            cur.show();
+        }
+        
+We need to look for a suitable element to be current in 
+
+        let nxts = ['.typed-input', '.explore', '.hier'];
+        for (let i = 0; i < nxts.length; i += 1) {
+            let nxt = $$(nxts[i], cur);
+            for (let j=0; j< nxt.length; j += 1) {
+               let nxtEl = nxt[j]; 
+               if (nxtEl.closest('.hier') === cur) {
+                    newCurrent(nxtEl,cur);
+                    return;
+                }
+            }
+        }
+
+We went through everything already. So now we do nothing. Descending to first
+element is weird as it is probably a descent that is irrelevant. 
+
+        return;
+    }
+
+[ascend]()
+
+This will go up to a parent in the hierarchy and will close the current element
+if open in some fashion.
+
+    () => {
+        let cur = getCurrent();
+        let par = cur.closest('.hier, body');
+        if (par.hide) {
+            par.hide();
+        }
+        newCurrent(par, cur);
+
+    }
 
 
 [focus]()
@@ -2132,7 +1374,7 @@ first and then html focus fallback. Also checks for existence. ~
 
 
     (el) => {
-        if (!el) { console.error("nothing passed into focus on");}
+        if (!el) { console.error("nothing passed into focus on"); return;}
         if (el.setFocus) {
             el.setFocus();
         } else if (el.focus) {
@@ -2141,143 +1383,6 @@ first and then html focus fallback. Also checks for existence. ~
             console.error("element not focusable", el);
         }
     }
-
-[active]()
-
-This returns the active tab index. 
-
-    () => obj.tabs.findIndex( el => el.active )
-
-
-[add order]()
-
-If we are adding a parent level, we expect an array with a parent attribute.
-Otherwise, we assume we are adding it to a child level. If adding a parent,
-then we expect a parent to be given and it will be added after it. If no
-parent is given (null), then it is added at the beginning of the list.
-Similarly, for a child, we add after the passed in element. If it is a parent
-element, then we append it to that listing. For falsy placement, we prepend
-to the first array, for truthy non-matching, we append to last array. 
-
-This function handles adding to the counters as needed.
-
-If the element is not matched, then we add on the end of the array. So one
-could pass true in for placement and it presumably would not be present and
-leads to appending to the array. 
-
-
-    function addOrder (placement, insert, self)  {
-        self = self ?? this;
-        if (Array.isArray(insert) ) {
-            if (placement) {
-                _":splice in parent"
-            } else { // falsey placement, prepend
-                self.unshift(insert);
-                self.parent += 1;
-            }
-        } else {  // child
-            if (placement) {
-                _":splice in child"
-            } else { // falsy placement, prepend to first array
-                self[0].unshift(insert);
-                if ( (self.parent === 0) && 
-                    (self[0].length > 1) ) {  //actually has another element
-                    self.current += 1;  
-                }
-            }
-
-        }
-    }
-
-[splice in parent]()
-
-We are adding an array and this part is that we want to put after an element
-which could be an actual given element if it matches or just at the end of
-current ones. 
-
-    let ind = self.findIndex( (arr) => arr.parentElement === placement );
-    if (ind === -1) { // not matched, append
-        self.push(insert);
-    } else { //actual appending after placement
-        self.splice(ind+1, 0, insert);
-        if (self.parent > ind) {
-            self.parent += 1;
-        }
-    }
-
-[splice in child]()
-
-Here we are trying to find an element. It could be a parent or it could be a
-child. Failure to find anything leads to appending to last array. 
-
-    let found = self.some( (arr, parind) => {
-        if (arr.parentElement === placement) {
-            arr.push(insert);
-            return true;
-        } else {
-            let ind = arr.findIndex( (el) => el === placement );
-            if (ind == -1) {
-                return false;
-            } else {
-                arr.splice(ind+1, 0, insert);
-
-If the element being added is in the current parent, then we need to worry
-about changing the current point as well. If not, then we are good to go. 
-
-                if ((self.parent === parind) &&
-                    (self.current > ind) ) {
-                        self.curent += 1;
-                }
-                return true;
-            }
-        }
-    });
-    if (!found) {
-        self[self.length-1].push(insert);
-    }
-
-
-
-[remove order]()
-
-This takes in an element and removes it by finding it. It updates the current
-pointer as needed. We assume an element appears only once. If it is a parent,
-we remove the whole array(!).
-
-    function removeOrder (del, self) {
-        self = self ?? this;
-        let ind = -1;
-        self.some( (arr, i) => {
-            if (arr.parentElement === del) {
-                ind = i;
-                return true;
-            } 
-            let fi = arr.findIndex( (child) => child === del);
-            if (fi !== -1) {
-                arr.splice(fi, 1);
-                if ( (self.parent === i) && (self.current > fi) ) {
-                    self.current += 1;
-                }
-                return true;
-            }
-            return false;
-        });
-
-Remove parent, updating parent index if we deleted the last parent. Otherwise
-it goes to the next one. We set current to 0, the first element of whatever
-order we have. 
-
-        if (ind !== -1) {
-            self.splice(ind, 1);
-            if (self.parent === ind) {
-                self.current = 0;
-                if (!self[ind]) {
-                    self.parent = ind-1;
-                }
-            }
-        }
-    }
-
 
 ## Content Loaded
 
@@ -2296,11 +1401,13 @@ This is the stuff we want to do to the page once stuff is loaded.
                 const a = $('.explore', el)
                 if (a) {a.click();}
             });
+            el.classList.add('hier');
         });
 
+        $$('sl-details, sl-drawer').forEach(el => el.classList.add('hier'));
 
         $$('.open-drawer').forEach( (el) => {
-            let drawer = el.nextElementSibling;
+            let drawer = el.previousElementSibling;
             if (drawer.tagName === 'SL-DRAWER') {
                 el.addEventListener('click', () => drawer.show());
                 drawer.addEventListener('sl-show', (ev) => ev.stopPropagation());
@@ -2310,7 +1417,7 @@ This is the stuff we want to do to the page once stuff is loaded.
                     })
                 ; 
             } else {
-                console.log('Error; no next door drawer', el);
+                console.log('Error; no drawer previously adjacent to open drawer buuton', el);
             }
         });
 
@@ -2370,7 +1477,6 @@ the scale, we get the bounding rectangle for the circle and the foreignObject. W
     let child = div.children[0];
     let cb = child.getBoundingClientRect();
     let cbW = cb.width/scale;
-    console.log(scale, cbW);
     if (cbW > 15) {
         let interval = (cbW-15)*2
         fo.setAttribute('width', 20 + interval);
@@ -2394,7 +1500,6 @@ the elements.
         if ( (ua.indexOf('safari') !== -1) && 
              (ua.indexOf('chrome') === -1) ) {
             safari = true;
-            console.log("safari found");
         }
 
     }   
@@ -2407,8 +1512,6 @@ escalating up.
 
     $$('.fano a').forEach( el => {
         let path = el.attributes.href.value.slice(0,-5);
-        console.log(path, location.pathname,
-        location.pathname.includes(path));
         if (location.pathname.includes(path) ) {
             $('circle', el).classList.add('parent');
         }
@@ -2480,8 +1583,6 @@ scope.
     function makeScopes (makeTypedInput, controller) {
 
         const scopes = controller.scopes;
-
-        console.log("makescopre", scopes, controller);
 
         let scanParents = _":scan parents";
 
@@ -2615,12 +1716,31 @@ the actual percent, use two spaces. Also true of vars.
                 v = '';
             } else {
                 v = v.value;
+                _":format v"
             }
             return v + rest;
         }).join('');
         return first+replaced;
     }
     
+[format v]()
+
+This attempts to do a proper formatting of the output of the function. We use
+the mathjs type function. TODO add other types (complex, fraction, ... with
+the desire of having spaced numbers of their separate parts).  
+
+    let t = math.typeOf(v);
+    switch (t) {
+    case 'number':
+    case 'BigNumber':
+        v = math.spacedNumber(v);
+    break;
+    default:
+        v = v.toString();
+    }
+
+
+
 [scan parents]()
 
 This scans parent  elements for a data-scope or, as fallback, an id. This

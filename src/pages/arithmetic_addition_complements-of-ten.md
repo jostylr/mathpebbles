@@ -16,6 +16,34 @@
 
 ## Intro
 
+    the importance of knowing the pairs that sum to 10
+
+    if second number is more than complement of first, reduce and add a 1
+
+    triangle picture of each pair, different colors and shapes to give 10.
+    
+    never add over ten. 
+
+
+
+[pebble]()
+
+    flashcard complements
+
+    practice with single digit where the last digit is what we type, hitting a
+    button or key to signal the leading 1. 
+
+[proof]()
+
+    different ways of dividing up 10? 
+
+[program]()
+
+    implement addition using the complementary method: 7 + 5, compare 5 to 3,
+    subtract to get 2, then return 1, 2
+
+
+
 ##### Pebble
 
 ## Teaser

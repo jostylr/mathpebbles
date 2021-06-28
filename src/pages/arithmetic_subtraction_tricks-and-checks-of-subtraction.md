@@ -16,6 +16,9 @@
 
 ## Intro
 
+    ### Seeing Result of Subtraction
+
+
 ##### Pebble
 
 ## Teaser

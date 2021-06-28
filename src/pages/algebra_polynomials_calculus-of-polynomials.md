@@ -16,6 +16,29 @@
 
 ## Intro
 
+    Start with looking at the polynomial near zero. Get a good feeling for that.
+
+    Start with doing each division until it is completely rewritten. Show graphs
+    of it shifted and the one with subbed in.
+
+    Then do linear, quadratic, etc. 
+
+    Using these, do Newton's method demonstrations on them both for zeros and for
+    max/min
+
+    Then discuss the patterns here and derive the derivative formulas. Note the
+    antiderivative coming from this as well. 
+
+    Lastly, explore a little bit of area related to antiderivatives. 
+
+
+[pebble]()
+
+[proof]()
+
+[program]()
+
+
 ##### Pebble
 
 ## Teaser

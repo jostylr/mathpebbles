@@ -16,6 +16,42 @@
 
 ## Intro
 
+
+    ### Long Division
+
+    ### Synthetic Division with a Line
+
+    ### Evaluating a Polynomial
+
+    ### Repeated Synthetic Division
+    
+    ### Synthetic Division with a Polynomial
+
+    ### Number Division 
+
+    Explain synthetic vs long division. Show how to input and read off, some with
+    0s  involved.  
+
+    explain repeated application
+
+    demonstrate dividing by higher factors
+
+    warning section of number division
+
+
+
+[pebble]()
+
+    Do synthetic division
+
+[proof]()
+
+    prove claims about synthetic division
+
+[program]()
+
+    implement synthetic division
+
 ##### Pebble
 
 ## Teaser

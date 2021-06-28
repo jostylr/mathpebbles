@@ -16,6 +16,43 @@
 
 ## Intro
 
+    ### Money
+
+    ### Dividing by Powers of 10
+
+    ### Decimals as Fractions with Powers of 10
+
+    ### Decimal Multiplication
+
+    ### Decimal Addition
+
+    ### Decimal Subtraction
+
+    ### Decimal Division
+
+    ### Rounding Decimals
+
+    And significance
+
+    ### Fraction and Decimal Conversion
+
+
+
+[pebble]()
+
+    Decimal Exploration
+
+    Rounding Decimals
+
+[proof]()
+
+    Repeating decimals as fractions
+
+[program]()
+
+    implement decimal arithmetic
+
+
 ##### Pebble
 
 ## Teaser

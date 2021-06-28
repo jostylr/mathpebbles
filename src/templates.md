@@ -271,10 +271,10 @@ Colons are totally optional, I hope.
                     ret.push('<sl-details summary="Video: '+title+'"><iframe width="560" height="315" src="'+url+'" title="YouTube video player" frameborder="0"  allowfullscreen></iframe></sl-details>');
                 break;
                 case 'PROOF':
-                    ret.push('<button type="button" class="explore open-drawer">Proof</button><sl-drawer class="proof" placement="left"' + id + '>');
+                    ret.push('<sl-drawer class="proof" placement="left"' + id + '>');
                 break;
                 case 'QED':
-                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
+                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer><button type="button" class="explore open-drawer">Proof</button>');
                 break;
                 case 'DETAILS':
                     _":details"
@@ -289,10 +289,10 @@ Colons are totally optional, I hope.
                     ret.push('</sl-details>');
                 break;
                 case 'PROGRAM' :
-                    ret.push('<button type="button" class="explore open-drawer">Program</button><sl-drawer placement="right" class="program"' + id + '>');
+                    ret.push('<sl-drawer placement="right" class="program"' + id + '>');
                 break;
                 case 'STOP':
-                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer>');
+                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer><button type="button" class="explore open-drawer">Program</button>');
                 break;
                 case 'CODE': {
                     ret.push('<sl-details class="code-block"'+id+'"><div class="try-code code" slot="summary">');
@@ -621,7 +621,6 @@ The crumb setup and css was originally from
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) 
 
     .crumbs {
-        border-bottom: 1px solid black;
         font-variant: small-caps;
     }
 
@@ -659,7 +658,7 @@ don't want that to grow.
         left:0;
         background-color:whitesmoke;
         width:100%;
-
+        padding-top:4px;
     }
 
 
@@ -869,7 +868,7 @@ default one.
                     scrollToEl(el);
                 }, 250);
             });
-            
+           el.classList.add('currentActive');   
         }
     } else {
 
@@ -882,20 +881,9 @@ which case we do nothing.
         if (nn === 'sl-details') {
             firstEl.show();
         }
+        firstEl.classList.add('currentActive');
     }
 
-
-
-[junk]()
-
-Waiting to shift the page. The delay is in art 
-
-        setTimeout( () => {
-            let hash = document.location.hash;
-            let el = $(hash);
-            if (!el) {return;} // no action
-            scrollToEl(el);
-        }, 150);
 
 
 [scroll to el]()
@@ -1048,15 +1036,10 @@ There is also math.js mainly used for high precision arithmetic.
             math.config({number:'BigNumber'});
             MP.makeF(math);
             //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
-            let controller = {
-                scopes : {},
-                current : null, //put the current selected scope here
-                container : $('.inputControl'),
-                active : []
-            };  
+            let controller = MP.controller = MP.initController()
+
             let keyInfo = MP.initKeys(controller);
             let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys, controller); 
-            MP.controller = controller;
             let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller);
 
             !-!SCRIPT!-!
@@ -1224,8 +1207,8 @@ TODO: Add stuff for using problems, doing quiz objects or practice objects.
 
     body {
         max-width: 80em;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 4px;
+        margin-right: 4px;
 
 The top margin being 0 helps the nav not have a gap. We need to have a full
 page width on the bottom to have it be able to scroll up. 

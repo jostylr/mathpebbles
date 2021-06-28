@@ -16,6 +16,36 @@
 
 ## Intro
 
+This comes before solving quadratics as this is a special case that allows
+everything else to be solved. 
+
+
+    ### Exact Square Roots
+
+    ### Approximating Square Roots
+
+    ### Signs and Square Roots
+
+    ### Implications of Irrational Roots
+
+    idea of a square of unit length 1 having an irrational length'd diagonal
+    being problematic? 
+
+
+[pebble]()
+
+    Guess and check square roots
+
+[proof]()
+
+    Square roots of integers being integers or irrational. 
+
+[program]()
+
+
+    Implement finding square roots
+
+
 ##### Pebble
 
 ## Teaser

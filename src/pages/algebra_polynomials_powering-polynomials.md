@@ -16,6 +16,12 @@
 
 ## Intro
 
+    Using synthetic division to expand binomials. 
+    Here we start with a few box multiplication setups? binomials, multinomials,
+    factorials, pascal's trianglei 
+
+
+
 ##### Pebble
 
 ## Teaser

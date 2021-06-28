@@ -16,6 +16,27 @@
 
 ## Intro
 
+
+    ### Two Digits Minus Large Digit
+    
+    ### Complements and Subtraction
+
+    14 - 9 = replace -9 with +1 and add, taking away digit from 1. 
+    
+    ### Generalized Complements
+
+[pebble]()
+
+    Practice complement subtraction
+
+[proof]()
+
+    Show why this works
+
+[program]()
+
+    Implement complement subtraction
+
 ##### Pebble
 
 ## Teaser

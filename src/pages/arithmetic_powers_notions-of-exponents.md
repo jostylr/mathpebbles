@@ -1,13 +1,10 @@
 # Notions of Exponents
 
     _"pieces | page /arithmetic/powers/notions-of-exponents, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Repeated Multiplication'), _'Repeated Multiplication |md ',
+            ec('Volumes'), _'Volumes |md ',
+            ec('Negative Exponents'), _'Negative Exponents |md ',
+            ec('Fractional Exponents'), _'Fractional Exponents |md '"
 
 [../public/arithmetic/powers/notions-of-exponents.html](# "save:")
 
@@ -51,7 +48,7 @@
 
 [end]()
 
-## sub 1
+## Repeated Multiplication
 
 
 
@@ -62,7 +59,7 @@
 ##### Code
 
 
-## sub 2
+## Volumes
 
 
 
@@ -73,7 +70,16 @@
 ##### Code
 
 
-## sub 3
+## Negative Exponents
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Fractional Exponents
 
 
 
@@ -84,47 +90,5 @@
 ##### Code
 
 
-## sub 4
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
-
-
-
-
-##### Pebble
-
-
-##### Code
 
 

@@ -16,6 +16,49 @@
 
 ## Intro
 
+    ### Areas
+
+    squares, rectangles, circles, ....  
+
+    Units
+
+    ### Multiplying Lines
+
+    If both increasing or both decreasing (slopes same sign), then faces up.
+    If mixed, then faces down. 
+
+    ### Squaring x
+
+    Raising x to the second power
+
+    Simplifying line multiplication using distributive to standard form. 
+
+    ### Parabolas
+
+    Geometric perspective. Mention other conic sections. 
+
+    ### Approximations
+
+    Three points to determine a quadratic, approximates hills and valleys
+
+
+[pebble]()
+
+    Exploring the line multiplication, maybe some area explorations? 
+
+[proof]()
+
+    Prove some of the statements above, maybe the mixed lines
+
+    Do the three point approximation stuff in detail
+
+[program]()
+
+    Doing the multiplication
+
+    given three points, produce the quadratic
+
+
 ##### Pebble
 
 ## Teaser

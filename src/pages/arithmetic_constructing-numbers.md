@@ -15,6 +15,23 @@
 [code runs](#code "h5: | .join \n")
 
 ## Intro
+    
+    We have described a human approach to numbers, namely, mapping groups of a
+    certain size to the number as well as to each other. 
+
+    But this feels a little unspecified even if we all know what words like
+    four means. Maybe it would be nice to have some canonical example to
+    represent the concept of four. 
+
+    Once we establish that, we then can ask about making sense of negative
+    numbers and fractions just using the positive numbers. Again, we know how
+    they should behave, but how do we put all of that on a firm foundation? 
+
+    We will explore these ideas here. It is safe to skip this chapter if you
+    are cool with the numbers as is. But, if you want a better viewpoint on
+    what a number is, please read on. This chapter will explore these ideas,
+    going into some details, but leaving other details to the proof section. 
+
 
 ##### Pebble
 

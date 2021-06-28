@@ -16,6 +16,35 @@
 
 ## Intro
 
+    ### Rounding and Corrections
+
+    ### Checksums
+
+    sums up
+
+    ### Alternate Sums
+
+    example of doing the alternating sum
+
+    ### Dedicated Practice 
+
+    one and two digit multiplications for speed and memory
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    implement quick practies of these ideas. 
+    
+[proof]()
+
+    number of total digits, sums?
+
+[program]()
+
+    produce the check sums
 ##### Pebble
 
 ## Teaser

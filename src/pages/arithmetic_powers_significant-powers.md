@@ -1,13 +1,12 @@
 # Significant Powers
 
     _"pieces | page /arithmetic/powers/significant-powers, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Significant Digits'), _'Significant Digits |md ',
+            ec('Scale Matters '), _'Scale Matters |md ',
+            ec('Estimating Power of 10'), _'Estimating Power of 10 |md ',
+            ec('Powers of 2'), _'Powers of 2 |md ',
+            ec('Units'), _'Units |md ',
+            ec('Number Sense as Superpower'), _'Number Sense as Superpower |md ' "
 
 [../public/arithmetic/powers/significant-powers.html](# "save:")
 
@@ -51,7 +50,30 @@
 
 [end]()
 
-## sub 1
+## Ideas
+
+[pebble]()
+
+    Estimating powers of a power
+
+    Exploring unit relations at powers
+
+    Significane exploration
+
+    Rules of thumb for each numbers power to be a power of 10 -- explore it. 
+
+[proof]()
+
+    Prove some estimates? Estimating above and below truth
+
+[program]()
+
+
+
+## Significant Digits
+
+
+    Very sensitive with higher powers
 
 
 
@@ -62,7 +84,7 @@
 ##### Code
 
 
-## sub 2
+## Scale Matters
 
 
 
@@ -73,7 +95,23 @@
 ##### Code
 
 
-## sub 3
+## Estimating Power of 10
+
+
+    5234 raised to 7th power, 5E3 to 7, 5 to 7 E21 5 cubed is about 100 so
+    maybe E5  so E26. 
+
+##### Pebble
+
+
+##### Code
+
+
+## Powers of 2
+
+    maybe using powers of 2 such as 5^7 = 10^7/ 2^7 and 2^7 is 128 so about
+    100 so 10^5 is an overestimate and 10^4 is underestimate but closer to
+    10^5. 
 
 
 
@@ -84,7 +122,24 @@
 ##### Code
 
 
-## sub 4
+## Units
+
+
+    Units are denoted with powers. 
+
+    Comparing feet to inches at different powers
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Number Sense as Superpower
+
+    The ability to estimate the right power of 10 gives a great sense of
+    appropriate numbers in a context
 
 
 
@@ -94,37 +149,5 @@
 
 ##### Code
 
-
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
-
-
-
-
-##### Pebble
-
-
-##### Code
 
 

@@ -16,6 +16,29 @@
 
 ## Intro
 
+    ### Units
+
+    ### Impact of Rounding
+
+    ### Partial Long Division
+
+    ### Significant Digits and Division
+
+
+
+[pebble]()
+
+    Exploration of inaccurate numbers and division
+
+[proof]()
+
+    Error results in division
+
+[program]()
+
+    Programmatic error demonstrations
+
+
 ##### Pebble
 
 ## Teaser

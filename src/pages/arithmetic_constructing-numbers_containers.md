@@ -16,6 +16,34 @@
 
 ## Intro
 
+    ### How do containers work?
+
+    Notion of container, putting stuff in, taking stuff out, 
+
+    ### Distinctifying stuff
+
+    making stuff distinct to put in
+
+    ### Maps between containers
+
+    mapping between containers
+    
+[pebble]()
+
+    explorations of containers of stuff, union vs disjoint union,
+    intersection, cartesian product.  do the numbers of these things. 
+
+[proof]()
+
+    finish off any missing zf axioms and setups except infinite
+
+    russell paradox, container vs set vs class
+
+[program]()
+
+    implementing any missing set operations
+
+
 ##### Pebble
 
 ## Teaser

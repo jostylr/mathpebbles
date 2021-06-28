@@ -16,6 +16,31 @@
 
 ## Intro
 
+
+    ### Undoing Addition
+
+    ### Solving Additive Equations
+
+    ### Negative Numbers on Their Own
+
+    Debt
+
+    ### Combining Negative Numbers
+
+
+[pebble]()
+
+    Demonstrate some additive equation stuff
+
+[proof]()
+
+    Something that shows negative properties as reflections of addition    
+
+[program]()
+
+    implement negative number arithmetic, given an equation, do some
+    subtraction with it? 
+
 ##### Pebble
 
 ## Teaser

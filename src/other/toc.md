@@ -146,7 +146,7 @@ The below section is generated. DO NOT EDIT BELOW THIS.
     </li>
     <li class="progress-0"><a href="arithmetic/powers/undoing-exponentiation.html">Undoing Exponentiation</a>
     </li>
-    <li class="progress-0"><a href="arithmetic/powers/sums-and-powers.html">Sums and Powers</a>
+    <li class="progress-0"><a href="arithmetic/powers/prime-factorization.html">Prime Factorization</a>
     </li>
     </ol>
     <li class="progress-0"><a href="arithmetic/constructing-numbers.html">Constructing Numbers</a>

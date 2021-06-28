@@ -115,7 +115,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0arithmetic/powers/significant-powers | Significant Powers | 
     0arithmetic/powers/guesstimation | Guesstimation | 
     0arithmetic/powers/undoing-exponentiation | Undoing Exponentiation | 
-    0arithmetic/powers/sums-and-powers | Sums and Powers | 
+    0arithmetic/powers/prime-factorization | Prime Factorization | 
     0arithmetic/constructing-numbers | Constructing Numbers | \mathbb{N}
     0arithmetic/constructing-numbers/containers | Containers | 
     0arithmetic/constructing-numbers/natural-numbers | Natural Numbers | 

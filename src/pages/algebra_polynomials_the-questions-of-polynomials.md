@@ -15,6 +15,38 @@
 [code runs](#code "h5: | .join \n")
 
 ## Intro
+ 
+
+    ### Evaluation
+
+    ### Solving for
+
+    ### Factoring
+
+    ### Extrema
+
+    ### Flat portions
+
+    ### Infinity
+
+    ### How to Graph
+
+    how to compute, zeros, max/mins,  factoring,  behavior , good window graphing,
+    distant behavior
+
+[pebble]()
+
+    Using the data to get good graphs, reading datea from graphs
+
+[proof]()
+
+    Infinite behavior stuff
+
+[program]()
+
+    implement intelligent graphing
+    
+
 
 ##### Pebble
 

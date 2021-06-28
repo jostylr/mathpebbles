@@ -16,6 +16,25 @@
 
 ## Intro
 
+    explaining with bags where we automatically move over when we have ten
+    pebbles
+
+
+[pebble]()
+
+    groupings with just stuff of tens
+
+[proof]()
+
+    detailing the formal process of how the carry over works
+
+[program]()
+
+    implementing that as we count through objects, assembling the digits
+    together as appropriate, building on the digit viewpoint
+
+    grouping is the heart of this so a transfer one way to another
+
 ##### Pebble
 
 ## Teaser

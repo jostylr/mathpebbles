@@ -16,6 +16,46 @@
 
 ## Intro
 
+    We now construct canonical examples of the natural numbers, that is, the
+    numbers 0, 1, 2, ..., n, n+1, ...
+
+    ### Zero
+
+    empty container is zero. 
+
+    ### One
+
+    1 is the thing with zero in it. 
+
+    ### Two
+
+    2 is with 0, 1 in it. ....
+
+    ### The Rest
+
+    Successor operation
+
+    the set is the set of numbers below it...
+
+    ### Counting
+
+    Making maps to count
+
+
+
+[pebble]()
+
+    visualizations of the numbers
+
+[proof]()
+
+    show this makes sense and works. introduce the infinite axiom
+
+[program]()
+
+    make the numbers from this
+
+
 ##### Pebble
 
 ## Teaser

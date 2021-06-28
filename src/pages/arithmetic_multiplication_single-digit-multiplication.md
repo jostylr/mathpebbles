@@ -16,6 +16,44 @@
 
 ## Intro
 
+    ### How Many Pairs to Memorize? 
+
+    Half are the same. Read them as the result. 
+
+    ### Complement Pairs
+
+    9*8 = (10-1)(10-2) = 100 -30 + 2 So add complements to get tens digit and
+    multiply. Give a box demonstration of it. 
+
+    ### Evens
+
+    If one of the factors is even, one can use smaller numbers to multiply and
+    then double the digits. So 6*8 can be seen as 2* (3*8) = 2* 24 = 48. 
+
+    ### Memorize Them
+
+    Those tricks useful to learn to memorize.
+
+    ### Tens vs Ones
+
+    Get in the habit of viewing the multiplications in terms of the two digits
+    distinctly to allow for better multiplication later
+
+
+
+[pebble]()
+
+    Practice single digit multiplication along with view as two distinct
+    digits. (so tens only, ones only, both)
+
+[proof]()
+
+    prove complement pairing, extend and explore. 
+
+[program]()
+
+    Hard code digit multiplication into pairs by doing the addition one at a
+    time. 
 ##### Pebble
 
 ## Teaser

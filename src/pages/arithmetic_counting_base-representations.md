@@ -16,6 +16,38 @@
 
 ## Intro
 
+    ### Base 10
+
+    we have been doing base 10 meaning each ascending group transfer is based
+    on accumulating 10 from the ones before
+
+    ### Binary
+
+    ### Hexadecimal
+
+    ### Time
+
+    ### Roman Numerals
+
+
+
+[pebble]()
+
+    play around with different bases. Allow for custom digit creation for
+    different bases. Display the same number in different formats. allow for
+    octal, hexadecimal, and binary in particular. ternary would be cool. 
+
+[proof]()
+
+    argue for the equality of different base representations, showing some
+    equivalence procedure. 
+
+[program]()
+
+    using different bases to represent different numbers. Actually loop
+    through the groupings to compute it
+
+
 ##### Pebble
 
 ## Teaser

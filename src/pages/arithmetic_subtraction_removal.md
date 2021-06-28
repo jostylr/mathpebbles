@@ -16,6 +16,25 @@
 
 ## Intro
 
+    ### Removal 
+
+    ### Over Removal
+
+    ### Single Digit Subtractions
+
+[pebble]()
+
+    practice visual removal
+
+[proof]()
+
+    Set subtraction, union and intersection formula
+
+[program]()
+
+    implement single digit subtraction
+
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,32 @@
 
 ## Intro
 
+    ### Dviding by Powers of 2 and 5
+
+    Divisbility checks for them as well
+
+    ### Divisibility Checks for 3 and 9
+
+    ### Divisibility Check for 11
+
+    ### Checking Division is Correct
+
+
+[pebble]()
+
+    Explore and practice divisibility checks
+
+    Check for correct division results
+
+[proof]()
+
+    Prove divisibility checks for
+
+[program]()
+
+    Implement divisibility checks
+
+
 ##### Pebble
 
 ## Teaser

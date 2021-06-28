@@ -1,13 +1,11 @@
 # Scientific Notation
 
     _"pieces | page /arithmetic/powers/scientific-notation, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Powers of 10'), _'Powers of 10 |md ',
+            ec('Shifting Decimal Places'), _'Shifting Decimal Places |md ',
+            ec('E Notation'), _'E Notation |md ',
+            ec('Scientific Notation'), _'Scientific Notation section |md ',
+            ec('Engineering Notation'), _'Engineering Notation |md ' "
 
 [../public/arithmetic/powers/scientific-notation.html](# "save:")
 
@@ -51,7 +49,38 @@
 
 [end]()
 
-## sub 1
+
+## Ideas
+
+
+[pebble]()
+
+    Practice notation conversion
+
+[proof]()
+
+    Decimal manipulations? Kind of weak. Just kind of notation
+
+[program]()
+
+    Implement conversion schemes
+
+## Powers of 10
+
+
+    Number of digits, special role of 10
+
+    scale, link to powers of 10 videos
+
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Shifting Decimal Places
 
 
 
@@ -62,7 +91,29 @@
 ##### Code
 
 
-## sub 2
+## E Notation
+
+    Do not use lowercase e.
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Scientific Notation section
+
+    power rules with scientific notation
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Engineering Notation
 
 
 
@@ -72,59 +123,5 @@
 
 ##### Code
 
-
-## sub 3
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 4
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
-
-
-
-
-##### Pebble
-
-
-##### Code
 
 

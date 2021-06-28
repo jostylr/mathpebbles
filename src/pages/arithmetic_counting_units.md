@@ -16,6 +16,36 @@
 
 ## Intro
 
+    emphasize the different counts of stuff: sheep, sticks, inches, tiles
+    (area), ... point out that combining sheep counts with inch counts does
+    not make a lot of sense
+
+    explore the idea of units as groupings: flock of sheep (could define an
+    actual amount) so then 2 flocks of sheep and 3 sheep...
+
+    inches versus feet kind of thing
+
+
+
+
+[pebble]()
+
+
+    given some varied objects, produce different counts based on the "unit"
+
+    practice a little with unit conversions
+
+[proof]()
+
+    some formal relation involving unit conversion? A bit tricky as it kind of
+    requires multiplication, but could be nice to do it without that
+    structure.
+
+[program]()
+
+    implement a unit conversion program, ideall without multiplication. 
+
+
 ##### Pebble
 
 ## Teaser

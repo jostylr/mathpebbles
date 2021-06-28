@@ -16,6 +16,19 @@
 
 ## Intro
 
+    Division. The undoing of multiplication. The undoing of many an aspiring
+    mathematics student. Some divisions are quite natural to do. These are
+    common place such as taking a half of something. 
+    
+    But others can be quite lengthy. We will go over and explain long
+    division. That process naturally leads into fractions and decimals, which
+    we also explain in-depth. 
+
+    While we will present a slightly improved version of long division here,
+    this is not too far off from the standard presentation. The tweaks do,
+    however, make it more pleasant to work through. 
+
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,15 @@
 
 ## Intro
 
+    Lines are simple and they serve a good approximation for getting from one
+    point to the next.
+
+    Quadratics are a little more complex, but still approachable with by-hand
+    arithmetic as well as allowing for a little more complicated algebra in
+    analyzing them. They represent going up and then coming down, or the
+    reverse. That is, these are the hills and valleys. 
+
+
 ##### Pebble
 
 ## Teaser

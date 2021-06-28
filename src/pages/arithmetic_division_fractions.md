@@ -16,6 +16,41 @@
 
 ## Intro
 
+    Big section
+
+    ### Remainders as Fractions
+
+    ### Integer and Fractions
+
+    ### Fraction Multiplication
+
+    ### Equivalent Fractions
+
+    ### Fraction Addition
+
+    Give cautious example of combining groups so that 1 out of 3 and 1 out of
+    3 becomes 2 out of 6 which is not how addition works and that's because
+    the whole is different.
+    [HN](https://news.ycombinator.com/item?id=23310281)
+
+    ### Fraction Subtraction
+
+    ### Fraction Division
+
+
+[pebble]()
+
+    Fraction Explorations
+
+[proof]()
+
+    Some fraction properties
+
+[program]()
+
+    Develop fraction combinating
+
+
 ##### Pebble
 
 ## Teaser

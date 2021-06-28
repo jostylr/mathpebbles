@@ -16,6 +16,77 @@
 
 ## Intro
 
+
+    Functions form a fundamental foundation of mathematics, second only in
+    importance to numbers themselves. These are the objects that we model and
+    explore the world with. We have already explored several important
+    families of functions: lines, quadratics, and more general polynomials. In
+    that investigation, we stumbled onto the ideas of calculus. Here we find
+    the foundations to extend calculus to more general functions and then use
+    calculus to define the functions. 
+
+    This approach is a little unorthodox in that some of the most common
+    functions to play around with in the calculus introductions will actually
+    be developed afterwards. This is not only a logical correction, but I
+    think it helps slow down the steps so that calculus never feels like some
+    kind of magic trick, but rather will become a faithful and well-understood
+    tool. 
+
+    We start with finishing off what we can do with the arithmetic operations
+    and unknown functions. We explore the algebraic functions, though largely
+    confine our explorations to the explicit types of ratios of polynommials
+    and adding in radical functions. We explore how to do calculus with these
+    functions from a more approximative viewpoint. 
+
+    Full calculus inevitably deals with notions of infinity and so we explore
+    various notions of infinity, starting with stuff just involving infinite
+    strings of numbers. 
+
+    We then move on to some infinite notions involving functions which largely
+    goes under the broad foundational notion of limit. The idea of a limit is
+    to look at behavior near the point of interest, but not at it. It is
+    similar to asking a person's neighbors about the person to gather
+    information. Such a tactic does not give you the full information after
+    one asking, but after many asks, a pattern develops and a notion arises.
+    Unlike asking neighbors, computing limits is not considered rude. 
+
+    With limits undestood, we can then tackle the abstract version of
+    differential calculus and integral calculus. Differential calculus is
+    about gathering slopes and deducing geometric information. Integral
+    calculus is about undoing derivatives as well as computing areas, lengths,
+    volumes, etc. Derivatives give us ways of simplifying problems, including
+    the very important Newton'smethod, while integrals give us a way of
+    assessing the accumulation of errors. 
+
+    With the tools of calculus firmly set in place, we can finally proceed
+    into some notable transcendental functions. Exponentials arise from
+    notions of population growth, whether it be actual life forms, compound
+    interest, or radioactive decay. To deal with the extreme scales of
+    exponentials, logarithms are useful to have around. They can be derived in
+    a variety of fashions, which we will do, but a somewhat explicit method
+    comes from computing the needed nominal annual interest rate to achieve a
+    desired effective annual rate. 
+
+    The other major function family is that of the trigonometric functions.
+    While they start off as functions related to right triangles and various
+    geometric computations, they rapidly become far more important as the
+    foundations for periodic functions. If you have repeating behavior, reach
+    for some trigonometric functions. We conclude the trigonometric chapter
+    with a view towards the complex exponential, a convenient idea that merges
+    the ideas and rules of exponentials with that of trigonometric functions. 
+
+    Our final chapter is an exploration of defining and transforming
+    functions. We start with "polynomials with infinitely many terms",
+    generally known as a power series; convergent ones lead to a Taylor
+    series which can represent a function entirely if everything is nice
+    enough.  We then explore functions coming from equations, partiuclarly
+    differential equations. This then leads to whole new families of
+    functions, of which we take a quick look at. Differential equations also
+    lead to some special transformations, such as the Laplace transform which
+    transforms differential equatons into algebraic equations.
+
+
+
 ##### Pebble
 
 ## Teaser

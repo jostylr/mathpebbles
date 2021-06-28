@@ -16,6 +16,26 @@
 
 ## Intro
 
+    ### Preserves Equality of Both Sides
+
+    ### Negative Plus Negative is Negative
+
+    ### Subtracting a Negative is Adding a Positive
+
+    ### Multiplication with Negative Numbers
+
+[pebble]()
+
+    Demonstrate properties
+
+[proof]()
+
+    Prove properties particularly the multiplication using algebra
+
+[program]()
+
+    Implement properties
+
 ##### Pebble
 
 ## Teaser

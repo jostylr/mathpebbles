@@ -16,6 +16,40 @@
 
 ## Intro
 
+    is there a largest number? 
+
+    explore the basic choice of always having n+1 defined or having a largest
+    number.  
+        
+    computers as examples of a largest number, the largest number written by a
+    human, etc. Largest number possibly expressed in full digit form using the
+    particles of the universe. 
+
+    versus theoretical math space. 
+
+
+[pebble]()
+
+    Given a largest number in the system, try to find it
+
+[proof]()
+
+    n squared > n, n squared <= n so n <= 1 
+
+[program]()
+
+    A program designed to exhaust the memory by creating each new number with
+    the Set construction? 
+
+    using arrays of numbers, find the largest number expressible before
+    exhausting memory? 
+
+    an article on memory limits in Node. 1.4GB limit, compute that out. 
+
+       https://medium.com/@ashleydavis75/node-js-memory-limitations-30d3fe2664c0 
+
+
+
 ##### Pebble
 
 ## Teaser

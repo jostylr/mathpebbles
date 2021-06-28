@@ -236,6 +236,7 @@ The one method to rule them all.
             return ret;
         };
         let volume =  link( computeVolume, [width, underHeight, overLength]);
+        console.log(volume);
         outputs({'h-volume': volume}, scope);
     },
 

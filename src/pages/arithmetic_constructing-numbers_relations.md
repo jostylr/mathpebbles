@@ -16,6 +16,38 @@
 
 ## Intro
 
+    ### Equivalence
+
+    ### Equality
+
+    Properties of reflexive, symmetric, transitive
+
+    adding, multiplying does not affect
+
+    ### Inequality
+
+    Similar story 
+
+    ### Pebbles
+
+    _":pebble"
+
+
+[pebble]()
+
+    some kind of visualization of flipping and adding, multiplying
+
+    Maybe using different kinds of representations to make it interesting?
+
+[proof]()
+
+    prove the properties, I guess. 
+
+[program]()
+
+    do manipulations
+
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,29 @@
 
 ## Intro
 
+
+    zero property, commutative, and associative
+
+    demonstrate with piles 
+
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    visualize the differences of these
+
+[proof]()
+
+    prove properties with some sets
+
+[program]()
+
+    do checks of this? 
+
+
 ##### Pebble
 
 ## Teaser

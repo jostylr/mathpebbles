@@ -16,6 +16,31 @@
 
 ## Intro
 
+    This section is intentionally simplified from general multiplication
+    problems. We handle the full nature of them in the next section.
+    
+    ### Left to Right Pitch
+
+    Left to right is how we read and obeys 
+
+    ### Two Low Digit Multiplications
+
+    ### Many Low Digits Multiplication 
+
+
+[pebble]()
+
+    Do no carry problems
+
+[proof]()
+
+    Not much. maybe analyze no digit carry with multi-digits?
+
+[program]()
+
+    Generate only no carry multiplication problems.
+
+
 ##### Pebble
 
 ## Teaser

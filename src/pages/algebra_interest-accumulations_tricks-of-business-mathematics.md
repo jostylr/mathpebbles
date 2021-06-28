@@ -16,6 +16,12 @@
 
 ## Intro
 
+car loan example (speed mathematics simplified)
+
+72 rule, then also how to quickly figure out payments, etc
+
+
+
 ##### Pebble
 
 ## Teaser

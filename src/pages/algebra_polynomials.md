@@ -14,7 +14,11 @@
 [pebbles](#pebble "h5: | .join \n")
 [code runs](#code "h5: | .join \n")
 
+
 ## Intro
+
+
+Polynomials from the beginning through a calculus of them   
 
 ##### Pebble
 

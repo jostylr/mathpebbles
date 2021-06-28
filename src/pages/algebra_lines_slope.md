@@ -5,7 +5,8 @@
             ec('Lines as Fixed Slopes'), _'Lines as Fixed Slopes |md ',
             ec(' Equation of a Line'), _' Equation of a Line |md ',
             ec('Plotting a Line'), _'Plotting a Line |md ',
-            ec('Slope and Angle'), _'Slope and Angle |md ' "
+            ec('Slope and Angle'), _'Slope and Angle |md ',
+            ec('Proportionality'), _'Proportionality | md' "
 
 [../public/algebra/lines/slope.html](# "save:")
 
@@ -124,6 +125,18 @@
 
 
 ##### Code
+
+
+## Proportionality
+
+
+
+
+##### Pebble
+
+
+##### Code
+
 
 
 

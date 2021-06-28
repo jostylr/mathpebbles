@@ -16,6 +16,28 @@
 
 ## Intro
 
+    combining piles, adding 1, repeated counting
+
+
+
+[pebble]()
+
+    merging piles
+
+[proof]()
+
+    equivalence of moving one from one pile to another and combining the whole
+
+    (set union)
+
+    Maybe peano arithmetic
+
+[program]()
+
+    union of sets, using the set itself object as a way of making sure each
+    object is distinct (disjoint union)
+
+
 ##### Pebble
 
 ## Teaser

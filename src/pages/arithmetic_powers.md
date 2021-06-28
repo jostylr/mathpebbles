@@ -7,7 +7,7 @@
             /arithmetic/powers/significant-powers,  _'Significant Powers |md',
             /arithmetic/powers/guesstimation,  _'Guesstimation |md',
             /arithmetic/powers/undoing-exponentiation,  _'Undoing Exponentiation |md',
-            /arithmetic/powers/sums-and-powers,  _'Sums and Powers |md'"
+            /arithmetic/powers/prime-factorization,  _'Prime Factorization |md'"
 
 [../public/arithmetic/powers.html](# "save:")
 
@@ -93,9 +93,9 @@
 
 [undoing-exponentiation](pages/arithmetic_powers_undoing-exponentiation.md "load:")
 
-## Sums and Powers
+## Prime Factorization
 
-    _"sums-and-powers::teaser"
+    _"prime-factorization::teaser"
 
 
-[sums-and-powers](pages/arithmetic_powers_sums-and-powers.md "load:")
+[prime-factorization](pages/arithmetic_powers_prime-factorization.md "load:")

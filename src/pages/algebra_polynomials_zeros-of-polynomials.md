@@ -16,6 +16,27 @@
 
 ## Intro
 
+    ### Zeros and Factors
+
+    Using the factors to go back to the original polynomial, zeros related to
+    factors
+
+    Emphasize synthetic division version and factoring
+
+    Argue for rational roots
+
+    Fundamental Theorem of algebra
+
+    Descartes' rule of signs, exploring
+
+[pebble]()
+
+[proof]()
+
+[program]()
+
+
+
 ##### Pebble
 
 ## Teaser

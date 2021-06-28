@@ -16,6 +16,28 @@
 
 ## Intro
 
+    give the table of learning addition digits. mention random sums
+
+    how to read it:  6+3 read internally as nine, not 6+3. also vertical setup
+
+
+
+
+[pebble]()
+
+    single digit addition flashcard
+
+[proof]()
+
+    proving equivalence of 1+1+1+1 with 2+2 with 4. stuff like that.
+
+[program]()
+
+    defining addition of symbols. object lookup of combined symbols add['32']
+    = 5
+
+
+
 ##### Pebble
 
 ## Teaser

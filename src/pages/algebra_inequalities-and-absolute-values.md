@@ -16,6 +16,26 @@
 
 ## Intro
 
+    Inequalities help us impose limits in a world in which perfect precision
+    is not possible.
+
+    For example, let's say that we want to get as many donuts as
+    possible while not going over $10. Let's say each donut costs $.79. Then
+    we want to find an positive integer {$$}n{/$$}such that {$$}n*0.79 < 10{/$$}.
+    Solving the for {$$}n{/$$}. We will go over such problems and expand on
+    them in some depth in the first two sections. 
+
+    We explore a classic inequality called the triangle inequality. It is the
+    algebraic expression of the basic idea that going along the other two
+    sides of a triangle takes longer than going along the third side. 
+
+    We spend a few sections on absolute values. Absolute values seem fairly
+    harmless at first as it seems we are just erasing negative signs. But it
+    quickly gets difficult with variables involved. 
+
+    We end with extending the idea of absolute value to that of a more general
+    notion of distance
+
 ##### Pebble
 
 ## Teaser

@@ -1,13 +1,13 @@
 # Guesstimation
 
     _"pieces | page /arithmetic/powers/guesstimation, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Guessing'), _'Guessing |md ',
+            ec('Ranges'), _'Ranges |md ',
+            ec('Geometric vs Arithmetic Mean'), _'Geometric vs Arithmetic Mean |md ',
+            ec('Scientific Notations'), _'Scientific Notations |md ',
+            ec('Significance'), _'Significance |md ',
+            ec('Questions'), _'Questions |md ',
+            ec('Absurdities'), _'Absurdities |md '"
 
 [../public/arithmetic/powers/guesstimation.html](# "save:")
 
@@ -51,7 +51,53 @@
 
 [end]()
 
-## sub 1
+
+## Ideas
+
+[pebble]()
+
+    Exploration of fuzzy estimates, do unbiased estimates combine to cancel or
+    not in general?
+
+[proof]()
+
+    Prove a few facts about the estimates, ranges, averages, geometric means.
+    worse scenarios
+
+[program]()
+
+    given ranges for inputs, find ranges for outputs. 
+
+    is geometric mean of those outputs on par with the basic single
+    computation using the geometric mean for the ranges? (also arithmetic,
+    etc). 
+
+## Guessing
+
+
+
+    Guessing as a starting point
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Ranges
+
+
+    Think about lowest and highest it could be
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Geometric vs Arithmetic Mean
 
 
 
@@ -62,7 +108,7 @@
 ##### Code
 
 
-## sub 2
+## Scientific Notations
 
 
 
@@ -73,7 +119,7 @@
 ##### Code
 
 
-## sub 3
+## Significance
 
 
 
@@ -84,7 +130,7 @@
 ##### Code
 
 
-## sub 4
+## Questions
 
 
 
@@ -95,29 +141,7 @@
 ##### Code
 
 
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
+## Absurdities
 
 
 

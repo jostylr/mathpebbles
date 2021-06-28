@@ -16,6 +16,15 @@
 
 ## Intro
 
+    ### High Degree Examples With Radicals
+
+    ### Explicit Formulas
+
+    ### Quintic
+
+    ### Not Radically Solvabl
+
+
 ##### Pebble
 
 ## Teaser

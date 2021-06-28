@@ -16,6 +16,32 @@
 
 ## Intro
 
+    the initial bag of units being the symbols 0 through 9. 
+
+    picture of dots for each digit, grouping those in smaller amounts when
+    possible (6 as two three dots, but seven as just one row).
+
+
+[pebble]()
+
+    * P: [Subconscious Counting](https://mathpebbles.com/subconscious-counting.html) 
+      A good exercise is to look at groups of obejcts and just say the number of
+      objects there is. Do not count; simply state the number. Then check.
+      Repeat. As you do this, you should find that five objects is reasonably
+      easy to spot while ten objects is difficult if not well-grouped. 
+
+[proof]()
+
+    some formal definition of the digits? 
+
+[program]()
+
+    generating the picture of dots? (more fun than math)
+    
+    or creating a notion of number for each of these symbols, a canonical set
+    of objects? 
+
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,12 @@
 
 ## Intro
 
+    start with single digits adding, tables, pictures, ways of grouping
+
+    Then add different colored piles, shifting
+
+    Then show the shortcut additive way, contrast with standard method
+
 ##### Pebble
 
 ## Teaser

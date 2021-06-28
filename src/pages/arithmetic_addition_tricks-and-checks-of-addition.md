@@ -16,6 +16,30 @@
 
 ## Intro
 
+    single additin in mind, track tens separately. see it. 
+
+    group digit pairs that sum no more than 10. 
+
+    digit sum, alternate subtraction sum 
+
+
+
+[pebble]()
+
+    practice long columns of single digits
+
+    practice with digit sums, spot errors with them 
+
+[proof]()
+
+    prove the check
+
+[program]()
+
+    implement digit sum checks
+
+
+
 ##### Pebble
 
 ## Teaser

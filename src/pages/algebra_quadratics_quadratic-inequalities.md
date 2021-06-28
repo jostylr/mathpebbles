@@ -16,6 +16,38 @@
 
 ## Intro
 
+    ### Questions Leading to Quadratic Inequalities
+
+    ### Graphing
+
+    ### Factoring
+
+    Get to be of the form with zero on one side. Factor. then do the sign
+    trick.
+
+    Show what happens if one factors with the other side not zero. 
+
+    ### Quadratic Formula
+
+    Start with vertex to determine overall constraint
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    Visually work through quadratic inequalities
+
+[proof]()
+
+    prove shape of inequality results
+
+[program]()
+
+    implement quadratic inequality solving
+
+
 ##### Pebble
 
 ## Teaser

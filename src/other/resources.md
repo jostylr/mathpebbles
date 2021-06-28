@@ -38,9 +38,12 @@ A HUGE list of resources
 
     ## Websites
 
-    [Steam Coded(https://steamcoded.org/math.html) A collection of free
+    * [Steam Coded](https://steamcoded.org/math.html) A collection of free
     resources in a retro website. Has a variety of SVG resources. 
-
+    * [Story of Math](https://www.storyofmathematics.com/) An interesting
+      attempt to weave some history and math lessons together. First saw the
+      notion that "calculus" is latin for pebbles!
+    
 
     ## Helpful Stuff in Creating This Website
 

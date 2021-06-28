@@ -46,96 +46,164 @@ for this. It depends on mathjs.
 
 ## Arithmetic
 
+    _"generate primes"
+
+    _"factor"
+
+
+### Generate Primes
+
+This is inspired from https://benmccormick.org/2017/11/28/sieveoferatosthenes/
+
+The idea is to have an ongoing list of knocked out numbers that hold the
+primes to generate the next one but with the added efficiency of ignoring the
+multiples of a found prime until it gets to prime^2 since everything
+underneath is a multiple of an earlier prime. This returns a function which
+generates primes. We also do a remember the primes version at the cost of
+remembering primes. 
+
+Modification of sieve of Erastothenes.
+
+    arithPrimes : [],
+
+    arithGenPrime : (_":independent generator")(),
+
+    airthGenGenPrime : _":independent generator",
+
+
+[independent generator]()
+
+This allows for the creation of a new generator, for whatever purpose. 
+
+    function* arithGenPrime (primes) { 
+        let f = this;
+        primes = primes ?? f.arithPrimes;
+        const notPrimes = new Map();
+        notPrimes.set(4, [2]);
+        primes.push(2);
+        yield 2;
+        let curVal = 2;
+        while (true) {
+            curVal += 1;
+            if (notPrimes.has(curVal) ) {
+                _":update marks"
+                notPrimes.delete(curVal);
+            } else { //prime found
+                primes.push(curVal);
+                notPrimes.set(curVal**2, [curVal]);
+                yield curVal;
+            }
+        }
+    }
+
+
+[update marks]()
+
+We have a found an already marked value. The value is being pointed to an
+array of primes that lead here (will have all prime factors listed here unless
+the factor squared is greater than this number so 6 has 2, but not 3 since 3^2
+is 9). So we add these primes to relevant later numbers ensuring that they are
+marked. 
+
+    let primes = notPrimes.get(curVal);
+    primes.forEach( prime => {
+        let nxtMarked = curVal + prime;
+        if (notPrimes.has(nxtMarked) ) {
+            notPrimes.get(nxtMarked).push(prime);
+        } else {
+            notPrimes.set(nxtMarked, [prime]);
+        }
+    });
+
+
+
+### Factor
+
+
+    _"prime factorization"
+
+    _"all factors"
+
+#### prime factorization
+
+This lists the prime factors with their multiplicity. 
+
+Here is a simple factor algorithm. It uses primes. It searches up to the square
+root of the number.  This expects an integer and it will absolute value it. 
+
+
+    arithPrimeFactorization : function (num) {
+        let f = this;
+        let primes = f.arithPrimes;
+        let gen = f.arithGenPrime;
+        if (math.eq(num, 0) ) { return 0;}
+        num = math.abs(num);
+        let root = math.sqrt(num);
+        let primeInd = -1;
+        let prime = 1;
+        let primeFactors = [];
+        while ( (math.lteq(prime, root)) && (math.gt(num, 1) ) ) { 
+            primeInd += 1;
+            if (primes.length < primeInd) {
+                prime = primes[primeInd];
+            } else {
+                prime = f.arithGenPrime.next().value;
+            }
+            let gcd = math.gcd(num, prime);
+            if ( gcd === 1) {
+                continue;
+            }
+            let pbox = [prime, 0];
+            primeFactors.push(pbox);
+            while (math.neq(gcd, 1)) {
+                pbox[1] += 1;
+                num = math.div(num, prime);
+                gcd = math.gcd(num, prime);
+            }
+            root = math.sqrt(num);
+        }
+        if (math.neq(num, 1) ) { // this should be a prime.
+            primeFactors.push([num, 1]);
+        }
+        return primeFactors;
+    },
+
+
+#### All factors
+
+So this calls the prime factorization algorithm, getting that list. Then it
+builds up all the factors. It does this by multiplying the previous list by
+all the relevant powers of the next prime, with power 0 there which gives the
+prior list. 
+
+The input can be a number, which does the prime factorization, or an array
+which is presumed to be of the prime factorization form.
+
+
+    arithFactors : function (inp) {
+        let f = this;
+        let pf = (Array.isArray(inp) ? inp : f.arithPrimeFactorization(inp));
+        let ret = [1];
+        pf.forEach( ([prime, pow]) => {
+            let powers = [];
+            for (j =0; j <= pow; j+=1 ) {
+                powers[j] = math.pow(prime, pow); //includes 1 as 0 power
+            }
+            let multiples = powers.map( (ppower) => {
+                return ret.map( (num) => math.mul(num, ppower) );
+            });
+            ret = [].concat(...multiples);
+        });
+        return ret; 
+    },
+
+
 ## Algebra
 
-    _"polynomials"
+    _"poly::"
 
 
-### Polynomials
-
-    _"synthetic division"
-
-#### synthetic division
-
-We expect a polynomial in the form of an array of coefficients from constant
-up to highest (for recursive calling, basically). The first term is the
-polynomial be divided into, the second term is the polynomial being used to
-divide into. The assumption for polynomials is that the last term is non-zero
-and represents the highest power in the polynomial. 
-
-All things returned follow this convention, namely everything works from right
-to left. 
-
-
-One source for higher power synthetic division: https://lostmathlessons.blogspot.com/2016/02/synthetic-division-with-higher-powers.html
-
-
-    syndiv : (poly, div) => {
-        if (div.length === 1) { // constant poly
-            let con = div[0];
-            return {
-                rows : [],
-                rem : [],
-                quot : poly.map( (coef) => math.div(coef, con) ) 
-            }
-        }
-        
-        let n = poly.length;
-        let m = div.length;
-        let t = div[m-1]; //highest power
-        if (math.neq(math.mul(t, t), t) ) { //checking for 1 (assume not 0 leading)
-            poly = poly.map( a => math.div(a, t) );
-            div = div.map( a => math.div(a, t) );
-        } // normalized now
-
-        let zero = math.sub(t, t);
-
-Convert div into actual numbers to use, stripping lead and negating. 
-        
-        div = div.map( a => math.neg( a) );
-        div.pop();
-        m = div.length;
-
-        let qlength = n -m;
-        if (qlength < 0) { // only remainder left 
-            ret.rem = poly.slice();
-            return ret;
-        }
-        
-Prepoplate rows with 0's. There should be one row for each of the divs.         
-
-        let rows = [];
-        let zeroRow = poly.map( () => zero);
-
-        for (let i = 0; i<m; i += 1) {
-            rows[i] = [...zeroRow];
-        }
-        
-        let quot = [];
-        let rem = [];
-        for (let i = n-1; i >= 0; i -= 1) {
-            let a = poly[i];
-            let sum = rows.reduce( (acc, row) => {
-                return math.add(a, row[i]);
-            }, a);
-
-We want to be able place each of the items in div into a slot. We are
-descending so we want i-m to be a valid index. A sum is also in the quotient
-if we can still do this otherwise it is in the remainder.
-
-            if ( (i-m) >= 0) {
-                div.forEach( (b, ind) => {
-                   rows[ind][i-(m-ind)] = math.mul(b, sum);
-                });
-                quot.unshift(sum);
-            } else {
-                rem.unshift(sum);
-            }
-        }
-
-        return {rows, quot, rem};
-
-    },
+[poly](f/poly.md "load:")
 
 ## Geometry
 

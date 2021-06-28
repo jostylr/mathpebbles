@@ -16,6 +16,34 @@
 
 ## Intro
 
+    ### Zero
+
+    ### One
+
+    ### Commutative Addition
+
+    ### Associative Addition
+
+    ### Commutative Multiplication
+
+    ### Associative Multiplication
+
+    ### Distributive Property
+
+
+[pebble]()
+
+    Type in an expression, show all equivalent forms using these rules? 
+
+[proof]()
+
+     Prove any property in any of these systems if not already proven. 
+
+[program]()
+
+    Manipulating an expression of numbers like this
+
+
 ##### Pebble
 
 ## Teaser

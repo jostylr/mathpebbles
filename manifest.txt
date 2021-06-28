@@ -46,7 +46,7 @@
 -       Significant Powers
 -       Guesstimation
 -       Undoing Exponentiation
--       Sums and Powers
+-       Prime Factorization
 -   Constructing Numbers. \mathbb{N}
 -       Containers
 -       Natural Numbers
@@ -65,13 +65,13 @@
 -       Families of Lines
 -       Linear Inequalities
 -   Quadratics. x^2
--       Notions of Quadratics
--       The Vertex of a Quadratic
--       Square Roots
--       Solving Quadratics
--       Complex Numbers
--       Common Quadratic Problems
--       Quadratic Inequalities
+-       Notions of Quadratics. %img:al-q-notions.svg
+-       The Vertex of a Quadratic. %img:al-q-vertex.svg
+-       Square Roots. \sqrt{13}
+-       Solving Quadratics. %img:al-q-solving.svg
+-       Complex Numbers. \sqrt{-1}
+-       Common Quadratic Problems. %:img:al-q-problems.svg
+-       Quadratic Inequalities. %:img:al-q-ineq.svg
 -   Polynomials. x^n
 -       Arithmetic of Polynomials
 -       The Questions of Polynomials

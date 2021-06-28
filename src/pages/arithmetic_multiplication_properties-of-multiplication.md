@@ -16,6 +16,39 @@
 
 ## Intro
 
+    ### One
+
+    ### Commutativate Multiplications
+
+    Example, relation to box
+
+    ### Associative Multiplication
+
+    Example, relation to box
+
+    ### Distributive Multiplication
+
+    Example, relation to box
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    Demonstrations
+
+[proof]()
+
+    peano proofs
+
+[program]()
+
+    Testing properties
+
+    Given a max number, test all possibilities? 
+
+
 ##### Pebble
 
 ## Teaser

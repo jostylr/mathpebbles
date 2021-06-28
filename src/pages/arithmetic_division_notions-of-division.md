@@ -16,6 +16,50 @@
 
 ## Intro
 
+
+    ### Finding Number of Rows Given Columns and Total
+
+    Talk about leftover
+
+    ### Area
+
+    Tiling a floor
+
+    ### Parts of a whole
+
+    Cake
+
+    ### Undoing Multiplication
+
+    Factors as well, leave question of not exact
+
+    ### Assigning Groups as Repeated Subtraction
+
+    ### Guess and Check
+
+
+
+[pebble]()
+
+    Getting number of rows 
+
+    Divide a cake into a number of pieces, guess the size by dragging.
+
+    Tile the floor
+
+    Guess the factor
+
+[proof]()
+
+    Showing counting the repeated subtraction is the same as undoing
+    multiplication.
+
+[program]()
+
+    Implement division by repeated substraction, guess and check for the other
+    stuff. 
+
+
 ##### Pebble
 
 ## Teaser

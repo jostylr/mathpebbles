@@ -16,6 +16,11 @@
 
 ## Intro
 
+    Start simply with asymptotics and zeros.  Then ramp up to using the calculus
+    portion to sketch basic shape, get window ranges, find max/mins and zeros
+
+
+
 ##### Pebble
 
 ## Teaser

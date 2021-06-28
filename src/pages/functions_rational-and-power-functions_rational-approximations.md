@@ -16,6 +16,11 @@
 
 ## Intro
 
+    given some points, fit it in
+
+    partial fraction decomposition
+
+
 ##### Pebble
 
 ## Teaser

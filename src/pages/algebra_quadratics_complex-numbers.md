@@ -16,6 +16,38 @@
 
 ## Intro
 
+    ### Square Root of a Negative Number
+
+    ### Quadratic Formula When There is No Solution
+
+    ### Iterative Approximating When There is No Solution
+
+    ### Graphing by Flipping, Rooting, and Circling
+
+    When there is no solution, reflecting across the horizontal through the
+    vertex leads to a parabola with solutions. Find those roots. Draw the
+    circle through those roots with that being a diameter. Then the complex
+    points in the plane for the original's roots are the points at the top 
+
+    contrast with Carlyle circle for real roots
+
+    complex root circle construction explained: 
+    https://scholarworks.umt.edu/cgi/viewcontent.cgi?article=1440&context=tme
+    
+[pebble]()
+
+    iterative version with complex
+    numbers, graphing with the flip, speed quadratic formula
+
+[proof]()
+
+    Establishing the reasonableness of the imaginary i
+
+[program]()
+
+    Compute out the flipping circle stuff, approximative scheme.
+
+
 ##### Pebble
 
 ## Teaser

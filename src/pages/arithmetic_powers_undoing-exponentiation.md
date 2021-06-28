@@ -1,13 +1,12 @@
 # Undoing Exponentiation
 
     _"pieces | page /arithmetic/powers/undoing-exponentiation, _'intro |md',
-            ec('sub 1'), _'sub 1 |md ',
-            ec('sub 2'), _'sub 2 |md ',
-            ec('sub 3'), _'sub 3 |md ',
-            ec('sub 4'), _'sub 4 |md ',
-            ec('sub 5'), _'sub 5 |md ',
-            ec('sub 6'), _'sub 6 |md ',
-            ec('sub 7'), _'sub 7 |md '"
+            ec('Square Roots'), _'Square Roots |md ',
+            ec('Cube Roots'), _'Cube Roots |md ',
+            ec('nth Root'), _'nth Root |md ',
+            ec('Fractional Powers'), _'Fractional Powers |md ',
+            ec('Sums and Powers'), _'Sums and Powers |md ',
+            ec('Irrationality '), _'Irrationality |md ' "
 
 [../public/arithmetic/powers/undoing-exponentiation.html](# "save:")
 
@@ -51,7 +50,60 @@
 
 [end]()
 
-## sub 1
+
+## Ideas 
+
+[pebble]()
+
+    Facilitate guess-n-check exploration
+
+    explore "precise roots"
+
+    Allow for alogrithmic exploration -- change the algorithm, particularly
+    higher powers with the weighting 
+
+[proof]()
+
+    Prove that the formulas fixed point is the solution
+
+    Maybe show that it gets closer?
+
+[program]()
+
+    Implement root extraction
+
+
+
+
+## Square Roots
+
+    Geometric, integer results, guess-n-check
+
+    Give the method, referring to later chapters
+
+
+##### Pebble
+
+
+##### Code
+
+
+## Cube Roots
+
+
+    Same story
+
+##### Pebble
+
+
+##### Code
+
+
+## nth Root
+
+
+
+    General computation of nth roots.
 
 
 
@@ -62,7 +114,29 @@
 ##### Code
 
 
-## sub 2
+## Fractional Powers
+
+
+    Separate the numerator and denominator
+
+
+##### Pebble
+
+
+##### Code
+
+## Sums and Powers
+
+
+    Point out the lack of pattern
+
+##### Pebble
+
+
+##### Code
+
+
+## Irrationality
 
 
 
@@ -73,58 +147,5 @@
 ##### Code
 
 
-## sub 3
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 4
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 5
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 6
-
-
-
-
-##### Pebble
-
-
-##### Code
-
-
-## sub 7
-
-
-
-
-##### Pebble
-
-
-##### Code
 
 

@@ -16,6 +16,27 @@
 
 ## Intro
 
+    ### Rational Approximations to Square Root 2
+
+    ### Square Root 2 is Not Rational
+
+    ### Integer or Irrational
+
+    ### Continued Fraction
+
+[pebble]()
+
+    Given a possible square root 2 approximation, find a better one
+
+[proof]()
+
+    Explore the subtle crux of reduced form
+
+[program]()
+
+    Explore r
+
+
 ##### Pebble
 
 ## Teaser

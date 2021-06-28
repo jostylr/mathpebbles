@@ -16,6 +16,37 @@
 
 ## Intro
 
+    ### Number of Total Digits
+
+    count total number of digits with a possible leading 0
+
+    ### Units
+
+    Different areas, different lengths, conversions
+
+    ### Precision
+
+    How do inaccuracies propagate? 
+
+    ### Significant Digits
+
+    Using precision stuff to form significant digits rules
+
+
+
+[pebble]()
+
+    Explore sizes and inaccuracies. Build multiple operation chains
+
+[proof]()
+
+    Proving number of digits, maybe some error stuff 
+
+[program]()
+
+    Significance exploration 
+
+
 ##### Pebble
 
 ## Teaser

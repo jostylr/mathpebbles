@@ -16,6 +16,58 @@
 
 ## Intro
 
+The idea of number as mapping
+
+symbols for the number of something
+
+extra digits as piles
+
+pictures, colored pebbles, colored piles
+
+units as piles, different digit systems, using `:` as separator of
+different bins of counting, eventually replacing the separator with a way
+of counting
+
+    This chapter may be tempting to skip as surely you know how to count if
+    you are reading this. But having a firm grasp on what a number is will
+    help greatly in demystifying mathematics from being gospel into being common
+    sense. 
+
+    !-
+
+    The basic idea of counting is a very old and foundational idea for humans.
+    It started with simple matching of the objects of interest with tracking
+    markers such as pebbles to be kept in a bag. From these humble origins,
+    more and more extensive and permanent means of tracking emerged, along
+    with predictive means. 
+
+    We will not be learning how to count here. Most people naturally pick it
+    up from those around them. But we will look at and analyze the emergence
+    of the natural numbers from that perspective. 
+
+    We start with the concept of number as correspnding to groups of objects.
+    This leads to not only a notion of equality, but also what it means for
+    there to be more in one group than another. 
+
+    From this, arises the ideas of using symbols for each number. Eventually,
+    we run out of our ability to know the symbols representing all of this and
+    we need a system of compacting the numbers. This gives rise to using
+    combinations of the symbols (digits) to represent larger numbers.
+
+    We then delve into tagging numbers with what they are representing. It
+    turns out that this is an extremely important notion that mathematics
+    often neglects, much to the detriment of the intuition of the mathematical
+    learning. 
+
+    What happens if we have a different number of base symbols? Conceptually,
+    this is simple. In practice, it is head spinning. So we will just gingerly
+    step down that road a little. 
+
+    We conclude this chapter with the unanswerable question "Is there a
+    largest number?" We explore some reasonable answers that one might have to
+    this question. 
+
+
 ##### Pebble
 
 ## Teaser

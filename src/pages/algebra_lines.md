@@ -15,56 +15,32 @@
 [code runs](#code "h5: | .join \n")
 
 ## Intro
-
-    Let's learn to express ourselves and solve equations. It will be fun!
-
-    !-
-
-    Here are some highlights of what we will learn how to do:
-
-    Model a problem with a linear equation
-
-    Solve a linear equation 
-
-    Model situations with quadratics
-
-    Solve a quadratic equation
-
-    Find the maximum or minimun of a quadratic
-
-    Solve polynomial equations
-
-    Rebase a polynomial
-
-    Graph polynomials
-    
-    Solve inequalities
-
-    Solve absolute value equations
-
-    Find out how much one will owe
-    
-    Amortization
-
-    Solving systems of linear equations
-
-    Exploring real and complex numbers
+  
+    Lines are where we begin. We take the notion of a straight line as being
+    the objects that, given two destinations on the line (points), the
+    shortest path between those those two points lies entirely on the line.
+    This is the human centered approach because we innately have a sense of
+    distance. We know from walking along paths which path is shorter. Using
+    distance as our guide, we use that to define lines, triangle, circles, and
+    angles. Once we have those, we can construct a coordinate system. This
+    system gives us a means of plotting and visualizing the objects we will be
+    talking about. With the right tools in place, we can then define slopes of
+    straight lines, something which is often assumed in the standard treatment
+    of textbooks. We will take some time to learn how to solve linear
+    equations, a crucial topic to be comfortable with. We will look at various
+    techniques to do so. We apply those techniques to the particular cases of
+    perpendicular and parallel lines. We conclude with revisiting the solution
+    techniques in the situation of linear inequalities which we solve in
+    similar fashions with a few twists. 
 
 ##### Pebble
 
 ## Teaser
 
-    How do we describe the world? How do we figure out how much to save to get
-    to a target savings when we have interest applied to it? How does interest
-    actually work? If I throw this ball up, how high will it go, where does it
-    go? 
-
-    We will explore lines (fundamental to everything), quadratics (hills and
-    bowls), polynomials (express all sorts of shapes), inequalities and
-    absolute values (exploring notions of being far apart), interest and other
-    topics of personal finance, and systems of lines that dip our toes into
-    strong applications of stuff. Our final chapter deals with defining real
-    and complex numbers, completing the construction of our basic number system. 
+    Straight lines give us the shortest path between two points. That
+    fundamental insight will allow us to explore deeply not only lines, but
+    all sorts of other geometric notions that come with lines. We will also
+    explore setting up and solving both linear equations linear inequalities. 
 
 
 ##### Pebble

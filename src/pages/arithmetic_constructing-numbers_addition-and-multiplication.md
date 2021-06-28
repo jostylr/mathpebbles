@@ -16,6 +16,40 @@
 
 ## Intro
 
+    ### Addition as Disjoint Union
+
+    Addition as disjoint union then counting
+
+    ### Associative Property of Addition
+
+    ### Multiplication as Cartesian Product
+
+    form all pairs of the numbers. then count
+
+    ### Commutative Property of Multiplication
+
+    commutative as which set goes first, do the explicit map
+
+    try to just use explicit number examples don't worry about generalizations
+    here. 
+
+    ### Distributive Propery of Multiplication
+
+    make the explicit map here
+
+[pebble]()
+
+    Do the visualizations
+
+[proof]()
+
+    Provide crisp proofs of all the properties
+
+[program]()
+
+    Implement this with sets
+
+
 ##### Pebble
 
 ## Teaser

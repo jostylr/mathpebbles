@@ -16,6 +16,40 @@
 
 ## Intro
 
+    ### Repeated Addition
+
+    explicit demonstrations
+
+    ### Area
+
+    Count number of tiles, avoid units. 
+
+    ### Pairing
+
+    list out pairs, don't use numbers, but say letters
+
+    ### Box Multiplication
+
+    Demonstrate different breaks up of the factors and having boxes of
+    different regions.
+
+[pebble]()
+
+    Demonstrate multiplication as tiles and sums, pairs
+    
+    Show combinations such as tiled areas with the pairs in them, with the
+    number of each row and colum listed and do a sum across
+
+[proof]()
+
+    Peano definition in terms of repeated addition
+
+[program]()
+
+    implement multiplication as repeated addition
+
+
+
 ##### Pebble
 
 ## Teaser

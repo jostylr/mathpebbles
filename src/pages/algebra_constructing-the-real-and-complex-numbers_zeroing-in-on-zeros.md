@@ -16,6 +16,14 @@
 
 ## Intro
 
+    ### Halving to Zero
+
+    ### Square Root Iteration
+
+    ### Higher Power Iteration
+
+    ### Continued Fraction Expansion
+
 ##### Pebble
 
 ## Teaser

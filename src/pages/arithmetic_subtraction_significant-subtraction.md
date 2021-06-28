@@ -16,6 +16,27 @@
 
 ## Intro
 
+
+    ### Examples
+
+    ### Rounding in Opposite Directions
+
+    ### Loss of Significance
+
+    ### Subtracting Very Close Quantities
+
+[pebble]()
+
+    Explore signifcant loss
+
+[proof]()
+
+    Prove some loss significant
+
+[program]()
+
+    Estimate significance loss
+
 ##### Pebble
 
 ## Teaser

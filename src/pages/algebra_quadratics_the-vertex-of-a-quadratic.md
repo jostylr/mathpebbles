@@ -16,6 +16,36 @@
 
 ## Intro
 
+    ### Graphing a Quadratic
+
+    ### Definition of Vertex
+
+    ### How the Vertex Changes
+
+    ### Symmetry
+
+    ### Finding the Vertex
+
+    ### Vertex Form
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    Graphical exploration of parabola and vertex, tracing of vertex as
+    parameters change
+
+[proof]()
+
+    prove the vertex formula stuff and derivation, symmetry, existence...
+
+[program]()
+
+    computing vertex given a quadratic
+
+
 ##### Pebble
 
 ## Teaser

@@ -16,6 +16,34 @@
 
 ## Intro
 
+
+    ### Division by a Single Digit Longwise
+
+    ### Division by Two Digits Longwise
+
+    ### Relation to Repeated Subtraction
+
+    ### Remainders
+
+    ### Quick Long Division
+
+    technique from speed mathematics simplified
+
+    ### Trickier Long Division
+
+
+[pebble]()
+
+    Long Division Practice /Demo
+
+[proof]()
+
+    Details on long division working
+
+[program]()
+
+    Implement quick long division with remainder
+
 ##### Pebble
 
 ## Teaser

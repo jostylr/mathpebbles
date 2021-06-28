@@ -16,6 +16,27 @@
 
 ## Intro
 
+
+    ### Finding Extrema
+
+    Go through using 3 point approximation to get vertex
+
+    ### Parabolic Trajectories
+
+    ### Approximations 
+
+[pebble]()
+
+    Guess the answer
+
+[proof]()
+
+    maybe something establishing max/min based on sign and only one. 
+
+[program]()
+
+    Trajectory work
+
 ##### Pebble
 
 ## Teaser

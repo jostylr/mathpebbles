@@ -16,6 +16,40 @@
 
 ## Intro
 
+    explain method of starting on the left. use underscores. put a 0 to the
+    left of the column. mention different techniques in speed mathematics
+    simplified. 
+
+    two number addition, multiple number addition. 
+
+    abacus
+
+
+    ### Pebbles
+
+    _":pebble"
+
+[pebble]()
+
+    lots of constrained practice of single digit adding, going from left to
+    right. 
+
+[proof]()
+
+    is there any question that this works? if adding two numbers, just need at
+    most one single underscore. Maybe give guidelines on how many underscores
+    could possibly be needed per number of numbers being added. largest
+    addition number given number of digits and number of numbers. 
+
+[program]()
+
+    implement the full addition algorithm. given a number as a string, go from
+    left to right, get lengths to get correct columns, have the underscores
+    listed separately as an array (useful for demonstrating). 
+
+    have it be that steps are explicitly recorded (or at least could be). 
+
+
 ##### Pebble
 
 ## Teaser

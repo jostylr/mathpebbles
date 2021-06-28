@@ -16,6 +16,31 @@
 
 ## Intro
 
+
+    ### Left to Right No Slash
+
+    make all the lower ones 
+
+    ### Introducing the Slash
+
+    ### Full Left to Right Slashing
+
+    ### Bigger Number on Top
+
+[pebble]()
+
+    Practice Slash Subtraction
+
+    Explore different subtraction arrangements
+
+[proof]()
+
+    Explore worst case slashing?
+
+[program]()
+
+    Implement full left to right subtraction.
+
 ##### Pebble
 
 ## Teaser
