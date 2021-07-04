@@ -131,14 +131,14 @@
     dividing `q`$ by the first root which will be stable as the approximate
     `2p`$ root will be large relative to `q`$ in this situation. 
 
-    Let's try it on the quadratic: `#quadratic;type:poly;=2x^2+12x + 3`
+    Let's try it on the quadratic: `#quadratic;type:poly;=2x^2+12x + 3$`
     
     !PEBBLE better-quadratic
 
     Steps:
 
-    1. Divide all by `=a=%q2`$:  `%better-quad`$
-    2. Divide `b`$ by 2:   `%better-p`$. This is `p`$ 
+    1. Divide all by `=a=%q2$`:  `%better-quad$`
+    2. Divide `b`$ by 2:   `%better-p`. This is `p`$ 
     3. `q`$ is the constant term: `%better-q`
     4.  
 

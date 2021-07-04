@@ -1479,8 +1479,13 @@ the scale, we get the bounding rectangle for the circle and the foreignObject. W
     let cbW = cb.width/scale;
     if (cbW > 15) {
         let interval = (cbW-15)*2
-        fo.setAttribute('width', 20 + interval);
-        fo.setAttribute('x', Math.max(-16, -5 - interval) );
+        let oldx=fo.getAttribute('x'), oldwidth=fo.getAttribute('width');
+        if (oldwidth==20) {
+            fo.setAttribute('width', 20 + interval);
+        } 
+        if (oldx==-5) {
+            fo.setAttribute('x', Math.max(-16, -5 - interval) );
+        }
     }
 
 

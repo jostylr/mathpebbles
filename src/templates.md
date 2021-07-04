@@ -146,7 +146,7 @@ page. If there are no symbols or children, then we go to the parent.
 
 We have a non-tex thing when the lead character is a percent.
 
-        let type;
+        let type, x=-5, y=-9, w=20, h=23;
         if (symbol[0] === '%') {
             let ind = symbol.indexOf(':');
             if (ind === -1) { 
@@ -155,15 +155,35 @@ We have a non-tex thing when the lead character is a percent.
             }
             type = symbol.slice(1,ind).trim(); 
             symbol = symbol.slice(ind+1).trim(); 
+
+The type can also have x,y,width,height coordinates embedded, in that order.
+It requires being in parentheses. To do this with katex, the type has to be
+specifically given and then use parentheses. 
+
+            if (type.includes('\u0028') ) {   //open parentheses
+                let par;
+                [type, par] = type.split('\u0028');
+                [x=x,y=y,w=w,h=h] = par.
+                    split('\u0029')[0].  
+                    split(',').
+                    map( e => e || undefined); //get rid of empty strings so as default
+            }
         } else {
             type = 'katex';
         }
+        if (type==='svg') {
+            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
+    <circle r="20" fill="white" />
+    <image href="/img/${symbol}.svg" x="${x}" y="${y}" width="${w}" height="${h}"></image>
+    </a>`);
+    } else {
         fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
     <circle r="20" fill="white" />
-    <foreignObject x="-5" y="-9" width="20" height="23">
+    <foreignObject x="${x}" y="${y}" width="${w}" height="${h}">
     <div class="fano-math" data-type="${type}" data-text="${symbol}"></div>
     </foreignObject>
     </a>`);
+    }
     });
 
 
@@ -197,6 +217,7 @@ the section name and the second one being a path for the Explore button.
         }
         const body = args[i+1].trim();
         let [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
+        preview = shoelacify(preview);
         full = shoelacify(full || ''); 
         if (full) {
             main += `<sl-details id="${slugify(name)}">
@@ -207,7 +228,7 @@ the section name and the second one being a path for the Explore button.
                 ${full || ''}
                 </sl-details>`;
         } else {
-            main += `<div id="${slugify(name)}" class="plain">${heading}${body}</div>`;
+            main += `<div id="${slugify(name)}" class="plain">${heading}${preview}</div>`;
         }
     }
 

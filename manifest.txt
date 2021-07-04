@@ -4,7 +4,7 @@
 -       Pebbles of Various Sizes. oO
 -       Digits. %t:0-9
 -       Carry Overs. %t:10
--       Units. %img:ruler.svg
+-       Units. %svg:ar-c-units
 -       Base Representations. %t: 0-1
 -       Largest Number. \infty
 -   Addition. + 
@@ -65,13 +65,13 @@
 -       Families of Lines
 -       Linear Inequalities
 -   Quadratics. x^2
--       Notions of Quadratics. %img:al-q-notions.svg
--       The Vertex of a Quadratic. %img:al-q-vertex.svg
--       Square Roots. \sqrt{13}
--       Solving Quadratics. %img:al-q-solving.svg
--       Complex Numbers. \sqrt{-1}
--       Common Quadratic Problems. %:img:al-q-problems.svg
--       Quadratic Inequalities. %:img:al-q-ineq.svg
+-       Notions of Quadratics. %svg(-12,-12,24,24):al-q-1-notions
+-       The Vertex of a Quadratic. %svg(-15,-15,30,30):al-q-2-vertex
+-       Square Roots. %svg(-16,-16,30,30):al-q-3-sqroot
+-       Solving Quadratics. %svg(-13,-11,30,30):al-q-4-solving
+-       Complex Numbers. %svg(-18,-16,30,30):al-q-5-complex
+-       Common Quadratic Problems. %svg(-11,-13,30,30):al-q-6-problems
+-       Quadratic Inequalities. %svg(-11,-11,30,30):al-q-7-ineq
 -   Polynomials. x^n
 -       Arithmetic of Polynomials
 -       The Questions of Polynomials

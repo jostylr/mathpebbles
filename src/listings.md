@@ -134,13 +134,13 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0algebra/lines/families-of-lines | Families of Lines | 
     0algebra/lines/linear-inequalities | Linear Inequalities | 
     0algebra/quadratics | Quadratics | x^2
-    0algebra/quadratics/notions-of-quadratics | Notions of Quadratics | 
-    0algebra/quadratics/the-vertex-of-a-quadratic | The Vertex of a Quadratic | 
-    0algebra/quadratics/square-roots | Square Roots | 
-    0algebra/quadratics/solving-quadratics | Solving Quadratics | 
-    0algebra/quadratics/complex-numbers | Complex Numbers | 
-    0algebra/quadratics/common-quadratic-problems | Common Quadratic Problems | 
-    0algebra/quadratics/quadratic-inequalities | Quadratic Inequalities | 
+    0algebra/quadratics/notions-of-quadratics | Notions of Quadratics | %svg(-12,-12,24,24):al-q-1-notions
+    0algebra/quadratics/the-vertex-of-a-quadratic | The Vertex of a Quadratic | %svg(-15,-15,30,30):al-q-2-vertex
+    0algebra/quadratics/square-roots | Square Roots | %svg(-16,-16,30,30):al-q-3-sqroot
+    0algebra/quadratics/solving-quadratics | Solving Quadratics | %svg(-13,-11,30,30):al-q-4-solving
+    0algebra/quadratics/complex-numbers | Complex Numbers | %svg(-18,-16,30,30):al-q-5-complex
+    0algebra/quadratics/common-quadratic-problems | Common Quadratic Problems | %svg(-11,-13,30,30):al-q-6-problems
+    0algebra/quadratics/quadratic-inequalities | Quadratic Inequalities | %svg(-11,-11,30,30):al-q-7-ineq
     0algebra/polynomials | Polynomials | x^n
     0algebra/polynomials/arithmetic-of-polynomials | Arithmetic of Polynomials | 
     0algebra/polynomials/the-questions-of-polynomials | The Questions of Polynomials | 
