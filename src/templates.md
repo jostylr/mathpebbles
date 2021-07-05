@@ -146,7 +146,7 @@ page. If there are no symbols or children, then we go to the parent.
 
 We have a non-tex thing when the lead character is a percent.
 
-        let type, x=-5, y=-9, w=20, h=23;
+        let type='latex', x=-7, y=-7, w=20, h=23;
         if (symbol[0] === '%') {
             let ind = symbol.indexOf(':');
             if (ind === -1) { 
@@ -157,7 +157,7 @@ We have a non-tex thing when the lead character is a percent.
             symbol = symbol.slice(ind+1).trim(); 
 
 The type can also have x,y,width,height coordinates embedded, in that order.
-It requires being in parentheses. To do this with katex, the type has to be
+It requires being in parentheses. To do this with latex, the type has to be
 specifically given and then use parentheses. 
 
             if (type.includes('\u0028') ) {   //open parentheses
@@ -168,14 +168,19 @@ specifically given and then use parentheses.
                     split(',').
                     map( e => e || undefined); //get rid of empty strings so as default
             }
-        } else {
-            type = 'katex';
-        }
+        } 
         if (type==='svg') {
             fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
     <circle r="20" fill="white" />
     <image href="/img/${symbol}.svg" x="${x}" y="${y}" width="${w}" height="${h}"></image>
     </a>`);
+    } else if (type === 'latex') {
+        fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
+    <circle r="20" fill="white" />
+    <g class="fano-math" data-type="latex" data-text="${symbol}"
+    transform="translate(${x} ${y}) scale(1.4 1.4)" >
+    </g></a>`);
+    
     } else {
         fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
     <circle r="20" fill="white" />
@@ -976,7 +981,7 @@ reference the css from [common](common.md "load:")
         <title> !-!TITLE!-! </title>
     
 Shoelaces. Load this first so submodules can load while others load. Found if
-katex and jsxgraph were first, then they block loading of elements. 
+sxgraph were first, then they block loading of elements. 
 
         <link rel="stylesheet" href="/r/shoelace/shoelace.css">
         <script type="module" src="/r/shoelace/shoelace.esm.js"></script>
@@ -996,24 +1001,19 @@ My homespun Var binding
         _"global css:version"
 
 
-Katex  global: katex
+Mathjax  global: MathJax
 
-        <link rel="stylesheet" href="/r/katex.css">
-        <style>.katex { font-size:1em;}</style>
-        <script defer src="/r/katex.js" ></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                renderMathInElement(document.body, {
-                    delimiters: [
-                      {left: '\\\\(', right: '\\\\)', display: false},
-                      {left: '\\\\[', right: '\\\\]', display: true}
-                    ],
-                throwOnError : false
-                });
-            });
-        </script> 
+        window.MathJax = {
+          svg: {
+            fontCache: 'global'
+          }
+        };
+        </script>
 
+        <script type="text/javascript" id="MathJax-script" defer
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
 
 
 JSXGraph  global: JXG
@@ -1052,6 +1052,7 @@ There is also math.js mainly used for high precision arithmetic.
     <script>
          let m;
          document.addEventListener("DOMContentLoaded", function() {
+            const render = _"render";
             const {link, Var, show, hide } = MP;
             MP.mathSub(math);
             math.config({number:'BigNumber'});
@@ -1060,8 +1061,8 @@ There is also math.js mainly used for high precision arithmetic.
             let controller = MP.controller = MP.initController()
 
             let keyInfo = MP.initKeys(controller);
-            let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, keyInfo.keys, controller); 
-            let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller);
+            let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, render, keyInfo.keys, controller); 
+            let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller, render);
 
             !-!SCRIPT!-!
 
@@ -1335,11 +1336,11 @@ for that.
         
 
     
-[../public/r/global-1.css](# "save:")
+[../public/r/global-2.css](# "save:")
 
 [version]() 
 
-    <link rel='stylesheet' href='/r/global-1.css'>
+    <link rel='stylesheet' href='/r/global-2.css'>
 
 
 ### Global JS
@@ -1351,18 +1352,36 @@ for that.
 
      document.addEventListener("DOMContentLoaded", function() {
 
+        window.render = _"render";
+
         _"accordion:js"
 
         _"common::content loaded"
     });
 
 
-[../public/r/global-1.mjs](# "save:")
+[../public/r/global-2.mjs](# "save:")
     
 [version]()
 
-    '/r/global-1.mjs'
+    '/r/global-2.mjs'
             
+
+#### Render
+
+This is a short wrapper for doing a render
+
+    function render (text, par, options) {
+        options ??= {display:false}
+        let out = MathJax.tex2svg(text, options);
+        if (par) {
+            while (par.firstChild) {
+              par.removeChild(par.firstChild);
+            }
+            par.append(out);
+        }
+        return out; 
+    }
 
 
 # Previously useful Abandoned now

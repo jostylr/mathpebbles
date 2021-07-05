@@ -25,7 +25,7 @@ things and stuff just propagates. Spreadsheet style, if  you will.
 
     const initController = _"make controller";
 
-    const initMakeTypedInput = (math, jsx, keys, controller) => {
+    const initMakeTypedInput = (math, jsx, render, keys, controller) => {
         _"types"
         return [_"typed input", types];
     };
@@ -537,7 +537,7 @@ painful to use.
 This does spacing of numbers (based on
 [stackoverflow](https://stackoverflow.com/a/16637170)
 
-This is for rendering in katex.
+This is for rendering in latex.
 
 
         math.spacedNumber = (a) => { 
@@ -558,7 +558,7 @@ This is for rendering in katex.
             if (d) {
                 n = n + '.' + d;
             }
-            n = n.replace(/ /g,'\\ '); //for katex not collapse spacing
+            n = n.replace(/ /g,'\\ '); //for latex not collapse spacing
             return n;
         };
     }
@@ -917,7 +917,7 @@ Scalerange is set to 0 so rescale calls fromVar -- needed it to be a different v
     const varVal = new Var(value || 0, {_":input"});
     
 
-    link((v)=>{ katex.render(math.spacedNumber(v), container);}, varVal);
+    link((v)=>{ render(math.spacedNumber(v), container);}, varVal);
     
 
 The rounding is really rounding the center. Not sure where else this would
@@ -1444,8 +1444,9 @@ them.
             div.classList.add('safari-fixed');
         }
         let {type, text} = div.dataset;
-        if (type === 'katex') {
-            katex.render(text, div);
+        if (type === 'latex') {
+            let svg = render(text).querySelector('svg');
+            div.append(svg);
         } else if (type === "html") {
             div.innerHTML = text;
         } else if (type==="s") { //shoelace icon
@@ -1585,7 +1586,7 @@ overrides. It will stop at body. Those with same data-scope will have a merged
 scope. 
 
     
-    function makeScopes (makeTypedInput, controller) {
+    function makeScopes (makeTypedInput, controller, render) {
 
         const scopes = controller.scopes;
 
@@ -1647,7 +1648,7 @@ setup is for, but they may not be in existence yet here.
             let o = outs[vname] = outs[vname] || [];
             o.push(el);
         });
-        katex.render(replace(el.dataset.value, scope), el);
+        render(replace(el.dataset.value, scope), el);
     });
 
 
@@ -1681,7 +1682,7 @@ are linked to the variable.
             if (o) {
                 o.forEach( (el) => {
                     let text = replace(el.dataset.value, scope);
-                    katex.render(text, el);
+                    render(text, el);
                 });
             }
         };
