@@ -73,7 +73,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0arithmetic/counting/pebbles-of-various-sizes | Pebbles of Various Sizes | oO
     0arithmetic/counting/digits | Digits | %t:0-9
     0arithmetic/counting/carry-overs | Carry Overs | %t:10
-    0arithmetic/counting/units | Units | %img:ruler.svg
+    0arithmetic/counting/units | Units | %svg:ar-c-units
     0arithmetic/counting/base-representations | Base Representations | %t: 0-1
     0arithmetic/counting/largest-number | Largest Number | \infty
     0arithmetic/addition | Addition | + 
@@ -149,7 +149,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0algebra/polynomials/calculus-of-polynomials | Calculus of Polynomials | 
     0algebra/polynomials/graphing-polynomials | Graphing polynomials | 
     0algebra/polynomials/powering-polynomials | Powering Polynomials | 
-    0algebra/interest-accumulations | Interest Accumulations | \%
+    0algebra/interest-accumulations | Interest Accumulations | \u0025
     0algebra/interest-accumulations/percentages | Percentages | 
     0algebra/interest-accumulations/simple-interest-and-discount | Simple Interest and Discount | 
     0algebra/interest-accumulations/compound-interest | Compound Interest | 
@@ -222,7 +222,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0geometry/parametric-curves/arc-length | Arc Length | 
     0geometry/parametric-curves/reparametrizations | Reparametrizations | 
     0geometry/parametric-curves/geodesics | Geodesics | 
-    0geometry/higher-dimensions | Higher Dimensions | \mathbb{R}^N
+    0geometry/higher-dimensions | Higher Dimensions | \mathbb{R}^N % -12 -9 1.3 1.3
     0geometry/higher-dimensions/three-dimensions | Three Dimensions | 
     0geometry/higher-dimensions/volumes | Volumes | 
     0geometry/higher-dimensions/surface-area | Surface area | 
@@ -239,7 +239,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0geometry/other-geometries/infinite-dimensional-geometries | Infinite Dimensional Geometries | 
     0geometry/other-geometries/compact-geometry | Compact Geometry | 
     0functions | Functions | f
-    0functions/rational-and-power-functions | Rational and Power Functions | \sqrt{x}
+    0functions/rational-and-power-functions | Rational and Power Functions | \sqrt{x} % -16 -7 1.3 1.3
     0functions/rational-and-power-functions/rational-functions | Rational Functions | 
     0functions/rational-and-power-functions/graphing-rational-functions | Graphing Rational Functions | 
     0functions/rational-and-power-functions/calculus-of-rational-functions | Calculus of Rational Functions | 
@@ -255,7 +255,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0functions/infinite-processes/iterative-processes | Iterative Processes | 
     0functions/infinite-processes/errors | Errors | 
     0functions/infinite-processes/the-reality-of-infinity | The Reality of Infinity | 
-    0functions/differential-calculus | Differential Calculus | \frac{df}{dx}
+    0functions/differential-calculus | Differential Calculus | \frac{df}{dx} % -13 -12 1.3 1.3
     0functions/differential-calculus/notions-of-derivatives | Notions of Derivatives | 
     0functions/differential-calculus/using-derivatives | Using Derivatives | 
     0functions/differential-calculus/derivative-rules | Derivative Rules | 
@@ -263,7 +263,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0functions/differential-calculus/optimization-problems | Optimization Problems | 
     0functions/differential-calculus/taylor-polynomials | Taylor Polynomials | 
     0functions/differential-calculus/implicit-differentiation | Implicit Differentiation | 
-    0functions/integral-calculus | Integral Calculus | \int f
+    0functions/integral-calculus | Integral Calculus | \int f % -13 -12 1.3 1.3
     0functions/integral-calculus/notions-of-integrals | Notions of Integrals | 
     0functions/integral-calculus/fundamental-theorem-of-calculus | Fundamental Theorem of Calculus | 
     0functions/integral-calculus/integral-rules | Integral Rules | 
@@ -279,7 +279,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0functions/exponentials-and-logarithms/dealing-with-large-numbers | Dealing with Large Numbers | 
     0functions/exponentials-and-logarithms/applications-of-exponentials-and-logarithms | Applications of Exponentials and Logarithms | 
     0functions/exponentials-and-logarithms/asymptotics | Asymptotics | 
-    0functions/trigonometric-functions | Trigonometric Functions | \tan
+    0functions/trigonometric-functions | Trigonometric Functions | \tan % -16 -7 1.3 1.3
     0functions/trigonometric-functions/notions-of-trigonometric-functions | Notions of Trigonometric Functions | 
     0functions/trigonometric-functions/properties-of-trigonometric-functions | Properties of Trigonometric Functions | 
     0functions/trigonometric-functions/approximating-trigonometric-functions | Approximating Trigonometric Functions | 

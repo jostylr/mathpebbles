@@ -58,7 +58,7 @@ The path should start with a slash, but easy to forget.
         _":details"
         replace.MAIN = main;
 
-        replace.FOOTER = `<footer>${makePath(path)}</footer>`; //nextPrev(path);
+        replace.FOOTER = `<footer>${makePath(path)[1]}</footer>`; //nextPrev(path);
         
         const fanoSymbols = [];
         {_":populate fano"}
@@ -146,7 +146,7 @@ page. If there are no symbols or children, then we go to the parent.
 
 We have a non-tex thing when the lead character is a percent.
 
-        let type='latex', x=-7, y=-7, w=20, h=23;
+        let type='latex', x=-7, y=-7, w=20, h=23, scalex=1.4, scaley=1.4;
         if (symbol[0] === '%') {
             let ind = symbol.indexOf(':');
             if (ind === -1) { 
@@ -158,7 +158,8 @@ We have a non-tex thing when the lead character is a percent.
 
 The type can also have x,y,width,height coordinates embedded, in that order.
 It requires being in parentheses. To do this with latex, the type has to be
-specifically given and then use parentheses. 
+specifically given and then use parentheses. But really for the latex, we want
+x, y, scalex, and scaley.  To do this do a % followed by up to 4 numbers
 
             if (type.includes('\u0028') ) {   //open parentheses
                 let par;
@@ -174,11 +175,17 @@ specifically given and then use parentheses.
     <circle r="20" fill="white" />
     <image href="/img/${symbol}.svg" x="${x}" y="${y}" width="${w}" height="${h}"></image>
     </a>`);
-    } else if (type === 'latex') {
-        fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
+        } else if (type === 'latex') {
+            if (symbol.includes('%')) {
+                let nums;
+                [symbol, nums] = symbol.split('%').map( s=> s.trim() );
+                [x=x,y=y,scalex=scalex,scaley=scaley] = nums.split(/\s+/);
+            }
+            symbol = symbol.replaceAll('\\u0025', '\\%');
+            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
     <circle r="20" fill="white" />
     <g class="fano-math" data-type="latex" data-text="${symbol}"
-    transform="translate(${x} ${y}) scale(1.4 1.4)" >
+    transform="translate(${x} ${y}) scale(${scalex} ${scaley})" >
     </g></a>`);
     
     } else {
@@ -442,6 +449,7 @@ nav is initially hidden to avoid FLOUT.
 
         let ret = '<nav>\n';
         let {prevB, nextB} = nextPrev(path);
+        let parlink = makePath(path)[0];
         end = '\n</nav>';
         let lp = links[path];
         if (!lp) {
@@ -476,17 +484,19 @@ nav is initially hidden to avoid FLOUT.
             _":other"
         ]]);
         const drops = downs.map( ([top, items]) => {
-            let mret = '<sl-dropdown>\n';
+            let mret = `<div class="dropdown" x-data="dropdown" x-init="top='${top}'" x-effect="changeCaret">\n`;
             let cls = items.length ? '' : 'class="empty"';
-            mret += `<sl-button slot="trigger" ${cls} caret>${top}</sl-button>\n`;
+            mret += `<button ${cls} @click="open = ! open" x-html="caret" x-active="open" ></button>\n`;
+            mret += `<ul class="menu" x-show="open" x-transition.duration.500ms x-cloak
+            @click.outside="open=false">`
             mret += items.map( 
-                ([name, path]) => `<sl-button class="hide" href="${path}.html">${name}</sl-button>`).
+                ([name, path]) => `<li><a class href="${path}.html">${name}</a></li>`).
                 join('\n');
-            mret += '\n</sl-dropdown>\n';
+            mret += '\n</ul></div>\n';
             return mret;
         }).join('\n');
         let fano = `_":plain fano"`;
-        ret += `<div class="prevnext"> ${prevB} ${fano} ${nextB}</div> <div class="drops">${drops}</div> `;
+        ret += ` <div class="drops">${drops}</div> <div class="prevnext"> ${prevB} ${fano} ${nextB}</div>`;
         ret += end;
         return ret;
     }
@@ -505,6 +515,20 @@ These are the items in the other dropdown.
     ['Index of Content', '/book-index'],
     ['Support','/support']
 
+[dropdown]()
+
+    Alpine.data('dropdown', () => ({
+        open: false,
+        caret : '',
+        top :'',
+        
+        changeCaret() {
+            this.caret = this.top + `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" height="2.5ex" stroke-linejoin="round"><g ${this.open ? '' : 'transform="rotate(-90 12 12)"'}><polyline points="6 9 12 15 18 9"></polyline></g></svg>`;
+        }, 
+
+    })) ;
+
+ 
 
 [css]()
 
@@ -512,61 +536,133 @@ Styling the nav
 
     nav {
         border-bottom: 1px solid black;
-        font-variant: small-caps;
         display:flex;
         justify-content:space-between;
         flex-wrap:wrap;
+        background-color: var(--nav-bg); 
+    }
 
-        --sl-input-border-radius-medium : 0px;
-        --sl-input-border-width : 0px;
+    nav .drops {
+        display: inline-flex;
+        align-items: center;
     }
 
 
-    nav sl-dropdown {
+    nav .dropdown {
+        position:relative;
+   
+        display: inline-block;
+      
+    }
+
+    nav .dropdown button {
+        display:flex;
+        align-items:center;
+        font-variant: small-caps;
         margin-right:1px;
+        padding: 5px 10px;
+        text-align: center;
+        border-radius: 0;
+        background-color: white;
+        border: none; 
     }
 
-    sl-dropdown sl-button {
-        width:100%
+    nav .dropdown button, nav .dropdown a {
+        font-size:16px;
+    }
+
+    nav .dropdown .menu {
+        position:absolute;
+        list-style:none;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:flex-start;
+        width:max-content;
+        padding-left:0;
+        background-color:white;
+        padding:10px;
+        border: ridge black 1px;
+        margin-top:0;
+        filter: drop-shadow(2px 3px 2px);
+        z-index:10;
+    }
+
+    nav .dropdown a, a:visited {
+        text-decoration: none;
+        color:black;
+        font-variant: small-caps;
+        width:100%;
+        padding-top:5px;
+        padding-bottom:5px;
+        display:inline-block;
+    }
+
+    nav .dropdown a:hover {
+        background-color: var(--pri-bg-faint);
+        color: var(--pri-fg-faint);
     }
 
     nav .empty {
         visibility:hidden;
     }
 
-    nav svg {
+    .prevnext svg {
         position:relative;
         top: 6px;
     }
 
+    nav .dropdown button.active {
+        background-color: var(--pri-bg-moderate);
+    }
+
     @media only screen and (max-width:570px) {
-        nav .drops {
-            --sl-spacing-small:0;
+    }
+
+    @media only screen and (max-width: 492px) {
+        nav .dropdown button {
+            padding:2px;
+            margin-right:0;
         }
     }
 
-    @media only screen and (max-width: 476px) {
-        nav .drops {
-            --sl-spacing-medium:0;
-        }
-        
-    }
+    @media only screen and (max-width: 400px) {
 
-    @media only screen and (max-width: 405px) {
-        nav .prevnext > a {
+        .dropdown button svg {
             display:none;
         }
-        nav  {
-            --sl-spacing-medium:2px;
+        nav .dropdown button {
+            padding:2px;
+            border: solid 1px gray;
+            border-radius:4px;
+            margin-right:4px;
         }
+
+
+
     }
 
+    @media only screen and (max-width: 360px) {
+        nav .prevnext > a[title="Parent"] {
+            display:none;
+        }
+
+        nav .dropdown .menu {
+            position:fixed;
+            left:-2vw;
+        }
+
+        nav .dropdown button {
+            padding:1px;
+        }
+
+    }
 
 [plain fano]()
 
 This makes a little svg favicon of a plain pebbles as a little icon.
 
-    <a title="MathPebbles" href="/index.html"><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.5em" viewbox="0 0 600 600">
+    <a title="Parent" href="${parlink}.html"><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.5em" viewbox="0 0 600 600">
           <g id="layer1">
              <circle cx="300" cy="350" r="300" fill="#2b5797" />
             <polygon fill="white" stroke="black" stroke-width="12"
@@ -607,25 +703,28 @@ is the reason for the various branches.
         if (!book) {
             ret += item('mp', 'MathPebbles', ''); 
             ret += end;
-            return ret;
+            return ['/index', ret];
         }
         ret += item('mp', 'MathPebbles', '/index');
         if (!chapter) {
             ret += item('book', book, ''); 
             ret += end; 
-            return ret;
+            return ['/index', ret];
         } 
         if (!section) {
-            ret += item('book', book, '/'+book); 
+            let par = '/'+book;
+            ret += item('book', book, par); 
             ret += item('chapter', chapter, '');
             ret += end; 
-            return ret;
+            return [par, ret];
         } 
-        ret += item('book', book, '/'+book); 
-        ret += item('chapter', chapter, '/'+book + '/' + chapter);
+        let par = '/'+book;
+        ret += item('book', book, par);
+        par += '/'+ chapter;
+        ret += item('chapter', chapter, par);
         ret += item('section', section, '');
         ret += end; 
-        return ret;
+        return [par, ret];
     }
 
 [item]()
@@ -733,19 +832,28 @@ This creates the next and previous buttons. We need the [listings](listings.md
 If not prev, then we are on the main page and we have no previous. We add a
 div to maintain consistency of the three items. 
 
-        const prevB = prev ? `<sl-button class="prev ${progress(prev)}" href="${prev || home}.html" title="${tr(prev)}">
-            <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
-            </sl-button> ` : 
+        const prevB = prev ? `<a class="prev ${progress(prev)}" href="${prev
+        || home}.html" title="${tr(prev)}">_":left"</a> ` : 
             `_":empty"` ;
-        const nextB = `<sl-button class="next ${progress(prev)}" href="${next || home}.html" title="${tr(next)}"><sl-icon name="arrow-right" stye="font-size:20px;"></sl-icon></sl-button>`;
+        const nextB = `<a  class="next ${progress(prev)}" href="${next || home}.html" title="${tr(next)}">_":right"</a>`;
         return {prevB, nextB};
     }
 
 [empty]()
 
-    <sl-button class="prev" aria-hidden="true" style="visibility:hidden;" href="/index.html" title="Ignore">
-        <sl-icon name="arrow-left" stye="font-size:20px;"></sl-icon>
-    </sl-button> 
+    <a class="prev" aria-hidden="true" style="visibility:hidden;" href="/index.html" title="Ignore">
+        _":left"</a> 
+
+[left]()
+
+From https://remixicon.com/
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  height="20px"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z"/></svg>
+
+[right]() 
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  height="20px"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg>
 
 
 [transform]()
@@ -759,35 +867,6 @@ This gives the name for the path.
         return links[path]?.name || path.slice(1).toUpperCase() || 'MathPebbles' 
     }
 
-
-[middle]()
-
-This gives the middle pages in the footer: About, FAQ, Settings, Site Map
-
-
-    <sl-dropdown>
-        <sl-button slot="trigger" caret>Non-Mathy Stuff</sl-button>
-        <sl-button href="/about.html">About</sl-button>
-        <sl-button href="/faq.html">FAQ</sl-button>
-        <sl-button href="/support.html">Support</sl-button>
-        <sl-button href="/settings.html">Settings</sl-button>
-        <sl-button href="/toc.html">Table of Contents</sl-button>
-        <sl-button href="/book-index.html">Index of Content</sl-button>
-    </sl-dropdown>
-
-
-[old transform]()
-
-This transforms the path info into human pleasing ideas. 
-
-    (text) => {
-        if (!text) {return ''};
-        return text.
-            slice(1).
-            replace(/\//g, ' > ').
-            replace(/\-\-/g, ', ').
-            replace(/\-/g, ' ');
-    }
 
 
 [css]() 
@@ -979,6 +1058,8 @@ reference the css from [common](common.md "load:")
         <meta name='viewport' content='width=device-width,initial-scale=1.0'>
         <meta name='theme-color' content='#333333'>
         <title> !-!TITLE!-! </title>
+
+
     
 Shoelaces. Load this first so submodules can load while others load. Found if
 sxgraph were first, then they block loading of elements. 
@@ -1225,8 +1306,16 @@ TODO: Add stuff for using problems, doing quiz objects or practice objects.
 
 ### Global CSS
 
+    :root {
+        --pri-bg : rgb(105, 206, 255);
+        --pri-bg-moderate : rgba(105, 206, 255, 0.5);
+        --pri-bg-faint : rgba(105, 206, 255, 0.2);
+        --pri-fg-faint :rgb(4, 58, 84);
+        --nav-bg : whitesmoke;
+    }
 
-
+    [x-cloak] { display: none !important; }
+    
     body {
         max-width: 80em;
         margin-left: 4px;
@@ -1274,7 +1363,7 @@ keep the explore button from growing, we give it a height of 1em.
     }
 
     .explore, .explore:link, .explore:visited {
-      background-color: #69ceff;
+      background-color: var(--pri-bg); 
       font-size:80%;
       color: black;
       padding: 5px 10px;
@@ -1346,11 +1435,13 @@ for that.
 ### Global JS
 
     
-    
+    import Alpine from '/r/alpine.mjs'
+
     _"common::js"
 
+    _"alpine"
 
-     document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
 
         window.render = _"render";
 
@@ -1384,101 +1475,43 @@ This is a short wrapper for doing a render
     }
 
 
-# Previously useful Abandoned now
-
-## Section Example
-
-This is an example to try out 
 
 
-[../public/section.html](# "save | page algebra/lines/shortest-distance,_':intro|md', Distance, _':section 1|md', Angles,_':section 2|md'" )
+## Alpine
 
-[intro]() 
-
-    This is a sample intro lines
-
-[section 1]()
-
-    The shortest distance between two lines is ...
-
-[section 2]( )
-
-    
-    Diffrent cool shapes
+This is where we put all the Alpine related code. 
 
 
-## Book Example
+    _"make nav:dropdown"
 
-This is just the same as the section example except it is a book. 
+    _"xactive"
 
-    _":pieces | page  /algebra/lines, _':intro|md', 
-        /algebra/lines/shortest-distance, _':section 1|md', 
-        /algebra/lines/circles--angles--and-trianges, _':section 2|md' "
-
-
-[../public/book.html](# "save" )
+    window.Alpine = Alpine
+    Alpine.start()
 
 
-[pieces]()
+[show]()
 
-    !- style
-    _":style"
-    !- script
-    _":script"
+To avoid flout, I find it necessary to hide some stuff. This cleans it up. 
 
-
-[style]()
-
-This is an example to try out 
+    $$('.menu').forEach( el=> show(el) );
 
 
-[script]()
-        
-    console.log('hey');
+### xactive
 
+This takes in a boolean expression and will add or remove the active class
+depending on true or false, respectively. 
 
-[intro]() 
+    Alpine.directive('active', (el, { expression }, { evaluateLater, effect }) => {
+        let callbool = evaluateLater(expression)
 
-    This is a sample intro to lines (preview)
-
-    !-
-    
-    This should be a longer bit expanded. 
-
-
-[section 1]()
-
-
-    The shortest distance between two points is given by the straight line
-    between them. 
-
-    !-
-
-    Walk from there to here in the minimu of steps...
-
-    What are the implications of this ...
-
-    Read more in the chapter [Shortest
-    Distance](/algebra/lines/shortest-distance). 
-
-[section 2]( )
-
- 
-    From the shortest distance, we get a circle. From a circle, we get an
-    angle. And with three lines, we get three angles whose figure is called a
-    triangle. 
-
-    Read more in the chapter [Circles, Angles, and
-    Triangles](/algebra/lines/circles--angles--and-triangles). 
-
-    !-
-
-    What are all the places I can get to that are exactly 1 mile away from
-    where I am now? 
-
-    ....
-
-
-  
-
-
+        effect(() => {
+            callbool(bool => {
+                if (bool) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        });
+    });

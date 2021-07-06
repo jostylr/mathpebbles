@@ -779,7 +779,7 @@ defaultType (probably real [linear])
 
 [apply specifics]()
 
-In specifics, we load attributes to the container element and initiate the
+In specifics, weload attributes to the container element and initiate the
 variable of interest.
 
     let value = null;
@@ -1780,3 +1780,8 @@ This retrieves the named scope, creating it if necessary.
         };
         return scope;
     }
+
+
+
+
+

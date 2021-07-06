@@ -252,49 +252,49 @@ The one method to rule them all.
 
 ## Arithmetic
 
-    \_"arithmetic::teaser"
+    _"arithmetic::teaser"
 
 
-[arithmetic](pages/arithmetic.md "load")
+[arithmetic](pages/arithmetic.md "load:")
 
 ## Algebra
 
-    \_"algebra::teaser"
+    _"algebra::teaser"
 
 
-[algebra](pages/algebra.md "load")
+[algebra](pages/algebra.md "load:")
 
 ## Geometry
 
-    \_"geometry::teaser"
+    _"geometry::teaser"
 
 
-[geometry](pages/geometry.md "load")
+[geometry](pages/geometry.md "load:")
 
 ## Functions
 
-    \_"functions::teaser"
+    _"functions::teaser"
 
 
-[functions](pages/functions.md "load")
+[functions](pages/functions.md "load:")
 
 ## Many Variables
 
-    \_"many-variables::teaser"
+    _"many-variables::teaser"
 
 
-[many-variables](pages/many-variables.md "load")
+[many-variables](pages/many-variables.md "load:")
 
 ## Probability and Statistics
 
-    \_"probability-and-statistics::teaser"
+    _"probability-and-statistics::teaser"
 
 
-[probability-and-statistics](pages/probability-and-statistics.md "load")
+[probability-and-statistics](pages/probability-and-statistics.md "load:")
 
 ## Practitioners
 
-    \_"practitioners::teaser"
+    _"practitioners::teaser"
 
 
-[practitioners](pages/practitioners.md "load")
+[practitioners](pages/practitioners.md "load:")
