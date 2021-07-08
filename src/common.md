@@ -726,27 +726,26 @@ This checks the status of line and acts appropriately: activate if not active
 Safari outlines this element because of focus stuff and the outline is weird
 and unneeded. 
 
-    .typed-input {
-        outline:none;
-    }
-    
 But it is nice to outline the input ones. 
 
-    .typed-input {
+    .input {
+        outline:none;
+        padding: 2px 3px 0px;
+        background-color: var(--pri-bg-moderate);
+    }
+    
+    .input.open {
+        /*border: 2px dotted green;*/
         border-bottom: 2px solid green;
+        background-color: #cff3cf;
     }
 
-    .typed-input.open {
-        border: 2px dotted green;
-        border-bottom: 2px solid green;
-    }
-
-    .typed-input.active {
+    .input.active {
         border: 2px solid green;
         background-color: rgba(105,206,255, 0.3)
     }
 
-    .typed-input:focus {
+    .input:focus {
         border-bottom-color: red;
     }
 
@@ -754,11 +753,12 @@ But it is nice to outline the input ones.
         display:none;
     }
 
-Needed some kind of callout for the changing text. Figured blue color looked
-nice. 
+Needed some kind of callout for the changing text. Figure a subtle pinkish
+grey background gives a feeling of not manipulative. 
 
     .output {
-        color: blue;
+        background-color: #f9e9e9;
+        padding: 2px 3px 0px;
     }
 
 

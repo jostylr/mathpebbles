@@ -176,9 +176,9 @@
 
 The one method to rule them all. 
 
-    We want a box that can hold `#h-target=20$` cubic feet of mulch. Its dimension
-    are such that the length is `#h-overLength=3` feet longer than the width and the
-    height is `#h-underHeight=1` foot less than the width. How do we find the
+    We want a box that can hold `#target=20` cubic feet of mulch. Its dimension
+    are such that the length is `#overLength==3` feet longer than the width and the
+    height is `#underHeight=1` foot less than the width. How do we find the
     dimensions? 
 
     We explore a general method that we think of as the hammer method since it
@@ -194,19 +194,20 @@ The one method to rule them all.
 
     For this particular example, we use the (definitionesque) fact that we can
     get the volume from the dimnesions by multiplying them all together. So
-    the expression is `=(x + %h-overLength ) *(x - %h-underHeight ) * x$`
+    the expression is `==(x + ${overLength} ) *(x - ${underHeight} ) * x`
     where `x`$ is the width. 
 
-    We try some number, such as `#h-width;type:real;=10`, to get a sense of this. Plugging
-    in, we get `=%h-volume`. Our task is get that volume to be our target number
-    of `=%h-target`.
+    We try some number, such as `#width=10`, to get a sense of this. Plugging
+    in, we get `=:volume`. Our task is get that volume to be our target number
+    of `=target` and we are currently `=math.sub( target, volume)` away
+    from the target. 
 
     !PEBBLE hammer-text
 
     To tackle this in a reasonably efficient manner, we do a couple of guesses
     and then we pretend that this expression is a representing a line. In
     particular, a line has the nice property that changes in `y`$ are
-    proportional to changes in `x.`$ That proportionality constant is the
+    proportional to changes in `x`$. That proportionality constant is the
     [slope](algebra/lines/slope.html#proportionality).
 
     Applying it here, we can compute our next guess by computing how much we
@@ -219,6 +220,14 @@ The one method to rule them all.
 
 
 ##### Pebble
+
+
+    cVolume : function () {
+        let x = this.width;
+        let l = math.add(x, this.overLength);
+        let h = math.sub(x, this.underHeight);
+        return math.mul(x, l, h);
+    },
 
     'hammer-text' : (el, scope) => {
         console.log(scope, controller);
@@ -250,6 +259,7 @@ The one method to rule them all.
     },
 
 
+```ignore
 ## Arithmetic
 
     _"arithmetic::teaser"
@@ -298,3 +308,19 @@ The one method to rule them all.
 
 
 [practitioners](pages/practitioners.md "load:")
+```
+
+## Arithmetic
+
+
+## Algebra
+
+## Geometry
+
+## Functions
+
+## Many Variables
+
+## Probability and Statistics
+
+## Practitioners

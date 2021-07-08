@@ -231,20 +231,31 @@ the section name and the second one being a path for the Explore button.
         let [preview, full] = body.split('<p>!-</p>').map( e => e.trim());
         preview = shoelacify(preview);
         full = shoelacify(full || ''); 
+        let self=slugify(name);
         if (full) {
-            main += `<sl-details id="${slugify(name)}">
-                <div slot="summary">
-                    ${heading}
+            main += `<div class="top section" id="${self}" x-data="section" x-init="me('${self}')">
+                <div class="summary">
+                    _":heading"
                     ${preview}
                 </div>
+                <div class="full" x-show="open" x-cloak>
                 ${full || ''}
-                </sl-details>`;
+                </div>
+                <ul class="footer" x-show="footCount" x-init="footer = $el"></ul>
+                </div>`;
         } else {
-            main += `<div id="${slugify(name)}" class="plain">${heading}${preview}</div>`;
+            main += `<div id="${self}" x-data="section" x-init="me('${name}')" class="top">${heading}${preview}<ul class="footer" x-show="footCount"></ul> </div>`;
         }
     }
 
+[heading]() 
 
+The heading here is for sections with details to reveal. This is specifically
+not to be those with explore buttons. 
+
+    <h2>${name} 
+        <button @click="open =  ! open" x-text="open ? 'Less...' : 'More...'">More...</button>
+    </h2>
 
 ## Shoelace full
 
@@ -486,7 +497,7 @@ nav is initially hidden to avoid FLOUT.
         const drops = downs.map( ([top, items]) => {
             let mret = `<div class="dropdown" x-data="dropdown" x-init="top='${top}'" x-effect="changeCaret">\n`;
             let cls = items.length ? '' : 'class="empty"';
-            mret += `<button ${cls} @click="open = ! open" x-html="caret" x-active="open" ></button>\n`;
+            mret += `<button ${cls} @click="open = ! open" x-html="caret" :class="open ? 'active' :'' " ></button>\n`;
             mret += `<ul class="menu" x-show="open" x-transition.duration.500ms x-cloak
             @click.outside="open=false">`
             mret += items.map( 
@@ -1142,9 +1153,10 @@ There is also math.js mainly used for high precision arithmetic.
             let controller = MP.controller = MP.initController()
 
             let keyInfo = MP.initKeys(controller);
+            /*
             let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, render, keyInfo.keys, controller); 
             let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller, render);
-
+            */
             !-!SCRIPT!-!
 
             const fun = {
@@ -1179,6 +1191,8 @@ variables in the additional script area.
     const pebbles = {
         !-!PEBBLES!-!
     };
+
+    window.pebbles = pebbles;
 
     const initiatePebble = function initiatePebble (ev) {
         const el = this;
@@ -1352,7 +1366,7 @@ To give space for underline of number, we increase the line height a bit.
 
 Specifying width otherwise the explore buttons don't line up. 
 
-    h2.with-explore {
+    .section h2, h2.with-explore {
         width:min(90vw, 50em);
 
 grid to put the explore buttons on the right and have long text drop down. To
@@ -1362,9 +1376,9 @@ keep the explore button from growing, we give it a height of 1em.
         grid-template-columns: 1fr auto;
     }
 
-    .explore, .explore:link, .explore:visited {
+    .section h2 button, .explore, .explore:link, .explore:visited {
       background-color: var(--pri-bg); 
-      font-size:80%;
+      font-size:70%;
       color: black;
       padding: 5px 10px;
       text-align: center;
@@ -1377,7 +1391,14 @@ keep the explore button from growing, we give it a height of 1em.
     h2.with-explore .explore {
       height: 1em;
     }
-    
+    .section h2 button {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size:60%;
+        height:1.7em;
+        border:none;
+    }
+
     .explore:visited {
         filter:brightness(80%);
     }
@@ -1388,15 +1409,17 @@ keep the explore button from growing, we give it a height of 1em.
     }
 
 
-This simulates the detail block for the non-detail stuff on the pages: 
+This simulates the detail block for the non-detail stuff on the pages: (now
+not using the detail so using class section for non-plain, so just adding it). 
 
-    .plain {
+    .top {
         padding-left: 1em;
         border: 1px solid var(--sl-color-gray-200);
         border-radius: 5px;
+        padding-right:1em;
     }
 
-    .plain + sl-details, sl-details + .plain, .plain + .plain { 
+    .top + .top { 
         margin-top: 5px;
     }
 
@@ -1422,6 +1445,8 @@ for that.
     _"common::css"
     _"make nav:css"
     _"make fano:css"
+
+    _"xdata footer css"
         
 
     
@@ -1439,7 +1464,6 @@ for that.
 
     _"common::js"
 
-    _"alpine"
 
     document.addEventListener("DOMContentLoaded", function() {
 
@@ -1448,6 +1472,9 @@ for that.
         _"accordion:js"
 
         _"common::content loaded"
+
+        _"alpine"
+
     });
 
 
@@ -1484,7 +1511,18 @@ This is where we put all the Alpine related code.
 
     _"make nav:dropdown"
 
-    _"xactive"
+    let dataStores = window.dataStores = {};
+    let inputTypes = window.inputTypes = _"input types";
+
+    let methods = _"make alpine methods";
+
+    Alpine.data('section', () => {
+        const ret= {...window.pebbles, ...methods};
+        ret.open = false;
+        ret.footCount = 0;
+        return ret;
+    });
+
 
     window.Alpine = Alpine
     Alpine.start()
@@ -1496,11 +1534,186 @@ To avoid flout, I find it necessary to hide some stuff. This cleans it up.
 
     $$('.menu').forEach( el=> show(el) );
 
+### Make alpine methods
+
+This is where we stick a bunch of common alpine methods.
+
+    {
+        _":mathout",
+        _":mathParse",
+        empty : () => '', // if  you need an empty string 
+        pass : (v) => v,  //displays nothing, but does pass through to store
+        store : function (v, name) {
+            return this[name] = v; 
+        },
+        me (name) {
+            dataStores[name] = this;
+            this.me = name;
+        },
+        _"toggle Input", 
+    }
+
+[mathout]()
+
+This calls the math renderer. The return of MathJax are elements, not html
+strings so this is why we are doing it with el appending etc. 
+
+    mathOut (value, el) {
+        let options = {display:false};
+        if (el.tagName === 'DIV') {
+            options.display = true;
+        }
+        render(math.spacedNumber(value), el, options);
+        return value;
+    }
+
+[mathParse]()
+
+    mathParse (value, el) {
+        let {type} = el.dataset;
+        try {
+            return this[name]=math[type](value);
+        } catch (e) {
+            console.error(type, value, e, el);
+        }
+    }
+
+
+### Toggle Input
+
+This is the function that is called to toggle inputting changes to the input
+variables. This uses the data-type attribute to figure out what kind of input
+is appropriate. It pops up the input element in the footer. The id of the
+encapsulating div for the input is iname where name is the name of the input.  
+
+    toggleInput(el) {
+        let {name, type} = el.dataset;
+        let footer = $('.footer', el.closest('[x-data]'));
+        let iname = 'i' + name;
+        let inp = $('#' + iname, footer);
+        if (inp) { //already exists, just toggle
+            $('.toggle', inp).click();
+            return;
+        }
+
+Make input if we get to here. 
+
+We have this odd way of constructing because innerHTML assignment with alpine
+seemed to create two click handlers. By cloning and appending, it resets so
+only one gets assigned. 
+
+        let div = document.createElement('div');
+        let html = inputTypes[type]?.call(this, name);  
+        div.innerHTML= html;
+        footer.appendChild(div.children[0].cloneNode(true));
+    }
+
+### Input types
+
+This is where we create the various input types. They are: 
+
+* bignum.  This add or subtracts based on the power of 10 selected.  
+    
+---
+
+    {
+    _"bignum",
+    
+    }
+
+### Bignum 
+
+    bignumber (name) {
+        let iname = 'i'+name; //input string
+        let ename = 'e'+name; //actual power value
+        let pname = 'p'+name; //power string for input
+        let tname = 't'+name; //toggle visibility
+        this[iname] = this[name].toString();
+        this[ename] = 1;
+        this[pname] = 0;
+        this[tname] = true;
+        let html = `_":html"`;
+        return html;
+    }
+
+[html]()
+
+This is the html 
+
+    <li id="i${name}" x-show = "t${name}">
+    <div class="primary" >
+        <button @click="${name} = math.sub(${name}, ${ename})">-</button>
+        <input type="text" @change="${name} = math.bignumber($el.value)"
+            x-effect="$el.value = ${name}.toString()" ></input>
+        <button @click="${name} = math.add(${name}, ${ename})">+</button>
+    </div>
+
+    <div class="exponent">
+        <button @click="p${name} = p${name} - 1">_</button>
+        <span>1E</span>
+        <input x-model.number="p${name}" x-effect="e${name} = math.pow(10, p${name})"></input>
+        <button @click="console.log('hey'); p${name} = p${name} + 1" >^</button>
+    </div>
+
+
+This bit toggle the open or closed, but it also increments/decrements footCount
+depending on whether the toggle 
+
+    <div class="controls">
+       <button class="toggle" @click="t${name} = ! t${name}"
+       x-effect="t${name} ? footCount++ : footCount--" >X</button>
+    </div>
+
+    </li>
+
+
+### xdata footer css
+
+Similar to the bottom footer, but shifted up. 
+
+    .footer {
+        position: sticky;
+        bottom: 26px;
+        background-color: whitesmoke;
+        width: 100%;
+        z-index:20;
+        list-style : none;
+        padding:0;
+    }
+
+    .footer li {
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .footer input {
+        border: 1px solid var(--pri-bg-moderate);
+    }
+    
+    .footer .exponent input {
+        width: 3em;
+    }
+
+    .footer button {
+        background-color: var(--pri-bg-moderate);
+        border: none;
+        border-radius: 4px;
+    }
+
+    @media only screen and (max-width: 400px) {
+        .footer .primary input {
+            width:6em;
+        }
+
+    }
 
 ### xactive
 
 This takes in a boolean expression and will add or remove the active class
 depending on true or false, respectively. 
+
+
+NOT NEEDED due to bind directive!  :class="bool ? 'active' : ''
 
     Alpine.directive('active', (el, { expression }, { evaluateLater, effect }) => {
         let callbool = evaluateLater(expression)
@@ -1515,3 +1728,5 @@ depending on true or false, respectively.
             });
         });
     });
+
+
