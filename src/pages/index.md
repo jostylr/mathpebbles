@@ -45,6 +45,7 @@
 
 [style]() 
 
+    
 [script]()
 
 [header]()
@@ -202,8 +203,6 @@ The one method to rule them all.
     of `=target` and we are currently `=math.sub( target, volume)` away
     from the target. 
 
-    !PEBBLE hammer-text
-
     To tackle this in a reasonably efficient manner, we do a couple of guesses
     and then we pretend that this expression is a representing a line. In
     particular, a line has the nice property that changes in `y`$ are
@@ -215,47 +214,55 @@ The one method to rule them all.
     this to the change in the volume between our two guesses and then we apply
     that proportional change to our width. And that becomes our next guess. 
 
-    !PEBBLE hammer-table
+    Guess 1: `#g1=3`,  Guess 2: `#g2=10`, Precision: `#precision=1E-10`. Then
+    here is our method computing the result: 
+
+    `%tag:table;@innerHTML;=hammerTable()`
     
 
 
 ##### Pebble
 
 
-    cVolume : function () {
-        let x = this.width;
+    cVolume (x) {
+        x = x ?? this.width;
         let l = math.add(x, this.overLength);
         let h = math.sub(x, this.underHeight);
         return math.mul(x, l, h);
     },
 
-    'hammer-text' : (el, scope) => {
-        console.log(scope, controller);
-        let {
-            'h-width':target, 
-            'h-overLength':overLength, 
-            'h-underHeight':underHeight, 
-             'h-width':width} = scope.vars; 
-        let computeVolume = (w, h, l) => {
-            let ret = math.mul(w, 
-                math.sub(w,h), 
-                math.add(w,l)
-            );
-            console.log("volume computed:", ret);
-            return ret;
-        };
-        let volume =  link( computeVolume, [width, underHeight, overLength]);
-        console.log(volume);
-        outputs({'h-volume': volume}, scope);
+    hammerTable (maxloops=50) {
+        let {g1, g2, precision} = this;
+        let digits = Math.round(Math.abs(Math.log(precision)/Math.log(10)) );
+        console.log(digits);
+        let [xdiff, v1, v2, ydiff, targetDiff, r, g3] = this.hammerFunction(g1, g2);
+        let rows = [];
+        let count = 0;
+        while ( math.gt(math.abs(targetDiff), precision) &&  (count < maxloops)) {
+            rows.push(  '<tr>' + [g1, g2, xdiff, v1, v2, ydiff, targetDiff, r, g3].map( num => {
+                return `<td>${math.format(num, {notation:'fixed', precision:digits})}</td>`;
+            }).join('')+'</tr>');
+            count += 1;
+            g1 = g2;
+            g2 = g3;
+            [xdiff, v1, v2, ydiff, targetDiff, r, g3] = this.hammerFunction (g1, g2);
+        }
+        let header = '<thead><tr><th>' + 
+            ['x1', 'x2', 'x1-x2', 'v1', 'v2', 'v1-v2', 't-v2', 'r', 'x3'].join('</th><th>')+ 
+            '</th></tr></thead>';
+        return header + '<tbody>' + rows.join('') + '</tbody>';
     },
 
-    'hammer-table' : (el) => {
-        
-        
-    },
-
-    'hammer-function' : (el) => {
-
+    hammerFunction (guess1, guess2) {
+        let v1 = this.cVolume(guess1);
+        let v2 = this.cVolume(guess2);
+        let xdiff = math.sub(guess1, guess2);
+        let ydiff = math.sub(v1, v2);
+        let target = this.target;
+        let targetDiff = math.sub(target, v2);
+        let r = math.div(targetDiff, ydiff);
+        let g3 = math.add(guess2, math.mul(r, xdiff));
+        return [xdiff, v1, v2, ydiff, targetDiff, r, g3];
     },
 
 

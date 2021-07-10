@@ -1546,6 +1546,9 @@ This is where we stick a bunch of common alpine methods.
         store : function (v, name) {
             return this[name] = v; 
         },
+        innerHTML (val, par) {
+            par.innerHTML = val;
+        },
         me (name) {
             dataStores[name] = this;
             this.me = name;

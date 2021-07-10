@@ -89,7 +89,7 @@ module.exports = function(Folder, args) {
                     insert += 'tabindex="0" '; 
                     insert += 'x-init="store(' + parser + '(' + exp + ', $el), \''+ name +'\')" ';
                     insert += 'x-effect="' + displayer + '(' + name + ', $el)" ';
-                    insert += '@click="toggleInput($el, footer)"';
+                    insert += '@click="toggleInput($el)"';
                 } else {    
                     if (name) { //want to store value
                         insert += 'x-effect="' + displayer + '(store(' + exp + ', \'' + name + '\'), $el)" ';
