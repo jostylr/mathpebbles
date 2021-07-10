@@ -6,6 +6,35 @@ my attempt to get the functionality I like most out of Svelte though it is
 radically less in its scope. Basically, I want to be able manipulate various
 things and stuff just propagates. Spreadsheet style, if  you will. 
 
+    _"Dom helpers"
+
+    const mathHelper = _"math helpers"
+    // small wrapper here to pass in mathjs and jsxgraph
+    const initKeys = _"init keys";
+    
+    const makeF = function makeF (math) {
+        const f = _"function defs::f";
+        this.f = f;
+        return f;
+    }
+
+    const MP = {
+        mathHelper, $, $$, show, hide, 
+        initKeys, makeF}; 
+
+    export {MP};
+
+
+
+
+[../public/r/common.mjs](# "save")
+
+
+[function defs](function-defs.md "load:")  These are the mathematical functions we
+will use. 
+
+
+## Old 
 
     _"Event emitter"
 
@@ -45,12 +74,8 @@ things and stuff just propagates. Spreadsheet style, if  you will.
 
     export {MP};
 
+ 
 
-[../public/r/common.mjs](# "save")
-
-
-[function defs](function-defs.md "load:")  These are the mathematical functions we
-will use. 
 
 ## Link
 
@@ -527,7 +552,7 @@ replace child. I guess?
 This does a quick abbreviation of some common math operators to make it less
 painful to use. 
 
-    (math) => {
+    (math, Decimal, Fraction) => {
         let subs = _":subs";
         for (const prop in subs) {
             math[prop] = math[subs[prop]];
@@ -561,7 +586,52 @@ This is for rendering in latex.
             n = n.replace(/ /g,'\\ '); //for latex not collapse spacing
             return n;
         };
+
+This is where we add in direct type construction. 
+
+        math.decimal = Decimal;
+        math.precision = (num) => {math.decimal.precision = num};
+
+
+        math.fraction = Fraction;
+        Fraction.prototype.scale = _":scale";
+
     }
+
+[scale]()
+
+For fraction, want to be able to have non-reduced fractions. We can scale the
+individual parts, but when combining fractions, it gets reduced again
+(reasonable of course). There should be a boolean REDUCE; it is present in
+normal fraction.js, but using bigfraction.js for now. The reduce does has the
+issue that say, when adding fractions of same denominator, they still scale
+with each other so that 6/8+6/8 = 96/64.  That seems not desired. 
+
+So creating a function that will scale a fraction if given a scale factor. It
+takes a second argument boolen to indicate that this should be the new
+denominator (true to be denom).
+
+This will scale the fraction, but any manipulations of the fraction will
+almost surely lose the scale. So this is basically for display purposes (what
+other reason is there anyway?) 
+
+The denominator will ensure that that number is in there, but it may be a
+larger number. 
+
+    function (scale, isDenominator) {
+        let frac = this.clone();
+        scale = BigInt(scale) // using bigints!
+        if (isDenominator) {
+            let fd = frac.d;
+            let fscale = Fraction(scale);
+            let gcd = fscale.gcd(fd);
+            scale = fscale.div(gcd).n;
+        } 
+        frac.n = frac.n*scale;
+        frac.d = frac.d*scale;
+        return frac;
+    }
+
 
 [subs]()
 

@@ -1117,7 +1117,8 @@ JSXGraph  global: JXG
 There is also math.js mainly used for high precision arithmetic. 
 
         <script typ="text/javascript" charset="UTF-8" defer src="/r/math.js"></script>
-
+        <script typ="text/javascript" charset="UTF-8" defer src="/r/decimal.js"></script>
+        <script typ="text/javascript" charset="UTF-8" defer src="/r/fraction.js"></script>
 
         <link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -1145,18 +1146,12 @@ There is also math.js mainly used for high precision arithmetic.
          let m;
          document.addEventListener("DOMContentLoaded", function() {
             const render = _"render";
-            const {link, Var, show, hide } = MP;
-            MP.mathSub(math);
-            math.config({number:'BigNumber'});
+            const {show, hide } = MP;
+            MP.mathHelper(math, Decimal, Fraction);
             MP.makeF(math);
-            //let makeScaledNumber = MP.initScaledNumber(math, JXG, keyInfo.keys); 
-            let controller = MP.controller = MP.initController()
 
-            let keyInfo = MP.initKeys(controller);
-            /*
-            let [makeTypedInput, types] = MP.initMakeTypedInput(math, JXG, render, keyInfo.keys, controller); 
-            let {scanParents, openScope, outputs} = MP.makeScopes (makeTypedInput, controller, render);
-            */
+            /*let keyInfo = MP.initKeys({});*/
+
             !-!SCRIPT!-!
 
             const fun = {
@@ -1606,7 +1601,7 @@ seemed to create two click handlers. By cloning and appending, it resets so
 only one gets assigned. 
 
         let div = document.createElement('div');
-        let html = inputTypes[type]?.call(this, name);  
+        let html = inputTypes[type]?.(name, this);  
         div.innerHTML= html;
         footer.appendChild(div.children[0].cloneNode(true));
     }
@@ -1626,15 +1621,15 @@ This is where we create the various input types. They are:
 
 ### Bignum 
 
-    bignumber (name) {
+    bignumber (name, store) {
         let iname = 'i'+name; //input string
         let ename = 'e'+name; //actual power value
         let pname = 'p'+name; //power string for input
         let tname = 't'+name; //toggle visibility
-        this[iname] = this[name].toString();
-        this[ename] = 1;
-        this[pname] = 0;
-        this[tname] = true;
+        store[iname] = store[name].toString();
+        store[ename] = 1;
+        store[pname] = 0;
+        store[tname] = true;
         let html = `_":html"`;
         return html;
     }
@@ -1680,7 +1675,7 @@ Similar to the bottom footer, but shifted up.
         background-color: whitesmoke;
         width: 100%;
         z-index:20;
-        list-style : none;
+        lisstyle : none;
         padding:0;
     }
 
