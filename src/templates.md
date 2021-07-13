@@ -280,6 +280,7 @@ lines until some ending tag.
 * PROGRAM: whatever for a program environment. STOP.
 * CODE name: starting code block  SOLUTION: Some explanatory text and a code
   block to sub in for the solution. END.
+* FOOTNOTE: This pops up from the bottom. It ends with SOCK. 
 
 
 Colons are totally optional, I hope. 
@@ -289,9 +290,11 @@ Colons are totally optional, I hope.
     function shoelacify (text) {
         let reg = /\!([A-Z]+)\:?(.*)$/;
         let lines = text.split('\n');
+        let place = 0;
         let ret = [];
         let n = lines.length;
         let i;
+        places = [];
         for (i = 0; i < n; i+= 1) {
             let line = lines[i];
             if (line.slice(0,4) === '<p>!') {
@@ -300,52 +303,63 @@ Colons are totally optional, I hope.
                 let end = (match?.[2] || '').
                     trim().
                     slice(0, -4); //slice is to get rid of closing p element
-                let id = end ? ' data-scope="'+end.trim().toLowerCase()+'"' : ''; //may be needed
-
+                let p; // local place 
                 switch (type) {
-                case 'PEBBLE' : {
-                    id = ' id="'+end+'"';
-                    ret.push('<div class="pebble"' + id + '></div>');
-                break; }
+                case 'PEBBLE' : 
+                    ret.push(`<div class="pebble" id="${end}" x-effect="${end}($el)"></div>`);
+                break; 
                 case 'VIDEO':
-                    end = end.trim();
-                    let ind = end.indexOf(' ');
-                    let url = end.slice(0, ind);
-                    let title = end.slice(ind+1);
-                    ret.push('<sl-details summary="Video: '+title+'"><iframe width="560" height="315" src="'+url+'" title="YouTube video player" frameborder="0"  allowfullscreen></iframe></sl-details>');
+                    _":video"
+
                 break;
                 case 'PROOF':
-                    ret.push('<sl-drawer class="proof" placement="left"' + id + '>');
+                    _":proof"
                 break;
                 case 'QED':
-                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer><button type="button" class="explore open-drawer">Proof</button>');
+                    _":qed"
                 break;
                 case 'DETAILS':
                     _":details"
                 break;
+
+
+The structure of the details and summary is a little complicated. We have an
+overall detail div for styling. The summary div contains a div with the
+summary information as well as a button for toggling the details. The summary
+div is for a flex to push the button to the far right.  
+
                 case 'SUMMARY':
-                    ret.push('<sl-details><div slot="summary">');
+                    p = place += 1;
+                    places.push(p);
+                    ret.push(`<div class="detail" x-init="togglers[${p}] = false">
+                    <div class="blurb">
+                    <button @click.stop="togglers[${p}] = ! togglers[${p}]" 
+                    x-html = "caret( togglers[${p}] )"></button>
+                    <div>`);
                 break;
-                case 'DETAIL': {
-                    ret.push('</div>');
-                break; }
+                case 'DETAIL': 
+                    p = places.pop();
+                    ret.push(`</div></div>
+                    <div x-show="togglers[${p}]" x-transition.scale.origin.top> `);
+                break; 
                 case 'DONE':
-                    ret.push('</sl-details>');
+                    ret.push('</div></div>');
                 break;
                 case 'PROGRAM' :
-                    ret.push('<sl-drawer placement="right" class="program"' + id + '>');
+                   _":proof | sub Proof, Program, left, right" 
                 break;
                 case 'STOP':
-                    ret.push('<button class="explore close-drawer" slot="footer">Close</button></sl-drawer><button type="button" class="explore open-drawer">Program</button>');
+                    _":qed"
                 break;
-                case 'CODE': {
-                    ret.push('<sl-details class="code-block"'+id+'"><div class="try-code code" slot="summary">');
-                break; }
+                case 'CODE': 
+                    _":code"
+                break; 
                 case 'SOLUTION':
-                    ret.push('</div><div class="solution-code code" >');
+                    p = places.pop();
+                    ret.push(`</div><div x-show="togglers[${p}]">`);
                 break;
                 case 'END':
-                    ret.push('</div></sl-details>');
+                    ret.push('</div></div>');
                 break;
                 default: 
                     ret.push(line);
@@ -357,6 +371,94 @@ Colons are totally optional, I hope.
 
         return ret.join('\n');
     }
+
+
+[video]() 
+
+This takes in a video url followed by a space followed by a title. The display
+is the title followed by a caret thing. 
+
+
+
+    end = end.trim();
+    let ind, url, title;
+    if (end.slice(0,2) === '<a') {
+        ind = end.indexOf('</a>');
+        url = end.slice(0, ind).match(/href\=\"([^"]+)\"/)?.[1];
+        title = end.slice(ind+5).trim();
+    } else {
+        ind = end.indexOf(' ');
+        url = 'https://player.vimeo.com/video/' + end.slice(0, ind) + '?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+        title = end.slice(ind+1).trim();
+    }
+    p = place += 1; 
+    ret.push(`<div class="video" x-init="togglers[${p}]= false "> 
+    <h4>Video: ${title} 
+        <button @click.stop ="togglers[${p}] = ! togglers[${p}]"
+        x-html = "caret( togglers[${p}] ) "></button>
+    </h4>
+
+Doing the weird dynamic source thing because it seems to remember and get
+locked in when being refreshed with a new source. Since I may want to change
+links, ... I really don't understand this problem, here is a link to Firefox
+bug page:  https://bugzilla.mozilla.org/show_bug.cgi?id=363840
+
+
+    <iframe x-cloak x-show="togglers[${p}]" src="about:blank" x-init="$el.src = '${url}'" frameborder="0" allow="fullscreen; picture-in-picture" title="${title}"></iframe>
+
+    </div>
+    `); 
+
+[proof]()
+
+    p = place += 1;
+    places.push(p);
+    ret.push(` <button @click="togglers[${p}] = true">Proof</button>
+        <div class="overlay" x-effect="overlay = togglers[${p}]"  
+        x-show="togglers[${p}]"
+        x-transition.scale.origin.left >
+        <div class="left" 
+        @click.outside="togglers[${p}] = false"  
+        x-init="togglers[${p}] = false" >`
+    );
+
+
+[qed]() 
+
+    p = places.pop();
+    ret.push(`</div><button class="close" @click="togglers[${p}] = false">Close</button>
+    </div> `);
+
+
+[code]() 
+
+
+This creates the try code block. 
+
+    p = place +=1;
+    places.push(p);
+    ret.push(`<div class="code" x-data="code"
+         x-init="${end.trim().toLowerCase() || 'noop'}()"
+         >
+         <div class="try" x-init="imp($el)">
+        <textarea></textarea>
+        <pre x-text="log.join('\\n')"></pre>
+        <div class="buttons">
+        <button @click.stop="save(_':try el')">Save</button>
+        <button @click.stop="run(_':try el')">Run</button>
+        <button @click.stop="imp(_':try el')">Reset</button>
+        <button @click.stop="restore(_':try el')">Restore</button>
+        <button style="display: inline-flex; padding-bottom: 3px;"
+        @click.stop ="togglers[${p}] = ! togglers[${p}]"
+        x-html = "caret( togglers[${p}], 'Show Working Program' ) "></button>
+        </div>
+        <div x-html="out"></div>`);
+
+[try el]() 
+
+Not sure how to easily grab this in another way. Anticipate it changing. 
+
+    $el.parentElement.parentElement
 
 [details]()
 
@@ -423,17 +525,106 @@ suggest that should not happen.
 
 We want the sub detail list to have no padding
 
-    sl-details ol, sl-details ul {
-        padding-left:2px;
+
+    .blurb > button {
+        font-size: 72%;
+        padding: 2px 5px;
+        margin-right: 3em;    
+    } 
+
+    .video iframe {
+       width:94vw;
+       height:55vw;
     }
 
-    sl-drawer{
-        --size : clamp(200px, 90vw, 600px);
+    .left, .right {
+        height: 96vh;
+        position: fixed;
+        top: 0px;
+        background-color: white;
+        z-index: 250;
+        width: 70vw;
+        padding: 24px;
+        overflow-y: auto;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+
     }
 
-    sl-drawer[placement=left] [slot=footer] {
-        float:left;
+    .left {
+        left: 0px;
+        border-right: whitesmoke 4px solid;
     }
+
+    .right {
+        right: 0px;
+        border-left: whitesmoke 4px solid;
+    }
+
+    .left + .close {
+        position: absolute;
+        bottom: 1vh;
+        left: 37vw;
+        z-index:260;
+    }
+
+    .right + .close {
+        position: absolute;
+        bottom: 1vh;
+        right: 37vw;
+        z-index:260;
+    }
+
+
+    .frozen {
+        overflow:hidden;
+    }
+    
+
+    .overlay {
+        position:fixed;
+        top:0;left:0;right:0;bottom:0;
+        background:rgba(255,255,255,0.7);
+        z-index:200;
+    }
+
+    .blurb {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    textarea {
+        width:clamp(280px, 70vw, 500px);
+        height:150px;
+    }
+
+    pre {
+        border: whitesmoke 2px solid;
+        width:clamp(280px, 70vw, 500px);
+    }
+    
+    @media only screen and (max-width: 492px) {
+        .left, .right {
+            width: 96vw;
+            left:0;
+            right:unset;
+        }
+
+        .left + .close {
+            left:48vw;
+            right:unset;
+        }
+       
+        textarea, pre {
+            width: 92%;
+        }
+
+    }
+
 
 
 ## Slugify
@@ -627,8 +818,6 @@ Styling the nav
         background-color: var(--pri-bg-moderate);
     }
 
-    @media only screen and (max-width:570px) {
-    }
 
     @media only screen and (max-width: 492px) {
         nav .dropdown button {
@@ -798,15 +987,6 @@ don't want that to grow.
     }
 
 
-[junk]()
-
-long ones did not look right
-
-    .crumbs sl-button {
-        width:150px;  
-    }
-
-
 
 
 ## Progress
@@ -831,7 +1011,7 @@ This creates the next and previous buttons. We need the [listings](listings.md
         const home = '/index';
         let prev, next;   
         if (!links.hasOwnProperty(path) ) { 
-            console.log('no such path:', path); 
+            if (path !=='/index') { console.log('no such path:', path); }
             next = '/arithmetic';
             prev = '';
         } else {
@@ -1134,7 +1314,8 @@ There is also math.js mainly used for high precision arithmetic.
         !-!HEADER!-!
 
     </head>
-    <body>
+    <body x-data={overlay:false} :class="overlay && 'frozen'"
+        @keyup.escape="$el.querySelectorAll('.overlay .close').forEach( (el)=> el.click() )">
     !-!NAV!-!
     !-!BEGIN!-!
     !-!MAIN!-!
@@ -1148,19 +1329,24 @@ There is also math.js mainly used for high precision arithmetic.
             const render = _"render";
             const {show, hide } = MP;
             MP.mathHelper(math, Decimal, Fraction);
+            math.precision(100);
             MP.makeF(math);
 
             /*let keyInfo = MP.initKeys({});*/
 
             !-!SCRIPT!-!
 
-            const fun = {
+            MP.fun = {
                 !-!FUNCTIONS!-!
             };
             
-            _"set trigger for pebbles"
+            MP.pebbles = {
+                !-!PEBBLES!-!
+            };
 
-            _"setup code"
+            MP.code = {
+                !-!CODE!-!
+            };
 
             _"setup problems"
         });
@@ -1170,48 +1356,6 @@ There is also math.js mainly used for high precision arithmetic.
     </html>
 
 
-### set trigger for pebbles
-
-Here we listen for show events on details and drawers and then we run the
-initiation code in the pebbles object. Just do this once per detail/drawer.
-Need to filter out sub details and drawers. So basically, we take all the
-pebbles in a container and then if they are contained in another detail or
-drawer, we ignore ($$ will filter stuff in actual subfashion). 
-We also grab the scope that the pebble finds itself in. 
-
-The placement of the pebble initiation code gives it access to any of the
-variables in the additional script area. 
-
-
-    const pebbles = {
-        !-!PEBBLES!-!
-    };
-
-    window.pebbles = pebbles;
-
-    const initiatePebble = function initiatePebble (ev) {
-        const el = this;
-        let allPebbles = $$( '.pebble', el);
-        let subPebbles = $$( 'sl-details .pebble, sl-drawer .pebble', el);
-        let topPebbles = allPebbles.
-            filter( (alEl) => !(subPebbles.some( (subEl) => subEl === alEl ) ) );
-        topPebbles.forEach( (topEl) => {
-            try{
-                let scope = openScope(scanParents(topEl));
-                pebbles[topEl.id](topEl, scope);
-            } catch (e) {
-                console.log("Problem with pebble:" + topEl.id, e);
-            }
-        });
-        el.removeEventListener('sl-show', initiatePebble);
-    };
-
-
-
-    $$('sl-details, sl-drawer').forEach( el => {
-        el.addEventListener('sl-show', initiatePebble);
-    });
-
 
 ### Setup code
 
@@ -1219,6 +1363,10 @@ variables in the additional script area.
     const code = {
         !-!CODE!-!
     };
+    window.code = code;
+
+
+[junk]() 
 
 
 We need to setup the code block here. It comes to us with a `pre code` nesting
@@ -1280,23 +1428,9 @@ This is a simple log function.
 [code html]()
 
 
-    <textarea class="text-code">\${codeText}</textarea>
-    <pre class="log"></pre>
-    <div class="buttons">
-    <sl-button class="save">Save</sl-button>
-    <sl-button class="run">Run</sl-button>
-    <sl-button class="reset">Reset</sl-button>
-    <sl-button class="restore">Restore</sl-button>
-    </div>
-    <div class="out"></div>
+
 
 [css]()
-
-
-    .text-code {
-        width:clamp(10px, 70vw, 500px);
-        height:150px;
-    }
 
 
 [styling the code]() 
@@ -1371,9 +1505,13 @@ keep the explore button from growing, we give it a height of 1em.
         grid-template-columns: 1fr auto;
     }
 
-    .section h2 button, .explore, .explore:link, .explore:visited {
+
+TODO: consolidate all of this (replace .explore with .button). 
+
+    .top button, .top a.button, .section h2 button, .explore, .explore:link, .explore:visited {
       background-color: var(--pri-bg); 
-      font-size:70%;
+      font-size:initial;
+      border:none;
       color: black;
       padding: 5px 10px;
       text-align: center;
@@ -1398,9 +1536,14 @@ keep the explore button from growing, we give it a height of 1em.
         filter:brightness(80%);
     }
 
-    .explore:hover, .explore:active, .explore:focus {
+    .top button:hover, .top button:active, .top button:focus, .explore:hover, .explore:active, .explore:focus {
       filter: drop-shadow(3px 3px 2px);
       outline:none;
+    }
+
+    .video button {
+        font-size: 72%;
+        padding: 2px 5px;
     }
 
 
@@ -1511,10 +1654,23 @@ This is where we put all the Alpine related code.
 
     let methods = _"make alpine methods";
 
+This is for the main section which hosts lots of subsections too. 
+
     Alpine.data('section', () => {
-        const ret= {...window.pebbles, ...methods};
+        const ret= {...MP.pebbles, ...methods};
         ret.open = false;
         ret.footCount = 0;
+        ret.togglers = [];
+        return ret;
+    });
+
+Code needs its own scope and has a variety of methods so this creates that
+independent context.
+
+    Alpine.data('code', () => {
+        const ret = { ...MP.code, _":code"};
+        ret.log = [];
+        ret.out = '';
         return ret;
     });
 
@@ -1528,6 +1684,48 @@ This is where we put all the Alpine related code.
 To avoid flout, I find it necessary to hide some stuff. This cleans it up. 
 
     $$('.menu').forEach( el=> show(el) );
+    
+
+[code]()
+
+
+This imports the code from the to-be-hidden code block into the textarea. 
+
+     imp (el) {
+        let ta = el.firstElementChild;
+        let code = el.lastElementChild;
+        code.classList.add('hide');
+        ta.value = code.firstElementChild.innerText;
+        this.renew?.();
+        this.log = [];
+        this.out = '';
+     },
+     run (el) {
+        this.log = [];
+        this.out = '';
+        let {pre = '', post = '' } = this;
+        try {
+            let log = (...args) => this.log.push(...args);
+            let out = (str) => {this.out = str};
+            let vars = this.vars.map( name => `let ${name} =
+            this.${name};`).join('\n'); 
+            let str = vars + '\n' + pre + '\n' + el.firstElementChild.value + '\n' + post;
+            console.log(str);
+            eval(str);
+        } catch(e) {
+            this.log.push(e);
+        }
+    }, 
+    save (el) {
+        //some kind of name grabbing for saving
+        //save el.firstElementChild.value;
+    },
+    restore (el) {
+        // some kind of selection of saved versions
+        // el.firstElementChild.value = saved text
+    },
+    noop () { },
+
 
 ### Make alpine methods
 
@@ -1547,6 +1745,9 @@ This is where we stick a bunch of common alpine methods.
         me (name) {
             dataStores[name] = this;
             this.me = name;
+        },
+        caret (open=false, text='') {
+            return  text + ` <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" height="2.5ex" stroke-linejoin="round"><g ${open ? '' : 'transform="rotate(-90 12 12)"'}><polyline points="6 9 12 15 18 9"></polyline></g></svg>`;
         },
         _"toggle Input", 
     }
@@ -1615,13 +1816,13 @@ This is where we create the various input types. They are:
 ---
 
     {
-    _"bignum",
+    _"decimal",
     
     }
 
-### Bignum 
+### Decimal 
 
-    bignumber (name, store) {
+    decimal (name, store) {
         let iname = 'i'+name; //input string
         let ename = 'e'+name; //actual power value
         let pname = 'p'+name; //power string for input
@@ -1640,16 +1841,16 @@ This is the html
 
     <li id="i${name}" x-show = "t${name}">
     <div class="primary" >
-        <button @click="${name} = math.sub(${name}, ${ename})">-</button>
-        <input type="text" @change="${name} = math.bignumber($el.value)"
+        <button @click="${name} = ${name}.sub(${ename})">-</button>
+        <input type="text" @change="${name} = math.decimal($el.value)"
             x-effect="$el.value = ${name}.toString()" ></input>
-        <button @click="${name} = math.add(${name}, ${ename})">+</button>
+        <button @click="${name} = ${name}.add(${ename}) ">+</button>
     </div>
 
     <div class="exponent">
         <button @click="p${name} = p${name} - 1">_</button>
         <span>1E</span>
-        <input x-model.number="p${name}" x-effect="e${name} = math.pow(10, p${name})"></input>
+        <input x-model.number="p${name}" x-effect="e${name} = Math.pow(10, p${name})"></input>
         <button @click="console.log('hey'); p${name} = p${name} + 1" >^</button>
     </div>
 

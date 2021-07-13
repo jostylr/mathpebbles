@@ -69,11 +69,11 @@
     This is called Moser's problem and it is an interesting problem because the
     number of regions at first doubles for each point added but when we add
     the 6th point, the maximum number of regions is less than double the
-    previous number. Let's explore.
+    previous number. Let's explore.  `#n=3`
 
     !PEBBLE moser
 
-    !VIDEO url  Moser's Circle Demonstration  
+    !VIDEO 172749090 Moser's Circle Demonstration  
  
 
     !DETAILS: 
@@ -94,7 +94,7 @@
 
     !PEBBLE moser-inductive
 
-    !VIDEO url Moser's Circle Inductive Proof
+    !VIDEO https://bugbearday.org/ Moser's Circle Inductive Proof
 
     Euler
 
@@ -122,8 +122,12 @@
     !CODE: counting1regions
 
     ```
-    log(points); 
     regions = 0;
+    log(points); 
+    regions = 31;
+    this.regions += 1;
+    log(regions, this.regions);
+    out(`<p>${5}</p>`);
 
     ```
 
@@ -134,7 +138,7 @@
     
     ```
     regions = 31;
-    log('my the solution goes here');
+    log(regions);
     ```
 
     !END.
@@ -145,14 +149,16 @@
 
 ##### Pebble
 
-    moser : (el) => {
+    moser (el)  {
+        let n = this.n; 
+        console.log(this, n, n.toString());
        el.id = 'cool';
         el.style = 'width:500px;height:200px;border:1px';
 
         let b = JXG.JSXGraph.initBoard('cool', {boundingbox: [-5, 2, 5, -2],
         showCopyright: false, showNavigation: true});
         let  p1 = b.create('point',[0,0], {name:'A',size: 4, face: 'o'});
-        let p2 = b.create('point',[2,-1], {name:'B',size: 4, face: 'o'});
+        let p2 = b.create('point',[2,n.toNumber()], {name:'B',size: 4, face: 'o'});
 
         let ci = b.create('circle',["A","B"], {strokeColor:'#00ff00',strokeWidth:2}); 
     },
@@ -164,12 +170,13 @@
 ##### Code
 
 
-    counting1regions : (text, out) => {
+    counting1regions () {
         console.log("Moser code was here");
-        let points = [[1,3], [2, 4]];
-        let regions;
-        eval(text);
-        out.innerHTML =`<p>${regions}</p>`;
+        this.vars = ['regions', 'points'];
+        this.renew = () => {this.regions = 6;}
+        this.pre = `points = [[1,3], [2, 4]]`;
+        this.out =`<p>5</p>`;
+        this.log.push(5, 6);
     },
 
 
@@ -200,7 +207,7 @@ The one method to rule them all.
 
     We try some number, such as `#width=10`, to get a sense of this. Plugging
     in, we get `=:volume`. Our task is get that volume to be our target number
-    of `=target` and we are currently `=math.sub( target, volume)` away
+    of `=target` and we are currently `= target.sub(volume)` away
     from the target. 
 
     To tackle this in a reasonably efficient manner, we do a couple of guesses
@@ -226,21 +233,22 @@ The one method to rule them all.
 
     cVolume (x) {
         x = x ?? this.width;
-        let l = math.add(x, this.overLength);
-        let h = math.sub(x, this.underHeight);
-        return math.mul(x, l, h);
+        let l = x.add(this.overLength);
+        let h = x.sub(this.underHeight);
+        return x.mul(l).mul(h);
     },
 
     hammerTable (maxloops=50) {
+        math.precision(1000);
         let {g1, g2, precision} = this;
         let digits = Math.round(Math.abs(Math.log(precision)/Math.log(10)) );
         console.log(digits);
         let [xdiff, v1, v2, ydiff, targetDiff, r, g3] = this.hammerFunction(g1, g2);
         let rows = [];
         let count = 0;
-        while ( math.gt(math.abs(targetDiff), precision) &&  (count < maxloops)) {
+        while (targetDiff.abs().gt( precision.toNumber()) &&  (count < maxloops)) {
             rows.push(  '<tr>' + [g1, g2, xdiff, v1, v2, ydiff, targetDiff, r, g3].map( num => {
-                return `<td>${math.format(num, {notation:'fixed', precision:digits})}</td>`;
+                return `<td>${num.toFixed(digits)}</td>`;
             }).join('')+'</tr>');
             count += 1;
             g1 = g2;
@@ -256,14 +264,17 @@ The one method to rule them all.
     hammerFunction (guess1, guess2) {
         let v1 = this.cVolume(guess1);
         let v2 = this.cVolume(guess2);
-        let xdiff = math.sub(guess1, guess2);
-        let ydiff = math.sub(v1, v2);
+        let xdiff = guess1.sub( guess2);
+        let ydiff = v1.sub( v2);
         let target = this.target;
-        let targetDiff = math.sub(target, v2);
-        let r = math.div(targetDiff, ydiff);
-        let g3 = math.add(guess2, math.mul(r, xdiff));
+        let targetDiff = target.sub( v2);
+        let r = targetDiff.div(ydiff);
+        let g3 = guess2.add(r.mul( xdiff));
         return [xdiff, v1, v2, ydiff, targetDiff, r, g3];
     },
+
+
+##### Code 
 
 
 ```ignore

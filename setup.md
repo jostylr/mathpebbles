@@ -123,10 +123,10 @@ works in such strings, at least for computed values.
         let bits = rest.split(';').map( el => el.trim());
         let displayer = 'mathOut';
         let parser = 'mathParse';
-        let type = data.type =  'bignumber';
+        let type = data.type =  'decimal';
         let cls = [kind];
         bits.forEach( bit => {
-            let first = bit[0];
+            let first = bit[0] || '';
             switch (first) {
             case '@' : 
                 if (bit[bit.length-1] === '~') {
@@ -148,6 +148,8 @@ works in such strings, at least for computed values.
             break;
             case '.' : 
                 cls.push(bit.slice(1));
+            break;
+            case '' :
             break;
             default : 
                 let [key='', val=''] = bit.split(':').map( el=>el.trim() );
