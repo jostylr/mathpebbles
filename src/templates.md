@@ -1286,13 +1286,6 @@ reference the css from [common](common.md "load:")
         <title> !-!TITLE!-! </title>
 
 
-    
-Shoelaces. Load this first so submodules can load while others load. Found if
-sxgraph were first, then they block loading of elements. 
-
-        <link rel="stylesheet" href="/r/shoelace/shoelace.css">
-        <script type="module" src="/r/shoelace/shoelace.esm.js"></script>
-
 
 My homespun Var binding
 
