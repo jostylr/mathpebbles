@@ -318,8 +318,8 @@ Colons are totally optional, I hope.
                 case 'QED':
                     _":qed"
                 break;
-                case 'DETAILS':
-                    _":details"
+                case 'DETAILS': 
+                    { _":details" }
                 break;
 
 
@@ -469,6 +469,8 @@ we assume it is a detail as well with the list itself being the reveal item
 (so an invitation to do something, then click to get hints in list, then click
 on each hint). 
 
+j becomes the place where the ol or ul element lives. 
+
     let j = i+1;
     let stuffInBetween = false;
     let test = lines[j].slice(0,4);
@@ -478,33 +480,57 @@ on each hint).
         test = lines[j].slice(0,4);
     }
     if (stuffInBetween) { //non list stuff
-        ret.push('<sl-details><div slot="summary">');
+        p = place += 1;
+        ret.push('<div class="blurb">');
+        ret.push(` <button @click.stop="togglers[${p}] = ! togglers[${p}]" 
+        x-html = "caret( togglers[${p}] )"></button>
+         <div>`);
         for (i=i+1; i < j; i += 1) {
             ret.push(lines[i]);
         }
-        ret.push('</div>');
+        ret.push('</div></div>');
     }
 
 We are now on the list. The first line is the open list one;
 
-Not sure if we should worry about case of `<li>something</li>` Experiments
-suggest that should not happen. 
-    
+Not sure if we should worry about case of `<li>something</li>`. The last push
+of a line that does not exactly match of only having  `<li>` should work. 
 
-    ret.push(lines[j]);
-    let listEnd = '</' + lines[j].slice(1);
+    let type = lines[j].slice(1,3);
+    if (stuffInBetween) {
+        ret.push(`<${type} x-show="togglers[${p}]">`);
+    } else {
+        ret.push(`<${type}>`);
+    }
+    let listEnd = `</${type}>`;
     j += 1;
     let line = lines[j];
     let summary = false;
+    let q; 
     while (line !== listEnd) {
         if (summary) {
-            ret.push(line + '</div>');
+            ret.push(line + `</div></div><div x-show="togglers[${q}]">`);
             summary = false;
         } else if (line === '<li>') {
-            ret.push('<li><sl-details><div slot="summary">');
-            summary = true;
+
+If the item is just a single bit with no other paragraphs, then we can figure
+this out by looking ahead by 2 lines and adding them if the li closure happens
+there. 
+
+            if (lines[j+2] === '</li>') {
+                ret.push(...lines.slice(j, j+3));
+                j += 2;
+            } else {
+                q = place += 1;
+                ret.push(`
+                <li><div class="blurb">
+                <button @click.stop="togglers[${q}] = ! togglers[${q}]" 
+                x-html = "caret( togglers[${q}] )"></button>
+                <div> `);
+                summary = true;
+            }
         } else if (line === '</li>') {
-            ret.push('</sl-details></li>');
+            ret.push('</div></li>');
         } else {
             ret.push(line);
         }
@@ -512,11 +538,10 @@ suggest that should not happen.
         line = lines[j];
     }
 
-    ret.push(line);
+    ret.push(listEnd);
 
-    if (stuffInBetween) {
-        ret.push('</sl-details>');
-    }
+
+i will increment from looping.
 
     i = j;
 
@@ -529,7 +554,7 @@ We want the sub detail list to have no padding
     .blurb > button {
         font-size: 72%;
         padding: 2px 5px;
-        margin-right: 3em;    
+        margin-right: 1em;    
     } 
 
     .video iframe {
@@ -565,7 +590,7 @@ We want the sub detail list to have no padding
 
     .left + .close {
         position: absolute;
-        bottom: 1vh;
+        bottom: 1v;
         left: 37vw;
         z-index:260;
     }
@@ -596,6 +621,16 @@ We want the sub detail list to have no padding
         align-items: center;
     }
 
+TODO revisit the positioning of the lists. 
+
+
+    .blurb + *, .blurb + * > li {
+        margin-top:-1em;
+    }
+
+    .blurb + * > li > :last-child > :last-child {
+        margin-bottom: 1.5em;
+    }
 
     textarea {
         width:clamp(280px, 70vw, 500px);

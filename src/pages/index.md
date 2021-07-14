@@ -84,7 +84,27 @@
 
         In detail 
 
+        More details
+
     * Next step 
+
+    * Final step
+
+        blah blah
+
+     no blah
+
+     !DETAILS: 
+
+     * No leading blurb
+
+        what? 
+
+    * blurb blurb
+
+        details
+        
+        more details
 
     !PROOF: Induction
 
