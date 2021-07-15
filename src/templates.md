@@ -352,7 +352,7 @@ div is for a flex to push the button to the far right.
                     _":qed"
                 break;
                 case 'CODE': 
-                    _":code"
+                    { _":code" }
                 break; 
                 case 'SOLUTION':
                     p = places.pop();
@@ -437,35 +437,40 @@ This creates the try code block.
 
     p = place +=1;
     places.push(p);
-    ret.push(`<div class="code" x-data="code"
-         x-init="${end.trim().toLowerCase() || 'noop'}()"
-         >
-         <div class="try" x-init="imp($el)"input>
-         <div class="code-view">
-            <textarea spellCheck="false" 
-            @input="updateCode($el) && syncScroll($el)" 
-            @scroll = syncScroll($el);
-            @keydown.alt.tab.stop = "checkTab($el, 4)"
-            ></textarea>
-            <pre class="line-numbers language-javscript match-braces"><code></code></pre>
-        </div>
+    let title = end.trim().toLowerCase() || 'noop';
+    ret.push(`<div class="code" x-data="code" x-init="${title}()" >
+         <div class="try">
+         <div class="editor language-js line-number match-braces" x-init="start( $el , '${title}')"></div>
         <pre x-text="log.join('\\n')"></pre>
         <div class="buttons">
-        <button @click.stop="save(_':try el')">Save</button>
-        <button @click.stop="run(_':try el')">Run</button>
-        <button @click.stop="imp(_':try el')">Reset</button>
-        <button @click.stop="restore(_':try el')">Restore</button>
+        <button @click.stop="save()">Save</button>
+        <button @click.stop="run()">Run</button>
+        <button @click.stop="reset()">Reset</button>
+        <button @click.stop="restore()">Restore</button>
         <button style="display: inline-flex; padding-bottom: 3px;"
         @click.stop ="togglers[${p}] = ! togglers[${p}]"
         x-html = "caret( togglers[${p}], 'Show Working Program' ) "></button>
         </div>
         <div x-html="out"></div>`);
 
+
+
+
+[junk]()
+
+            <textarea spellCheck="false" 
+            @input="updateCode($el) " 
+            @keydown.alt.tab.stop = "checkTab($el, 4)"
+            ></textarea>
+            <pre class="line-numbers language-javscript match-braces"><code></code></pre>
+
+
+
 [try el]() 
 
 Not sure how to easily grab this in another way. Anticipate it changing. 
 
-    $el.parentElement.parentElement
+    $el.parentElement.parentElement.firstElementChild
 
 [details]()
 
@@ -1304,6 +1309,16 @@ My homespun Var binding
             
         </script>
 
+For code editing
+
+        <link href="/r/prism.css" rel="stylesheet" />
+        <script>
+             window.Prism = window.Prism || {};
+		     Prism.manual = true;
+         </script>
+        <script defer src="/r/prism.js"></script>
+        
+        <script defer src="/r/codejar.js"></script>
 
         _"global css:version"
 
@@ -1322,8 +1337,6 @@ Mathjax  global: MathJax
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
         </script>
 
-
-        _"styling the code:header"
 
 JSXGraph  global: JXG
 
@@ -1392,61 +1405,6 @@ There is also math.js mainly used for high precision arithmetic.
     </body>
     </html>
 
-
-
-### Styling the code
-
-
-TODO:  https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax-highlighted-code/
-
-This would allow the textareas to have syntax highlighting. 
-
-[header]()
-
-This loads the library
-
-    <link href="/r/prism.css" rel="stylesheet" />
-
-    <script defer src="/r/prism.js"></script>
-
-
-[css]() 
-
-    .code-view.code-view.code-view > textarea, .code-view.code-view.code-view > pre {
-      /* Both elements need the same text and space styling so they are directly on top of each other */
-      margin: 10px;
-      padding: 10px;
-      border: 0;
-      width: calc(100% - 32px);
-      height: 150px;
-      overflow: auto;
-
-
-Then we want to position them right on top of each other:
-
-      position: absolute !important;
-      top: 0;
-      left: 0;
-    }
-
-    .code-view.code-view.code-view > textarea {
-        z-index : 1;
-        color: transparent;
-        background: transparent;
-        caret-color: white;
-        resize: none;
-    }
-
-    .code-view.code-view.code-view > pre {
-        z-index:0; 
-    }
-
-    .code-view.code-view.code-view * {
-      /* Also add text styles to highlighting tokens */
-      font-size: 15pt;
-      font-family: monospace;
-      line-height: 20pt;
-    }
 
 
 # Setup Problems
@@ -1585,8 +1543,6 @@ for that.
         }
     }
 
-    _"styling the code:css"
-
     _"make path:css"
     _"next prev:css"
     _"accordion:css"
@@ -1679,6 +1635,7 @@ Code needs its own scope and has a variety of methods so this creates that
 independent context.
 
     Alpine.data('code', () => {
+        let jar, editor, title, original;
         const ret = { ...MP.code, _":code"};
         ret.log = [];
         ret.out = '';
@@ -1701,6 +1658,47 @@ To avoid flout, I find it necessary to hide some stuff. This cleans it up.
 
 
 This imports the code from the to-be-hidden code block into the textarea. 
+
+    start (el, t)  {
+        title = t;
+        console.log('el', el, t);
+        jar = CodeJar(el, Prism.highlightElement);
+        let origCode = el.parentElement.lastElementChild.firstElementChild;
+        origCode.classList.add('hide');
+        original = origCode.textContent;
+        this.reset();
+    },
+    reset () {
+        jar.updateCode(original);
+        this.log  = [];
+        this.out = '';
+    },
+    run () {
+        this.log = [];
+        this.out = '';
+        let {pre = '', post = '' } = this;
+        let userCode = jar.toString();
+        try {
+            let log = (...args) => this.log.push(...args);
+            let out = (str) => {this.out = str};
+            let vars = this.vars.map( name => `let ${name} =
+            this.${name};`).join('\n'); 
+            let str = vars + '\n' + pre + '\n' + userCode + '\n' + post;
+            console.log(str);
+            eval(str);
+        } catch(e) {
+            this.log.push(e);
+        }
+    },
+    save () {
+    },
+    restore () {
+
+    },
+
+[junk]()
+
+
 
      imp (el) {
         let ta = el.firstElementChild.firstElementChild;
@@ -1740,23 +1738,6 @@ This imports the code from the to-be-hidden code block into the textarea.
         // el.firstElementChild.value = saved text
     },
     noop () { },
-    syncScroll (ta ) {
-        let code = ta.nextElementSibling.children[0];
-        code.scrollTop = ta.scrollTop;
-        code.scrollLeft = ta.scrollLeft;
-        return true;
-    },
-    updateCode(ta) {
-        let code = ta.nextElementSibling.children[0];
-        let text = ta.value;
-        if (text[text.length-1] == "\n") { // If the last character is a newline character
-           text += " "; // Add a placeholder space character to the final line 
-        }
-        // Update code
-        code.textContent = text;
-          // Syntax Highlight
-      Prism.highlightElement(code);
-    },
     checkTab(ta, spaces) {
         let code = ta.value;
         let start = ta.selectionStart;
@@ -1768,33 +1749,6 @@ deprecated, but if it works, its cool.
         document.execCommand('insertText', false, spaceStr);
         this.updateCode(ta);
       },
-
-[fuller version of checktab]()
-
-Abandoned this because the key combo of tab.alt.shift also trigged tab.alt. So
-could only use one. 
-
-
-    checkTab(ta, spaces) {
-        let code = ta.value;
-        let start = ta.selectionStart;
-        let spaceStr = ' '.repeat( Math.abs(spaces));
-        if (spaces > 0) {
-            document.execCommand('insertText', false, spaceStr);
-        } else {
-            let compstr = code.slice(start+spaces, start);
-            console.log(compstr, compstr.length, spaceStr === compstr);
-            if (code.slice(start+spaces, start) === spaceStr) {
-                ta.selectionStart += spaces;
-                console.log(start, spaces, ta.selectionStart);
-                //document.execCommand('delete', false, null);
-            } else {
-                return;
-            }
-        }
-        this.updateCode(ta);
-      },
-
 
 
 
