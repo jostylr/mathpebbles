@@ -440,8 +440,15 @@ This creates the try code block.
     ret.push(`<div class="code" x-data="code"
          x-init="${end.trim().toLowerCase() || 'noop'}()"
          >
-         <div class="try" x-init="imp($el)">
-        <textarea></textarea>
+         <div class="try" x-init="imp($el)"input>
+         <div class="code-view">
+            <textarea spellCheck="false" 
+            @input="updateCode($el) && syncScroll($el)" 
+            @scroll = syncScroll($el);
+            @keydown.alt.tab.stop = "checkTab($el, 4)"
+            ></textarea>
+            <pre class="line-numbers language-javscript match-braces"><code></code></pre>
+        </div>
         <pre x-text="log.join('\\n')"></pre>
         <div class="buttons">
         <button @click.stop="save(_':try el')">Save</button>
@@ -1316,6 +1323,8 @@ Mathjax  global: MathJax
         </script>
 
 
+        _"styling the code:header"
+
 JSXGraph  global: JXG
 
         
@@ -1385,87 +1394,60 @@ There is also math.js mainly used for high precision arithmetic.
 
 
 
-### Setup code
+### Styling the code
 
-
-    const code = {
-        !-!CODE!-!
-    };
-    window.code = code;
-
-
-[junk]() 
-
-
-We need to setup the code block here. It comes to us with a `pre code` nesting
-and we want it to be a textarea. 
-
-We allow for a setup phase of the code. Generally we will want that so that
-the coding can be focused on the cool stuff. This might be setting up a
-jsxgraph board or some kind of data. 
-
-
-    $$('.code').
-        forEach(par => {
-            let codeText = $('code', par)?.innerText || '';
-            $('pre', par).outerHTML = \`<div class="container">_":code html"</div><sl-button>Show Working Program</sl-button> \`;
-            let con = $('.container', par);
-            con.addEventListener('click', (ev) => ev.stopPropagation() );
-
-For the textarea, we want to prevent any other reactions from happening.  
-
-            let ta = $('textarea', par);
-            ta.addEventListener('keydown', (ev) => ev.stopPropagation()); 
-            let logout = $('.log', par);
-            let log = _":log";
-            let out = $('.out', par);
-            let preRun = code[par.parentNode.dataset.id] || '';  
-            $('.run', par).addEventListener('click', () => {
-                _":run code"
-            });
-        })
-    ;
-
-[run code]() 
-
-
-The log function and the out element are available to the eval code. 
-
-    logout.innerText = '';
-    try {
-       eval(preRun+'\\n'+ta.value);
-    } catch(e) {
-        log(e);
-    }
-
-
-[log]() 
-
-This is a simple log function. 
-
-    function log (...args) {
-        let text = logout.innerText;
-        if (text) { args.shift(text) } //adds newline
-        text += args.map(
-                obj => obj.toString()
-            ).join('\\n');
-        logout.innerText = text;
-    }
-
-
-[code html]()
-
-
-
-
-[css]()
-
-
-[styling the code]() 
 
 TODO:  https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax-highlighted-code/
 
 This would allow the textareas to have syntax highlighting. 
+
+[header]()
+
+This loads the library
+
+    <link href="/r/prism.css" rel="stylesheet" />
+
+    <script defer src="/r/prism.js"></script>
+
+
+[css]() 
+
+    .code-view.code-view.code-view > textarea, .code-view.code-view.code-view > pre {
+      /* Both elements need the same text and space styling so they are directly on top of each other */
+      margin: 10px;
+      padding: 10px;
+      border: 0;
+      width: calc(100% - 32px);
+      height: 150px;
+      overflow: auto;
+
+
+Then we want to position them right on top of each other:
+
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+
+    .code-view.code-view.code-view > textarea {
+        z-index : 1;
+        color: transparent;
+        background: transparent;
+        caret-color: white;
+        resize: none;
+    }
+
+    .code-view.code-view.code-view > pre {
+        z-index:0; 
+    }
+
+    .code-view.code-view.code-view * {
+      /* Also add text styles to highlighting tokens */
+      font-size: 15pt;
+      font-family: monospace;
+      line-height: 20pt;
+    }
+
 
 # Setup Problems
 
@@ -1603,11 +1585,12 @@ for that.
         }
     }
 
+    _"styling the code:css"
+
     _"make path:css"
     _"next prev:css"
     _"accordion:css"
     _"shoelace full:css"
-    _"setup code:css"
     _"common::css"
     _"make nav:css"
     _"make fano:css"
@@ -1720,13 +1703,17 @@ To avoid flout, I find it necessary to hide some stuff. This cleans it up.
 This imports the code from the to-be-hidden code block into the textarea. 
 
      imp (el) {
-        let ta = el.firstElementChild;
+        let ta = el.firstElementChild.firstElementChild;
         let code = el.lastElementChild;
         code.classList.add('hide');
-        ta.value = code.firstElementChild.innerText;
-        this.renew?.();
+        ta.focus();
+        ta.selectionStart = 0; 
+        ta.selectionEnd = ta.value.length;
+        console.log(ta.selectionStart, ta.selectionEnd);
+        document.execCommand('insertText', false, code.firstElementChild.innerText);
         this.log = [];
         this.out = '';
+        this.updateCode(ta);
      },
      run (el) {
         this.log = [];
@@ -1753,6 +1740,62 @@ This imports the code from the to-be-hidden code block into the textarea.
         // el.firstElementChild.value = saved text
     },
     noop () { },
+    syncScroll (ta ) {
+        let code = ta.nextElementSibling.children[0];
+        code.scrollTop = ta.scrollTop;
+        code.scrollLeft = ta.scrollLeft;
+        return true;
+    },
+    updateCode(ta) {
+        let code = ta.nextElementSibling.children[0];
+        let text = ta.value;
+        if (text[text.length-1] == "\n") { // If the last character is a newline character
+           text += " "; // Add a placeholder space character to the final line 
+        }
+        // Update code
+        code.textContent = text;
+          // Syntax Highlight
+      Prism.highlightElement(code);
+    },
+    checkTab(ta, spaces) {
+        let code = ta.value;
+        let start = ta.selectionStart;
+        let spaceStr = ' '.repeat(spaces);
+
+The execCommand comes from https://stackoverflow.com/a/44473352  It is
+deprecated, but if it works, its cool. 
+
+        document.execCommand('insertText', false, spaceStr);
+        this.updateCode(ta);
+      },
+
+[fuller version of checktab]()
+
+Abandoned this because the key combo of tab.alt.shift also trigged tab.alt. So
+could only use one. 
+
+
+    checkTab(ta, spaces) {
+        let code = ta.value;
+        let start = ta.selectionStart;
+        let spaceStr = ' '.repeat( Math.abs(spaces));
+        if (spaces > 0) {
+            document.execCommand('insertText', false, spaceStr);
+        } else {
+            let compstr = code.slice(start+spaces, start);
+            console.log(compstr, compstr.length, spaceStr === compstr);
+            if (code.slice(start+spaces, start) === spaceStr) {
+                ta.selectionStart += spaces;
+                console.log(start, spaces, ta.selectionStart);
+                //document.execCommand('delete', false, null);
+            } else {
+                return;
+            }
+        }
+        this.updateCode(ta);
+      },
+
+
 
 
 ### Make alpine methods
