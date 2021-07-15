@@ -146,6 +146,7 @@
     log(points); 
     regions = 31;
     this.regions += 1;
+    this.dude += 10;
     log(regions, this.regions);
     out(`<p>${5}</p>`);
 
@@ -193,10 +194,10 @@
     counting1regions () {
         console.log("Moser code was here");
         this.vars = ['regions', 'points'];
-        this.renew = () => {this.regions = 6;}
+        this.points = [[1,6],[2,7]];
+        this.renew = () => {this.regions = 6; this.dude = 7}
         this.pre = `points = [[1,3], [2, 4]]`;
-        this.out =`<p>5</p>`;
-        this.log.push(5, 6);
+        this.post = 'log(this.regions, this.points, this.dude, regions, points)';
     },
 
 

@@ -426,7 +426,7 @@ bug page:  https://bugzilla.mozilla.org/show_bug.cgi?id=363840
 [qed]() 
 
     p = places.pop();
-    ret.push(`</div><button class="close" @click="togglers[${p}] = false">Close</button>
+    ret.push(`<div class="spacer"></div></div><button class="close" @click="togglers[${p}] = false">Close</button>
     </div> `);
 
 
@@ -440,7 +440,9 @@ This creates the try code block.
     let title = end.trim().toLowerCase() || 'noop';
     ret.push(`<div class="code" x-data="code" x-init="${title}()" >
          <div class="try">
-         <div class="editor language-js line-number match-braces" x-init="start( $el , '${title}')"></div>
+         <textarea spellCheck="false" x-init="start($el, '${title}')" 
+            @keydown.alt.tab.stop = "tab(4)"
+         ></textarea>
         <pre x-text="log.join('\\n')"></pre>
         <div class="buttons">
         <button @click.stop="save()">Save</button>
@@ -449,7 +451,8 @@ This creates the try code block.
         <button @click.stop="restore()">Restore</button>
         <button style="display: inline-flex; padding-bottom: 3px;"
         @click.stop ="togglers[${p}] = ! togglers[${p}]"
-        x-html = "caret( togglers[${p}], 'Show Working Program' ) "></button>
+        x-html = "caret( togglers[${p}], 'Show Ref' ) "></button>
+        <button x-show="togglers[${p}]" @click.stop="ref()">Load Ref</button>
         </div>
         <div x-html="out"></div>`);
 
@@ -458,11 +461,7 @@ This creates the try code block.
 
 [junk]()
 
-            <textarea spellCheck="false" 
-            @input="updateCode($el) " 
-            @keydown.alt.tab.stop = "checkTab($el, 4)"
-            ></textarea>
-            <pre class="line-numbers language-javscript match-braces"><code></code></pre>
+
 
 
 
@@ -562,6 +561,9 @@ i will increment from looping.
 
 We want the sub detail list to have no padding
 
+    .spacer {
+        height: 20px;
+    }
 
     .blurb > button {
         font-size: 72%;
@@ -580,7 +582,7 @@ We want the sub detail list to have no padding
         top: 0px;
         background-color: white;
         z-index: 250;
-        width: 70vw;
+        width: clamp(480px, 70vw, 600px);
         padding: 24px;
         overflow-y: auto;
         padding-top: 2vh;
@@ -602,15 +604,15 @@ We want the sub detail list to have no padding
 
     .left + .close {
         position: absolute;
-        bottom: 1v;
-        left: 37vw;
+        bottom: 1vh;
+        left: clamp(220px, 35vw, 300px);
         z-index:260;
     }
 
     .right + .close {
         position: absolute;
         bottom: 1vh;
-        right: 37vw;
+        right: clamp(220px, 35vw, 300px);
         z-index:260;
     }
 
@@ -1311,14 +1313,6 @@ My homespun Var binding
 
 For code editing
 
-        <link href="/r/prism.css" rel="stylesheet" />
-        <script>
-             window.Prism = window.Prism || {};
-		     Prism.manual = true;
-         </script>
-        <script defer src="/r/prism.js"></script>
-        
-        <script defer src="/r/codejar.js"></script>
 
         _"global css:version"
 
@@ -1429,8 +1423,8 @@ TODO: Add stuff for using problems, doing quiz objects or practice objects.
     
     body {
         max-width: 80em;
-        margin-left: 4px;
-        margin-right: 4px;
+        margin-left: auto;
+        margin-right:auto;
 
 The top margin being 0 helps the nav not have a gap. We need to have a full
 page width on the bottom to have it be able to scroll up. 
@@ -1635,7 +1629,7 @@ Code needs its own scope and has a variety of methods so this creates that
 independent context.
 
     Alpine.data('code', () => {
-        let jar, editor, title, original;
+        let ta, title, original;
         const ret = { ...MP.code, _":code"};
         ret.log = [];
         ret.out = '';
@@ -1661,15 +1655,20 @@ This imports the code from the to-be-hidden code block into the textarea.
 
     start (el, t)  {
         title = t;
-        console.log('el', el, t);
-        jar = CodeJar(el, Prism.highlightElement);
+        ta = el;
+        console.log('ta', ta, t);
         let origCode = el.parentElement.lastElementChild.firstElementChild;
         origCode.classList.add('hide');
         original = origCode.textContent;
-        this.reset();
+        ta.value = original;
     },
-    reset () {
-        jar.updateCode(original);
+    reset (text) {
+    console.log('reseting');
+        ta.focus();
+        ta.selectionStart = 0; 
+        ta.selectionEnd = ta.value.length;
+        console.log(ta.selectionStart, ta.selectionEnd);
+        document.execCommand('insertText', false, text ?? original);
         this.log  = [];
         this.out = '';
     },
@@ -1677,14 +1676,14 @@ This imports the code from the to-be-hidden code block into the textarea.
         this.log = [];
         this.out = '';
         let {pre = '', post = '' } = this;
-        let userCode = jar.toString();
         try {
             let log = (...args) => this.log.push(...args);
             let out = (str) => {this.out = str};
             let vars = this.vars.map( name => `let ${name} =
             this.${name};`).join('\n'); 
-            let str = vars + '\n' + pre + '\n' + userCode + '\n' + post;
+            let str = vars + '\n' + pre + '\n' + ta.value + '\n' + post;
             console.log(str);
+            this.renew?.(); //allows init code to renew stuff versus carried on
             eval(str);
         } catch(e) {
             this.log.push(e);
@@ -1695,6 +1694,28 @@ This imports the code from the to-be-hidden code block into the textarea.
     restore () {
 
     },
+    noop () { },
+    tab(spaces) {
+        let start = ta.selectionStart;
+        let spaceStr = ' '.repeat(spaces);
+
+The execCommand comes from https://stackoverflow.com/a/44473352  It is
+deprecated, but if it works, its cool. 
+
+        document.execCommand('insertText', false, spaceStr);
+    },
+
+This is trying to grab the original code
+
+    ref () {
+        let codeEl = $('code', ta.parentElement.nextElementSibling);
+        console.log(codeEl);
+        this.reset(codeEl.textContent);
+    },
+
+
+
+
 
 [junk]()
 
@@ -1704,11 +1725,7 @@ This imports the code from the to-be-hidden code block into the textarea.
         let ta = el.firstElementChild.firstElementChild;
         let code = el.lastElementChild;
         code.classList.add('hide');
-        ta.focus();
-        ta.selectionStart = 0; 
-        ta.selectionEnd = ta.value.length;
-        console.log(ta.selectionStart, ta.selectionEnd);
-        document.execCommand('insertText', false, code.firstElementChild.innerText);
+
         this.log = [];
         this.out = '';
         this.updateCode(ta);
@@ -1737,21 +1754,6 @@ This imports the code from the to-be-hidden code block into the textarea.
         // some kind of selection of saved versions
         // el.firstElementChild.value = saved text
     },
-    noop () { },
-    checkTab(ta, spaces) {
-        let code = ta.value;
-        let start = ta.selectionStart;
-        let spaceStr = ' '.repeat(spaces);
-
-The execCommand comes from https://stackoverflow.com/a/44473352  It is
-deprecated, but if it works, its cool. 
-
-        document.execCommand('insertText', false, spaceStr);
-        this.updateCode(ta);
-      },
-
-
-
 ### Make alpine methods
 
 This is where we stick a bunch of common alpine methods.
