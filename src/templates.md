@@ -233,7 +233,8 @@ the section name and the second one being a path for the Explore button.
         full = shoelacify(full || ''); 
         let self=slugify(name);
         if (full) {
-            main += `<div class="top section" id="${self}" x-data="section" x-init="me('${self}')">
+            main += `<div class="top section" id="${self}"
+            x-data="section" x-init="me('${self}')">
                 <div class="summary">
                     _":heading"
                     ${preview}
@@ -254,7 +255,7 @@ The heading here is for sections with details to reveal. This is specifically
 not to be those with explore buttons. 
 
     <h2>${name} 
-        <button @click="open =  ! open" x-text="open ? 'Less...' : 'More...'">More...</button>
+        <button @click="toggleSection( '${self}', $el )" x-text="open ? 'Less...' : 'More...'">More...</button>
     </h2>
 
 ## Shoelace full
@@ -280,7 +281,6 @@ lines until some ending tag.
 * PROGRAM: whatever for a program environment. STOP.
 * CODE name: starting code block  SOLUTION: Some explanatory text and a code
   block to sub in for the solution. END.
-* FOOTNOTE: This pops up from the bottom. It ends with SOCK. 
 
 
 Colons are totally optional, I hope. 
@@ -318,6 +318,22 @@ Colons are totally optional, I hope.
                 case 'QED':
                     _":qed"
                 break;
+                case 'PROGRAM' :
+                   _":proof | sub Proof, Program, left, right" 
+                break;
+                case 'STOP':
+                    _":qed"
+                break;
+                case 'CODE': 
+                    { _":code" }
+                break; 
+                case 'SOLUTION':
+                    p = places.pop();
+                    ret.push(`</div><div x-show="togglers[${p}]">`);
+                break;
+                case 'END':
+                    ret.push('</div></div>');
+                break;
                 case 'DETAILS': 
                     { _":details" }
                 break;
@@ -345,22 +361,7 @@ div is for a flex to push the button to the far right.
                 case 'DONE':
                     ret.push('</div></div>');
                 break;
-                case 'PROGRAM' :
-                   _":proof | sub Proof, Program, left, right" 
-                break;
-                case 'STOP':
-                    _":qed"
-                break;
-                case 'CODE': 
-                    { _":code" }
-                break; 
-                case 'SOLUTION':
-                    p = places.pop();
-                    ret.push(`</div><div x-show="togglers[${p}]">`);
-                break;
-                case 'END':
-                    ret.push('</div></div>');
-                break;
+
                 default: 
                     ret.push(line);
                 }
@@ -1188,15 +1189,9 @@ Now we try to get an item in the newly visible elment focused.
             } else {
                 el.focus();
             }
-        });
-    });
+        })
+    })
 
-To have nested details, it was necessary to stop the propagation of the show
-events otherwise they would close. Not sure if it is the accordion part. 
-
-    $$('sl-details').forEach( el => {
-        el.addEventListener('sl-show', (ev) => ev.stopPropagation());
-    });
 
 
 On initial load, open up the relevant detail from the hash or open up the
@@ -1206,14 +1201,14 @@ default one.
     if (hash) {
         let el = $(hash);
         if (el) {
-            el.show();
+           console.log('should be button', el.firstElementChild.firstElementChild.lastElementChild);
             window.addEventListener('load', () => {
+               el.firstElementChild.firstElementChild.lastElementChild.click();
                setTimeout( () => {
                     console.log("scrolling");
                     scrollToEl(el);
                 }, 250);
             });
-           el.classList.add('currentActive');   
         }
     } else {
 
@@ -1222,11 +1217,10 @@ We want to open the top level detail if it is a detail. But it could not be in
 which case we do nothing. 
 
         let firstEl = $('nav + *');
-        let nn = firstEl.nodeName.toLocaleLowerCase();
-        if (nn === 'sl-details') {
-            firstEl.show();
+        let button = firstEl?.firstElementChild?.firstElementChild?.lastElementChild;
+        if (button && button.nodeName === "BUTTON") {
+            button.click();
         }
-        firstEl.classList.add('currentActive');
     }
 
 
@@ -1241,6 +1235,7 @@ going on, even on load.
     function (el) { 
         let navB = nav.getBoundingClientRect().bottom;
         let h2 = $('h2', el);
+        console.log(el, h2);
         let h2Top = h2.getBoundingClientRect().top;
         scrollBy({top: (h2Top - navB) - 6, behavior:"smooth"});
     }
@@ -1716,44 +1711,6 @@ This is trying to grab the original code
 
 
 
-
-[junk]()
-
-
-
-     imp (el) {
-        let ta = el.firstElementChild.firstElementChild;
-        let code = el.lastElementChild;
-        code.classList.add('hide');
-
-        this.log = [];
-        this.out = '';
-        this.updateCode(ta);
-     },
-     run (el) {
-        this.log = [];
-        this.out = '';
-        let {pre = '', post = '' } = this;
-        try {
-            let log = (...args) => this.log.push(...args);
-            let out = (str) => {this.out = str};
-            let vars = this.vars.map( name => `let ${name} =
-            this.${name};`).join('\n'); 
-            let str = vars + '\n' + pre + '\n' + el.firstElementChild.value + '\n' + post;
-            console.log(str);
-            eval(str);
-        } catch(e) {
-            this.log.push(e);
-        }
-    }, 
-    save (el) {
-        //some kind of name grabbing for saving
-        //save el.firstElementChild.value;
-    },
-    restore (el) {
-        // some kind of selection of saved versions
-        // el.firstElementChild.value = saved text
-    },
 ### Make alpine methods
 
 This is where we stick a bunch of common alpine methods.
@@ -1777,6 +1734,7 @@ This is where we stick a bunch of common alpine methods.
             return  text + ` <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" height="2.5ex" stroke-linejoin="round"><g ${open ? '' : 'transform="rotate(-90 12 12)"'}><polyline points="6 9 12 15 18 9"></polyline></g></svg>`;
         },
         _"toggle Input", 
+        _"toggle section",
     }
 
 [mathout]()
@@ -1832,6 +1790,45 @@ only one gets assigned.
         let html = inputTypes[type]?.(name, this);  
         div.innerHTML= html;
         footer.appendChild(div.children[0].cloneNode(true));
+    }
+
+
+### Toggle section
+
+This toggles the sections by toggling the value of open on this data item,
+modifying the hash, and then toggling close the hash of the other one. If it
+is the same one, then we simply close and clear the hash. 
+
+TODO: deal with fragile and redundant location stuff ?
+
+
+    toggleSection (name, el) {
+        console.log(name, this.open); 
+        if (this.open) {  // already open, clean and close
+            this.open = false;
+            if (!window.pause) {
+                history.pushState({}, 'MathPebbles', document.location.pathname);
+            } else {
+                window.pause = false
+            }
+        } else {
+            this.open = true;
+            let hash = document.location.hash.slice();
+            if (hash.slice(1) === name) {return; } //closed but hashed already
+            if (hash) {
+                let curEl = $(hash);
+                if (curEl) {
+                    window.pause = true;
+                    curEl.firstElementChild.firstElementChild.lastElementChild.click();
+                }
+                setTimeout( () => {
+                    console.log("scrolling");
+                    scrollToEl(el.parentElement.parentElement);
+                }, 250);
+
+            }
+            history.pushState({},'MathPebbles', document.location.pathname+'#'+name);
+        }
     }
 
 ### Input types

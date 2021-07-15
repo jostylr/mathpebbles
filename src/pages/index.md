@@ -64,7 +64,7 @@
     several straight fences crossing the field. These fences will enclose
     various regions inside the field. If `n`$ is the number of endpoints of
     the fences on the circle, what is the maximum number of enclosed regions
-    that could be obtained? What causes the number to be lower? 
+    that could be obtained? What causes the number to be lower?
 
     This is called Moser's problem and it is an interesting problem because the
     number of regions at first doubles for each point added but when we add
