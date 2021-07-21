@@ -18,6 +18,38 @@
 
 ## Intro
 
+    MathPebbles is dedicated to exploring mathematics through interactive
+    text and graphs, video, proofs, and programs. One can also take notes and
+    do practice problems. 
+
+    It is organized into seven books, each with seven chapters, and each
+    chapter has seven sections. Sections may contain a lot of subsections or
+    be fairly minimal. Some chapters can represent whole courses while others
+    may only represent a small portion of a course's material. It gets heavier
+    as one goes further on. 
+
+    We start with counting and end with professional applications of
+    mathematics. It is very ambitious. 
+
+    The hope of this site is to inspire an exploratory attitude in using
+    mathematics. Mathematics is a tool for understanding the world and is a
+    world unto itself. Exploring that world and our world simultaneously will
+    be our journey. 
+
+    One of the features of this site is carefully crafted computer-aided
+    explorations of mathematics. While there are incredible computer-based
+    mathematical systems out there, e.g., [GeoGebra](https://geogebra.org),
+    they are of a general purpose and can be hard to use to fully explore
+    something. In paticular, it is not only answers that we seek, but the
+    methods and how they vary. This requires a guided partnership between
+    student and computer. 
+
+    As of this writing, it is very much empty of content and still being
+    worked on. It will take years to complete this, if ever. But hopefully 
+
+
+
+
 ##### Pebble
 
 ## Teaser
@@ -298,7 +330,6 @@ The one method to rule them all.
 ##### Code 
 
 
-```ignore
 ## Arithmetic
 
     _"arithmetic::teaser"
@@ -347,7 +378,8 @@ The one method to rule them all.
 
 
 [practitioners](pages/practitioners.md "load:")
-```
+
+```ignore
 
 ## Arithmetic
 
@@ -363,3 +395,4 @@ The one method to rule them all.
 ## Probability and Statistics
 
 ## Practitioners
+```

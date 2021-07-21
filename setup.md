@@ -89,11 +89,15 @@ works in such strings, at least for computed values.
 
 ### Parsing
 
+Inputs should be buttons to activate the input interface. 
     
     function (text) {
         _":figure out kind"
         let data = {};
         let tag = 'span';
+        if (kind === 'input') {
+            tag = 'button';
+        }
         if (text[0] === '!') {
             text = text.slice(1);
             tag = 'div';
@@ -172,7 +176,6 @@ evaluated as a interpolated string, taking in the values
 
         let exp = compute ? value : '`' + value + '`';
         if (kind==='input') {
-            insert += 'tabindex="0" '; 
             insert += 'x-init="store(' + parser + '(' + exp + ', $el), \''+ name +'\')" ';
             insert += 'x-effect="' + displayer + '(' + name + ', $el)" ';
             insert += '@click="toggleInput($el)"';

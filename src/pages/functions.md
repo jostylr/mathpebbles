@@ -91,6 +91,25 @@
 
 ## Teaser
 
+    Functions are as fundamental to mathematics as numbers are. They give us
+    the power to describe inputs and outputs. We have already seen functions
+    in our exploration of lines, quadratics, and general polynomials. 
+
+    We start with a couple of problematic function types that arise from
+    arithmetic: rational and radical functions. After getting some familiarity
+    with the calculus in this situation, we delve into more generality the
+    notions of infinity, differential, and integral calculus. 
+
+    With the general calculus stage set, we then explore the first
+    transcendental functions: exponentials, logarithms, and trigonometric
+    functions. These are the foundations for modeling many interesting
+    behaviors. 
+
+    We finish with how we can define functions in general using various kinds
+    of equations and transformations to accomplish our goals. We also include
+    a section on special functions, which are useful in many areas but are a
+    bit on the technical side.  
+
 ##### Pebble
 
 ## Pieces

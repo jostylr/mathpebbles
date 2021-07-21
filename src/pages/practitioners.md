@@ -99,6 +99,33 @@
 
 ## Teaser
 
+    The first six books give a basic foundation to learning and using
+    mathematics. But there is a vast deal more to learn. This book tries to
+    highlight and describe some of the uses, providing some mathematical
+    insights and practices for this more difficult material, but this is the
+    realm where serious study for serious purpose is, more or less, required. 
+
+    Some of these areas are of interest largely to just professional
+    mathematicians with the occasional leaking of such knowledge to other
+    professions. Algebraists, analysts, geometers, logicians, and
+    combinatorialists are examples of such mathematics. We have already
+    touched on a variety of foundations for these areas and we will highlight
+    some of the structures built on our humble foundations. 
+
+    While the first three sections focus mostly on pure mathematics, the last
+    three sections focus on the application of mathematics to various fields
+    falling under the general umbrella of science, engineering, and art. 
+
+    The middle section between these two halves is that of the group I term
+    the booleans. Counting, logic, computer science, game theory, politics.
+    These are areas where the application and the theoretical are far less
+    separated and they are a natural bridge to changing the focus from
+    mathematics itself to using mathematics. 
+
+    My hope is to eventually include interviews with practitioners, but that
+    will be a far off time from now if it happens. 
+
+
 ##### Pebble
 
 ## Pieces

@@ -288,23 +288,23 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0functions/trigonometric-functions/sums-and-products-of-trigonometric-functions | Sums and Products of Trigonometric Functions | 
     0functions/trigonometric-functions/complex-exponentials | Complex Exponentials | 
     0functions/defining-functions | Defining Functions | y'
-    0functions/defining-functions/taylor-series | Taylor Series | 
-    0functions/defining-functions/functional-equations | Functional Equations | 
-    0functions/defining-functions/differential-equations | Differential Equations | 
-    0functions/defining-functions/special-functions | Special Functions | 
-    0functions/defining-functions/laplace-transforms | Laplace Transforms | 
-    0functions/defining-functions/fourier-approximations | Fourier Approximations | 
-    0functions/defining-functions/tricks | Tricks | 
+    0functions/defining-functions/taylor-series | Taylor Series | \sum a_i x^i % -17 -7 .7 .7
+    0functions/defining-functions/functional-equations | Functional Equations | F(y)=  % -17 -7 .7 .7 
+    0functions/defining-functions/differential-equations | Differential Equations | y'= % -12 -7 1 1
+    0functions/defining-functions/special-functions | Special Functions | J_n % -11
+    0functions/defining-functions/laplace-transforms | Laplace Transforms | \mathcal{L}
+    0functions/defining-functions/fourier-approximations | Fourier Approximations | \hat{f} % -7 -12
+    0functions/defining-functions/tricks | Tricks | \frac{dy}{y} = dx % -17 -7 .5 .5
     0many-variables | Many Variables | \bar{x}
-    0many-variables/linear-algebra | Linear Algebra | A \bar{x} 
-    0many-variables/linear-algebra/vectors | Vectors | 
-    0many-variables/linear-algebra/subspaces | Subspaces | 
-    0many-variables/linear-algebra/matrices | Matrices | 
-    0many-variables/linear-algebra/solving-linear-systems | Solving Linear Systems | 
-    0many-variables/linear-algebra/changing-the-basis | Changing the Basis | 
-    0many-variables/linear-algebra/diagonalizations | Diagonalizations | 
-    0many-variables/linear-algebra/complex-linear-spaces | Complex Linear Spaces | 
-    0many-variables/systems-of-ordinary-differential-equations | Systems of Ordinary Differential Equations | \bar{x}'
+    0many-variables/linear-algebra | Linear Algebra | A \bar{x} % -16 
+    0many-variables/linear-algebra/vectors | Vectors | \vec{v}
+    0many-variables/linear-algebra/subspaces | Subspaces | W \subset % -16 -7 1 1 
+    0many-variables/linear-algebra/matrices | Matrices | \begin{bmatrix} a & b \\ c & d\end{bmatrix} % -16 -13 .7 .7
+    0many-variables/linear-algebra/solving-linear-systems | Solving Linear Systems | \begin{align} ax + by & = \\ cx + dy & = \end{align} % -19 -11 .55 .55
+    0many-variables/linear-algebra/changing-the-basis | Changing the Basis | v_1,.,v_n % -17 -5 .7 .7
+    0many-variables/linear-algebra/diagonalizations | Diagonalizations | \begin{bmatrix} a & 0 \\ 0 & d\end{bmatrix} % -16 -13 .7 .7
+    0many-variables/linear-algebra/complex-linear-spaces | Complex Linear Spaces | \mathbb{C}^N % -15 -12
+    0many-variables/systems-of-ordinary-differential-equations | Systems of Ordinary Differential Equations | \bar{x}' % -7 -9
     0many-variables/systems-of-ordinary-differential-equations/predator-prey | Predator Prey | 
     0many-variables/systems-of-ordinary-differential-equations/two-dimensional-systems | Two Dimensional Systems | 
     0many-variables/systems-of-ordinary-differential-equations/matrix-solutions | Matrix Solutions | 
@@ -312,7 +312,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0many-variables/systems-of-ordinary-differential-equations/non-linear-differential-systems | Non-linear Differential Systems | 
     0many-variables/systems-of-ordinary-differential-equations/chaos | Chaos | 
     0many-variables/systems-of-ordinary-differential-equations/critical-points | Critical Points | 
-    0many-variables/multivariable-functions | Multivariable Functions | \bar{f}
+    0many-variables/multivariable-functions | Multivariable Functions | \bar{f} % -7 -14
     0many-variables/multivariable-functions/one-to-many | One to Many | 
     0many-variables/multivariable-functions/many-to-one | Many to One | 
     0many-variables/multivariable-functions/complex-to-complex | Complex to Complex | 
@@ -320,7 +320,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0many-variables/multivariable-functions/graphs | Graphs | 
     0many-variables/multivariable-functions/questions-to-ask | Questions to Ask | 
     0many-variables/multivariable-functions/multivariable-polynomials | Multivariable Polynomials | 
-    0many-variables/multivaribale-differential-calculus | Multivaribale Differential Calculus | \frac{\partial f}{\partial x}
+    0many-variables/multivaribale-differential-calculus | Multivaribale Differential Calculus | \frac{\partial f}{\partial x} % -12 -13 1.3 1.3 
     0many-variables/multivaribale-differential-calculus/total-derivatives | Total Derivatives | 
     0many-variables/multivaribale-differential-calculus/partial-derivatives | Partial Derivatives | 
     0many-variables/multivaribale-differential-calculus/tangentials | Tangentials | 
@@ -328,7 +328,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0many-variables/multivaribale-differential-calculus/lagrange-multiplies | Lagrange Multiplies | 
     0many-variables/multivaribale-differential-calculus/high-dimensional-newtons-method | High Dimensional Newtons Method | 
     0many-variables/multivaribale-differential-calculus/local-approximations | Local Approximations | 
-    0many-variables/multivariable-integral-calculus | Multivariable Integral Calculus | d\bar{x}
+    0many-variables/multivariable-integral-calculus | Multivariable Integral Calculus | \iint d\bar{x} % -14 -9 .8 .8
     0many-variables/multivariable-integral-calculus/volume-integrals | Volume Integrals | 
     0many-variables/multivariable-integral-calculus/surface-area-integrals | Surface Area Integrals | 
     0many-variables/multivariable-integral-calculus/line-integrals | Line Integrals | 
@@ -336,7 +336,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0many-variables/multivariable-integral-calculus/change-of-basis-in-integrals | Change of Basis in Integrals | 
     0many-variables/multivariable-integral-calculus/antiderivatives | Antiderivatives | 
     0many-variables/multivariable-integral-calculus/generalizing-multivariable-integrals | Generalizing Multivariable Integrals | 
-    0many-variables/partial-differential-equations | Partial Differential Equations | \Delta f
+    0many-variables/partial-differential-equations | Partial Differential Equations | \Delta f  % -13 -8  1.2 1.2
     0many-variables/partial-differential-equations/partial-versus-ordinary | Partial versus Ordinary | 
     0many-variables/partial-differential-equations/verifying-solutions | Verifying Solutions | 
     0many-variables/partial-differential-equations/laplacian-equations | Laplacian Equations | 
@@ -344,7 +344,7 @@ THE BELOW IS GENERATED. DO NOT EDIT!!!! WILL BE UPDATED OVER TIME
     0many-variables/partial-differential-equations/time-versus-space | Time versus Space | 
     0many-variables/partial-differential-equations/approximations-in-pdes | Approximations in PDEs | 
     0many-variables/partial-differential-equations/generalized-solutions | Generalized Solutions | 
-    0many-variables/curved-spaces | Curved Spaces | T_p M 
+    0many-variables/curved-spaces | Curved Spaces | T_p M % -17 -9 1 1
     0many-variables/curved-spaces/surfaces-in-3d | Surfaces in 3D | 
     0many-variables/curved-spaces/curves | Curves | 
     0many-variables/curved-spaces/coordinates | Coordinates | 

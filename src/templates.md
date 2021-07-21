@@ -171,8 +171,8 @@ x, y, scalex, and scaley.  To do this do a % followed by up to 4 numbers
             }
         } 
         if (type==='svg') {
-            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
-    <circle r="20" fill="white" />
+            fanoSymbols.push( `<a href="${path}.html" transform="translate${positions[ind]}" stroke="black" stroke-width="1px"><title>${name}</title>
+    <circle r="20" fill="var(--cir)" />
     <image href="/img/${symbol}.svg" x="${x}" y="${y}" width="${w}" height="${h}"></image>
     </a>`);
         } else if (type === 'latex') {
@@ -182,15 +182,15 @@ x, y, scalex, and scaley.  To do this do a % followed by up to 4 numbers
                 [x=x,y=y,scalex=scalex,scaley=scaley] = nums.split(/\s+/);
             }
             symbol = symbol.replaceAll('\\u0025', '\\%');
-            fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
-    <circle r="20" fill="white" />
+            fanoSymbols.push( `<a href="${path}.html" transform="translate${positions[ind]}" stroke="black" stroke-width="1px"><title>${name}</title>
+    <circle r="20" fill="var(--cir)" />
     <g class="fano-math" data-type="latex" data-text="${symbol}"
     transform="translate(${x} ${y}) scale(${scalex} ${scaley})" >
     </g></a>`);
     
     } else {
-        fanoSymbols.push( `<a href="${path}.html" title="${name}" transform="translate${positions[ind]}" stroke="black" stroke-width="1px">
-    <circle r="20" fill="white" />
+        fanoSymbols.push( `<a href="${path}.html" transform="translate${positions[ind]}" stroke="black" stroke-width="1px"> <title>${name}</title>
+    <circle r="20" fill="var(--cir)" />
     <foreignObject x="${x}" y="${y}" width="${w}" height="${h}">
     <div class="fano-math" data-type="${type}" data-text="${symbol}"></div>
     </foreignObject>
@@ -242,10 +242,10 @@ the section name and the second one being a path for the Explore button.
                 <div class="full" x-show="open" x-cloak>
                 ${full || ''}
                 </div>
-                <ul class="footer" x-show="footCount" x-init="footer = $el"></ul>
+                <ul class="footer"  x-init="footer = $el"></ul>
                 </div>`;
         } else {
-            main += `<div id="${self}" x-data="section" x-init="me('${name}')" class="top">${heading}${preview}<ul class="footer" x-show="footCount"></ul> </div>`;
+            main += `<div id="${self}" x-data="section" x-init="me('${name}')" class="top">${heading}${preview}<ul class="footer" ></ul> </div>`;
         }
     }
 
@@ -405,7 +405,7 @@ links, ... I really don't understand this problem, here is a link to Firefox
 bug page:  https://bugzilla.mozilla.org/show_bug.cgi?id=363840
 
 
-    <iframe x-cloak x-show="togglers[${p}]" src="about:blank" x-init="$el.src = '${url}'" frameborder="0" allow="fullscreen; picture-in-picture" title="${title}"></iframe>
+    <iframe x-cloak x-show="togglers[${p}]" src="about:blank" x-init="$el.src = '${url}'" frameborder="0" allow="fullscreen" title="${title}"></iframe>
 
     </div>
     `); 
@@ -573,8 +573,8 @@ We want the sub detail list to have no padding
     } 
 
     .video iframe {
-       width:94vw;
-       height:55vw;
+        width: 100%;
+        height: min(50vw, 30em);
     }
 
     .left, .right {
@@ -1132,12 +1132,6 @@ This gives the name for the path.
 This is where we put stuff related to making the accordion style detail stuff. 
 
 
-[css]()
-            
-    body > sl-details:not(:last-of-type) {
-        margin-bottom: var(--sl-spacing-xx-small);
-     }
-
 [js]() 
 
 This is where we do some common behavior on event listening. 
@@ -1147,52 +1141,6 @@ This is where we do some common behavior on event listening.
 
     let scrollToEl = _":scroll to el";
 
-    const details = $$('body > sl-details');
-    details.forEach( el => { 
-        el.addEventListener('sl-show', ev => {
-            details.forEach( elEv => (elEv.open = ev.target === details) );
-            let path = document.location.pathname.split('/').slice(-1)[0].split('.')[0];
-            let hash = document.location.hash.slice(1);
-            let h2 = $('h2', el);
-            let title = h2.innerText;
-            console.log(hash, path, el.id, hash!==el.id);
-
-Manage the history state; push state is so that there is no scrolling, but we
-do have back/forward behavior. The first if is for the first element. If it is
-visible to show, then it should already be at the top so no scroll. The second
-is if it is a different element than last shown in which case we scroll.
-
-            if (el.id === path) {
-                if (hash.length) { // top default, clear hash
-                    history.pushState({}, title, document.location.pathname); 
-                }
-            } else if (hash !== el.id) {
-                history.pushState({},title, document.location.pathname+'#'+el.id);
-                setTimeout( () => {
-                    scrollToEl(el);
-                }, 250);
-            } else {
-                return; //no action, same element in view
-            }
-
-
-Now we do the scrolling. Since the previous item may be open and then closes,
-altering scroll placement, we do a timeout to have that done afterwards.
-Hopefully, this also gives context to the user to not be too jarring. 
-
-
-Now we try to get an item in the newly visible elment focused. 
-
-            let tabby = $('[tabindex]', el);
-            if (tabby) {
-                tabby.focus();
-            } else {
-                el.focus();
-            }
-        })
-    })
-
-
 
 On initial load, open up the relevant detail from the hash or open up the
 default one. 
@@ -1201,7 +1149,6 @@ default one.
     if (hash) {
         let el = $(hash);
         if (el) {
-           console.log('should be button', el.firstElementChild.firstElementChild.lastElementChild);
             window.addEventListener('load', () => {
                el.firstElementChild.firstElementChild.lastElementChild.click();
                setTimeout( () => {
@@ -1276,8 +1223,8 @@ sections.
 
 This should be the relevant parent circle in the fano. 
 
-    circle.parent {
-        fill:#69ceff;
+    circle.here {
+        fill:var(--this-cir);
     }
 
 
@@ -1409,15 +1356,17 @@ TODO: Add stuff for using problems, doing quiz objects or practice objects.
     :root {
         --pri-bg : rgb(105, 206, 255);
         --pri-bg-moderate : rgba(105, 206, 255, 0.5);
-        --pri-bg-faint : rgba(105, 206, 255, 0.2);
+        --pri-bg-faint :  #a9e0fc
         --pri-fg-faint :rgb(4, 58, 84);
         --nav-bg : whitesmoke;
+        --cir : #a9e0fc;
+        --this-cir : lightgray;
     }
 
     [x-cloak] { display: none !important; }
     
     body {
-        max-width: 80em;
+        max-width: 60em;
         margin-left: auto;
         margin-right:auto;
 
@@ -1446,14 +1395,10 @@ To give space for underline of number, we increase the line height a bit.
         line-height: 1.2;
     }
 
-    sl-input {
-        width: 20ch;
-    }
-
 Specifying width otherwise the explore buttons don't line up. 
 
     .section h2, h2.with-explore {
-        width:min(90vw, 50em);
+        width:min(90vw, 100%);
 
 grid to put the explore buttons on the right and have long text drop down. To
 keep the explore button from growing, we give it a height of 1em.
@@ -1509,7 +1454,7 @@ not using the detail so using class section for non-plain, so just adding it).
 
     .top {
         padding-left: 1em;
-        border: 1px solid var(--sl-color-gray-200);
+        border: 3px solid whitesmoke;
         border-radius: 5px;
         padding-right:1em;
     }
@@ -1534,7 +1479,6 @@ for that.
 
     _"make path:css"
     _"next prev:css"
-    _"accordion:css"
     _"shoelace full:css"
     _"common::css"
     _"make nav:css"
@@ -1585,7 +1529,7 @@ This is a short wrapper for doing a render
 
     function render (text, par, options) {
         options ??= {display:false}
-        let out = MathJax.tex2svg(text, options);
+        let out = MathJax.tex2svg(text, options).querySelector('svg');
         if (par) {
             while (par.firstChild) {
               par.removeChild(par.firstChild);
@@ -1615,7 +1559,6 @@ This is for the main section which hosts lots of subsections too.
     Alpine.data('section', () => {
         const ret= {...MP.pebbles, ...methods};
         ret.open = false;
-        ret.footCount = 0;
         ret.togglers = [];
         return ret;
     });
@@ -1730,11 +1673,13 @@ This is where we stick a bunch of common alpine methods.
             dataStores[name] = this;
             this.me = name;
         },
+        active : '',
         caret (open=false, text='') {
             return  text + ` <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" height="2.5ex" stroke-linejoin="round"><g ${open ? '' : 'transform="rotate(-90 12 12)"'}><polyline points="6 9 12 15 18 9"></polyline></g></svg>`;
         },
         _"toggle Input", 
         _"toggle section",
+        _"click Toggle",
     }
 
 [mathout]()
@@ -1763,6 +1708,29 @@ strings so this is why we are doing it with el appending etc.
     }
 
 
+### Click Toggle
+
+This is run when the x button in the footer editor gets clicked. It should
+make the item active if it is not active and deactivate it if isn't. If
+something else is active, then it should be dehtroned. Should happen
+automatically, I think. 
+
+    clickToggle (name) {
+        let {active} = this;
+        if (active === name) {
+            this.active = '';
+            $('[data-name='+name+']').classList.remove('active');
+        } else {
+            let old = this.active;
+            if (old) {
+                $('[data-name='+old+']').classList.remove('active');
+            }
+            this.active = name;
+            $('[data-name='+name+']').classList.add('active');
+        }
+        console.log(this.active, name, active);
+    }
+
 ### Toggle Input
 
 This is the function that is called to toggle inputting changes to the input
@@ -1775,21 +1743,22 @@ encapsulating div for the input is iname where name is the name of the input.
         let footer = $('.footer', el.closest('[x-data]'));
         let iname = 'i' + name;
         let inp = $('#' + iname, footer);
-        if (inp) { //already exists, just toggle
+        
+If it doesn't exist we create it. We create it in a state of not being open so
+we can do the click and make sure it works as all other clicks on does. 
+
+        if (!inp) {
+            let div = document.createElement('div');
+            let html = inputTypes[type]?.(name, this);  
+            div.innerHTML= html;
+            inp = div.children[0].cloneNode(true);
+            footer.appendChild(inp);
+            this.clickToggle(name);
+        } else {
             $('.toggle', inp).click();
-            return;
         }
+        return;
 
-Make input if we get to here. 
-
-We have this odd way of constructing because innerHTML assignment with alpine
-seemed to create two click handlers. By cloning and appending, it resets so
-only one gets assigned. 
-
-        let div = document.createElement('div');
-        let html = inputTypes[type]?.(name, this);  
-        div.innerHTML= html;
-        footer.appendChild(div.children[0].cloneNode(true));
     }
 
 
@@ -1803,9 +1772,10 @@ TODO: deal with fragile and redundant location stuff ?
 
 
     toggleSection (name, el) {
-        console.log(name, this.open); 
+        let top = el.parentElement.parentElement.parentElement;
         if (this.open) {  // already open, clean and close
             this.open = false;
+            $$('.active .toggle', top).forEach( (el) => el.click());
             if (!window.pause) {
                 history.pushState({}, 'MathPebbles', document.location.pathname);
             } else {
@@ -1823,7 +1793,7 @@ TODO: deal with fragile and redundant location stuff ?
                 }
                 setTimeout( () => {
                     console.log("scrolling");
-                    scrollToEl(el.parentElement.parentElement);
+                    scrollToEl(top);
                 }, 250);
 
             }
@@ -1835,7 +1805,8 @@ TODO: deal with fragile and redundant location stuff ?
 
 This is where we create the various input types. They are: 
 
-* bignum.  This add or subtracts based on the power of 10 selected.  
+* decimal.  This add or subtracts based on the power of 10 selected.  
+
     
 ---
 
@@ -1854,7 +1825,7 @@ This is where we create the various input types. They are:
         store[iname] = store[name].toString();
         store[ename] = 1;
         store[pname] = 0;
-        store[tname] = true;
+        store[tname] = false;
         let html = `_":html"`;
         return html;
     }
@@ -1863,7 +1834,8 @@ This is where we create the various input types. They are:
 
 This is the html 
 
-    <li id="i${name}" x-show = "t${name}">
+    <li id="i${name}" x-show = "active === '${name}' "
+       :class="(active === '${name}') ? 'active' : '' ">
     <div class="primary" >
         <button @click="${name} = ${name}.sub(${ename})">-</button>
         <input type="text" @change="${name} = math.decimal($el.value)"
@@ -1875,7 +1847,7 @@ This is the html
         <button @click="p${name} = p${name} - 1">_</button>
         <span>1E</span>
         <input x-model.number="p${name}" x-effect="e${name} = Math.pow(10, p${name})"></input>
-        <button @click="console.log('hey'); p${name} = p${name} + 1" >^</button>
+        <button @click="p${name} = p${name} + 1" >^</button>
     </div>
 
 
@@ -1883,8 +1855,8 @@ This bit toggle the open or closed, but it also increments/decrements footCount
 depending on whether the toggle 
 
     <div class="controls">
-       <button class="toggle" @click="t${name} = ! t${name}"
-       x-effect="t${name} ? footCount++ : footCount--" >X</button>
+       <button class="toggle" @click="clickToggle('${name}')"
+       >X</button>
     </div>
 
     </li>

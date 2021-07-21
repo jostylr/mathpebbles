@@ -44,6 +44,32 @@
 
 ## Teaser
 
+    You may already know how to count, add, multiply, subtract, divide,
+    and exponentiate. Should you peruse this material? 
+
+    Yes, yes you should. The techniques in here are both faster and more
+    enlightening than traditional techniques (for the most part). We also
+    provide a solid foundation for understanding these operations
+    mathematically. At least skim it!
+
+    Throughout, we highlight issues of units and signifcant digits as well.
+    These ideas are often poorly understood due to a lack of exploration. This
+    site enables such exploration quite readily. 
+
+    In the powers chapter, we also discuss guesstimation which is a
+    fundamental tool in applying numbers to understanding reality. If you are
+    not well-versed in guesstimation, be sure to read that. 
+
+    The final chapter, that on constructing numbers, gives a solid foundation
+    for all the numbers we require for these operations, including integral
+    powers. For what happens with fractional powers, we leave to the last
+    chapter of Algbera. Why learn the constructions? Personally, I find it
+    satisfying to have a notion of how all of our numbers can come from,
+    literally, nothing, as long as nothing is considered a something. While
+    not particularly of practical importance, the goal of this site is not
+    just provide a useful approach to mathematics, but also a satisfying approach.
+
+
 ##### Pebble
 
 ## Pieces

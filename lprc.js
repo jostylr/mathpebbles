@@ -16,6 +16,9 @@ module.exports = function(Folder, args) {
                 }
                 let data = {};
                 let tag = 'span';
+                if (kind === 'input') {
+                    tag = 'button';
+                }
                 if (text[0] === '!') {
                     text = text.slice(1);
                     tag = 'div';
@@ -88,7 +91,6 @@ module.exports = function(Folder, args) {
                 let insert = '';
                 let exp = compute ? value : '`' + value + '`';
                 if (kind==='input') {
-                    insert += 'tabindex="0" '; 
                     insert += 'x-init="store(' + parser + '(' + exp + ', $el), \''+ name +'\')" ';
                     insert += 'x-effect="' + displayer + '(' + name + ', $el)" ';
                     insert += '@click="toggleInput($el)"';

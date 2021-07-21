@@ -65,6 +65,25 @@
 
 ## Teaser
 
+    Geometry is often used as a bridge to the abstract world of mathematics.
+    But geometry is actually a prime example of the mutual explorationo of the
+    phyiscal world and the mathematical world.
+
+    Starting with our innate notion of distance, we explore plane geoemtry,
+    mathematically, visually, and abstractly. We dabble with the fun art of
+    constructions which should be very fun with our interactive system. It
+    explores how things happen without numerical measurements. 
+
+    Trigonometry is our third chapter and it has far reaching implications,
+    many of which will have to wait until we have fully studied functions. 
+
+    Conic sections and parametric curves round our exploration of the world of
+    the plane. 
+
+    We finish with an exploration of higher dimensions and other kinds of
+    geometries. 
+
+
 ##### Pebble
 
 ## Pieces

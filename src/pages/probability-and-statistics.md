@@ -70,6 +70,30 @@
 
 ## Teaser
 
+    What might happen? That is a fundamental question to our existence and
+    mathematics has a vast toolbox for answering questions of the probable. 
+
+    We start with simply trying to describe the world in mathematical terms,
+    how to tell stories with data. Part of this is with summaries of the data
+    and various graphs and charts. One interesting part is trying to fit
+    functions to data. This is in contrast to, and in conjunction with, the
+    ideas of differential equations. 
+
+    We then launch into probability theory. We gradually build ourselves up to
+    the Central Limit Theorem, which is fundamental to the starting point of
+    statistics. 
+
+    From there, we cover three different notions of statistical explorations:
+    frequentist statistics (most traditional, easier to compute, not quite
+    answering our questions), bayesian statistics (controversial, trickier
+    to compute, answers our questions but with more questionable assumptions),
+    and simulations (not very defnitive, very enlightening, fun, definitely requires
+    computers). 
+
+    Our final chapter jumps into multivariate statistics. It tries to handle
+    more realistic descriptions involving far more quantities of interest. 
+
+
 ##### Pebble
 
 ## Pieces

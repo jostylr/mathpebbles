@@ -79,6 +79,20 @@
 
 ## Teaser
 
+    There are many inputs that go into producing an output and, in truth, the
+    output usually consists of many things. To model this, we need to
+    understand the world of functions that take in many (or one) and produce
+    one (or many) items. 
+
+    How do our single variable tools translate? What new problems arise and
+    what new opportunities? 
+
+    This is difficult material. We start with a codification of linearity in a
+    many-to-many world. We apply those systems to systems of differential
+    equations, a bedrock for predicting the future. We then dive into how
+    calculus evolves in this new world. We finish with the advanced topics of
+    partial differential equations and notions of curved spaces (manifolds). 
+
 ##### Pebble
 
 ## Pieces
