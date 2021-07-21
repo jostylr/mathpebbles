@@ -1,7 +1,0 @@
-#! /bin/bash
-
-set -e
-
-literate-programming "src/pages/$1.md"
-
-cp "fullsapper/src/routes/$1.svelte" "sapper/src/routes/$1.svelte"
