@@ -9,7 +9,7 @@ programs, proofs, and practice materials. It also will have built-in
 notetaking.
 
 It is currently under development, but its current version can be found at
-[the test site](test.mathpebbles.com)
+[the test site](https://test.mathpebbles.com)
 
 ## This repository
 
