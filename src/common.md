@@ -105,7 +105,7 @@ target.appendChild(el) could be `(el, null, ['appendChild', target])`
 
 Apparently, there is no "replace myself" method entirely, so we need to grab
 the parent, find the child node that is the target, and replace it through
-replace child. I guess?
+replace child. I guess? TODO == replaceWith? Not sure why not. 
 
 
 
@@ -270,7 +270,34 @@ This is the hook for the CSS to go with the HTML page.
 
 ### Keyboard commands
 
-So we will listen for keyboard presses to make changes 
+So we will listen for keyboard presses to make changes to the input element if
+the keys match. Within the input, we will have a notion of the active text
+input, which will have underline underneath it. For a fraction, it can be
+numerator, denominator, or the whole fraction being added to something.
+
+The keys are as follows: 
+
+* left : decrease increment
+* right: increase increment  (kind of like selecting the decimal place)
+* up : add increment
+* down : subtract increment
+* #: focus on number text
+* ^ : focus on increment text
+* esc : flips to active button in main text
+* <  > :  these cycle through active input numbers for something like a matrix
+  or systems or polynomials, etc
+* i : flips through whether increment adds real part or imaginary part to an
+  active number
+* w, d, n:  sets fractional increment mode of whole, denominator, or
+  numerator. The default is the whole which it goes back to if d or n is
+  active and flips back
+* We can use the asterisk to indicate multiply or divide by the increment. 
+
+The reason for having separate cycling commands is that types of numbers can
+be combined. We can have complex fractions in a matrix, for example. This may
+require some work to make actually happen, but it can be done and we want to
+leave open that option. 
+
 
 
 ## Typed Input

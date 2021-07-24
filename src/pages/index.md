@@ -1,7 +1,6 @@
 # MathPebbles
 
     _"pieces | page /index, _'intro |md',
-            ec("Moser's Circle Problem"), _"Moser | md",
             ec("Hammer Method"), _"hammer | md",
             /arithmetic,  _'Arithmetic |md',
             /algebra,  _'Algebra |md',
@@ -45,7 +44,7 @@
     student and computer. 
 
     As of this writing, it is very much empty of content and still being
-    worked on. It will take years to complete this, if ever. But hopefully 
+    worked on. It will take years to complete this, if ever. 
 
 
 
@@ -86,6 +85,9 @@
 
 [end]()
 
+```ignore
+
+            ec("Moser's Circle Problem"), _"Moser | md",
 ## Moser 
     
     What's the next term? 1, 2, 4, 8, 16, ??? (not 32) 
@@ -232,22 +234,46 @@
         this.post = 'log(this.regions, this.points, this.dude, regions, points)';
     },
 
+```
 
 ## Hammer
 
 The one method to rule them all. 
+
+    Here is a quick example of what this site can do. Prior knowledge required
+    for this example: arithmetic, acceptance that the volume of a box is the length times
+    width times height, and we will do some graphing. 
+
+    Armed with just that info, we will solve a silly problem quite quickly. 
+
+    !-
 
     We want a box that can hold `#target=20` cubic feet of mulch. Its dimension
     are such that the length is `#overLength==3` feet longer than the width and the
     height is `#underHeight=1` foot less than the width. How do we find the
     dimensions? 
 
+    Given the width, what is the volume of the box? Since volume is `L*H*W`$, we
+    need to find those three quantities. 
+
+    Everything is in terms of width. The translation of the given information
+    is that `==L = W + ${overLength}` and `== H = W - ${underHeight}`. 
+
+    Typically we write `x`$ for the unknown input and let's do that here. Then
+    the formula for computing the volume given the width `x`$ 
+    is `==(x + ${overLength} ) *(x - ${underHeight} ) * x`.
+
+    To get a sense of this problem, we can graph it with the width values
+    increasing along the horizontal axis towards the right while the volume
+    amount will be measured with increasing value up the vertical axis.  
+
+    !BOARD volumeGraph t:50, r:10 
+
+
     We explore a general method that we think of as the hammer method since it
     basically smashes any such "find the unknown that hits the target value"
     with very little understanding of the algebra of the problem.  (This is
     actually known as the Secant Method).
-
-    !-
 
     The first step is to write an expression that computes the value for a
     given choice. This is actually the hard part of the problem and is
@@ -255,8 +281,7 @@ The one method to rule them all.
 
     For this particular example, we use the (definitionesque) fact that we can
     get the volume from the dimnesions by multiplying them all together. So
-    the expression is `==(x + ${overLength} ) *(x - ${underHeight} ) * x`
-    where `x`$ is the width. 
+    the expression is    where `x`$ is the width. 
 
     We try some number, such as `#width=10`, to get a sense of this. Plugging
     in, we get `=:volume`. Our task is get that volume to be our target number
@@ -276,6 +301,8 @@ The one method to rule them all.
 
     Guess 1: `#g1=3`,  Guess 2: `#g2=10`, Precision: `#precision=1E-10`. Then
     here is our method computing the result: 
+
+
 
     `%tag:table;@innerHTML;=hammerTable()`
     
@@ -325,9 +352,58 @@ The one method to rule them all.
         let g3 = guess2.add(r.mul( xdiff));
         return [xdiff, v1, v2, ydiff, targetDiff, r, g3];
     },
+    volumeGraph (b, el)  {
+        let self = this;
+        let overLength, underHeight, target, x,y;
+        ({overLength =3, underHeight=1, target=20} = self.toNumber);
+        let eff = function update() {
+            ({overLength =3, underHeight=1, target=20} = self.toNumber); //same this in and out
+            [x,y] = self.vSolve(f);
+            console.log( "x,y", x, y);
+            b.fullUpdate();
+        };
+        let f = (x) => (x+overLength)*(x-underHeight)*x;
+        let l = (x) => target;
+        eff();
+        b.create('functiongraph', f);
+        b.create('functiongraph', l);
+        b.create('point', [()=>x, ()=>y]); 
+        console.log("we should have something on the screen");
+        this.volumeGraph = eff;
+    },
+    vSolve (f) {
+        let {overLength = 3, underHeight=1, target=20} = this.toNumber;
+        let g1 = Math.max(underHeight+1, target/5);
+        let g2 = Math.max(g1*1.1, g1+1);
+        let tdiff = 100; //totally random
+        let v2;
+        let count = 0;
+        while ( ( Math.abs(tdiff) > 1e-8 ) && (count < 20) ) {
+            let v1 = f(g1);
+            v2 = f(g2);
+            tdiff = target - v2;
+            let ydiff = v1-v2;
+            if (Math.abs(ydiff) < 1e-10) { 
+                g1 = (g1+g2+Math.random())/2; //just a random bit
+                count += 1; 
+                break;
+            }
+            let xdiff = g1 - g2;
+            let xslope = xdiff/ydiff;
+            g1 = g2;
+            g2 += xslope*tdiff;
+            count +=1;
+        }
+        return [g2, v2];
+    },
+
+
 
 
 ##### Code 
+
+
+```ignore
 
 
 ## Arithmetic
@@ -378,9 +454,7 @@ The one method to rule them all.
 
 
 [practitioners](pages/practitioners.md "load:")
-
-```ignore
-
+```
 ## Arithmetic
 
 
@@ -395,4 +469,3 @@ The one method to rule them all.
 ## Probability and Statistics
 
 ## Practitioners
-```

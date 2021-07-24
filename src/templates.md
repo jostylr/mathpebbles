@@ -281,7 +281,11 @@ lines until some ending tag.
 * PROGRAM: whatever for a program environment. STOP.
 * CODE name: starting code block  SOLUTION: Some explanatory text and a code
   block to sub in for the solution. END.
-
+* BOARD name options: This sets up a jxg board. The name is the identity and
+  should be used to refer to it. It will be in the alpine this under boards.
+  The options are key: str, pairs.  Very simple data options. Also, all graphs
+  are hidden under a button reveal. Clicking the reveal calls the board
+  creation function (once). 
 
 Colons are totally optional, I hope. 
 
@@ -336,6 +340,8 @@ Colons are totally optional, I hope.
                 break;
                 case 'DETAILS': 
                     { _":details" }
+                case 'BOARD':
+                    {_":board"}
                 break;
 
 
@@ -377,7 +383,11 @@ div is for a flex to push the button to the far right.
 [video]() 
 
 This takes in a video url followed by a space followed by a title. The display
-is the title followed by a caret thing. 
+is the title followed by a caret thing. It gets presented in the rendered
+markdown as a link, so we grab the info we want from that. It is also possible
+that we just stuck the reference for the video which is on vimeo, so that is
+what we assume in the else. We encapsulate it in an iframe and let the size
+happen in css. 
 
 
 
@@ -409,6 +419,53 @@ bug page:  https://bugzilla.mozilla.org/show_bug.cgi?id=363840
 
     </div>
     `); 
+
+
+[board]() 
+
+This makes a JXG board.
+
+    end = end.trim();
+    let space = end.indexOf(' ');
+    let name;
+    let options = {
+        w: '100%',
+        h: 'min(50vw, 30em)',
+        t : 5,
+        r : 5,
+        b : -5, 
+        l : -5, 
+        cls : 'board',
+    };
+    if (space === -1) {
+        name = end;
+    } else {
+        name = end.slice(0, space);
+
+We want attributes like 20em to be able to be passed in as a string; this is
+for the styling while for the bounding box, I want numbers (maybe don't need
+it because they might just get translated, but whatever). 
+
+        opts = end.slice(space+1).split(',').forEach( op => {
+            let [key, val] = op.split(':').map( s => s.trim() );
+            let num = +val;
+            if (isNaN(num) ) {
+                options[key] = val;
+            } else {
+                options[key] = num;
+            }
+        });
+    }
+    let o = options;
+    p = place += 1; 
+    ret.push(`<div class="jxg" x-init="togglers[${p}]= false "> 
+    <h4>Graph: ${name}
+        <button @click.stop ="toggleBoard( ${p}, '${name}', $el, ${JSON.stringify(o).replace(/"/g, "'")})"
+        x-html = "caret( togglers[${p}] ) "></button>
+    </h4>
+    </div>
+    `);
+
 
 [proof]()
 
@@ -1513,6 +1570,8 @@ for that.
 
         _"alpine"
 
+        _"mathjax correction"
+
     });
 
 
@@ -1522,6 +1581,15 @@ for that.
 
     '/r/global-2.mjs'
             
+
+
+### Mathjax correction
+
+This is to take out any mathjax rendered math and just use the svg part. 
+
+    $$('mjx-container').forEach( el => { 
+        el.replaceWith(el.firstElementChild);
+    });
 
 #### Render
 
@@ -1556,10 +1624,18 @@ This is where we put all the Alpine related code.
 
 This is for the main section which hosts lots of subsections too. 
 
+The togglers are for tracking the buttons opening and closing. The boards are
+the actual board objects from jsxgraph, and toNumber is an object that should
+contain a number equivalent to the fancy number object of inputs. 
+
+
     Alpine.data('section', () => {
         const ret= {...MP.pebbles, ...methods};
         ret.open = false;
         ret.togglers = [];
+        ret.boards = [];
+        ret.toNumber = {};
+        ret.type = 'decimal';
         return ret;
     });
 
@@ -1680,6 +1756,7 @@ This is where we stick a bunch of common alpine methods.
         _"toggle Input", 
         _"toggle section",
         _"click Toggle",
+        _"toggle Board",
     }
 
 [mathout]()
@@ -1712,7 +1789,7 @@ strings so this is why we are doing it with el appending etc.
 
 This is run when the x button in the footer editor gets clicked. It should
 make the item active if it is not active and deactivate it if isn't. If
-something else is active, then it should be dehtroned. Should happen
+something else is active, then it should be dethroned. Should happen
 automatically, I think. 
 
     clickToggle (name) {
@@ -1801,6 +1878,46 @@ TODO: deal with fragile and redundant location stuff ?
         }
     }
 
+
+### Toggle board
+
+This will initiate a jxgraph board and, later on, toggle it being revealed or
+not by the togglers convention. 
+
+    toggleBoard (p, name, btn, o) {
+        let {boards, togglers} = this;
+        togglers[p] =  ! togglers[p];
+        if (!boards[name]) {
+           let board = $$$('div', {
+            id : name, 
+            style: `width:${o.w}; height:${o.h};`,
+            class : o.cls,
+            'x-show' : `togglers[${p}]`,
+           }, ['appendChild', btn.parentElement.parentElement]); 
+           console.log(board.outerHTML);
+           let b = JXG.JSXGraph.initBoard(name, {
+            boundingbox: [o.l, o.t, o.r, o.b],
+
+copyright is, by default false. So writing true flips it. For nav, the default
+should be true. So we want to negate the result of being false. 
+
+            showCopyright :  (o.copy === 'true'), 
+            showNavigation : (o.nav !== 'false'),
+            axis : (o.axis !== 'false'),
+            });
+
+Using a function here to return the board because otherwise Alpine will see
+the changes to the board and call the effect again and again. This is the way
+to hide the changes but keep the access to the board. 
+
+            boards[name] = () => b;
+            board.setAttribute('x-effect', `console.log("effecting"); ${name}(boards.${name}())`);
+        }
+
+    }
+
+   
+
 ### Input types
 
 This is where we create the various input types. They are: 
@@ -1835,7 +1952,10 @@ This is where we create the various input types. They are:
 This is the html 
 
     <li id="i${name}" x-show = "active === '${name}' "
-       :class="(active === '${name}') ? 'active' : '' ">
+       :class="(active === '${name}') ? 'active' : '' "
+        x-init="toNumber.${name} = ${name}.toNumber()"
+        x-effect="toNumber.${name} = ${name}.toNumber()"
+       >
     <div class="primary" >
         <button @click="${name} = ${name}.sub(${ename})">-</button>
         <input type="text" @change="${name} = math.decimal($el.value)"
