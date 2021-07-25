@@ -319,7 +319,7 @@ The one method to rule them all.
     },
 
     hammerTable (maxloops=50) {
-        math.precision(1000);
+        math.precision(64);
         let {g1, g2, precision} = this;
         let digits = Math.round(Math.abs(Math.log(precision)/Math.log(10)) );
         console.log(digits);

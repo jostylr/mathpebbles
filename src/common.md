@@ -9,8 +9,8 @@ things and stuff just propagates. Spreadsheet style, if  you will.
     _"Dom helpers"
 
     const mathHelper = _"math helpers"
-    // small wrapper here to pass in mathjs and jsxgraph
-    const initKeys = _"init keys";
+    
+    _"keyboard commands"
     
     const makeF = function makeF (math) {
         const f = _"function defs::f";
@@ -18,9 +18,9 @@ things and stuff just propagates. Spreadsheet style, if  you will.
         return f;
     }
 
-    const MP = {
+    const MP = { keys,
         mathHelper, $, $$, show, hide, 
-        initKeys, makeF}; 
+         makeF}; 
 
     export {MP};
 
@@ -262,123 +262,8 @@ larger number.
 
 ## CSS
 
-This is the hook for the CSS to go with the HTML page. 
-
-    _"typed input:css"
-
-
-
-### Keyboard commands
-
-So we will listen for keyboard presses to make changes to the input element if
-the keys match. Within the input, we will have a notion of the active text
-input, which will have underline underneath it. For a fraction, it can be
-numerator, denominator, or the whole fraction being added to something.
-
-The keys are as follows: 
-
-* left : decrease increment
-* right: increase increment  (kind of like selecting the decimal place)
-* up : add increment
-* down : subtract increment
-* #: focus on number text
-* ^ : focus on increment text
-* esc : flips to active button in main text
-* <  > :  these cycle through active input numbers for something like a matrix
-  or systems or polynomials, etc
-* i : flips through whether increment adds real part or imaginary part to an
-  active number
-* w, d, n:  sets fractional increment mode of whole, denominator, or
-  numerator. The default is the whole which it goes back to if d or n is
-  active and flips back
-* We can use the asterisk to indicate multiply or divide by the increment. 
-
-The reason for having separate cycling commands is that types of numbers can
-be combined. We can have complex fractions in a matrix, for example. This may
-require some work to make actually happen, but it can be done and we want to
-leave open that option. 
-
-
-
-## Typed Input
-
-This creates a Var that is displayed in a span by default and, when
-selected/clicked, it adds a bottom element to the page for the input. 
-
-We will have various different types, but primarily a real and complex type
-being used. 
-
-Other types include discrete (basically normal range element), set/sequence
-(basically select option, maybe a slider for the sequence exploration), and
-logarithmic which is a multiplicative scale applied to the type. This is more
-of an extension type. 
-
-The input should be a container element (null to generate one, string to
-select one),  type (string if known type or object that implements a type),
-specifics (value, id, label, ?), 
-options object to deal with everything else. 
-
-It returns the container element, the Var that the value is related to, and a
-settings object that everything else can be tweaked. 
-
-This function is also defined in a context of a keys scope object, a
-controller (with a vars, container, and active list), in addition to access to
-the math and JXG objects (
-
-type is a creation function.
-
-    function makeTypedInput (container, type, specifics, options) {
-        _":initiate container"
-        _":initiate type"
-        _":apply specifics"
-
-        let [varVal, varScale, localKeys] = type(value, options, { container, line});
-
-        container.addEventListener('click', _":toggle activate");
-
-        return {container, varVal, varScale, line, localKeys};
-    }
-
-[initiate container]()
-
-The given container will be the display and will handle the click (will have
-enter function this way, to I think). The click will toggle whether the input
-is displayed or not. 
-
-    if (container === null) {
-        container = $$$('span');
-    } else if (typeof container === "string") {
-        container = $(container);
-    } 
-    $$$(container, {class:'typed-input', tabIndex: 0});
-    
-    let footBoss = controller.container;
-
-    let line = $$$('div', {class:'hide'}); // this will contain the input elements
-    footBoss.append(line);
-
-
-[toggle activate]()
-
-This checks the status of line and acts appropriately: activate if not active
-(unhide if needed), deactivate and hide if active.
-
-    () => {
-        let cl = line.classList;
-        if (cl.contains('hide') ) {
-            cl.remove('hide');
-            container.classList.add('open');
-            controller.activate(container, line, localKeys);
-        } else if (controller.primary.line === line ) {
-            cl.add('hide');
-            container.classList.remove('open');
-            controller.deactivate();
-        } else {  //already visible, not active, mostly for keyboard
-            controller.activate(container, line, localKeys);
-        }
-    }
-
-[css]() 
+TODO: This is some random css that should be organized into a better location.
+Mainly button stuff.
 
 Safari outlines this element because of focus stuff and the outline is weird
 and unneeded. 
@@ -420,82 +305,43 @@ grey background gives a feeling of not manipulative.
     }
 
 
-[initiate type]()
 
-Outside of this function, we need to define a types object and have a
-defaultType (probably real [linear]) 
+### Keyboard commands
 
+So we will listen for keyboard presses to make changes to the input element if
+the keys match. Within the input, we will have a notion of the active text
+input, which will have underline underneath it. For a fraction, it can be
+numerator, denominator, or the whole fraction being added to something.
 
-    if (typeof type === "string") {
-        type = types[type];
-    } 
-    if (!type) { 
-        type = types[types.default];
-    }
+The keys are as follows: 
 
+* left : decrease increment
+* right: increase increment  (kind of like selecting the decimal place)
+* up : add increment
+* down : subtract increment
+* #: focus on number text
+* ^ : focus on increment text
+* esc : flips to active button in main text
+* <  > :  these cycle through active input numbers for something like a matrix
+  or systems or polynomials, etc
+* We can use the asterisk `*` to indicate multiply or divide by the increment. 
+* The `/` slash can represent toggling through the fraction parts: numerator,
+  denominator, and whole. 
 
-
-[apply specifics]()
-
-In specifics, weload attributes to the container element and initiate the
-variable of interest.
-
-    let value = null;
-    if (specifics) {
-        let attrs = specifics.attrs;
-        $$$(container, attrs); // applies them through setAttribute or class stuff
-        if (specifics.hasOwnProperty('value')) {
-            value = specifics.value;
-        }
-    }
-
-### Init keys
-
-This loads the key listening event and does the loading operation. It will
-return the listener for removal if needed (should not be, but...)
-
-For main navigation, we have: 
-we use h and l for left-right navigation in a given level (sibling order for
-relevant blocks). We use j and k for going up and down levels, closing and
-opening as needed. The keys n and m will do input travels, previous and later,
-respectively. This allows us to not worry too much about the tabbing order
-issue. These are known by inputs. We use b to activate them. 
-
-o and p can navigate between pages. 
-
-The keys will have the default page keys (right hand) and the input will have
-their own keys (left). We use the keys on the primary current for those. 
-
-    (controller) => {
-        
-        const focus = _":focus";
-        const getCurrent = () => $('.currentActive') || document.activeElement; 
-        const newCurrent = (nxt,cur) => {
-            cur = cur ?? getCurrent();
-            cur.classList.remove('currentActive');
-            console.log("nexted", nxt);
-            nxt.classList.add('currentActive');
-            nxt.scrollIntoView({behavior:'smooth', block:'center' }); 
-        };
-
-        const filter = _":filtering for cur level";
-
-        const keys = {_":global"};
-        const getKC = _":get key command";
-
-        const keyDown = _":key down listener";
-        document.addEventListener('keydown', keyDown);
-        return {keyDown, keys};
-    }
+The reason for having separate cycling commands is that types of numbers can
+be combined. We can have complex fractions in a matrix, for example. This may
+require some work to make actually happen, but it can be done and we want to
+leave open that option. 
 
 
-[get key command]()
 
-This looks up the key 
-
-    (key) => {
-        return controller.primary.localKeys[key] || keys[key] || null
-    }
+    const keys = {_":global"};
+    keys['Escape'].input = true;
+    ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].forEach( str => {
+        keys[str].repeatable = true;
+    });
+    const keyListener = _":key down listener";
+    document.addEventListener('keydown', keyListener);
 
 
 [key down listener]()
@@ -507,19 +353,23 @@ but who knows? Actually, maybe we find a null, we stop. That we could have
 some keys that respond specially, but we disable the more general stuff. 
 
     (ev) => {
-
-Textareas are their own thing entirely. 
+        let f = keys[ev.key];
+        if (!f) {return;}
+        let stopDef = false;
 
         if (ev.target.nodeName === 'TEXTAREA') {
-            return; // disables key listening in text areaas 
+            if (f.textarea) {
+                _":f call"
+            } else {
+                return; // disables key listening in text areaas 
+            }
         }
 
-        let f = getKC(ev.key);
-        
-        if (!f) { return;}
+        let bool = (ev.target.nodeName === 'INPUT')  ;
 
-        let bool = (ev.target.nodeName === 'SL-INPUT') ||
-           (ev.target.nodeName === 'INPUT')  ;
+This prevents repeat keys from happening unless we want it to. The input
+behavior is there to allow the default or not, depending on whether the
+original key gets is not intercepted or is.  
 
         if (ev.repeat) {
             if (!f.repeatable) {
@@ -534,213 +384,105 @@ Textareas are their own thing entirely.
         }
 
 
-Text inputs are left alone unless the relevant key command says it is okay to
-be used in an input. 
+Inputs are left alone unless the relevant key command says it is okay to
+be used in an input. Since we want to use arrows and such, it is more than
+just text inputs that could get messed up. 
 
-        if (bool) {
-            if (ev.target.type === 'text') {
-                if (f.input) {
-                    f();
-                    ev.preventDefault();
-                    return true;
-                }
-                return; 
-            }
+        if (bool && !f.input) {
+            return; 
         }
 
 If we are here, then we want to check for key command.
 
-        f(ev.target);
-        
-        ev.preventDefault();
-        return true;
+        _":f call"
     }
 
+[f call]()
+
+    stopDef = f(ev.target);
+    if (stopDef) {
+        ev.preventDefault();
+        return true;
+    } else {
+        return;
+    }
 
 [global]()
+
 
 
 Tried to just click on the buttons programmatically, but that did not work. So
 doing next thing of assigning window. 
 
-    o: _":prev nav",
-    p : _":prev nav |sub prev, next",
-    m : _":item focus",
-    n : _":item focus | sub += 1, -= 1",
-    b : _":toggle input",
-    l : _":item focus | sub .typed-input, .hier",
-    h : _":item focus | sub .typed-input, .hier, += 1, -= 1",
-    j : _":descend",
-    k : _":ascend" 
-
-
-
-[prev nav]()
-
-For traveling to other pages in sequence. 
+    ArrowUp :  _":btn",
+    ArrowDown : _":btn | sub add, sub",
+    ArrowLeft : _":btn | sub add, lower",
+    ArrowRight : _":btn | sub add, raise",
+    '#' : _":focus",
+    '^' : _":focus | sub primary, increment" ,
+    Escape : _":escape",
+    '<' : _":btn | sub add, cycle-left",
+    '>' : _":btn | sub add, cycle-right",
+    '*' : _":btn | sub add, mul",
+    '/' : _":btn | sub add, frac",
+    
+[btn]()
 
     () => {
-        let b = $('.prev');
-        let h = b.getAttribute('aria-hidden');
-        if (h) { return;} // not clickable
-        window.location = window.location.origin + b.getAttribute('href');
-    }
-
-[item focus]()
-
-This should be focused on input types. We grab the active element. If it is of
-typed-input, then we cycle from there. 
-
-    () => {
-        let cur = getCurrent(); 
-        _":deal with being in input control"
-        let {siblings, index} = filter(cur, '.typed-input');
-        index += 1;
-        let n = siblings.length;
-        console.log(index,n, siblings, cur);
-        if (n === 0) { 
-            console.error("no siblings", cur);
-            return;
-        }
-        while (index >= n) {
-            index -= n;
-        }
-        while (index < 0) {
-            index += n;
-        }
-        newCurrent(siblings[index]);
-    }
-  
-        
-        
-[deal with being in input control]()
-
-We could be an active element in input control. We don't want to navigate
-there. So we find its partner container in the main body. 
-
-    let inCo = cur.closest('.inputControl');
-    if (inCo) {
-        let line = cur.closest('.inputControl > *');
-        let inps = controller.scopes.inputs;
-        for (const key in inps) {
-            if (line === inps[key].line) {
-                cur = inps[key].container;
-                break;
-            }
-        }
-    }
-
-
-[filtering for cur level]()
-
-So this is a function that takes in an element and a selector. It then returns
-an array of siblings that match the selector, the index of the current element
-if it matches the selector, and its parent in the hierarchy, and any children
-of the hierarchy.
-
-    (el, sel) => {
-        let parent = el.parentElement.closest('.hier, body');
-
-        let children = $$('.hier', parent);
-
-        let siblings = $$(sel, parent);
-
-        siblings = siblings.filter( (el) => {
-            let anc = el.parentElement.closest('.hier, body',);
-            return (anc === parent);
-        });
-
-        let index = siblings.indexOf(el); 
-
-        //console.log("filter", el, parent, children, siblings, index);
-
-        return {parent, children, siblings, index};
-    }
-
-
-[toggle input]()
-
-We want to click an input. 
-
-    () => {
-        let cur = getCurrent();
-        if (cur.matches('.typed-input') ) {
-            cur.click();
-        }
-    }
-
-
-[descend]()
-
-This opens up 
-
-    () => {
-        let cur = getCurrent();
-        
-If it is an explore link, then we want to follow that link and we are done
-here. 
-
-        if (cur.matches('a.explore')) {
-            cur.click();
-            return;
-        }
-        if (cur.show) {
-            cur.show();
-        }
-        
-We need to look for a suitable element to be current in 
-
-        let nxts = ['.typed-input', '.explore', '.hier'];
-        for (let i = 0; i < nxts.length; i += 1) {
-            let nxt = $$(nxts[i], cur);
-            for (let j=0; j< nxt.length; j += 1) {
-               let nxtEl = nxt[j]; 
-               if (nxtEl.closest('.hier') === cur) {
-                    newCurrent(nxtEl,cur);
-                    return;
-                }
-            }
-        }
-
-We went through everything already. So now we do nothing. Descending to first
-element is weird as it is probably a descent that is irrelevant. 
-
-        return;
-    }
-
-[ascend]()
-
-This will go up to a parent in the hierarchy and will close the current element
-if open in some fashion.
-
-    () => {
-        let cur = getCurrent();
-        let par = cur.closest('.hier, body');
-        if (par.hide) {
-            par.hide();
-        }
-        newCurrent(par, cur);
-
-    }
-
-
-[focus]()
-
-A little helper for bringing stuff into focus. Supports shoelace focus as
-first and then html focus fallback. Also checks for existence. ~
-
-
-    (el) => {
-        if (!el) { console.error("nothing passed into focus on"); return;}
-        if (el.setFocus) {
-            el.setFocus();
-        } else if (el.focus) {
-            el.focus();
+        let btn = $('.section.open .active .add');
+        if (btn) {
+            btn.click();
+            return true;
         } else {
-            console.error("element not focusable", el);
+            return false;
         }
     }
 
+
+[focus]() 
+
+    () => {
+        let input = $('.section.open .active .primary input, .open .active .primary textarea');
+        if (input) {
+            input.focus();
+            return true;
+        } else {
+            return;
+        }
+    }
+
+[escape]()
+
+This tries to close various things. If first tries to close an active
+variable. If there is none, then it tries to close overlays and then the
+section.  
+
+    () => {
+        let el = $('.open .active .toggle');
+        if (el) {
+            let btn = $('.section.open button.active');
+            el.click();
+            btn?.focus?.();
+            return true;
+        }
+        el = $('.overlay.open .close');
+        if (el) {
+            let btn = $('button.opened');           
+            el.click();
+            btn?.focus?.();
+            return true;
+        }
+        el = $('.section.open h2 button');
+        if (el) {
+            el.click();
+            el.focus();
+            return true;
+        }
+        return ; 
+    }
+
+
+    
 ## Content Loaded
 
 
@@ -768,8 +510,6 @@ them.
             div.append(svg);
         } else if (type === "html") {
             div.innerHTML = text;
-        } else if (type==="s") { //shoelace icon
-            div.innerHTML = `<sl-icon name="${text}"></sl-icon>`;
         } else if (type==="img") { //remixicon
             div.innerHTML = `<img width="18" height="18" src="/img/${text}" />`;
         } else {

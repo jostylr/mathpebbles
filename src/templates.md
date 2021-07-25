@@ -233,7 +233,7 @@ the section name and the second one being a path for the Explore button.
         full = shoelacify(full || ''); 
         let self=slugify(name);
         if (full) {
-            main += `<div class="top section" id="${self}"
+            main += `<div class="top section" id="${self}" :class="open ?  'open' : '' "
             x-data="section" x-init="me('${self}')">
                 <div class="summary">
                     _":heading"
@@ -471,8 +471,9 @@ it because they might just get translated, but whatever).
 
     p = place += 1;
     places.push(p);
-    ret.push(` <button @click="togglers[${p}] = true">Proof</button>
-        <div class="overlay" x-effect="overlay = togglers[${p}]"  
+    ret.push(` <button :class="togglers[${p}] ? 'opened':''" @click="togglers[${p}] = true"
+        >Proof</button>
+        <div class="overlay" :class="togglers[$p}] ? 'open' : ''" x-effect="overlay = togglers[${p}]"  
         x-show="togglers[${p}]"
         x-transition.scale.origin.left >
         <div class="left" 
@@ -1372,10 +1373,9 @@ There is also math.js mainly used for high precision arithmetic.
             const render = _"render";
             const {show, hide } = MP;
             MP.mathHelper(math, Decimal, Fraction);
-            math.precision(100);
+            math.precision(20);
             MP.makeF(math);
 
-            /*let keyInfo = MP.initKeys({});*/
 
             !-!SCRIPT!-!
 
@@ -1500,7 +1500,7 @@ TODO: consolidate all of this (replace .explore with .button).
       outline:none;
     }
 
-    .video button {
+    .video button, .jxg button, .ggb button {
         font-size: 72%;
         padding: 2px 5px;
     }
@@ -1757,6 +1757,7 @@ This is where we stick a bunch of common alpine methods.
         _"toggle section",
         _"click Toggle",
         _"toggle Board",
+        _"edisplay",
     }
 
 [mathout]()
@@ -1918,6 +1919,23 @@ to hide the changes but keep the access to the board.
 
    
 
+### edisplay
+
+This displays the increment. We want to be fixed point for up to 4 digits, so
+the log being between 4 and -4. 
+
+    eDisplay (dec) {
+        console.log(dec.toString());
+        let lg = dec.log(10);
+        console.log(lg.toString());
+        if (lg.lte(4) && lg.gte(-4) ){
+            return dec.toString();
+        } else {
+            return dec.toExponential();
+        }
+    }
+
+
 ### Input types
 
 This is where we create the various input types. They are: 
@@ -1940,8 +1958,7 @@ This is where we create the various input types. They are:
         let pname = 'p'+name; //power string for input
         let tname = 't'+name; //toggle visibility
         store[iname] = store[name].toString();
-        store[ename] = 1;
-        store[pname] = 0;
+        store[ename] = math.decimal(1);
         store[tname] = false;
         let html = `_":html"`;
         return html;
@@ -1957,17 +1974,17 @@ This is the html
         x-effect="toNumber.${name} = ${name}.toNumber()"
        >
     <div class="primary" >
-        <button @click="${name} = ${name}.sub(${ename})">-</button>
+        <button class="sub" @click="${name} = ${name}.sub(${ename})">-</button>
         <input type="text" @change="${name} = math.decimal($el.value)"
             x-effect="$el.value = ${name}.toString()" ></input>
-        <button @click="${name} = ${name}.add(${ename}) ">+</button>
+        <button class="add" @click="${name} = ${name}.add(${ename}) ">+</button>
     </div>
 
-    <div class="exponent">
-        <button @click="p${name} = p${name} - 1">_</button>
-        <span>1E</span>
-        <input x-model.number="p${name}" x-effect="e${name} = Math.pow(10, p${name})"></input>
-        <button @click="p${name} = p${name} + 1" >^</button>
+    <div class="increment">
+        <button class="lower" @click="e${name} = e${name}.div(10) ">_</button>
+        <input type="text" @change="e${name} = math.decimal($el.value)"
+            x-effect="$el.value = eDisplay(e${name})" ></input>
+        <button class="raise" @click="e${name} = e${name}.mul(10)" >^</button>
     </div>
 
 
@@ -1988,7 +2005,7 @@ Similar to the bottom footer, but shifted up.
 
     .footer {
         position: sticky;
-        bottom: 26px;
+        bottom: 24px;
         background-color: whitesmoke;
         width: 100%;
         z-index:20;
